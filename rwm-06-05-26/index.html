@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RWM Shoot Day — Script Package</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dust-gray: #8B8580;
+    --bone-ink: #E8E0CF;
+    --arc-magenta: #D83B93;
+    --signal-violet: #7C4DFF;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(160deg, #020308 0%, #07041a 55%, #0d0625 100%);
+    min-height: 100vh;
+    color: var(--bone-ink);
+    position: relative;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0; opacity: 0.11;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+  }
+  body::after {
+    content: '';
+    position: fixed; top: -20vh; left: 50%; transform: translateX(-50%);
+    width: 80vw; height: 80vw;
+    background: radial-gradient(circle, rgba(216,59,147,0.08) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+  .wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 48px 24px 130px; }
+
+  /* HEADER */
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+  .mark {
+    width: 38px; height: 38px; border-radius: 8px;
+    background: linear-gradient(135deg, #D83B93, #7C4DFF);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .wordmark { display: flex; flex-direction: column; gap: 2px; }
+  .wm-top { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .wm-sub { font-size: 10px; letter-spacing: 0.12em; color: var(--dust-gray); }
+
+  /* INTRO */
+  .intro {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(216,59,147,0.22);
+    border-radius: 14px; padding: 36px 40px; margin-bottom: 48px;
+    position: relative; overflow: hidden;
+  }
+  .intro::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #D83B93, #7C4DFF, transparent); }
+  .eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--arc-magenta); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .eyebrow::after { content: ''; flex: 1; height: 1px; background: rgba(216,59,147,0.2); }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 4vw, 32px); font-weight: 700; line-height: 1.2; margin-bottom: 18px; background: linear-gradient(135deg, #E8E0CF 40%, #D83B93); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .intro-p { font-size: 15px; line-height: 1.78; color: #c4bdb0; margin-bottom: 26px; }
+  .intro-p + .intro-p { margin-top: -14px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 26px; }
+  .chip { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; padding: 5px 13px; border-radius: 100px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--dust-gray); }
+  .chip.hot { background: rgba(216,59,147,0.1); border-color: rgba(216,59,147,0.25); color: var(--arc-magenta); }
+  .howto { background: rgba(124,77,255,0.07); border: 1px solid rgba(124,77,255,0.2); border-radius: 10px; padding: 15px 20px; font-size: 13px; color: #b4adc8; line-height: 1.65; }
+  .howto strong { color: var(--signal-violet); font-weight: 600; }
+
+  /* SEC LABEL */
+  .sec { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dust-gray); margin-bottom: 20px; }
+
+  /* FORMAT */
+  .fmts { display: flex; flex-direction: column; gap: 14px; margin-bottom: 64px; }
+  .fmt { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; overflow: hidden; transition: border-color 0.2s; }
+  .fmt.open { border-color: rgba(216,59,147,0.3); }
+  .fhd { display: flex; align-items: center; gap: 16px; padding: 22px 28px; cursor: pointer; user-select: none; transition: background 0.15s; }
+  .fhd:hover { background: rgba(255,255,255,0.03); }
+  .fnum { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--arc-magenta); min-width: 24px; flex-shrink: 0; }
+  .finfo { flex: 1; }
+  .ftitle { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 3px; }
+  .fdesc { font-size: 12px; color: var(--dust-gray); line-height: 1.4; }
+  .fcnt { font-size: 11px; color: var(--dust-gray); margin-right: 8px; flex-shrink: 0; }
+  .chev { color: var(--dust-gray); transition: transform 0.3s, color 0.2s; flex-shrink: 0; }
+  .fmt.open .chev { transform: rotate(180deg); color: var(--arc-magenta); }
+  .fbody { display: none; padding: 0 28px 26px; }
+  .fmt.open .fbody { display: block; }
+  .snote { font-size: 11px; color: rgba(139,133,128,0.75); font-style: italic; margin-bottom: 16px; padding: 10px 14px; border-left: 2px solid rgba(216,59,147,0.25); background: rgba(216,59,147,0.04); border-radius: 0 6px 6px 0; line-height: 1.6; }
+
+  /* SCRIPTS */
+  .scs { display: flex; flex-direction: column; gap: 8px; }
+  .sc { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.055); border-radius: 10px; overflow: hidden; transition: border-color 0.2s; }
+  .sc.open { border-color: rgba(124,77,255,0.4); }
+  .shd { display: flex; align-items: center; gap: 12px; padding: 15px 20px; cursor: pointer; user-select: none; transition: background 0.15s; }
+  .shd:hover { background: rgba(255,255,255,0.025); }
+  .sidx { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--signal-violet); min-width: 22px; flex-shrink: 0; }
+  .stitle { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 500; flex: 1; }
+  .sch { color: var(--dust-gray); transition: transform 0.3s, color 0.2s; flex-shrink: 0; }
+  .sc.open .sch { transform: rotate(180deg); color: var(--signal-violet); }
+  .sbody { display: none; padding: 0 20px 20px; }
+  .sc.open .sbody { display: block; }
+
+  /* SCRIPT META */
+  .smeta { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .tv { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; padding: 4px 12px; border-radius: 100px; background: rgba(124,77,255,0.15); border: 1px solid rgba(124,77,255,0.3); color: var(--signal-violet); }
+  .td { font-size: 11px; color: var(--dust-gray); }
+
+  /* SPOTS */
+  .spots { display: flex; flex-direction: column; gap: 10px; }
+  .spot { }
+  .slbl { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--arc-magenta); margin-bottom: 6px; }
+  .stxt {
+    font-size: 14px; line-height: 1.8; color: var(--bone-ink);
+    white-space: pre-line; outline: none;
+    padding: 11px 14px;
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.055);
+    border-radius: 8px; width: 100%; display: block;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .stxt:focus { border-color: rgba(124,77,255,0.45); background: rgba(124,77,255,0.04); }
+  .stxt.cue { font-style: italic; color: rgba(139,133,128,0.8); background: rgba(216,59,147,0.04); border-color: rgba(216,59,147,0.15); }
+
+  /* CTA */
+  .cta { background: rgba(255,255,255,0.025); border: 1px solid rgba(216,59,147,0.14); border-radius: 14px; padding: 48px 40px; text-align: center; margin-bottom: 48px; }
+  .cta h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(20px, 3vw, 26px); font-weight: 700; margin-bottom: 14px; }
+  .cta p { font-size: 15px; color: #c4bdb0; line-height: 1.7; margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .cbtn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 10px; background: linear-gradient(135deg, #D83B93, #7C4DFF); color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; letter-spacing: 0.02em; box-shadow: 0 4px 24px rgba(216,59,147,0.3); transition: opacity 0.2s, transform 0.2s; }
+  .cbtn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .ft { font-size: 12px; color: var(--dust-gray); line-height: 1.6; }
+  .ftsub { font-size: 11px; color: rgba(139,133,128,0.45); margin-top: 6px; letter-spacing: 0.06em; }
+
+  /* DOWNLOAD */
+  .dlbtn { position: fixed; bottom: 28px; right: 28px; z-index: 100; display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 10px; background: linear-gradient(135deg, #D83B93, #7C4DFF); color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; border: none; letter-spacing: 0.02em; box-shadow: 0 4px 28px rgba(216,59,147,0.4); transition: opacity 0.2s, transform 0.2s; }
+  .dlbtn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  @media (max-width: 600px) {
+    .intro { padding: 28px 22px; }
+    .fhd { padding: 18px 20px; }
+    .fbody { padding: 0 18px 22px; }
+    .cta { padding: 36px 22px; }
+    .dlbtn { bottom: 16px; right: 16px; font-size: 12px; padding: 11px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M11 3C6.6 3 3 6.6 3 11s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 13.5c-3 0-5.5-2.5-5.5-5.5S8 5.5 11 5.5s5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5z" fill="white" opacity="0.9"/>
+        <circle cx="11" cy="11" r="2.5" fill="white"/>
+      </svg>
+    </div>
+    <div class="wordmark">
+      <span class="wm-top">Cosmic Arc Media</span>
+      <span class="wm-sub">Content Systems</span>
+    </div>
+  </header>
+
+  <div class="intro">
+    <div class="eyebrow">Shoot Day Script Package — Rural Waste Management</div>
+    <h1>Jaron, here's what we're planning to film.</h1>
+    <p class="intro-p">Four formats, 15 scripts. Read through everything, change whatever doesn't sound like you, and hit "Download Updated Version" when you're done. Bring that file to the shoot or send it back beforehand.</p>
+    <p class="intro-p">Every text block is editable right here in the browser.</p>
+    <div class="chips">
+      <span class="chip hot">Shoot day ready</span>
+      <span class="chip">4 formats</span>
+      <span class="chip">15 scripts</span>
+      <span class="chip">6 cuts per video</span>
+      <span class="chip">Talent: Jaron</span>
+    </div>
+    <div class="howto">
+      <strong>How this works:</strong> each format is a different style we'll film. Inside each script, the numbered spots are the positions you move to — 6 per video for maximum engagement. <strong>Bracketed lines like [spill the beans] are production cues, not spoken lines.</strong> Italic/darker blocks indicate cues vs. dialogue.
+    </div>
+  </div>
+
+  <div class="sec">The shoot plan ↓</div>
+
+  <div class="fmts">
+
+    <!-- FORMAT 01 -->
+    <div class="fmt" id="f1">
+      <div class="fhd" onclick="tog('f1','fmt')">
+        <span class="fnum">01</span>
+        <div class="finfo">
+          <div class="ftitle">The Bit — Spill the Beans / Tea</div>
+          <div class="fdesc">Table, one prop per script. One metaphor, one message, walk off.</div>
+        </div>
+        <span class="fcnt">4 scripts</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="fbody">
+        <div class="snote">
+          <strong style="color:var(--arc-magenta);">SHOOT ORDER:</strong> Film all four bits back to back first — [spill the beans], [spill the tea], [blow the whistle], [let the cat out of the bag] — one take each with props ready. Then reset and film all the talking sections. Far more efficient than doing each script start to finish.
+        </div>
+        <div class="scs">
+
+          <div class="sc" id="s1-1">
+            <div class="shd" onclick="tog('s1-1','sc')">
+              <span class="sidx">1.1</span>
+              <span class="stitle">Your Trash Bill Shouldn't Look Like This <span style="font-size:11px;color:#8B8580;font-weight:400;">(PROP: BEANS)</span></span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">I've been wanting to say this for a while.
+Your trash bill should not look like
+a politician's stock portfolio.</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">You call to sign up, they quote you $24 a month.
+Sounds reasonable.
+Then the bill comes.</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">There's a line for the base service.
+A line for the fuel surcharge.
+Environmental recovery fee. Administrative charge.
+Sales tax on all of it.
+That $24 is now $54.</div></div>
+                <div class="spot"><div class="slbl">4 — cue</div><div class="stxt cue" contenteditable="false">[spill the beans]
+There it is.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">We quote you one number. That's the total.
+Tax included. No surcharges. No extra fees.
+The number we tell you is the number you pay.
+Go to our website right now. All there.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">If we ever raise the price,
+you get a full month's notice and a reason why.
+Three times in three years.
+That's it.
+[walk off]</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s1-2">
+            <div class="shd" onclick="tog('s1-2','sc')">
+              <span class="sidx">1.2</span>
+              <span class="stitle">The Fine Print That Costs You <span style="font-size:11px;color:#8B8580;font-weight:400;">(PROP: TEA)</span></span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1 — cue</div><div class="stxt cue" contenteditable="false">[spill the tea]
+Here's something most trash companies would rather you didn't know.</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">If you signed up with a major company in the last few years,
+there's a decent chance you're in a multi-year contract.
+It was in the fine print.</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">Which makes sense — it was designed to be skimmed.
+If you want out early, you owe them.
+Sometimes hundreds of dollars.</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">I know because I ran their dumpster at my own house.
+It cost me over a thousand dollars to break that contract.
+To cancel a service I was already overpaying for.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">Our service agreement is one page.
+Says "non-binding" right at the top.
+You want to leave? Leave.
+No buyout. No collections.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">Because if I have to lock you in to keep you,
+I'm not earning you.
+I'm just keeping you from leaving.
+Those are not the same thing.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s1-3">
+            <div class="shd" onclick="tog('s1-3','sc')">
+              <span class="sidx">1.3</span>
+              <span class="stitle">The $24 That Isn't $24 <span style="font-size:11px;color:#8B8580;font-weight:400;">(PROP: WHISTLE)</span></span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">Someone needs to call this out.
+So I will.</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">Most big companies advertise a low number.
+Let's say $24 a month. That's the base rate.</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">Then: fuel surcharge. Extra.
+Environmental recovery fee. Extra.
+Administrative charge. Extra.
+Sales tax calculated on all of the above.</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">By the time that hits your bill,
+you're looking at $50, $54, sometimes $60.
+And you signed a contract at the $24 price
+without knowing what was coming.
+That's not an oversight. That's the model.</div></div>
+                <div class="spot"><div class="slbl">5 — cue</div><div class="stxt cue" contenteditable="false">[blow the whistle]</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">Our price includes everything.
+Service, fuel, truck, driver. Sales tax.
+One number.
+If it ever changes, you'll know a month before it happens.
+And you'll know why.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s1-4">
+            <div class="shd" onclick="tog('s1-4','sc')">
+              <span class="sidx">1.4</span>
+              <span class="stitle">Before You Sign Up With Anyone <span style="font-size:11px;color:#8B8580;font-weight:400;">(PROP: CAT)</span></span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">Before you sign up with any trash company —
+not just us, anyone —
+try something first.</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">Google how to cancel their service.
+Not how to sign up. How to cancel.
+See how easy that information is to find.</div></div>
+                <div class="spot"><div class="slbl">3 — cue</div><div class="stxt cue" contenteditable="false">[let the cat out of the bag]</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">If cancellation info is buried, that's not an oversight.
+That's a design decision.
+Companies that make it easy to leave don't need to hide it.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">We don't have a cancellation page
+because there's nothing to cancel.
+You call us. We pick up the cart.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">No fee. No notice period.
+No arguing with anyone on the phone.
+You just stop.
+Try finding that offer from the other guys.</div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMAT 02 -->
+    <div class="fmt" id="f2">
+      <div class="fhd" onclick="tog('f2','fmt')">
+        <span class="fnum">02</span>
+        <div class="finfo">
+          <div class="ftitle">Origin Story</div>
+          <div class="fdesc">One longer video. Outside or by the truck. This has never been on camera.</div>
+        </div>
+        <span class="fcnt">1 script</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="fbody">
+        <div class="snote">Six movements through the story. Each one is a cut to a new position or angle.</div>
+        <div class="scs">
+
+          <div class="sc" id="s2-1">
+            <div class="shd" onclick="tog('s2-1','sc')">
+              <span class="sidx">2.1</span>
+              <span class="stitle">Why a Trooper and a Teacher Started a Trash Company</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~2–3 min</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1 — standing, neutral</div><div class="stxt" contenteditable="true">Six years as a Texas State Trooper.
+My wife was a schoolteacher for five.
+And then we started a trash company.
+I know. It's a pivot.</div></div>
+                <div class="spot"><div class="slbl">2 — wider shot</div><div class="stxt" contenteditable="true">We wanted to build something we owned.
+Something that served the community we already lived in.
+When we looked at trash service in this area —
+the contracts, the fees, the companies that weren't from here —
+we thought we could do it better.</div></div>
+                <div class="spot"><div class="slbl">3 — by the truck</div><div class="stxt" contenteditable="true">So we made a short list of things we would not do.
+No multi-year contracts.
+No hidden fees.
+One price that includes everything.</div></div>
+                <div class="spot"><div class="slbl">4 — tighter angle</div><div class="stxt" contenteditable="true">And when we mess up — and we do —
+we fix it all the way.
+Money back. Another pickup.
+And a $10 credit on your next bill.
+An apology should mean something or it doesn't.</div></div>
+                <div class="spot"><div class="slbl">5 — walking</div><div class="stxt" contenteditable="true">Three years later: 2,400 households. Fifteen communities.
+Three price increases, each with a full month's notice.
+One customer lost on the last one.
+I'll take that trade every time.</div></div>
+                <div class="spot"><div class="slbl">6 — back to neutral</div><div class="stxt" contenteditable="true">I moved here when I was 18.
+This is home.
+I see these people at church, at football games, at the bank.
+I wear this hat everywhere.
+You're not calling a 1-800 number.
+You're calling someone who drove your road last week.</div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMAT 03 -->
+    <div class="fmt" id="f3">
+      <div class="fhd" onclick="tog('f3','fmt')">
+        <span class="fnum">03</span>
+        <div class="finfo">
+          <div class="ftitle">Straight Talk</div>
+          <div class="fdesc">Direct to camera. No props, no truck. Six positions per script.</div>
+        </div>
+        <span class="fcnt">4 scripts</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="fbody">
+        <div class="snote">Step, angle, or frame change between every numbered spot. Even small moves — step left, lean forward, slightly closer — register as cuts when edited.</div>
+        <div class="scs">
+
+          <div class="sc" id="s3-1">
+            <div class="shd" onclick="tog('s3-1','sc')">
+              <span class="sidx">3.1</span>
+              <span class="stitle">The Total Price Is the Total Price</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">When you ask us what it costs,
+we tell you the total.
+Not the base rate. The total. Tax included.</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">That sounds like it should be normal.
+It isn't.</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">Most companies quote a low number
+then add fuel surcharges, environmental fees, administrative charges.
+By the time the bill arrives, it's 30% more.</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">The number you signed up for was a teaser.
+The real price came later.
+That's not an accident. That's the model.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">We've had three price increases in three years.
+Every single one with a full month's notice
+and a real explanation.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">Not a form letter. An actual reason.
+Because if you're going to charge people more,
+tell them why and give them time to decide.
+That's the whole policy.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s3-2">
+            <div class="shd" onclick="tog('s3-2','sc')">
+              <span class="sidx">3.2</span>
+              <span class="stitle">What Happens When We Miss Your Pickup</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">We miss pickups sometimes.
+West Texas roads, equipment, weather.
+It happens.</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">Here's our policy when it does.
+You get your money back for that period.</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">We either come back the next day,
+or you put extra out the following week at no charge.</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">And on top of that —
+a $10 credit on your next bill.
+About a third of your monthly payment. Off.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">Not instead of fixing it.
+In addition to it.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">A lot of our best reviews
+came from customers we let down first.
+That's not luck.
+That's the policy working.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s3-3">
+            <div class="shd" onclick="tog('s3-3','sc')">
+              <span class="sidx">3.3</span>
+              <span class="stitle">Why We Don't Do Contracts</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">You should be free to choose who picks up your trash
+the same way you choose anything else.
+Change your mind? Go somewhere else.</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">That should just be how it works.</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">The reason we don't do contracts isn't a strategy.
+It's a belief.
+If I have to lock you in to keep you,
+I'm not earning you.</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">I'm just keeping you from leaving.
+Those are not the same thing.
+I know because I've been a customer of a company
+that cost me a thousand dollars to leave.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">I'm not building that company.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">Our agreement is one page. Non-binding at the top.
+Sign up online in three minutes.
+We want to win your business every month. Not hold it.
+Tell us if we're not.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s3-4">
+            <div class="shd" onclick="tog('s3-4','sc')">
+              <span class="sidx">3.4</span>
+              <span class="stitle">What You're Actually Paying For</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">When you pay for trash service,
+you're paying for one thing.
+A cart shows up, gets emptied, disappears.
+Same day. Every week.</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">That's the service.</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">You're not paying a fuel surcharge.
+You're not paying an environmental recovery fee.
+Those are things companies add
+after you've already agreed to the price.</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">They're not part of the service.
+They're additional revenue
+wrapped in language that sounds necessary.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">None of it is.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">We charge one number.
+Cart, driver, fuel, truck, everything. Sales tax.
+That's it.
+Go to our website. Price is right there.
+No forms. No waiting.</div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMAT 04 -->
+    <div class="fmt" id="f4">
+      <div class="fhd" onclick="tog('f4','fmt')">
+        <span class="fnum">04</span>
+        <div class="finfo">
+          <div class="ftitle">Fun &amp; Visual</div>
+          <div class="fdesc">Educational and action-based. Needs the truck and props more than a teleprompter.</div>
+        </div>
+        <span class="fcnt">6 scripts</span>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="fbody">
+        <div class="snote">Spot numbers here represent phases of the video — action, angle, or location changes. Italic blocks are production cues.</div>
+        <div class="scs">
+
+          <div class="sc" id="s4-1">
+            <div class="shd" onclick="tog('s4-1','sc')">
+              <span class="sidx">4.1</span>
+              <span class="stitle">Anatomy of a Trash Truck</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~90–120 sec</span><span class="td">6 cuts — walk around the truck</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1 — front</div><div class="stxt" contenteditable="true">Most people see this thing come by their house every week
+and think: big, loud, early.
+Fair. But there's a lot going on here.</div></div>
+                <div class="spot"><div class="slbl">2 — cab</div><div class="stxt" contenteditable="true">Up here is the cab. Driver's office.
+Eight-hour day minimum.
+Route sheet, radio, a lot of coffee.
+The seat has seen better decades.</div></div>
+                <div class="spot"><div class="slbl">3 — compaction unit</div><div class="stxt" contenteditable="true">Down here is the compaction unit.
+Runs on hydraulics.
+Blade pressure around a thousand PSI.</div></div>
+                <div class="spot"><div class="slbl">4 — explaining</div><div class="stxt" contenteditable="true">That takes your week's worth of garbage
+and compresses it to about a third of its original size.
+Every couple of pickups, it cycles automatically.</div></div>
+                <div class="spot"><div class="slbl">5 — back of truck</div><div class="stxt" contenteditable="true">That's the sound you hear when we drive away from your house.
+Not just leaving — making room for the next stop.</div></div>
+                <div class="spot"><div class="slbl">6 — loading section</div><div class="stxt" contenteditable="true">Back here is the loading section.
+Forks hook under the lip of the cart.
+Arm lifts it, tips it, dumps it in.
+By end of route, we're carrying five to eight tons.
+Every day.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s4-2">
+            <div class="shd" onclick="tog('s4-2','sc')">
+              <span class="sidx">4.2</span>
+              <span class="stitle">How Many Soccer Balls Fit in a 95-Gallon Cart</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">This came up at dinner.
+I couldn't let it go.
+How many regulation soccer balls
+fit in a standard 95-gallon trash cart?</div></div>
+                <div class="spot"><div class="slbl">2 — cue</div><div class="stxt cue" contenteditable="false">[start loading soccer balls]
+One. Two. Three.</div></div>
+                <div class="spot"><div class="slbl">3 — cue</div><div class="stxt cue" contenteditable="false">[keep going]
+Still going.</div></div>
+                <div class="spot"><div class="slbl">4 — cue</div><div class="stxt cue" contenteditable="false">[more]
+Keep counting.</div></div>
+                <div class="spot"><div class="slbl">5 — reveal</div><div class="stxt" contenteditable="true">[fill in number after testing].
+That's how many.
+Nobody needed to know that.
+You're thinking about it now.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">This is the cart we put at your house every week.
+Holds a lot more garbage than soccer balls.
+Same price either way. No overage fee.
+Just the one number.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s4-3">
+            <div class="shd" onclick="tog('s4-3','sc')">
+              <span class="sidx">4.3</span>
+              <span class="stitle">Trash Truck Review</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts — deadpan car-review delivery, fully serious</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">A lot of people review cars.
+Nobody reviews trash trucks.
+We're fixing that.</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">This is the [truck make/model].
+It is not fast.
+It is not pretty.</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">Zero to sixty: who's counting.
+Horsepower: 300, Cummins ISB 6.7.
+Sounds impressive. Mostly used to haul garbage.</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">Interior: functional.
+Two cup holders. One currently occupied.
+Cargo capacity: five to eight tons fully loaded.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">It is, however, extremely good at one specific thing.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">This truck shows up to your house every week.
+Same route. Same time.
+Rain, wind, West Texas in July. Doesn't care.
+Would I recommend it?
+I do. Every week. To 2,400 households.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s4-4">
+            <div class="shd" onclick="tog('s4-4','sc')">
+              <span class="sidx">4.4</span>
+              <span class="stitle">I Bet I Can Finish Reading Our Agreement First</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts — prop: pitcher filling with tea</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1 — cue</div><div class="stxt cue" contenteditable="false">[set up the pitcher]
+I'm going to make you a bet.
+I bet I can read our entire service agreement
+before this pitcher fills up. Ready?
+[start it]</div></div>
+                <div class="spot"><div class="slbl">2</div><div class="stxt" contenteditable="true">"This is a non-binding service agreement
+between Rural Waste Management LLC and the customer."
+Put your cart out on pickup day.
+[check pitcher — still going]</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">Keep hazardous materials out of it.
+Pay your invoice.
+[look at pitcher]
+That's the agreement.</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">We've got time.
+No multi-year lock-in.
+No fuel surcharge clause buried on page four.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">Because there is no page four.
+There's barely a page one.
+[pitcher still filling]</div></div>
+                <div class="spot"><div class="slbl">6 — cue</div><div class="stxt cue" contenteditable="false">[pitcher finishes — or Jaron walks off before it does]
+The only reason a service agreement needs to be long
+is if someone's hiding something in it.
+Ours is short because we have nothing to hide.
+One price. One page. Three minutes online.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s4-5">
+            <div class="shd" onclick="tog('s4-5','sc')">
+              <span class="sidx">4.5</span>
+              <span class="stitle">Here's What the Inside of a Trash Truck Looks Like</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~60–90 sec</span><span class="td">6 cuts — camera goes inside the truck for spots 2–3</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1 — exterior</div><div class="stxt" contenteditable="true">You've seen this go by your house every week.
+You've probably never seen what's going on inside.</div></div>
+                <div class="spot"><div class="slbl">2 — inside chamber</div><div class="stxt" contenteditable="true">This is where it all goes.
+When your cart tips, everything falls in right here.</div></div>
+                <div class="spot"><div class="slbl">3 — inside, compactor</div><div class="stxt" contenteditable="true">Then the compaction blade sweeps forward
+and pushes it toward the front.
+About every two stops.</div></div>
+                <div class="spot"><div class="slbl">4 — back outside</div><div class="stxt" contenteditable="true">By the time we're done with a full route,
+this whole space is packed solid.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">Five to eight tons, depending on the run.
+That sound when the truck drives away?
+That's the compaction cycle running.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">From the outside, looks like a big truck leaving.
+From in here, it's a hydraulic press running at a thousand PSI
+cycling every few stops for ten hours.
+That's the job.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sc" id="s4-6">
+            <div class="shd" onclick="tog('s4-6','sc')">
+              <span class="sidx">4.6</span>
+              <span class="stitle">Here's What It Looks Like When It's Crushing a Load</span>
+              <svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="sbody">
+              <div class="smeta"><span class="tv">~45–75 sec</span><span class="td">6 cuts — let the compactor run first</span></div>
+              <div class="spots">
+                <div class="spot"><div class="slbl">1</div><div class="stxt" contenteditable="true">People always want to know what it looks like
+when the compactor runs.</div></div>
+                <div class="spot"><div class="slbl">2 — cue</div><div class="stxt cue" contenteditable="false">[film the compaction cycle running]
+Watch.</div></div>
+                <div class="spot"><div class="slbl">3</div><div class="stxt" contenteditable="true">The blade runs at about a thousand PSI.
+Takes whatever went in
+and compresses it to a third of its original size.</div></div>
+                <div class="spot"><div class="slbl">4</div><div class="stxt" contenteditable="true">Bags, boxes, bottles, everything.
+A third.</div></div>
+                <div class="spot"><div class="slbl">5</div><div class="stxt" contenteditable="true">This runs automatically throughout the route.
+It's what lets one truck carry a full day's work
+without stopping to dump mid-run.</div></div>
+                <div class="spot"><div class="slbl">6</div><div class="stxt" contenteditable="true">Most people have never seen this up close.
+Now you have.
+Every two pickups. Ten hours. Five days a week.
+That's the truck. That's the job.</div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cta">
+    <h2>Questions or changes before the shoot?</h2>
+    <p>Click any text block and start typing — everything is editable. Download the updated version when you're done and send it back or bring it to the day.</p>
+    <a class="cbtn" href="mailto:landon@cosmicarcmedia.com?subject=RWM Shoot Scripts&body=Hey Landon,%0D%0A%0D%0AI went through the scripts and had a few thoughts!%0D%0A%0D%0A">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Reply to Landon
+    </a>
+  </div>
+
+  <footer>
+    <p class="ft">Prepared by Cosmic Arc Media &mdash; landon@cosmicarcmedia.com</p>
+    <p class="ftsub">Create once. Repurpose intelligently. Publish consistently.</p>
+  </footer>
+
+</div>
+
+<button class="dlbtn" onclick="dl()">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+  Download Updated Version
+</button>
+
+<script>
+  function tog(id, cls) {
+    const el = document.getElementById(id);
+    const was = el.classList.contains('open');
+    document.querySelectorAll('.' + cls).forEach(e => e.classList.remove('open'));
+    if (!was) el.classList.add('open');
+  }
+  function dl() {
+    const b = new Blob(['<!DOCTYPE html>\n' + document.documentElement.outerHTML], {type:'text/html'});
+    const a = Object.assign(document.createElement('a'), {href: URL.createObjectURL(b), download: 'rwm-shoot-scripts-updated.html'});
+    document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(a.href);
+  }
+</script>
+</body>
+</html>
