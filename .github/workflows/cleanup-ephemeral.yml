@@ -1,0 +1,55 @@
+name: Cleanup ephemeral uploads
+
+# Deletes any folder that contains a `.ephemeral` marker file once its
+# delete-on date (the first line of that file, YYYY-MM-DD) has arrived.
+# Folders without a `.ephemeral` marker (e.g. permanent proposal packages)
+# are never touched.
+
+on:
+  schedule:
+    - cron: '17 8 * * *'   # daily, ~08:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Remove expired ephemeral folders
+        run: |
+          set -euo pipefail
+          today=$(date -u +%F)
+          changed=0
+          while IFS= read -r marker; do
+            dir=$(dirname "$marker")
+            # safety: never act on the repo root or an empty path
+            if [ "$dir" = "." ] || [ -z "$dir" ]; then
+              echo "Skipping unsafe marker location: $marker"
+              continue
+            fi
+            exp=$(head -n1 "$marker" | tr -d '[:space:]')
+            if [ -z "$exp" ]; then
+              echo "No date in $marker, skipping"
+              continue
+            fi
+            if [[ "$exp" > "$today" ]]; then
+              echo "Keep:   $dir (expires $exp)"
+            else
+              echo "Expire: $dir (delete-on $exp, today $today)"
+              git rm -r --quiet "$dir"
+              changed=1
+            fi
+          done < <(find . -name .ephemeral -not -path './.git/*')
+
+          if [ "$changed" = "1" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Auto-remove expired ephemeral uploads ($today)"
+            git push
+          else
+            echo "Nothing expired today."
+          fi
