@@ -78,6 +78,18 @@
   .lede{color:var(--mut);font-size:14.5px;margin:15px 0 0;}
   .lede .g{color:var(--lime);font-weight:600;}
 
+  /* Live Q&A links */
+  .linkslab{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:700;color:var(--mut);margin:18px 0 0;}
+  .links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 2px;}
+  .linkbtn{display:flex;flex-direction:column;gap:3px;text-decoration:none;border-radius:13px;padding:12px 14px;background:var(--card);border:1px solid var(--line);}
+  .linkbtn .t{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;font-size:13.5px;letter-spacing:.03em;color:var(--ink);display:flex;align-items:center;gap:7px;}
+  .linkbtn .d{font-size:11px;color:var(--mut);line-height:1.3;}
+  .linkbtn.form{border-color:rgba(171,232,79,.45);background:linear-gradient(180deg,rgba(171,232,79,.12),rgba(171,232,79,.03));}
+  .linkbtn.form .t{color:var(--lime);}
+  .linkbtn.sheet{border-color:rgba(255,210,63,.42);background:linear-gradient(180deg,rgba(255,210,63,.10),rgba(255,210,63,.02));}
+  .linkbtn.sheet .t{color:var(--gold);}
+  .linkbtn:active{transform:scale(.99);}
+
   /* Section headings (open sections) */
   h2{
     font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
@@ -240,6 +252,17 @@
       <span class="chip">940 Arroyo St</span>
     </div>
     <p class="lede">Tap any vendor for its <span class="g">green focus questions</span> with backup questions in grey underneath. Everything else is collapsed into a clean menu, tap to open.</p>
+    <div class="linkslab">Audience Q&amp;A · live links</div>
+    <div class="links">
+      <a class="linkbtn form" href="https://docs.google.com/forms/d/e/1FAIpQLSe8235EyEcP3w8BEVaY63sIJNYObjL_t1HAbfgc3hRRCUPpoA/viewform?usp=sharing&amp;ouid=112812028911735199817" target="_blank" rel="noopener noreferrer">
+        <span class="t">📝 Question Form</span>
+        <span class="d">For attendees to submit a question</span>
+      </a>
+      <a class="linkbtn sheet" href="https://docs.google.com/spreadsheets/d/17GdhALbI3DGlIVT7hREp9A6AJecDrUsH6NmH-XWvOWM/edit?resourcekey=&amp;gid=1366810603#gid=1366810603" target="_blank" rel="noopener noreferrer">
+        <span class="t">📊 Responses Sheet</span>
+        <span class="d">Read submitted Qs to answer on camera</span>
+      </a>
+    </div>
   </div>
 
   <!-- ============ 1. GENERIC ============ -->
@@ -761,6 +784,10 @@
         <div class="callout">
           <span class="lab">Work in the lead-capture bit</span>
           Film people scanning the Health Question QR and dropping a question. On camera: "Got a health question? Scan this, drop it in, and we might answer it on camera." That's your newsletter signup + social follow engine, on video.
+          <div class="links" style="margin-top:12px">
+            <a class="linkbtn form" href="https://docs.google.com/forms/d/e/1FAIpQLSe8235EyEcP3w8BEVaY63sIJNYObjL_t1HAbfgc3hRRCUPpoA/viewform?usp=sharing&amp;ouid=112812028911735199817" target="_blank" rel="noopener noreferrer"><span class="t">📝 Question Form</span><span class="d">Attendees submit a question</span></a>
+            <a class="linkbtn sheet" href="https://docs.google.com/spreadsheets/d/17GdhALbI3DGlIVT7hREp9A6AJecDrUsH6NmH-XWvOWM/edit?resourcekey=&amp;gid=1366810603#gid=1366810603" target="_blank" rel="noopener noreferrer"><span class="t">📊 Responses Sheet</span><span class="d">Pull a question to answer live</span></a>
+          </div>
         </div>
       </div>
     </details>
