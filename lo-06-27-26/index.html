@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Live Oak Expo Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0d0a;
+    --bg2:#10130d;
+    --card:#161a12;
+    --card2:#1d2318;
+    --line:#2b3322;
+    --ink:#edefe7;
+    --mut:#98a38f;
+    --lime:#abe84f;
+    --lime-dim:#7fae3f;
+    --gold:#ffd23f;
+    --pink:#ff5da2;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.55;font-size:16px;
+    background-image:radial-gradient(120% 60% at 50% -10%, #16210f 0%, var(--bg) 60%);
+  }
+  section{scroll-margin-top:128px;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,12,9,0.86);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .hbar{display:flex;align-items:center;gap:12px;padding:11px 18px;max-width:760px;margin:0 auto;}
+  .brandmark{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:15px;letter-spacing:.06em;
+    text-transform:uppercase;line-height:1.05;white-space:nowrap;
+  }
+  .brandmark .lo{color:var(--lime);}
+  .brandmark .sub{display:block;font-size:10px;letter-spacing:.22em;color:var(--mut);font-weight:500;}
+  .jumpwrap{margin-left:auto;position:relative;flex:1;max-width:230px;}
+  select#jump{
+    width:100%;appearance:none;-webkit-appearance:none;
+    background:var(--card2);color:var(--ink);
+    border:1px solid var(--line);border-radius:10px;
+    padding:10px 34px 10px 13px;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;
+    cursor:pointer;
+  }
+  .jumpwrap::after{
+    content:"";position:absolute;right:13px;top:50%;width:8px;height:8px;
+    border-right:2px solid var(--lime);border-bottom:2px solid var(--lime);
+    transform:translateY(-70%) rotate(45deg);pointer-events:none;
+  }
+
+  /* Hero */
+  .hero{padding:30px 0 8px;}
+  .kicker{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:12px;color:var(--lime);font-weight:600;margin-bottom:8px;}
+  h1{
+    font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
+    font-size:clamp(30px,8vw,46px);line-height:.98;letter-spacing:.01em;margin:0 0 14px;
+  }
+  h1 em{font-style:italic;color:var(--lime);}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:6px 12px;font-size:12.5px;font-weight:600;color:var(--ink);
+  }
+  .chip b{color:var(--gold);font-weight:700;}
+  .lede{color:var(--mut);font-size:15px;margin:16px 0 0;}
+
+  /* Section headings */
+  h2{
+    font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
+    font-size:24px;letter-spacing:.03em;margin:0 0 4px;display:flex;align-items:center;gap:11px;
+  }
+  h2 .num{
+    color:var(--bg);background:var(--lime);font-size:13px;font-weight:700;
+    width:25px;height:25px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;flex:none;
+  }
+  .sectop{padding-top:34px;border-top:1px solid var(--line);margin-top:30px;}
+  .seclede{color:var(--mut);font-size:14px;margin:2px 0 18px;}
+
+  h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:15px;color:var(--lime);margin:22px 0 9px;}
+
+  /* Question lists */
+  ul.q{list-style:none;margin:0;padding:0;}
+  ul.q li{
+    position:relative;padding:9px 0 9px 26px;border-bottom:1px solid rgba(43,51,34,.55);font-size:15px;
+  }
+  ul.q li:last-child{border-bottom:none;}
+  ul.q li::before{
+    content:"";position:absolute;left:4px;top:16px;width:7px;height:7px;border-radius:2px;
+    background:var(--lime);transform:rotate(45deg);
+  }
+
+  /* Cards / callouts */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 17px;margin:14px 0;}
+  .callout{
+    background:linear-gradient(180deg,rgba(171,232,79,.08),rgba(171,232,79,.02));
+    border:1px solid rgba(171,232,79,.32);border-radius:14px;padding:14px 16px;margin:16px 0;font-size:14px;
+  }
+  .callout.gold{background:linear-gradient(180deg,rgba(255,210,63,.09),rgba(255,210,63,.02));border-color:rgba(255,210,63,.34);}
+  .callout .lab{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:700;color:var(--lime);display:block;margin-bottom:5px;}
+  .callout.gold .lab{color:var(--gold);}
+  .callout ul{margin:7px 0 0;padding-left:18px;}
+  .callout li{margin:4px 0;}
+
+  .roles{display:grid;gap:9px;margin:12px 0 2px;}
+  .role{display:flex;gap:11px;align-items:baseline;font-size:14px;}
+  .role b{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:13px;color:var(--gold);min-width:74px;flex:none;}
+
+  /* Vendor quick chips */
+  .vchips{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 18px;}
+  .vchips a{
+    font-size:12px;font-weight:600;color:var(--ink);text-decoration:none;
+    background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 11px;
+  }
+  .vchips a:active{border-color:var(--lime);}
+
+  .tools{display:flex;gap:9px;margin:4px 0 14px;}
+  .tools button{
+    font-family:'Inter',sans-serif;font-weight:600;font-size:12.5px;color:var(--mut);
+    background:var(--card);border:1px solid var(--line);border-radius:9px;padding:7px 13px;cursor:pointer;
+  }
+  .tools button:active{color:var(--lime);border-color:var(--lime);}
+
+  /* Vendor details */
+  details.vendor{background:var(--card);border:1px solid var(--line);border-radius:13px;margin:10px 0;overflow:hidden;}
+  details.vendor[open]{border-color:rgba(171,232,79,.4);}
+  details.vendor summary{
+    list-style:none;cursor:pointer;padding:14px 44px 14px 16px;position:relative;
+  }
+  details.vendor summary::-webkit-details-marker{display:none;}
+  .vname{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-size:16px;line-height:1.15;}
+  .vtag{display:block;color:var(--mut);font-size:12.5px;margin-top:3px;line-height:1.35;}
+  details.vendor summary::after{
+    content:"";position:absolute;right:17px;top:20px;width:9px;height:9px;
+    border-right:2px solid var(--lime);border-bottom:2px solid var(--lime);
+    transform:rotate(45deg);transition:transform .2s;
+  }
+  details.vendor[open] summary::after{transform:rotate(-135deg);top:24px;}
+  .vbody{padding:0 16px 14px;border-top:1px solid var(--line);margin-top:2px;}
+  .vbody .ctx{font-size:13px;color:var(--mut);margin:11px 0 8px;font-style:italic;}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 60px;color:var(--mut);font-size:12.5px;text-align:center;}
+  footer .lime{color:var(--lime);}
+
+  /* Back to top */
+  #top{
+    position:fixed;right:16px;bottom:16px;z-index:60;
+    width:46px;height:46px;border-radius:50%;border:1px solid var(--line);
+    background:var(--lime);color:#0b0d0a;font-size:20px;font-weight:700;
+    display:none;align-items:center;justify-content:center;cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.5);
+  }
+  #top.show{display:flex;}
+  .anchor{position:relative;top:-110px;visibility:hidden;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hbar">
+    <div class="brandmark"><span class="lo">LIVE OAK</span> EXPO<span class="sub">Content Field Guide</span></div>
+    <div class="jumpwrap">
+      <select id="jump" aria-label="Jump to section">
+        <option value="">Jump to…</option>
+        <optgroup label="Sections">
+          <option value="generic">1 · Generic Questions</option>
+          <option value="vendors">2 · Individual Vendors</option>
+          <option value="shotlist">3 · Shot List</option>
+          <option value="faqs">4 · Live Oak FAQs</option>
+        </optgroup>
+        <optgroup label="Jump to a Vendor">
+          <option value="v-upper-cervical">Upper Cervical Chiropractic</option>
+          <option value="v-wtx-strength">West Texas Strength</option>
+          <option value="v-forge-new-ground">Forge New Ground</option>
+          <option value="v-crusaders-forge">Crusaders Forge Nutrition</option>
+          <option value="v-rooted">Rooted Wellness</option>
+          <option value="v-redemption">Redemption Jiu Jitsu</option>
+          <option value="v-run-dad-run">Run Dad Run</option>
+          <option value="v-movement-pt">Movement Physical Therapy</option>
+          <option value="v-grace-grit">Grace &amp; Grit</option>
+          <option value="v-cv-counseling">CV Biblical Counseling</option>
+          <option value="v-maximus">Maximus Nutrition</option>
+          <option value="v-south-concho">South Concho Food Co.</option>
+          <option value="v-road-lizards">San Angelo Road Lizards</option>
+          <option value="v-spin-effect">The Spin Effect</option>
+          <option value="v-tfgu">TFGU</option>
+        </optgroup>
+      </select>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="kicker">Wellness &amp; Performance Expo</div>
+    <h1>San Angelo,<br><em>This Is Your Event</em></h1>
+    <div class="meta">
+      <span class="chip"><b>SAT</b> June 27, 2026</span>
+      <span class="chip">10 AM to 2 PM</span>
+      <span class="chip">940 Arroyo St</span>
+    </div>
+    <p class="lede">Your shoot-day playbook. Tap the dropdown up top to jump anywhere. Vendor cards are collapsed, tap one to open its questions.</p>
+  </div>
+
+  <!-- ============ 1. GENERIC ============ -->
+  <section id="generic" class="sectop">
+    <h2><span class="num">1</span> Generic Questions</h2>
+    <p class="seclede">Use these at any booth. Layer the vendor-specific ones on top.</p>
+
+    <div class="callout">
+      <span class="lab">Who shoots what</span>
+      <div class="roles">
+        <div class="role"><b>Mason</b><span>Quick "what do you do" at each booth, 30 to 45 sec, then back to hosting.</span></div>
+        <div class="role"><b>Stacey</b><span>The meatier FAQ / misconception questions per industry.</span></div>
+        <div class="role"><b>You</b><span>Rolling b-roll all day plus the street interviews below.</span></div>
+      </div>
+    </div>
+
+    <h3>Universal Booth Kit</h3>
+    <ul class="q">
+      <li>Tell me who you are and what your business does.</li>
+      <li>Who is this for? Who should be walking up to your booth today?</li>
+      <li>What's the biggest misconception people have about what you do?</li>
+      <li>If someone remembers one thing from your booth, what should it be?</li>
+      <li>What's your favorite part of the San Angelo wellness community?</li>
+      <li>Where can people find you after today? (have them say their handle to the camera)</li>
+    </ul>
+
+    <h3>Street / B-roll Interviews</h3>
+    <p class="seclede" style="margin-top:-2px">Grab these from attendees walking around. Cuts into a great montage.</p>
+    <ul class="q">
+      <li>What does being healthy mean to you?</li>
+      <li>One habit that actually changed your health?</li>
+      <li>Why'd you come out today?</li>
+      <li>Best thing you've seen at the expo so far?</li>
+      <li>Your business in 10 seconds, go. (rapid-fire vendor shoutouts)</li>
+    </ul>
+  </section>
+
+  <!-- ============ 2. VENDORS ============ -->
+  <section id="vendors" class="sectop">
+    <h2><span class="num">2</span> Individual Vendors</h2>
+    <p class="seclede">Each card: the angle, then 2 to 3 specific questions from research.</p>
+
+    <div class="callout gold">
+      <span class="lab">Heads up before you roll</span>
+      Some flyer names are slightly off, don't say the wrong one on tape:
+      <ul>
+        <li>"Forged New Ground" is actually <b>Forge New Ground</b></li>
+        <li>West Texas Strength's full name is <b>West Texas Strength, Nutrition &amp; Training Center</b></li>
+        <li>"CV Women's Counseling" is <b>CV Biblical Counseling Center</b></li>
+        <li>"Maximus Nutrition" is a supplement store + juice bar, not a loaded-tea club</li>
+        <li>"Grace &amp; Grit" is the local faith-based women's group (a Houston gym shares the name)</li>
+      </ul>
+      <div style="margin-top:9px">Fun thread: the expo (940 Arroyo), The Spin Effect (942) and TFGU (946) are next-door neighbors. "Arroyo St is becoming San Angelo's fitness row."</div>
+    </div>
+
+    <div class="vchips">
+      <a href="#v-upper-cervical">Chiropractic</a>
+      <a href="#v-wtx-strength">WTX Strength</a>
+      <a href="#v-forge-new-ground">Forge New Ground</a>
+      <a href="#v-crusaders-forge">Crusaders Forge</a>
+      <a href="#v-rooted">Rooted</a>
+      <a href="#v-redemption">Redemption JJ</a>
+      <a href="#v-run-dad-run">Run Dad Run</a>
+      <a href="#v-movement-pt">Movement PT</a>
+      <a href="#v-grace-grit">Grace &amp; Grit</a>
+      <a href="#v-cv-counseling">CV Counseling</a>
+      <a href="#v-maximus">Maximus</a>
+      <a href="#v-south-concho">South Concho</a>
+      <a href="#v-road-lizards">Road Lizards</a>
+      <a href="#v-spin-effect">Spin Effect</a>
+      <a href="#v-tfgu">TFGU</a>
+    </div>
+
+    <div class="tools">
+      <button onclick="setAll(true)">Expand all</button>
+      <button onclick="setAll(false)">Collapse all</button>
+    </div>
+
+    <details class="vendor" id="v-upper-cervical">
+      <summary><span class="vname">Upper Cervical Family Chiropractic</span><span class="vtag">Dr. Justin Cordle · gentle atlas work, no twist-and-crack</span></summary>
+      <div class="vbody">
+        <p class="ctx">Building's been a chiro office since 1936. They do precise upper-cervical correction with in-house X-rays.</p>
+        <ul class="q">
+          <li>Most people picture chiropractic as the big twist and crack. You go out of your way to say you don't do that. What's different about working just the upper cervical area?</li>
+          <li>This building has been a chiropractic office since 1936. Does being part of an 80-year run on the same corner mean anything to you and your patients?</li>
+          <li>You take your own X-rays before adjusting anyone. Why is that imaging step such a big deal in how you work?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-wtx-strength">
+      <summary><span class="vname">West Texas Strength, Nutrition &amp; Training Center</span><span class="vtag">Husband-wife team Juan &amp; Amanda · barbell / powerlifting, family culture</span></summary>
+      <div class="vbody">
+        <p class="ctx">24/7 barbell gym, Rogue gear, in-house nutrition coaching. Not a franchise box.</p>
+        <ul class="q">
+          <li>You and Amanda run this as a husband-and-wife team. What's it like building a strength gym together, and who's the tough one?</li>
+          <li>Members keep calling this place "family" instead of "the gym." What did you do on purpose to make it feel that way?</li>
+          <li>You're barbell and powerlifting first. For somebody at this expo who's scared of a barbell, how do you get them over it?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-forge-new-ground">
+      <summary><span class="vname">Forge New Ground</span><span class="vtag">Dr. Jesus Martinez (ASU grad) · cash-based one-on-one PT</span></summary>
+      <div class="vbody">
+        <p class="ctx">Runs it out of a garage clinic because he was fed up with rushed insurance PT. Dry needling, bilingual care.</p>
+        <ul class="q">
+          <li>You walked away from the insurance-based PT model to do cash-based one-on-one. What was the breaking point that made you say "I'm doing this my way"?</li>
+          <li>You're running a real doctor-led practice out of a garage clinic right now. There's something gritty about that. What's the vision once you land your permanent spot?</li>
+          <li>What can you actually do for an athlete in a private one-on-one session that a packed clinic can't?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-crusaders-forge">
+      <summary><span class="vname">Crusaders Forge Nutrition</span><span class="vtag">Jesse Abshier &amp; Michael Quinn · faith-driven supps + tea bar</span></summary>
+      <div class="vbody">
+        <p class="ctx">"Where Strength Meets Purpose," a "Jesus &amp; Protein" identity. Supplements, loaded teas, custom belts, smelling salts.</p>
+        <ul class="q">
+          <li>The whole brand is "Where Strength Meets Purpose," you've got a "Jesus &amp; Protein" thing going. How do you blend faith and fitness without it feeling forced?</li>
+          <li>Why "Crusaders Forge" instead of just another supplement shop name? What's the origin story?</li>
+          <li>If somebody walks in brand new, what's the first thing you put in their hands?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-rooted">
+      <summary><span class="vname">Rooted Wellness</span><span class="vtag">Dr. Melissa Jones, DC · holistic chiro, won a $30K city grant</span></summary>
+      <div class="vbody">
+        <p class="ctx">San Angelo native, came home to open it. Prenatal/infant, Webster, dry needling, root-cause focus.</p>
+        <ul class="q">
+          <li>You won 30 grand in the city's business plan competition. What is that money actually building for Rooted?</li>
+          <li>You're a San Angelo kid who came home to open this. Why plant roots here specifically?</li>
+          <li>People hear "craniosacral" or "iridology" and have no idea what that is. How do you explain what makes your approach different from a regular adjustment?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-redemption">
+      <summary><span class="vname">Redemption Jiu Jitsu</span><span class="vtag">Owners Zac &amp; Patrick, coach Conrad · "encouragement, not aggression"</span></summary>
+      <div class="vbody">
+        <p class="ctx">Opened 2022 to bring BJJ to San Angelo. Family and community focused, values-based kids program.</p>
+        <ul class="q">
+          <li>"Redemption" is a strong name for a gym. What's the story, and what does redemption look like on the mat?</li>
+          <li>You teach with encouragement instead of aggression, which is kind of the opposite of how people picture a fight gym. Why build it that way?</li>
+          <li>You opened in 2022 to bring jiu jitsu to San Angelo. Who's surprised you by walking through the door?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-run-dad-run">
+      <summary><span class="vname">Run Dad Run</span><span class="vtag">"Do hard things" running + apparel movement · let them self-intro</span></summary>
+      <div class="vbody">
+        <p class="ctx">Started as a friends' group text. Not really about being a dad, it's a mindset. Local operator's name unconfirmed, so let them introduce themselves.</p>
+        <ul class="q">
+          <li>Run Dad Run started as a group text between friends keeping each other accountable. How did a group chat turn into a brand you're bringing to an expo?</li>
+          <li>You say it's not really about being a dad, it's about doing hard things even when life's in the way. What was the hard thing you were showing up for when this began?</li>
+          <li>Who are you hoping to pull off the couch and into the crew here in San Angelo?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-movement-pt">
+      <summary><span class="vname">Movement Physical Therapy</span><span class="vtag">Dr. Megan Busker · fellowship-trained, top 1% credential</span></summary>
+      <div class="vbody">
+        <p class="ctx">Cash-based, full-hour one-on-one, no referral needed. Manual therapy, dry needling, same-week access.</p>
+        <ul class="q">
+          <li>You went fully cash-based and skipped insurance entirely. Gutsy call. Why was that right for the care you wanted to give?</li>
+          <li>Fellowship-trained manual therapy is a top 1% credential nationally. What does that let you do that a standard PT visit might not?</li>
+          <li>Most clinics rush you through in 20 minutes. You spend a full hour one-on-one. What changes for someone's recovery with that kind of time?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-grace-grit">
+      <summary><span class="vname">Grace &amp; Grit</span><span class="vtag">Chelse O'Neill · faith-based women's strength community</span></summary>
+      <div class="vbody">
+        <p class="ctx">"Where faith meets fitness." Real class schedule, mornings / midday virtual / evenings.</p>
+        <ul class="q">
+          <li>You built this around faith and fitness together. What does a workout look like with Christ at the center of it?</li>
+          <li>Why women only, and why strength training specifically instead of cardio or classes?</li>
+          <li>For a woman intimidated to walk into a weight room, what's the first thing you tell her on day one?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-cv-counseling">
+      <summary><span class="vname">CV Biblical Counseling Center</span><span class="vtag">Christ-centered counseling · handle gently</span></summary>
+      <div class="vbody">
+        <p class="ctx">Intentionally not licensed therapy, doesn't bill insurance. Serves women and families, specialty in abortion-related trauma. Keep it warm and respectful.</p>
+        <ul class="q">
+          <li>For someone who's never heard the term, how would you describe biblical counseling, and how it's different from seeing a regular therapist?</li>
+          <li>A lot of women carry things they've never told anyone. What helps someone feel safe enough to open up in that first session?</li>
+          <li>You offer both one-on-one and group healing. How do you help someone decide which is the right starting place?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-maximus">
+      <summary><span class="vname">Maximus Nutrition</span><span class="vtag">Family-owned, two locations · supplements + fresh juice bar</span></summary>
+      <div class="vbody">
+        <p class="ctx">Fresh-pressed juices (no added sugar), plus InBody body-comp scans and compression therapy. Real store, not a loaded-tea club.</p>
+        <ul class="q">
+          <li>The supplement aisle overwhelms most people. When someone walks in with no clue, how do you figure out what they actually need?</li>
+          <li>You do InBody scans on top of the juice bar. What's the most eye-opening thing people learn from a body-composition scan?</li>
+          <li>Everybody claims "no added sugar." What's actually going into your pressed juices?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-south-concho">
+      <summary><span class="vname">South Concho Food Co.</span><span class="vtag">Chelsea Click · 100% dedicated gluten-free cafe</span></summary>
+      <div class="vbody">
+        <p class="ctx">A dental hygienist diagnosed with celiac 20+ years ago. Mostly dairy-free too, scratch kitchen, zero cross-contamination.</p>
+        <ul class="q">
+          <li>You went from dental hygienist to running a gluten-free kitchen. How did celiac push you to make that leap?</li>
+          <li>A lot of places say "gluten-friendly," but you're 100% dedicated with no cross-contamination. Why was holding that line so important?</li>
+          <li>What's the one dish you missed most after your diagnosis that you finally cracked the recipe for?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-road-lizards">
+      <summary><span class="vname">San Angelo Road Lizards</span><span class="vtag">Nonprofit running club · "Run in the Sun" since 1973</span></summary>
+      <div class="vbody">
+        <p class="ctx">San Angelo's oldest race, sold out at 575 runners last year. Free "Little Lizards" kids program (ages 3 to 9).</p>
+        <ul class="q">
+          <li>Run in the Sun goes back to 1973 and sold out last year. What's it like being steward of the oldest race in San Angelo?</li>
+          <li>Little Lizards gets kids as young as three out running for free. What made you want to start them that young?</li>
+          <li>You only canceled the race once in 50 years, for 2020. What did coming back feel like?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-spin-effect">
+      <summary><span class="vname">The Spin Effect</span><span class="vtag">Shelbi &amp; Jake Browne · San Angelo's first spin studio (open house)</span></summary>
+      <div class="vbody">
+        <p class="ctx">Opened Jan 2026, 30 bikes, next door at 942 Arroyo. Idea sparked from a class Shelbi took in Wilmington NC. Motto "Movement Changes Everything."</p>
+        <ul class="q">
+          <li>The whole studio basically started from one cycle class you took in Wilmington. Walk me through the moment Jake said "we could do this at home."</li>
+          <li>Your motto is "Movement Changes Everything," and you've handed out "I see you" stickers around town since 2022. What's the effect you want people feeling when they leave?</li>
+          <li>You're San Angelo's first standalone spin studio. What did you want this room to feel like that you couldn't get anywhere else in town?</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="vendor" id="v-tfgu">
+      <summary><span class="vname">TFGU (Training From The Ground Up)</span><span class="vtag">MBSC Thrive licensed · joint-friendly, train for longevity (open house)</span></summary>
+      <div class="vbody">
+        <p class="ctx">Semi-private personal training at 946 Arroyo, licensed through Mike Boyle's network (gold standard). Owner name not public, so ask on camera.</p>
+        <ul class="q">
+          <li>You're licensed through MBSC Thrive, Mike Boyle's program, kind of the gold standard in strength and conditioning. What does carrying that license change about how you coach here?</li>
+          <li>A lot of gyms chase how heavy you can lift. You talk about being joint-friendly and training for longevity. What's the philosophy, and who's it for?</li>
+          <li>Your model is semi-private small-group instead of one-on-one or a big open floor. Why build it that way?</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 3. SHOT LIST ============ -->
+  <section id="shotlist" class="sectop">
+    <h2><span class="num">3</span> Shot List</h2>
+    <p class="seclede">Roll b-roll all day. This is your recap reel plus cutaways for every interview.</p>
+
+    <h3>Establishing + Atmosphere</h3>
+    <ul class="q">
+      <li>The big banner and signage, "Live Oak Wellness &amp; Performance Expo"</li>
+      <li>Parking lot filling, people walking in, the doors</li>
+      <li>Wide room shot showing all the booths and energy</li>
+      <li>Mason on the mic hosting (this is your anchor footage)</li>
+    </ul>
+
+    <h3>The Experience Stations (best visuals)</h3>
+    <ul class="q">
+      <li>Free body composition scans happening</li>
+      <li>RMR + VO2 max testing, someone on the bike or in the mask (great slow-mo)</li>
+      <li>Lab work station</li>
+      <li>The $500 giveaway box and people entering</li>
+    </ul>
+
+    <h3>Booth + Detail Shots</h3>
+    <p class="seclede" style="margin-top:-2px">Grab these BEFORE each interview so you have cutaways.</p>
+    <ul class="q">
+      <li>Each booth wide, then tight on hands-on details (supplements, equipment, food)</li>
+      <li>Logos and banners for lower-thirds</li>
+      <li>Handshakes, laughing, demos, people trying things</li>
+    </ul>
+
+    <h3>People + Energy</h3>
+    <ul class="q">
+      <li>Crowd reactions, families, kids, dogs (Run Dad Run vibe)</li>
+      <li>Someone lifting or on the spin bike in motion</li>
+      <li>Open houses: Spin Effect class in motion, TFGU training demo (both next door)</li>
+    </ul>
+
+    <div class="callout">
+      <span class="lab">Shooting tips</span>
+      <ul>
+        <li>Shoot vertical 9:16 as your primary, that's where this lives</li>
+        <li>Mic whoever's talking, expos are loud</li>
+        <li>Get each person's IG handle on camera or written down so you can tag them (= reshares = reach)</li>
+        <li>Keep Mason's per-booth bit to 30 to 45 sec so he can get back to hosting</li>
+        <li>Grab a clean "name + business" intro from everyone for captions</li>
+        <li>Get a quick verbal "yeah you can film me" before rolling</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 4. FAQs ============ -->
+  <section id="faqs" class="sectop">
+    <h2><span class="num">4</span> Live Oak FAQs</h2>
+    <p class="seclede">Answer these to camera. Becomes a "San Angelo asked, Live Oak answered" shorts series. Split between Mason and Stacey.</p>
+
+    <h3>Hormones / TRT (men)</h3>
+    <ul class="q">
+      <li>What is testosterone replacement therapy in plain English?</li>
+      <li>Signs of low T that guys brush off as "just getting older"?</li>
+      <li>Myth: isn't TRT just for bodybuilders or cheating? What's the real story?</li>
+      <li>Will it make me bald, infertile, or aggressive?</li>
+      <li>What age should a guy actually start paying attention to his hormones?</li>
+      <li>Do you have to be on it forever?</li>
+    </ul>
+
+    <h3>Weight Loss / GLP-1</h3>
+    <ul class="q">
+      <li>What are GLP-1 medications and how do they actually work?</li>
+      <li>Myth: is it "the easy way out"? What do you tell people who say that?</li>
+      <li>Who's a good candidate, and who isn't?</li>
+      <li>Difference between doing this with a provider vs buying stuff online?</li>
+      <li>Is there an off-ramp or do you take it forever?</li>
+    </ul>
+
+    <h3>Longevity / Labs / Performance</h3>
+    <p class="seclede" style="margin-top:-2px">Ties straight to the testing stations behind you.</p>
+    <ul class="q">
+      <li>Why does Live Oak put so much focus on bloodwork?</li>
+      <li>Difference between "normal" lab ranges and "optimal"?</li>
+      <li>What are VO2 max and RMR, and why should the average person care?</li>
+      <li>Does "longevity" mean living longer, or living better?</li>
+      <li>One thing most people could do today to add healthy years?</li>
+    </ul>
+
+    <h3>Women's Health</h3>
+    <ul class="q">
+      <li>Is hormone optimization just a men's thing? What about women?</li>
+      <li>What symptoms should women not just write off?</li>
+      <li>How does this connect to perimenopause and menopause?</li>
+    </ul>
+
+    <h3>Why Live Oak</h3>
+    <ul class="q">
+      <li>What makes Live Oak different from a regular doctor's visit?</li>
+      <li>Walk me through what happens when someone becomes a patient.</li>
+      <li>Do you have to live in San Angelo to work with you? (telehealth hook)</li>
+      <li>The #1 question you wish more people asked?</li>
+    </ul>
+
+    <div class="callout gold">
+      <span class="lab">Keep it compliant</span>
+      Educational only. No promising specific results, no diagnosing on camera. End the medical ones with "talk to a provider about what's right for you." Mason's funny voice is fine, just keep the claims clean.
+    </div>
+
+    <div class="callout">
+      <span class="lab">Work in the lead-capture bit</span>
+      Film people scanning the Health Question QR and dropping a question. On camera: "Got a health question? Scan this, drop it in, and we might answer it on camera." That's your newsletter signup + social follow engine, on video.
+    </div>
+  </section>
+
+  <footer>
+    Live Oak Wellness &amp; Performance Expo · Sat June 27, 2026<br>
+    Shoot-day field guide by <span class="lime">Cosmic Arc Media</span>
+  </footer>
+
+</div>
+
+<button id="top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  var sel = document.getElementById('jump');
+  sel.addEventListener('change', function(){
+    var id = sel.value;
+    if(!id){return;}
+    var el = document.getElementById(id);
+    if(el){
+      if(el.tagName === 'DETAILS'){ el.open = true; }
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    sel.selectedIndex = 0;
+  });
+
+  function setAll(open){
+    var all = document.querySelectorAll('details.vendor');
+    for(var i=0;i<all.length;i++){ all[i].open = open; }
+  }
+
+  // open a vendor when its quick-chip is tapped
+  var chips = document.querySelectorAll('.vchips a');
+  for(var i=0;i<chips.length;i++){
+    chips[i].addEventListener('click', function(e){
+      var id = this.getAttribute('href').slice(1);
+      var el = document.getElementById(id);
+      if(el && el.tagName === 'DETAILS'){ el.open = true; }
+    });
+  }
+
+  var topBtn = document.getElementById('top');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 600){ topBtn.classList.add('show'); }
+    else{ topBtn.classList.remove('show'); }
+  });
+</script>
+
+</body>
+</html>
