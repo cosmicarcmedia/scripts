@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RWM Truck Shoot — 2026-08-06 — Teleprompter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --dust-gray: #8B8580; --bone-ink: #E8E0CF; --arc-magenta: #D83B93; --signal-violet: #7C4DFF; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: linear-gradient(160deg, #020308 0%, #07041a 55%, #0d0625 100%); min-height: 100vh; color: var(--bone-ink); position: relative; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.11; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E"); background-size: 300px 300px; }
+  .wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 48px 24px 130px; }
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
+  .mark { width: 38px; height: 38px; border-radius: 8px; background: linear-gradient(135deg, #D83B93, #7C4DFF); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; color: #fff; }
+  .wordmark { display: flex; flex-direction: column; gap: 2px; }
+  .wm-top { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .wm-sub { font-size: 10px; letter-spacing: 0.12em; color: var(--dust-gray); }
+  .intro { background: rgba(255,255,255,0.03); border: 1px solid rgba(216,59,147,0.22); border-radius: 14px; padding: 30px 34px; margin-bottom: 30px; position: relative; overflow: hidden; }
+  .intro::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #D83B93, #7C4DFF, transparent); }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(22px, 4vw, 30px); font-weight: 700; line-height: 1.2; margin-bottom: 14px; background: linear-gradient(135deg, #E8E0CF 40%, #D83B93); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .intro-p { font-size: 14px; line-height: 1.7; color: #c4bdb0; margin-bottom: 14px; }
+  .howto { background: rgba(124,77,255,0.07); border: 1px solid rgba(124,77,255,0.2); border-radius: 10px; padding: 14px 18px; font-size: 13px; color: #b4adc8; line-height: 1.65; }
+  .howto strong { color: var(--signal-violet); font-weight: 600; }
+  .views { display: flex; gap: 10px; margin-bottom: 28px; position: sticky; top: 0; z-index: 5; padding: 12px 0; background: linear-gradient(180deg, #07041a 70%, transparent); }
+  .vbtn { flex: 1; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); color: var(--dust-gray); cursor: pointer; transition: all 0.2s; }
+  .vbtn.on { background: rgba(216,59,147,0.14); border-color: rgba(216,59,147,0.45); color: var(--arc-magenta); }
+  .view { display: none; }
+  .view.on { display: block; }
+  .fmts { display: flex; flex-direction: column; gap: 14px; margin-bottom: 64px; }
+  .fmt { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; overflow: hidden; transition: border-color 0.2s; }
+  .fmt.open { border-color: rgba(216,59,147,0.3); }
+  .fhd { display: flex; align-items: center; gap: 16px; padding: 20px 26px; cursor: pointer; user-select: none; }
+  .fhd:hover { background: rgba(255,255,255,0.03); }
+  .fnum { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--arc-magenta); min-width: 24px; flex-shrink: 0; }
+  .finfo { flex: 1; }
+  .ftitle { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 3px; }
+  .fdesc { font-size: 12px; color: var(--dust-gray); line-height: 1.4; }
+  .fcnt { font-size: 11px; color: var(--dust-gray); margin-right: 8px; flex-shrink: 0; }
+  .chev, .sch { color: var(--dust-gray); transition: transform 0.3s, color 0.2s; flex-shrink: 0; }
+  .fmt.open .chev { transform: rotate(180deg); color: var(--arc-magenta); }
+  .fbody { display: none; padding: 0 26px 24px; }
+  .fmt.open .fbody { display: block; }
+  .snote { font-size: 11px; color: rgba(139,133,128,0.85); font-style: italic; margin-bottom: 12px; padding: 9px 13px; border-left: 2px solid rgba(216,59,147,0.25); background: rgba(216,59,147,0.04); border-radius: 0 6px 6px 0; line-height: 1.6; }
+  .scs { display: flex; flex-direction: column; gap: 8px; }
+  .sc { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.055); border-radius: 10px; overflow: hidden; }
+  .sc.open { border-color: rgba(124,77,255,0.4); }
+  .shd { display: flex; align-items: center; gap: 12px; padding: 14px 18px; cursor: pointer; user-select: none; }
+  .shd:hover { background: rgba(255,255,255,0.025); }
+  .sidx { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--signal-violet); min-width: 22px; flex-shrink: 0; }
+  .stitle { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 500; flex: 1; }
+  .sc.open .sch { transform: rotate(180deg); color: var(--signal-violet); }
+  .sbody { display: none; padding: 0 18px 18px; }
+  .sc.open .sbody { display: block; }
+  .smeta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .tv { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; padding: 4px 12px; border-radius: 100px; background: rgba(124,77,255,0.15); border: 1px solid rgba(124,77,255,0.3); color: var(--signal-violet); }
+  .td { font-size: 11px; color: var(--dust-gray); }
+  .td.onscr { color: var(--arc-magenta); }
+  .spots { display: flex; flex-direction: column; gap: 10px; }
+  .slbl { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--arc-magenta); margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+  .sbeat { font-weight: 500; letter-spacing: 0.05em; color: var(--dust-gray); text-transform: none; }
+  .stxt { font-size: 17px; line-height: 1.75; color: var(--bone-ink); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 14px 18px; white-space: pre-wrap; outline: none; }
+  .stxt:focus { border-color: rgba(124,77,255,0.5); }
+  @media (max-width: 600px) { .stxt { font-size: 19px; line-height: 1.8; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark">RWM</div>
+    <div class="wordmark"><span class="wm-top">Rural Waste Management</span><span class="wm-sub">Truck shoot &middot; Grape Creek &middot; 2026-08-06 &middot; Cosmic Arc Media</span></div>
+  </header>
+
+  <div class="intro">
+    <h1>Truck Shoot Teleprompter</h1>
+    <p class="intro-p">Three locations per script. A is the truck at a named position, B is the cart, C is the open road. Every script opens with three quick beats, one per location, then a long section, a medium, a short, and a medium to close. Text is editable right here in the browser.</p>
+    <div class="howto"><strong>By location</strong> is the shooting view. Park at a position, open it, and run every script's beats that live there, top to bottom. Order: cab door, front fender, front axle, side of body, hopper, tailgate, then the cart station and open road for all the B and C beats. <strong>By script</strong> is the full read for review and rehearsal.</div>
+  </div>
+
+  <div class="views">
+    <button class="vbtn on" id="btn-loc" onclick="setview('loc')">By location</button>
+    <button class="vbtn" id="btn-scr" onclick="setview('scr')">By script</button>
+  </div>
+
+  <div class="view on" id="view-loc"><div class="fmts"><div class="fmt" id="pos1"><div class="fhd" onclick="tog('pos1')"><span class="fnum">1</span><div class="finfo"><div class="ftitle">Cab door</div><div class="fdesc">3 scripts, 8 beats at this position</div></div><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="loc1-s1"><div class="shd" onclick="tog('loc1-s1')"><span class="sidx">1</span><span class="stitle">You deserve to talk to a person</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; cab door &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Call most trash companies and see what happens.
+Press one for billing.
+Press two for service.
+Press three to hear these options again.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">Call our number and it rings a phone
+that is either in this truck or in my kitchen.
+Sometimes I answer with a kid hollering in the background.
+That is just the deal out here.
+But you get a person.
+And the person you get can actually fix it.
+Not put in a ticket about it. Fix it.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">So here is our whole phone system.
+You call 325 710 6222. I answer. It gets fixed.
+That has been the system for three years,
+and it is not changing.</div></div></div></div></div><div class="sc" id="loc1-s2"><div class="shd" onclick="tog('loc1-s2')"><span class="sidx">2</span><span class="stitle">You deserve a reason, not a notice</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; cab door &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Most companies, you find out when the bill shows up.
+No warning. No reason. Just a bigger number.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">You might not love it.
+But you will never be surprised by it.</div></div></div></div></div><div class="sc" id="loc1-s9"><div class="shd" onclick="tog('loc1-s9')"><span class="sidx">9</span><span class="stitle">Should have been a truck driver</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; cab door &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">A retired state trooper left a comment on our page
+that I have not been able to shake.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">He was not the only one.
+A deputy with twenty seven years
+said he watched holiday sunrises
+through the windshield of a patrol car.
+Twenty three years, another one wrote,
+and my kids are grown now. I missed too much.
+Sixteen years. Twenty five. Thirty two.
+Same story under every single one.
+I did six years as a trooper.
+I know exactly what they are talking about.
+The job matters. And it eats your family alive.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">So to every trooper and deputy in that comment section,
+thank you. I mean it.
+And to the man who said
+should have been a truck driver.
+Brother, the seat is real comfortable.
+And we are usually hiring.</div></div></div></div></div></div></div></div><div class="fmt" id="pos2"><div class="fhd" onclick="tog('pos2')"><span class="fnum">2</span><div class="finfo"><div class="ftitle">Front fender</div><div class="fdesc">3 scripts, 8 beats at this position</div></div><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="loc2-s3"><div class="shd" onclick="tog('loc2-s3')"><span class="sidx">3</span><span class="stitle">Eleven hundred and fifty dollars to quit</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; front fender &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">I had a trash service once.
+I went to cancel it.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">So we do not have a contract.
+No buyout. No cancellation fee. No collections letter.
+You want to leave, you call and you leave.</div></div></div></div></div><div class="sc" id="loc2-s4"><div class="shd" onclick="tog('loc2-s4')"><span class="sidx">4</span><span class="stitle">You should not have to fight for the good price</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; front fender &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Here is a game you have probably played
+without knowing you were in it.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">And all of a sudden
+they have got a better rate they can do for you.
+Funny how that works.
+The price was sitting there the whole time.
+They just were not going to hand it to you
+until you threatened to walk.
+That tells you exactly what they think you are worth.
+You get the good deal
+right at the moment you stop being loyal.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">It is on the website right now.
+Same number for everybody out here. Tax already in it.
+You should never have to threaten a company
+just to get treated right.</div></div></div></div></div><div class="sc" id="loc2-s8"><div class="shd" onclick="tog('loc2-s8')"><span class="sidx">8</span><span class="stitle">We used to weld our own</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; front fender &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Take a look at this thing.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">Welded a cart tipper onto it.
+Ran the hydraulic lines myself.
+We were on version three
+before a bank would even sit down with us.
+That was not very long ago.
+Now I am standing in front of a 2025 Freightliner
+with a thirty yard body on the back of it.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">The barn truck is how we started.
+This one is how we keep up.
+Same job either way.
+Show up and do it right.</div></div></div></div></div></div></div></div><div class="fmt" id="pos3"><div class="fhd" onclick="tog('pos3')"><span class="fnum">3</span><div class="finfo"><div class="ftitle">Front axle</div><div class="fdesc">1 scripts, 3 beats at this position</div></div><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="loc3-s12"><div class="shd" onclick="tog('loc3-s12')"><span class="sidx">12</span><span class="stitle">This truck was picked for your road</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; front axle &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Most trash trucks get built for a city.
+Wide streets. Curbs. Pavement.</div></div><div class="spot"><div class="slbl">A &middot; front axle &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">So look at the front end of this thing.
+That front axle sits back underneath the cab on purpose.
+Lets the wheels cut way harder than a normal truck.
+Which means we get turned around
+in a spot where a city truck
+would be backing up for a quarter mile.</div></div><div class="spot"><div class="slbl">A &middot; front axle &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">We picked it for your road.
+And your road is the reason
+it earns its keep.</div></div></div></div></div></div></div></div><div class="fmt" id="pos4"><div class="fhd" onclick="tog('pos4')"><span class="fnum">4</span><div class="finfo"><div class="ftitle">Side of body</div><div class="fdesc">4 scripts, 10 beats at this position</div></div><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="loc4-s5"><div class="shd" onclick="tog('loc4-s5')"><span class="sidx">5</span><span class="stitle">The most boring bill you have got</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">But a whole lot of folks out here do exactly that.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">Cart goes out the night before.
+Truck comes the same day it always comes.</div></div></div></div></div><div class="sc" id="loc4-s6"><div class="shd" onclick="tog('loc4-s6')"><span class="sidx">6</span><span class="stitle">You deserve to be worth the drive</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">You get treated like you are not quite worth the trip.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Those roads are not the leftovers of our business.
+They are the business.
+We did not build this to serve the easy part.</div></div></div></div></div><div class="sc" id="loc4-s7"><div class="shd" onclick="tog('loc4-s7')"><span class="sidx">7</span><span class="stitle">Your driver knows your road</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">There is something you only get
+from somebody who runs the same road every single week.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">And they do things nobody ever asked them to do.
+Customers tell on them in the reviews.
+Forget to roll your cart out,
+and there is a decent chance the driver
+walks up and pulls it out himself.
+Trash blows out of a bin,
+and the truck stops so he can get out
+and chase it across your yard.
+There are kids on our routes
+who run outside when they hear the truck,
+because the driver honks for them.
+Every week. Without fail.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">You deserve to be known.
+Not just a stop on a list.
+Out here that is not the exception.
+That is the standard.</div></div></div></div></div><div class="sc" id="loc4-s10"><div class="shd" onclick="tog('loc4-s10')"><span class="sidx">10</span><span class="stitle">What thirty yards actually means</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Most people see a trash truck
+and they just see a trash truck.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">We run about [number] houses
+before this thing is packed full
+and we have to go dump it.
+Your one cart out at the road,
+that is a whole week of your family.
+Coffee grounds. Boxes.
+Whatever the kids destroyed on Tuesday.
+Now multiply that by [number] families.
+That is what is riding behind me right now.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">Not the truck. Not the cart.
+The not having to think about it.
+That right there is what you are paying for.</div></div></div></div></div></div></div></div><div class="fmt" id="pos5"><div class="fhd" onclick="tog('pos5')"><span class="fnum">5</span><div class="finfo"><div class="ftitle">Hopper</div><div class="fdesc">1 scripts, 3 beats at this position</div></div><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="loc5-s11"><div class="shd" onclick="tog('loc5-s11')"><span class="sidx">11</span><span class="stitle">If we can&#x27;t throw it twelve feet in the air</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; hopper &middot; short<span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">People ask us all the time if we will take something.
+A couch. A water heater. An old fridge.</div></div><div class="spot"><div class="slbl">A &middot; hopper &middot; long<span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">Here is the rule.
+If we cannot throw it twelve feet in the air
+into that hopper right there,
+we do not pick it up.
+That is it. That is the entire policy.
+We do carts. We do dumpsters.
+We do not do furniture, appliances,
+or a trailer load of whatever came out of the shed.
+That is somebody else&#x27;s job
+and they are better at it than we are.</div></div><div class="spot"><div class="slbl">A &middot; hopper &middot; medium<span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">You deserve a straight no
+a whole lot more than you deserve a soft maybe.
+And if it fits in the cart, it flies.
+Twelve feet. Every time.</div></div></div></div></div></div></div></div><div class="fmt" id="pos6"><div class="fhd" onclick="tog('pos6')"><span class="fnum">6</span><div class="finfo"><div class="ftitle">Tailgate</div><div class="fdesc">4 scripts, 8 beats at this position</div></div><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="loc6-s13"><div class="shd" onclick="tog('loc6-s13')"><span class="sidx">13</span><span class="stitle">It doesn&#x27;t tip</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; tailgate &middot; short<span class="sbeat">beat 1 of 4</span></div><div class="stxt" contenteditable="true">Here is something almost nobody knows
+about a truck like this.</div></div><div class="spot"><div class="slbl">A &middot; tailgate &middot; long<span class="sbeat">beat 3 of 4</span></div><div class="stxt" contenteditable="true">The whole load pushes out the back instead.
+Straight and level.
+Sounds like a little thing. It is not.
+A loaded body tipped way up in the air
+on soft ground
+is how trucks end up laying on their side.
+So they build it to push instead of tip.
+Safer for the driver.
+Safer for anybody standing near it.</div></div></div></div></div><div class="sc" id="loc6-s14"><div class="shd" onclick="tog('loc6-s14')"><span class="sidx">14</span><span class="stitle">Grape Creek, older than San Angelo</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; tailgate &middot; short<span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">Grape Creek is older than San Angelo.
+By almost ten years.</div></div><div class="spot"><div class="slbl">A &middot; tailgate &middot; long<span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">Back in 1858, the Butterfield stage line
+won the contract to carry mail
+clear from St. Louis to San Francisco.
+Twenty eight hundred miles.
+About twenty five days, twice a week, both directions.
+And one of the stations on that entire run
+sat right here at Grape Creek.
+A shelter, a corral, a hot meal, and fresh mules.
+The one reporter riding that very first stage west
+wrote that Grape Creek was a fine stream,
+near some fine timber.
+That is 1858.
+Fort Concho did not exist.
+San Angelo did not exist.
+They showed up nine years later.</div></div></div></div></div><div class="sc" id="loc6-s15"><div class="shd" onclick="tog('loc6-s15')"><span class="sidx">15</span><span class="stitle">Carlsbad, not the one in New Mexico</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; tailgate &middot; short<span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">Everybody figures Carlsbad, Texas
+got its name from Carlsbad, New Mexico.
+Nope.</div></div><div class="spot"><div class="slbl">A &middot; tailgate &middot; long<span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">In 1907 a land company bought
+the old sixty thousand acre Hughes Ranch,
+laid out a townsite, built a hotel,
+and named the whole thing Hughes.
+Then somebody drilled a deep well
+and the water came up loaded with minerals.
+So in 1908 the town renamed itself Karlsbad,
+with a K,
+after a famous health spa over in Europe,
+and started selling itself as a resort.
+A bathhouse. Health tourists.
+People paid good money to come out here
+and drink the water.
+Then in 1912 the state opened
+the first tuberculosis hospital in Texas
+right down the road. Fifty seven beds.
+And because this is Texas,
+they opened a hospital with a barbecue.</div></div></div></div></div><div class="sc" id="loc6-s16"><div class="shd" onclick="tog('loc6-s16')"><span class="sidx">16</span><span class="stitle">Water Valley, six names in four years</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">A &middot; tailgate &middot; short<span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">Before this place was called Water Valley,
+it burned through five other names
+in about four years.</div></div><div class="spot"><div class="slbl">A &middot; tailgate &middot; long<span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">Then around 1889, two fellas named Phelin and Glynn
+dammed up the North Concho,
+dug an irrigation ditch,
+and brought water right down into the valley.
+Farms came. English settlers came.
+By 1914 there was a general store,
+a cotton gin, and two cotton buyers,
+which out here made it practically a metropolis.
+And the name?
+They looked at the water.
+They looked at the valley.
+Water Valley.
+Nailed it, boys. Sixth try.</div></div></div></div></div></div></div></div><div class="fmt" id="pos7"><div class="fhd" onclick="tog('pos7')"><span class="fnum">7</span><div class="finfo"><div class="ftitle">Cart</div><div class="fdesc">16 scripts, 30 beats at this position</div></div><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="loc7-s1"><div class="shd" onclick="tog('loc7-s1')"><span class="sidx">1</span><span class="stitle">You deserve to talk to a person</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Twenty minutes later you get somebody
+in a building four states from here
+who has never seen your road.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Folks out here have stood at the end of the driveway
+waving at a truck that kept on driving.
+Then spent the whole afternoon on hold about it.</div></div></div></div></div><div class="sc" id="loc7-s2"><div class="shd" onclick="tog('loc7-s2')"><span class="sidx">2</span><span class="stitle">You deserve a reason, not a notice</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Everybody&#x27;s trash bill goes up eventually.
+Ours has too.
+I am not going to stand out here
+and tell you it never will again.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">There are folks in this county
+who watched a thirty dollar bill turn into seventy.
+And the only explanation anybody ever gave them
+was two words. Fuel and fees.
+That is not a reason.
+That is a shrug with a dollar sign on it.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">You deserve a reason. Not a notice.
+And if the reason ever stops holding up,
+there is no contract keeping you here.
+That keeps us honest more than anything else.</div></div></div></div></div><div class="sc" id="loc7-s3"><div class="shd" onclick="tog('loc7-s3')"><span class="sidx">3</span><span class="stitle">Eleven hundred and fifty dollars to quit</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">And they told me it was going to cost me
+eleven hundred and fifty dollars to get out of it.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">Nobody should have to pay a ransom
+to quit a trash service.</div></div></div></div></div><div class="sc" id="loc7-s4"><div class="shd" onclick="tog('loc7-s4')"><span class="sidx">4</span><span class="stitle">You should not have to fight for the good price</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Your bill creeps up a few dollars at a time.
+Autopay keeps it quiet.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Now here is how our office handles the same phone call.
+A customer called about moving houses.
+The gal in our office told her,
+keep the dumpster that is already out there
+and you will not pay to have one brought out.
+She called us, and we talked her out of spending money.</div></div></div></div></div><div class="sc" id="loc7-s5"><div class="shd" onclick="tog('loc7-s5')"><span class="sidx">5</span><span class="stitle">The most boring bill you have got</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Trash ought to be the most boring bill you have got.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">Not because they are difficult.
+Because they have been burned enough times
+that they quit trusting it.
+There is somebody in this area
+paying 164 dollars a month for one 95 gallon cart.
+It did not start at 164.
+It crept there, a few dollars at a time,
+on autopay, while nobody was looking.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">Number is the same as last month.
+Boring is the whole product.
+You have got enough to keep up with.</div></div></div></div></div><div class="sc" id="loc7-s6"><div class="shd" onclick="tog('loc7-s6')"><span class="sidx">6</span><span class="stitle">You deserve to be worth the drive</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Your road is too far out.
+Not enough houses on it to bother with.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">You are not a rounding error
+on somebody&#x27;s route map.</div></div></div></div></div><div class="sc" id="loc7-s7"><div class="shd" onclick="tog('loc7-s7')"><span class="sidx">7</span><span class="stitle">Your driver knows your road</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Our drivers know which gate sticks.
+They know whose dog comes out to the fence
+and whose dog means it.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Nobody wrote any of that down.
+There is no box in a computer somewhere for it.
+They just know it,
+because they have been there fifty two times a year.</div></div></div></div></div><div class="sc" id="loc7-s8"><div class="shd" onclick="tog('loc7-s8')"><span class="sidx">8</span><span class="stitle">We used to weld our own</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">When we started this company
+we could not afford a trash truck.
+No bank would touch us.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Every bit of that came from folks out here
+deciding to give a local family a shot
+instead of calling the big guy.</div></div></div></div></div><div class="sc" id="loc7-s9"><div class="shd" onclick="tog('loc7-s9')"><span class="sidx">9</span><span class="stitle">Should have been a truck driver</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Thirty eight years married.
+And he figured he was home
+for maybe half of it.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">That is the actual reason there is a trash company
+with my name on the paperwork.
+This job keeps me in the county.
+I wave at the same kids every week.
+And when the route is done, I am home for supper.</div></div></div></div></div><div class="sc" id="loc7-s10"><div class="shd" onclick="tog('loc7-s10')"><span class="sidx">10</span><span class="stitle">What thirty yards actually means</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">This body holds thirty cubic yards.
+Which is a number nobody can picture.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">And not one of you had to think about a bit of it
+after the cart hit the road.
+It just disappears. Same day. Every week.</div></div></div></div></div><div class="sc" id="loc7-s11"><div class="shd" onclick="tog('loc7-s11')"><span class="sidx">11</span><span class="stitle">If we can&#x27;t throw it twelve feet in the air</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">And I would rather just tell you straight.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">But a soft maybe costs you a whole week.</div></div></div></div></div><div class="sc" id="loc7-s12"><div class="shd" onclick="tog('loc7-s12')"><span class="sidx">12</span><span class="stitle">This truck was picked for your road</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Out here we have got caliche.
+Cattle guards. Ranch gates.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">That is not an accident.
+Nobody buys a truck set up like this
+unless the roads they run every day look like yours.</div></div></div></div></div><div class="sc" id="loc7-s13"><div class="shd" onclick="tog('loc7-s13')"><span class="sidx">13</span><span class="stitle">It doesn&#x27;t tip</span><span class="fcnt">1 beat</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 4</span></div><div class="stxt" contenteditable="true">When it is full and we go dump it,
+this body does not tip up in the air
+the way a dump truck does.</div></div></div></div></div><div class="sc" id="loc7-s14"><div class="shd" onclick="tog('loc7-s14')"><span class="sidx">14</span><span class="stitle">Grape Creek, older than San Angelo</span><span class="fcnt">1 beat</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">And it happened because of a mail route.</div></div></div></div></div><div class="sc" id="loc7-s15"><div class="shd" onclick="tog('loc7-s15')"><span class="sidx">15</span><span class="stitle">Carlsbad, not the one in New Mexico</span><span class="fcnt">1 beat</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">This town got its name
+from a water well and a marketing idea.</div></div></div></div></div><div class="sc" id="loc7-s16"><div class="shd" onclick="tog('loc7-s16')"><span class="sidx">16</span><span class="stitle">Water Valley, six names in four years</span><span class="fcnt">1 beat</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">Yandell. Argenta. Stella. Rethaville. Mayesville.</div></div></div></div></div></div></div></div><div class="fmt" id="pos8"><div class="fhd" onclick="tog('pos8')"><span class="fnum">8</span><div class="finfo"><div class="ftitle">Open road</div><div class="fdesc">16 scripts, 32 beats at this position</div></div><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="loc8-s1"><div class="shd" onclick="tog('loc8-s1')"><span class="sidx">1</span><span class="stitle">You deserve to talk to a person</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">There is a review of a big trash company around here,
+from this May, that says it plain.
+Goes to voicemail. No call back.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">You should not have to work that hard
+to talk to your own trash company.</div></div></div></div></div><div class="sc" id="loc8-s2"><div class="shd" onclick="tog('loc8-s2')"><span class="sidx">2</span><span class="stitle">You deserve a reason, not a notice</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Here is the difference.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">We give you a full month before anything changes.
+And we tell you why.
+Fuel did this. The landfill did that.
+Here is the math. Here is the day it starts.</div></div></div></div></div><div class="sc" id="loc8-s3"><div class="shd" onclick="tog('loc8-s3')"><span class="sidx">3</span><span class="stitle">Eleven hundred and fifty dollars to quit</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">You want to know the actual reason
+this company exists?</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">Eleven hundred and fifty dollars.
+To get somebody to stop picking up my trash.
+I sat there looking at that paper thinking,
+how is this legal.
+And then it hit me worse. How is this normal.
+And it still is.
+A family that switched to us this summer
+found out their old contract
+had renewed itself for another thirty six months.
+Fine print. No notice. Nothing.
+And the price to get out was
+six hundred seventy three dollars and seventy one cents.
+They had it figured to the seventy one cents.
+That is how dialed in that machine is.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">That is not a business model.
+That is a trap with a monthly payment.
+We would rather earn you every month
+than lock the door behind you.</div></div></div></div></div><div class="sc" id="loc8-s4"><div class="shd" onclick="tog('loc8-s4')"><span class="sidx">4</span><span class="stitle">You should not have to fight for the good price</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Then one day you finally get mad enough
+to call and tell them you are done.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">Our price is our price.
+You do not have to get mad to get it.</div></div></div></div></div><div class="sc" id="loc8-s5"><div class="shd" onclick="tog('loc8-s5')"><span class="sidx">5</span><span class="stitle">The most boring bill you have got</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">You should not have to open it.
+You should not have to hold it up next to last month&#x27;s.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Ours is one line.
+One number. Tax already in it.
+You can read the entire thing in about four seconds.</div></div></div></div></div><div class="sc" id="loc8-s6"><div class="shd" onclick="tog('loc8-s6')"><span class="sidx">6</span><span class="stitle">You deserve to be worth the drive</span><span class="fcnt">3 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">There is a thing that happens to you
+when you live outside the city limits.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">A fella right here in Grape Creek
+wrote a review about the big company he had before.
+Every neighbor on both sides of him got picked up.
+His cans sat there full.
+He walked out and tried to flag the truck down,
+and it kept on driving.
+Another review, same town.
+They just skipped our street this week,
+and it is not the first time either.
+That is what too far out looks like in real life.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">You are the route.
+Grape Creek. Vancourt. Sherwood. Knickerbocker.
+If we take your road, we run your road, every week.
+That is the whole promise.</div></div></div></div></div><div class="sc" id="loc8-s7"><div class="shd" onclick="tog('loc8-s7')"><span class="sidx">7</span><span class="stitle">Your driver knows your road</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">They know the house where the cart has to sit
+on the far side of the cattle guard
+or the truck cannot get to it.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">That is the difference
+between a route and a relationship.</div></div></div></div></div><div class="sc" id="loc8-s8"><div class="shd" onclick="tog('loc8-s8')"><span class="sidx">8</span><span class="stitle">We used to weld our own</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">So I built one in my barn
+out of a dump trailer.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">So thank you for that.
+We are not taking it lightly.</div></div></div></div></div><div class="sc" id="loc8-s9"><div class="shd" onclick="tog('loc8-s9')"><span class="sidx">9</span><span class="stitle">Should have been a truck driver</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Then he wrote four words.
+Should have been a truck driver.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">The sunsets out here are better anyway.
+No windshield required.</div></div></div></div></div><div class="sc" id="loc8-s10"><div class="shd" onclick="tog('loc8-s10')"><span class="sidx">10</span><span class="stitle">What thirty yards actually means</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">So let me say it a different way.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">That is the actual product.</div></div></div></div></div><div class="sc" id="loc8-s11"><div class="shd" onclick="tog('loc8-s11')"><span class="sidx">11</span><span class="stitle">If we can&#x27;t throw it twelve feet in the air</span><span class="fcnt">1 beat</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">Now I could tell you maybe
+and leave you hanging until pickup day.
+Plenty of outfits would.</div></div></div></div></div><div class="sc" id="loc8-s12"><div class="shd" onclick="tog('loc8-s12')"><span class="sidx">12</span><span class="stitle">This truck was picked for your road</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Roads that were a two track
+a long time before anybody called them a road.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">We did not pick it for a city.</div></div></div></div></div><div class="sc" id="loc8-s13"><div class="shd" onclick="tog('loc8-s13')"><span class="sidx">13</span><span class="stitle">It doesn&#x27;t tip</span><span class="fcnt">1 beat</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 4 of 4</span></div><div class="stxt" contenteditable="true">Not one customer is ever going to ask me about that.
+But you are paying us to know it.</div></div></div></div></div><div class="sc" id="loc8-s14"><div class="shd" onclick="tog('loc8-s14')"><span class="sidx">14</span><span class="stitle">Grape Creek, older than San Angelo</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">Not a fort. Not a railroad. The mail.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">So Grape Creek had a scheduled delivery route
+before San Angelo was even a place.
+Twice a week, rain or shine,
+somebody came down this road with a job to do.
+Back then it was letters.
+These days it is more coffee grounds and diapers.
+Progress.
+The stage quit running in 1861.
+We are still here.</div></div></div></div></div><div class="sc" id="loc8-s15"><div class="shd" onclick="tog('loc8-s15')"><span class="sidx">15</span><span class="stitle">Carlsbad, not the one in New Mexico</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">And honestly, it nearly worked.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">By the 1930s that hospital
+had treated more than thirteen thousand people.
+So Carlsbad has been in the business
+of hauling problems away for over a century.
+Folks used to pay to put the water in.
+Now they pay us to haul everything else out.
+Either way. Not the one in New Mexico.</div></div></div></div></div><div class="sc" id="loc8-s16"><div class="shd" onclick="tog('loc8-s16')"><span class="sidx">16</span><span class="stitle">Water Valley, six names in four years</span><span class="fcnt">2 beats</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">They went through town names
+like I go through work gloves.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">But here is the thing. That one stuck.
+Because it was plain and it was true.
+No spa water. No stagecoach. Just a ditch that worked
+and a name that told you exactly what you were getting.
+Around here, that is about
+the highest compliment there is.</div></div></div></div></div></div></div></div></div></div>
+  <div class="view" id="view-scr"><div class="fmts"><div class="fmt" id="blkA"><div class="fhd" onclick="tog('blkA')"><span class="fnum">A</span><div class="finfo"><div class="ftitle">Block A: you deserve better</div><div class="fdesc">Shoot these first while he is fresh. Seven scripts, 60 to 90 seconds each.</div></div><span class="fcnt">7 scripts</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="scr-s1"><div class="shd" onclick="tog('scr-s1')"><span class="sidx">1</span><span class="stitle">You deserve to talk to a person</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~82 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: Nobody answered. Nobody called back.</span></div><div class="spots"><div class="spot"><div class="slbl">A &middot; cab door &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Call most trash companies and see what happens.
+Press one for billing.
+Press two for service.
+Press three to hear these options again.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Twenty minutes later you get somebody
+in a building four states from here
+who has never seen your road.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">There is a review of a big trash company around here,
+from this May, that says it plain.
+Goes to voicemail. No call back.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">Call our number and it rings a phone
+that is either in this truck or in my kitchen.
+Sometimes I answer with a kid hollering in the background.
+That is just the deal out here.
+But you get a person.
+And the person you get can actually fix it.
+Not put in a ticket about it. Fix it.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Folks out here have stood at the end of the driveway
+waving at a truck that kept on driving.
+Then spent the whole afternoon on hold about it.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">You should not have to work that hard
+to talk to your own trash company.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">So here is our whole phone system.
+You call 325 710 6222. I answer. It gets fixed.
+That has been the system for three years,
+and it is not changing.</div></div></div></div></div><div class="sc" id="scr-s2"><div class="shd" onclick="tog('scr-s2')"><span class="sidx">2</span><span class="stitle">You deserve a reason, not a notice</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~68 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: A bigger number is not an explanation.</span></div><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Everybody&#x27;s trash bill goes up eventually.
+Ours has too.
+I am not going to stand out here
+and tell you it never will again.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Here is the difference.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Most companies, you find out when the bill shows up.
+No warning. No reason. Just a bigger number.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">There are folks in this county
+who watched a thirty dollar bill turn into seventy.
+And the only explanation anybody ever gave them
+was two words. Fuel and fees.
+That is not a reason.
+That is a shrug with a dollar sign on it.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">We give you a full month before anything changes.
+And we tell you why.
+Fuel did this. The landfill did that.
+Here is the math. Here is the day it starts.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">You might not love it.
+But you will never be surprised by it.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">You deserve a reason. Not a notice.
+And if the reason ever stops holding up,
+there is no contract keeping you here.
+That keeps us honest more than anything else.</div></div></div></div></div><div class="sc" id="scr-s3"><div class="shd" onclick="tog('scr-s3')"><span class="sidx">3</span><span class="stitle">Eleven hundred and fifty dollars to quit</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~85 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: The exit fee is the business model.</span></div><div class="snote">Confirm the 1150 figure, and that he is good referencing the family who switched this
+summer without naming them.</div><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">You want to know the actual reason
+this company exists?</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">I had a trash service once.
+I went to cancel it.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">And they told me it was going to cost me
+eleven hundred and fifty dollars to get out of it.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">Eleven hundred and fifty dollars.
+To get somebody to stop picking up my trash.
+I sat there looking at that paper thinking,
+how is this legal.
+And then it hit me worse. How is this normal.
+And it still is.
+A family that switched to us this summer
+found out their old contract
+had renewed itself for another thirty six months.
+Fine print. No notice. Nothing.
+And the price to get out was
+six hundred seventy three dollars and seventy one cents.
+They had it figured to the seventy one cents.
+That is how dialed in that machine is.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">So we do not have a contract.
+No buyout. No cancellation fee. No collections letter.
+You want to leave, you call and you leave.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">Nobody should have to pay a ransom
+to quit a trash service.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">That is not a business model.
+That is a trap with a monthly payment.
+We would rather earn you every month
+than lock the door behind you.</div></div></div></div></div><div class="sc" id="scr-s4"><div class="shd" onclick="tog('scr-s4')"><span class="sidx">4</span><span class="stitle">You should not have to fight for the good price</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~87 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: The good price was there the whole time.</span></div><div class="spots"><div class="spot"><div class="slbl">A &middot; front fender &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Here is a game you have probably played
+without knowing you were in it.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Your bill creeps up a few dollars at a time.
+Autopay keeps it quiet.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Then one day you finally get mad enough
+to call and tell them you are done.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">And all of a sudden
+they have got a better rate they can do for you.
+Funny how that works.
+The price was sitting there the whole time.
+They just were not going to hand it to you
+until you threatened to walk.
+That tells you exactly what they think you are worth.
+You get the good deal
+right at the moment you stop being loyal.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Now here is how our office handles the same phone call.
+A customer called about moving houses.
+The gal in our office told her,
+keep the dumpster that is already out there
+and you will not pay to have one brought out.
+She called us, and we talked her out of spending money.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">Our price is our price.
+You do not have to get mad to get it.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">It is on the website right now.
+Same number for everybody out here. Tax already in it.
+You should never have to threaten a company
+just to get treated right.</div></div></div></div></div><div class="sc" id="scr-s5"><div class="shd" onclick="tog('scr-s5')"><span class="sidx">5</span><span class="stitle">The most boring bill you have got</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~62 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: You should not need a note in your phone for trash.</span></div><div class="spots"><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Trash ought to be the most boring bill you have got.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">You should not have to open it.
+You should not have to hold it up next to last month&#x27;s.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">But a whole lot of folks out here do exactly that.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">Not because they are difficult.
+Because they have been burned enough times
+that they quit trusting it.
+There is somebody in this area
+paying 164 dollars a month for one 95 gallon cart.
+It did not start at 164.
+It crept there, a few dollars at a time,
+on autopay, while nobody was looking.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Ours is one line.
+One number. Tax already in it.
+You can read the entire thing in about four seconds.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">Cart goes out the night before.
+Truck comes the same day it always comes.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">Number is the same as last month.
+Boring is the whole product.
+You have got enough to keep up with.</div></div></div></div></div><div class="sc" id="scr-s6"><div class="shd" onclick="tog('scr-s6')"><span class="sidx">6</span><span class="stitle">You deserve to be worth the drive</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~73 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: &quot;Too far out&quot; stops here.</span></div><div class="spots"><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">There is a thing that happens to you
+when you live outside the city limits.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">You get treated like you are not quite worth the trip.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Your road is too far out.
+Not enough houses on it to bother with.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">A fella right here in Grape Creek
+wrote a review about the big company he had before.
+Every neighbor on both sides of him got picked up.
+His cans sat there full.
+He walked out and tried to flag the truck down,
+and it kept on driving.
+Another review, same town.
+They just skipped our street this week,
+and it is not the first time either.
+That is what too far out looks like in real life.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Those roads are not the leftovers of our business.
+They are the business.
+We did not build this to serve the easy part.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">You are not a rounding error
+on somebody&#x27;s route map.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">You are the route.
+Grape Creek. Vancourt. Sherwood. Knickerbocker.
+If we take your road, we run your road, every week.
+That is the whole promise.</div></div></div></div></div><div class="sc" id="scr-s7"><div class="shd" onclick="tog('scr-s7')"><span class="sidx">7</span><span class="stitle">Your driver knows your road</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~86 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: There is no computer field for any of this.</span></div><div class="spots"><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">There is something you only get
+from somebody who runs the same road every single week.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Our drivers know which gate sticks.
+They know whose dog comes out to the fence
+and whose dog means it.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">They know the house where the cart has to sit
+on the far side of the cattle guard
+or the truck cannot get to it.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">And they do things nobody ever asked them to do.
+Customers tell on them in the reviews.
+Forget to roll your cart out,
+and there is a decent chance the driver
+walks up and pulls it out himself.
+Trash blows out of a bin,
+and the truck stops so he can get out
+and chase it across your yard.
+There are kids on our routes
+who run outside when they hear the truck,
+because the driver honks for them.
+Every week. Without fail.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Nobody wrote any of that down.
+There is no box in a computer somewhere for it.
+They just know it,
+because they have been there fifty two times a year.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">That is the difference
+between a route and a relationship.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">You deserve to be known.
+Not just a stop on a list.
+Out here that is not the exception.
+That is the standard.</div></div></div></div></div></div></div></div><div class="fmt" id="blkB"><div class="fhd" onclick="tog('blkB')"><span class="fnum">B</span><div class="finfo"><div class="ftitle">Block B: the truck</div><div class="fdesc">The long section in every one of these stays at the truck part being featured, on purpose. Six scripts.</div></div><span class="fcnt">6 scripts</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="scr-s8"><div class="shd" onclick="tog('scr-s8')"><span class="sidx">8</span><span class="stitle">We used to weld our own</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~60 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: From a barn build to a Freightliner.</span></div><div class="snote">Confirm: is this truck new to the fleet, and is he good talking about it.</div><div class="spots"><div class="spot"><div class="slbl">A &middot; front fender &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Take a look at this thing.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">When we started this company
+we could not afford a trash truck.
+No bank would touch us.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">So I built one in my barn
+out of a dump trailer.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">Welded a cart tipper onto it.
+Ran the hydraulic lines myself.
+We were on version three
+before a bank would even sit down with us.
+That was not very long ago.
+Now I am standing in front of a 2025 Freightliner
+with a thirty yard body on the back of it.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Every bit of that came from folks out here
+deciding to give a local family a shot
+instead of calling the big guy.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">So thank you for that.
+We are not taking it lightly.</div></div><div class="spot"><div class="slbl">A &middot; front fender &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">The barn truck is how we started.
+This one is how we keep up.
+Same job either way.
+Show up and do it right.</div></div></div></div></div><div class="sc" id="scr-s9"><div class="shd" onclick="tog('scr-s9')"><span class="sidx">9</span><span class="stitle">Should have been a truck driver</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~88 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: A retired trooper wrote this under our post.</span></div><div class="snote">This one comes straight from the comment section on the July trooper post. Do not name
+any commenter. Let him play it sincere, this is the deepest thing on the page.</div><div class="spots"><div class="spot"><div class="slbl">A &middot; cab door &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">A retired state trooper left a comment on our page
+that I have not been able to shake.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Thirty eight years married.
+And he figured he was home
+for maybe half of it.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Then he wrote four words.
+Should have been a truck driver.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">He was not the only one.
+A deputy with twenty seven years
+said he watched holiday sunrises
+through the windshield of a patrol car.
+Twenty three years, another one wrote,
+and my kids are grown now. I missed too much.
+Sixteen years. Twenty five. Thirty two.
+Same story under every single one.
+I did six years as a trooper.
+I know exactly what they are talking about.
+The job matters. And it eats your family alive.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">That is the actual reason there is a trash company
+with my name on the paperwork.
+This job keeps me in the county.
+I wave at the same kids every week.
+And when the route is done, I am home for supper.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">The sunsets out here are better anyway.
+No windshield required.</div></div><div class="spot"><div class="slbl">A &middot; cab door &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">So to every trooper and deputy in that comment section,
+thank you. I mean it.
+And to the man who said
+should have been a truck driver.
+Brother, the seat is real comfortable.
+And we are usually hiring.</div></div></div></div></div><div class="sc" id="scr-s10"><div class="shd" onclick="tog('scr-s10')"><span class="sidx">10</span><span class="stitle">What thirty yards actually means</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~60 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: Your whole week rides in here.</span></div><div class="snote">Fill in his real number before shooting. Ballpark if he does not know offhand: a thirty
+yard packer runs somewhere around 150 to 250 houses depending on compaction. Do not put
+a number on screen he has not confirmed.</div><div class="spots"><div class="spot"><div class="slbl">A &middot; side of body &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Most people see a trash truck
+and they just see a trash truck.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">This body holds thirty cubic yards.
+Which is a number nobody can picture.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">So let me say it a different way.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">We run about [number] houses
+before this thing is packed full
+and we have to go dump it.
+Your one cart out at the road,
+that is a whole week of your family.
+Coffee grounds. Boxes.
+Whatever the kids destroyed on Tuesday.
+Now multiply that by [number] families.
+That is what is riding behind me right now.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">And not one of you had to think about a bit of it
+after the cart hit the road.
+It just disappears. Same day. Every week.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">That is the actual product.</div></div><div class="spot"><div class="slbl">A &middot; side of body &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">Not the truck. Not the cart.
+The not having to think about it.
+That right there is what you are paying for.</div></div></div></div></div><div class="sc" id="scr-s11"><div class="shd" onclick="tog('scr-s11')"><span class="sidx">11</span><span class="stitle">If we can&#x27;t throw it twelve feet in the air</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~63 sec</span><span class="td">6 beats</span><span class="td onscr">On screen: The whole policy in one sentence.</span></div><div class="spots"><div class="spot"><div class="slbl">A &middot; hopper &middot; short<span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">People ask us all the time if we will take something.
+A couch. A water heater. An old fridge.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">And I would rather just tell you straight.</div></div><div class="spot"><div class="slbl">A &middot; hopper &middot; long<span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">Here is the rule.
+If we cannot throw it twelve feet in the air
+into that hopper right there,
+we do not pick it up.
+That is it. That is the entire policy.
+We do carts. We do dumpsters.
+We do not do furniture, appliances,
+or a trailer load of whatever came out of the shed.
+That is somebody else&#x27;s job
+and they are better at it than we are.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">Now I could tell you maybe
+and leave you hanging until pickup day.
+Plenty of outfits would.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">But a soft maybe costs you a whole week.</div></div><div class="spot"><div class="slbl">A &middot; hopper &middot; medium<span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">You deserve a straight no
+a whole lot more than you deserve a soft maybe.
+And if it fits in the cart, it flies.
+Twelve feet. Every time.</div></div></div></div></div><div class="sc" id="scr-s12"><div class="shd" onclick="tog('scr-s12')"><span class="sidx">12</span><span class="stitle">This truck was picked for your road</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~56 sec</span><span class="td">7 beats</span><span class="td onscr">On screen: Look where the front wheels sit.</span></div><div class="spots"><div class="spot"><div class="slbl">A &middot; front axle &middot; short<span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Most trash trucks get built for a city.
+Wide streets. Curbs. Pavement.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">Out here we have got caliche.
+Cattle guards. Ranch gates.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">Roads that were a two track
+a long time before anybody called them a road.</div></div><div class="spot"><div class="slbl">A &middot; front axle &middot; long<span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">So look at the front end of this thing.
+That front axle sits back underneath the cab on purpose.
+Lets the wheels cut way harder than a normal truck.
+Which means we get turned around
+in a spot where a city truck
+would be backing up for a quarter mile.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; medium<span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">That is not an accident.
+Nobody buys a truck set up like this
+unless the roads they run every day look like yours.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">We did not pick it for a city.</div></div><div class="spot"><div class="slbl">A &middot; front axle &middot; medium<span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">We picked it for your road.
+And your road is the reason
+it earns its keep.</div></div></div></div></div><div class="sc" id="scr-s13"><div class="shd" onclick="tog('scr-s13')"><span class="sidx">13</span><span class="stitle">It doesn&#x27;t tip</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~47 sec</span><span class="td">4 beats</span><span class="td onscr">On screen: Watch what it does not do.</span></div><div class="snote">Optional. Only shoot if Jaron confirms the body ejects the load out the back rather
+than tipping up. If it tips, skip it. Four beats on purpose, it is a short one.</div><div class="spots"><div class="spot"><div class="slbl">A &middot; tailgate &middot; short<span class="sbeat">beat 1 of 4</span></div><div class="stxt" contenteditable="true">Here is something almost nobody knows
+about a truck like this.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 4</span></div><div class="stxt" contenteditable="true">When it is full and we go dump it,
+this body does not tip up in the air
+the way a dump truck does.</div></div><div class="spot"><div class="slbl">A &middot; tailgate &middot; long<span class="sbeat">beat 3 of 4</span></div><div class="stxt" contenteditable="true">The whole load pushes out the back instead.
+Straight and level.
+Sounds like a little thing. It is not.
+A loaded body tipped way up in the air
+on soft ground
+is how trucks end up laying on their side.
+So they build it to push instead of tip.
+Safer for the driver.
+Safer for anybody standing near it.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 4 of 4</span></div><div class="stxt" contenteditable="true">Not one customer is ever going to ask me about that.
+But you are paying us to know it.</div></div></div></div></div></div></div></div><div class="fmt" id="blkC"><div class="fhd" onclick="tog('blkC')"><span class="fnum">C</span><div class="finfo"><div class="ftitle">Block C: towns</div><div class="fdesc">Longer, 60 to 90 seconds, bigger blocks of text, five beats. Shot at the tailgate.</div></div><span class="fcnt">3 scripts</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="fbody"><div class="scs"><div class="sc" id="scr-s14"><div class="shd" onclick="tog('scr-s14')"><span class="sidx">14</span><span class="stitle">Grape Creek, older than San Angelo</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~75 sec</span><span class="td">5 beats</span><span class="td onscr">On screen: This town is older than San Angelo.</span></div><div class="spots"><div class="spot"><div class="slbl">A &middot; tailgate &middot; short<span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">Grape Creek is older than San Angelo.
+By almost ten years.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">And it happened because of a mail route.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">Not a fort. Not a railroad. The mail.</div></div><div class="spot"><div class="slbl">A &middot; tailgate &middot; long<span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">Back in 1858, the Butterfield stage line
+won the contract to carry mail
+clear from St. Louis to San Francisco.
+Twenty eight hundred miles.
+About twenty five days, twice a week, both directions.
+And one of the stations on that entire run
+sat right here at Grape Creek.
+A shelter, a corral, a hot meal, and fresh mules.
+The one reporter riding that very first stage west
+wrote that Grape Creek was a fine stream,
+near some fine timber.
+That is 1858.
+Fort Concho did not exist.
+San Angelo did not exist.
+They showed up nine years later.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">So Grape Creek had a scheduled delivery route
+before San Angelo was even a place.
+Twice a week, rain or shine,
+somebody came down this road with a job to do.
+Back then it was letters.
+These days it is more coffee grounds and diapers.
+Progress.
+The stage quit running in 1861.
+We are still here.</div></div></div></div></div><div class="sc" id="scr-s15"><div class="shd" onclick="tog('scr-s15')"><span class="sidx">15</span><span class="stitle">Carlsbad, not the one in New Mexico</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~82 sec</span><span class="td">5 beats</span><span class="td onscr">On screen: People paid money to drink the water here.</span></div><div class="spots"><div class="spot"><div class="slbl">A &middot; tailgate &middot; short<span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">Everybody figures Carlsbad, Texas
+got its name from Carlsbad, New Mexico.
+Nope.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">This town got its name
+from a water well and a marketing idea.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">And honestly, it nearly worked.</div></div><div class="spot"><div class="slbl">A &middot; tailgate &middot; long<span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">In 1907 a land company bought
+the old sixty thousand acre Hughes Ranch,
+laid out a townsite, built a hotel,
+and named the whole thing Hughes.
+Then somebody drilled a deep well
+and the water came up loaded with minerals.
+So in 1908 the town renamed itself Karlsbad,
+with a K,
+after a famous health spa over in Europe,
+and started selling itself as a resort.
+A bathhouse. Health tourists.
+People paid good money to come out here
+and drink the water.
+Then in 1912 the state opened
+the first tuberculosis hospital in Texas
+right down the road. Fifty seven beds.
+And because this is Texas,
+they opened a hospital with a barbecue.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">By the 1930s that hospital
+had treated more than thirteen thousand people.
+So Carlsbad has been in the business
+of hauling problems away for over a century.
+Folks used to pay to put the water in.
+Now they pay us to haul everything else out.
+Either way. Not the one in New Mexico.</div></div></div></div></div><div class="sc" id="scr-s16"><div class="shd" onclick="tog('scr-s16')"><span class="sidx">16</span><span class="stitle">Water Valley, six names in four years</span><svg class="sch" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="sbody"><div class="smeta"><span class="tv">~64 sec</span><span class="td">5 beats</span><span class="td onscr">On screen: It took six tries to name this town.</span></div><div class="spots"><div class="spot"><div class="slbl">A &middot; tailgate &middot; short<span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">Before this place was called Water Valley,
+it burned through five other names
+in about four years.</div></div><div class="spot"><div class="slbl">B &middot; cart &middot; short<span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">Yandell. Argenta. Stella. Rethaville. Mayesville.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; short<span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">They went through town names
+like I go through work gloves.</div></div><div class="spot"><div class="slbl">A &middot; tailgate &middot; long<span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">Then around 1889, two fellas named Phelin and Glynn
+dammed up the North Concho,
+dug an irrigation ditch,
+and brought water right down into the valley.
+Farms came. English settlers came.
+By 1914 there was a general store,
+a cotton gin, and two cotton buyers,
+which out here made it practically a metropolis.
+And the name?
+They looked at the water.
+They looked at the valley.
+Water Valley.
+Nailed it, boys. Sixth try.</div></div><div class="spot"><div class="slbl">C &middot; open road &middot; medium<span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">But here is the thing. That one stuck.
+Because it was plain and it was true.
+No spa water. No stagecoach. Just a ditch that worked
+and a name that told you exactly what you were getting.
+Around here, that is about
+the highest compliment there is.</div></div></div></div></div></div></div></div></div></div>
+</div>
+<script>
+function tog(id) { document.getElementById(id).classList.toggle('open'); }
+function setview(v) {
+  document.getElementById('view-loc').classList.toggle('on', v==='loc');
+  document.getElementById('view-scr').classList.toggle('on', v==='scr');
+  document.getElementById('btn-loc').classList.toggle('on', v==='loc');
+  document.getElementById('btn-scr').classList.toggle('on', v==='scr');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
