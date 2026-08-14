@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Directory | City of Mertzon, Texas</title>
+<meta name="description" content="Every business, service, and office in Mertzon, Texas in one directory: banking, dining, fuel, lodging, real estate, and utilities. Search or browse by category.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/tree-oak.png">
+</head>
+<body>
+
+<div class="demo-flag">
+  <b>Concept redesign.</b> Unofficial demo built by Cosmic Arc Media. The live City of Mertzon website is at
+  <a href="https://www.mertzontexas.com/" rel="noopener">mertzontexas.com</a>.
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="topbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      104 S Park View, Mertzon, TX 76941
+    </span>
+    <span class="topbar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>
+      <a href="tel:+13258355791">(325) 835-5791</a>
+    </span>
+    <span class="spacer"></span>
+    <span class="topbar-item urgent">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      Utility emergency: <a href="tel:+13253153676">(325) 315-3676</a>
+    </span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/tree-oak.png" alt="">
+      <span class="brand-text">
+        <span class="n">City of Mertzon</span>
+        <span class="s">Irion County, Texas</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="government.html">Government</a>
+      <a href="services.html">Services</a>
+      <a href="business.html" class="active">Business</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn btn-primary" href="https://new.nexbillpay.net/mertzoncitytx/billpay/signin" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        Pay My Bill
+      </a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <img class="hero-contours" src="assets/contours.svg" alt="" aria-hidden="true">
+  <img class="hero-tree" src="assets/tree-white.png" alt="" aria-hidden="true">
+  <div class="wrap pagehead-inner">
+    <div class="pagehead-copy">
+      <div class="crumbs"><a href="index.html">Home</a><span>/</span>Business Directory</div>
+      <h1>Business Directory</h1>
+      <p>Every business, service, and public office in Mertzon, in one place. Search by name or browse by category below. If you own a business inside the city and do not see it listed, or something here needs fixing, contact City Hall and we will get it added or corrected.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="field" style="max-width:420px; margin-bottom:1.25rem;">
+      <label for="biz-search">Search the directory</label>
+      <input type="search" id="biz-search" placeholder="Business name, service, or street">
+    </div>
+
+    <div class="filterbar">
+      <button class="chip on" data-filter="all">All</button>
+      <button class="chip" data-filter="banking">Banking</button>
+      <button class="chip" data-filter="government">City &amp; Government</button>
+      <button class="chip" data-filter="retail">Clothing &amp; Gifts</button>
+      <button class="chip" data-filter="emergency">Emergency Services</button>
+      <button class="chip" data-filter="feed">Feed Store</button>
+      <button class="chip" data-filter="fuel">Fuel</button>
+      <button class="chip" data-filter="garden">Garden Center</button>
+      <button class="chip" data-filter="grocery">Grocery</button>
+      <button class="chip" data-filter="lodging">Lodging</button>
+      <button class="chip" data-filter="meat">Meat Processing</button>
+      <button class="chip" data-filter="realestate">Real Estate</button>
+      <button class="chip" data-filter="restaurants">Restaurants</button>
+      <button class="chip" data-filter="internet">Internet Providers</button>
+      <button class="chip" data-filter="electricity">Electricity</button>
+      <button class="chip" data-filter="trash">Trash Services</button>
+    </div>
+
+    <div class="biz-cat" data-cat="banking">
+      <h2>Banking</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>First National Bank of Mertzon</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258354321">(325) 835-4321</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>106 S. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="government">
+      <h2>City &amp; Government</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Mertzon City Hall</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258355791">(325) 835-5791</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>104 S. Park View St., Mertzon, TX 76941</span></div>
+        </div>
+        <div class="biz">
+          <h3>US Post Office</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258352941">(325) 835-2941</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>303 W. Oak Ave., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="retail">
+      <h2>Clothing &amp; Gifts</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Hargrave's</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258352100">(325) 835-2100</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>104 N. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="emergency">
+      <h2>Emergency Services</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Sheriff's Department</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258352551">(325) 835-2551</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>209 N. Park View St., Mertzon, TX 76941</span></div>
+        </div>
+        <div class="biz">
+          <h3>Ambulance, Fire, Police</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:911">911</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="feed">
+      <h2>Feed Store</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>West Texas Wool &amp; Mohair Association</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258353661">(325) 835-3661</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>109 S. West Railroad St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="fuel">
+      <h2>Fuel</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Fuel Source</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13256322200">(325) 632-2200</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>160 Ranch Road 2469, Mertzon, TX 76941</span></div>
+        </div>
+        <div class="biz">
+          <h3>Star Stop (Alon)</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258357825">(325) 835-7825</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>117 S. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+        <div class="biz">
+          <h3>Star Stop (Shell)</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258352059">(325) 835-2059</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>111 N. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="garden">
+      <h2>Garden Center</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Native Ornamentals</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258352021">(325) 835-2021</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>416 N. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="grocery">
+      <h2>Grocery</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Family Dollar</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13253401672">(325) 340-1672</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>301 N. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="lodging">
+      <h2>Lodging</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Harvest Inn</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258352601">(325) 835-2601</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>302 N. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="meat">
+      <h2>Meat Processing</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Mertzon Meat Company</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258352611">(325) 835-2611</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>207 S. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="realestate">
+      <h2>Real Estate</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>M&amp;M Ranch Land Investments</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13252343077">Michelle: (325) 234-3077</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13254502550">Mike: (325) 450-2550</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>124 S. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="restaurants">
+      <h2>Restaurants</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Rico's Café</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13258358313">(325) 835-8313</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>119 N. Broadway St., Mertzon, TX 76941</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="internet">
+      <h2>Internet Providers</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Frontier Communications</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+18443835155">(844) 383-5155</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><a href="https://www.frontierinternet.com/plans-pricing/" rel="noopener">frontierinternet.com</a></div>
+        </div>
+        <div class="biz">
+          <h3>Resound</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13256505186">Brandi Whitlow: (325) 650-5186</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><a href="https://resoundnetworks.com/" rel="noopener">resoundnetworks.com</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="electricity">
+      <h2>Electricity</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Choose Energy</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><a href="https://www.chooseenergy.com/electricity-rates/texas/" rel="noopener">chooseenergy.com</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biz-cat" data-cat="trash">
+      <h2>Trash Services</h2>
+      <div class="biz-grid">
+        <div class="biz">
+          <h3>Republic Services</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13254817726">(325) 481-7726</a></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13252380947">(325) 238-0947</a></div>
+        </div>
+        <div class="biz">
+          <h3>Rural Waste Management</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+13257106222">(325) 710-6222</a></div>
+        </div>
+        <div class="biz">
+          <h3>Texas Disposal System</h3>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+18003758375">(800) 375-8375</a></div>
+        </div>
+      </div>
+    </div>
+
+    <p id="biz-empty" style="display:none; color:var(--muted);">No listings match that search.</p>
+
+  </div>
+</section>
+
+<section class="section section-sand">
+  <div class="wrap">
+    <div class="cta-strip">
+      <div>
+        <h2>Own a business in Mertzon?</h2>
+        <p>Listings are free for businesses inside the city, and City Hall keeps this directory current. Reach out to get yours added or to correct what is already here.</p>
+      </div>
+      <a class="btn" href="contact.html">Add or update a listing</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="flogo" src="assets/logo-white@3x.png" alt="City of Mertzon, Texas">
+        <div class="addr">
+          104 S Park View<br>
+          Mertzon, TX 76941<br>
+          <a href="tel:+13258355791">(325) 835-5791</a><br>
+          Fax (325) 835-7570
+        </div>
+        <div class="footer-emergency">
+          <span class="k">Utility emergency, after hours</span>
+          <a href="tel:+13253153676">(325) 315-3676</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Residents</h4>
+        <ul>
+          <li><a href="https://new.nexbillpay.net/mertzoncitytx/billpay/signin" rel="noopener">Pay my bill</a></li>
+          <li><a href="services.html#water">Start water service</a></li>
+          <li><a href="services.html#quality">Water quality report</a></li>
+          <li><a href="services.html#trash">Trash service</a></li>
+          <li><a href="services.html#animal">Animal control</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Government</h4>
+        <ul>
+          <li><a href="government.html#council">Mayor &amp; council</a></li>
+          <li><a href="government.html#meetings">Agendas &amp; minutes</a></li>
+          <li><a href="government.html#ordinances">City ordinances</a></li>
+          <li><a href="government.html#bids">Bid opportunities</a></li>
+          <li><a href="government.html#tax">Proposed tax rate</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Around Town</h4>
+        <ul>
+          <li><a href="business.html">Business directory</a></li>
+          <li><a href="contact.html">Contact City Hall</a></li>
+          <li><a href="contact.html#faq">Frequently asked questions</a></li>
+          <li><a href="https://portal.civicplus.com/TX-IrionCounty/notifications" rel="noopener">Emergency alerts</a></li>
+          <li><a href="https://www.facebook.com/City-Of-Mertzon-458393450849545/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>Concept redesign by <a href="https://cosmicarcmedia.com" rel="noopener">Cosmic Arc Media</a>. Not an official City of Mertzon website.</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="government.html">Government</a>
+        <a href="services.html">Services</a>
+        <a href="business.html">Business</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
