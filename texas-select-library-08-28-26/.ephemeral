@@ -1,0 +1,2 @@
+2026-10-15
+Texas Select script-library social batch, 80 cards at 1080x1080 for the Cloud Campaign import. Cloud Campaign re-hosts to its own S3 on import, so these copies are disposable after the window. 2x masters live in the vault at client-work/clients/texas-select-insurance/assets/social/2026-08-28-script-library-graphics/.
