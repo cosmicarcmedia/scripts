@@ -76,7 +76,10 @@
   .loc { margin:0 0 40px; }
   .lochd { padding:0 0 10px; margin:0 0 8px; border-bottom:2px solid rgba(255,77,141,0.45); }
   .lochd h3 { font-family:"Space Grotesk",Inter,sans-serif; font-size:23px;
-    font-weight:700; margin:0; color:#fff; }
+    font-weight:700; margin:0; color:#fff; display:flex; align-items:baseline; gap:11px;
+    flex-wrap:wrap; }
+  .gnum { font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+    color:var(--bg); background:var(--pink); border-radius:30px; padding:4px 11px; }
   .lochd .meta2 { font-size:12px; letter-spacing:.11em; text-transform:uppercase;
     color:var(--pink); font-weight:600; }
   .lochd .blurb { font-size:13.5px; color:var(--dim); margin-top:3px; }
@@ -145,7 +148,7 @@
   <div id="v-loc">
     <section class="loc">
       <div class="lochd">
-        <h3>Cactus Hotel</h3>
+        <h3><span class="gnum">Group 1</span>Cactus Hotel</h3>
         <div class="meta2">4 scripts &middot; 3 positions
           &middot; 6m 14s of talking</div>
         <div class="blurb">1A, 1B, 1C</div>
@@ -214,7 +217,7 @@ First commercial oil well in the Permian Basin.</div></div><div class="spot"><di
     </section>
     <section class="loc">
       <div class="lochd">
-        <h3>Chadbourne block</h3>
+        <h3><span class="gnum">Group 2</span>Chadbourne block</h3>
         <div class="meta2">5 scripts &middot; 3 positions
           &middot; 7m 43s of talking</div>
         <div class="blurb">2A, 2B, 2C</div>
@@ -288,7 +291,7 @@ So here is the question almost nobody asks, and almost nobody asks it for them e
     </section>
     <section class="loc">
       <div class="lochd">
-        <h3>Roosevelt Lofts</h3>
+        <h3><span class="gnum">Group 3</span>Roosevelt Lofts</h3>
         <div class="meta2">5 scripts &middot; 3 positions
           &middot; 7m 44s of talking</div>
         <div class="blurb">3A, 3B, 3C</div>
@@ -353,7 +356,7 @@ It is free, it takes a few minutes, and people forget constantly.</div></div></d
     </section>
     <section class="loc">
       <div class="lochd">
-        <h3>Texas Theatre</h3>
+        <h3><span class="gnum">Group 4</span>Texas Theatre</h3>
         <div class="meta2">1 scripts &middot; 3 positions
           &middot; 1m 14s of talking</div>
         <div class="blurb">4A, 4B, 4C</div>
@@ -398,7 +401,7 @@ Every downtown that ever turned itself around did it because somebody finally de
       <summary class="poshd">
         <span class="plet">1</span>
         <span class="pdesc">Conrad Hilton built this and you can live in it</span>
-        <span class="pcnt">Cactus Hotel &middot; 93s</span>
+        <span class="pcnt">Group 1 &middot; Cactus Hotel &middot; 93s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>Conrad Hilton built this. You can live in it.</span></div>
@@ -420,7 +423,7 @@ Think about that for a second.</div></div><div class="spot"><div class="slbl"><s
       <summary class="poshd">
         <span class="plet">2</span>
         <span class="pdesc">One man designed forty buildings down here</span>
-        <span class="pcnt">Cactus Hotel &middot; 88s</span>
+        <span class="pcnt">Group 1 &middot; Cactus Hotel &middot; 88s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>One man designed 40 buildings down here.</span></div>
@@ -440,7 +443,7 @@ It means the building you are considering has siblings.</div></div><div class="s
       <summary class="poshd">
         <span class="plet">3</span>
         <span class="pdesc">You can own the property and not what is under it</span>
-        <span class="pcnt">Cactus Hotel &middot; 102s</span>
+        <span class="pcnt">Group 1 &middot; Cactus Hotel &middot; 102s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>You can own it. Not what&#x27;s under it.</span></div>
@@ -460,7 +463,7 @@ They have to give you notice before drilling a new well, they cannot be negligen
       <summary class="poshd">
         <span class="plet">4</span>
         <span class="pdesc">This dirt paid for two universities</span>
-        <span class="pcnt">Cactus Hotel &middot; 91s</span>
+        <span class="pcnt">Group 1 &middot; Cactus Hotel &middot; 91s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>This dirt paid for two universities.</span></div>
@@ -479,7 +482,7 @@ All of it off land people had written off as good for nothing but running goats.
       <summary class="poshd">
         <span class="plet">5</span>
         <span class="pdesc">The town name is a corrected typo</span>
-        <span class="pcnt">Chadbourne block &middot; 92s</span>
+        <span class="pcnt">Group 2 &middot; Chadbourne block &middot; 92s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>This city&#x27;s name is a fixed grammar mistake.</span></div>
@@ -500,7 +503,7 @@ You can definitely see it in the fact that a downtown this size has a fourteen s
       <summary class="poshd">
         <span class="plet">6</span>
         <span class="pdesc">The city told a bank no</span>
-        <span class="pcnt">Chadbourne block &middot; 90s</span>
+        <span class="pcnt">Group 2 &middot; Chadbourne block &middot; 90s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>The city told a bank no.</span></div>
@@ -518,7 +521,7 @@ That is a review. A bank with lawyers just found that out in public.</div></div>
       <summary class="poshd">
         <span class="plet">7</span>
         <span class="pdesc">A whole neighborhood here does not own its own dirt</span>
-        <span class="pcnt">Chadbourne block &middot; 96s</span>
+        <span class="pcnt">Group 2 &middot; Chadbourne block &middot; 96s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>A whole neighborhood here doesn&#x27;t own its own dirt.</span></div>
@@ -539,7 +542,7 @@ Three questions, and ask them out loud.</div></div><div class="spot"><div class=
       <summary class="poshd">
         <span class="plet">8</span>
         <span class="pdesc">Ron Swanson would move here for the water law</span>
-        <span class="pcnt">Chadbourne block &middot; 94s</span>
+        <span class="pcnt">Group 2 &middot; Chadbourne block &middot; 94s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>Ron Swanson would move here for the water law.</span></div>
@@ -559,7 +562,7 @@ So is the risk.</div></div>
       <summary class="poshd">
         <span class="plet">9</span>
         <span class="pdesc">Hank Hill would understand this question</span>
-        <span class="pcnt">Chadbourne block &middot; 91s</span>
+        <span class="pcnt">Group 2 &middot; Chadbourne block &middot; 91s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>Hank Hill would understand this question.</span></div>
@@ -577,7 +580,7 @@ Over ten years it is a genuinely irritating number to find out about late.</div>
       <summary class="poshd">
         <span class="plet">10</span>
         <span class="pdesc">This building was boarded up eighteen months ago</span>
-        <span class="pcnt">Roosevelt Lofts &middot; 87s</span>
+        <span class="pcnt">Group 3 &middot; Roosevelt Lofts &middot; 87s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>This was boarded up eighteen months ago.</span></div>
@@ -595,7 +598,7 @@ They keep a block alive after five o&#x27;clock, they are what makes a restauran
       <summary class="poshd">
         <span class="plet">11</span>
         <span class="pdesc">Forty-five cents back on every rehab dollar</span>
-        <span class="pcnt">Roosevelt Lofts &middot; 102s</span>
+        <span class="pcnt">Group 3 &middot; Roosevelt Lofts &middot; 102s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>Forty-five cents back on every rehab dollar.</span></div>
@@ -614,7 +617,7 @@ And honestly, for the wrong buyer, that is exactly what they are.</div></div><di
       <summary class="poshd">
         <span class="plet">12</span>
         <span class="pdesc">Every branch of the military trains in this town</span>
-        <span class="pcnt">Roosevelt Lofts &middot; 97s</span>
+        <span class="pcnt">Group 3 &middot; Roosevelt Lofts &middot; 97s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>Every branch of the military trains in this town.</span></div>
@@ -632,7 +635,7 @@ There is a funding fee, and it moves depending on your down payment and whether 
       <summary class="poshd">
         <span class="plet">13</span>
         <span class="pdesc">Your tap water drives sixty-two miles to reach you</span>
-        <span class="pcnt">Roosevelt Lofts &middot; 92s</span>
+        <span class="pcnt">Group 3 &middot; Roosevelt Lofts &middot; 92s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>Your tap water drives 62 miles to reach you.</span></div>
@@ -648,7 +651,7 @@ Same part of the state. Two totally different water stories, with two totally di
       <summary class="poshd">
         <span class="plet">14</span>
         <span class="pdesc">Your school taxes just got cheaper</span>
-        <span class="pcnt">Roosevelt Lofts &middot; 86s</span>
+        <span class="pcnt">Group 3 &middot; Roosevelt Lofts &middot; 86s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>Your school taxes just got cheaper.</span></div>
@@ -666,7 +669,7 @@ It is free, it takes a few minutes, and people forget constantly.</div></div><di
       <summary class="poshd">
         <span class="plet">15</span>
         <span class="pdesc">Empty since 1983 and still looking</span>
-        <span class="pcnt">Texas Theatre &middot; 74s</span>
+        <span class="pcnt">Group 4 &middot; Texas Theatre &middot; 74s</span>
       </summary>
       <div class="posbody">
         <div class="onscr"><b>On screen</b><span>Empty since 1983. Still looking for someone.</span></div>
