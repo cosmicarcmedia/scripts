@@ -12,165 +12,132 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #040210;
-    --bg-mid: #0c0622;
-    --pink: #ff4d8d;
-    --pink-soft: #ea4c83;
-    --purple: #6a44d6;
-    --violet: #8b5cf6;
-    --glass: rgba(255,255,255,0.055);
-    --glass-2: rgba(255,255,255,0.085);
-    --glass-border: rgba(255,255,255,0.14);
-    --text: #ffffff;
-    --muted: #b9aad6;
-    --dim: #6f5fa6;
+    --bg:#040210; --bg-mid:#0c0622; --pink:#ff4d8d; --pink-soft:#ea4c83;
+    --purple:#6a44d6; --violet:#8b5cf6;
+    --glass:rgba(255,255,255,0.055); --glass-2:rgba(255,255,255,0.085);
+    --glass-border:rgba(255,255,255,0.14);
+    --text:#ffffff; --muted:#b9aad6; --dim:#6f5fa6;
   }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
   body {
-    margin: 0;
-    background: var(--bg);
+    margin:0; background:var(--bg);
     background-image:
       radial-gradient(900px 620px at 12% -8%, rgba(255,77,141,0.20), transparent 62%),
       radial-gradient(760px 560px at 92% 4%, rgba(106,68,214,0.24), transparent 60%),
       linear-gradient(178deg, var(--bg) 0%, var(--bg-mid) 46%, var(--bg) 100%);
-    background-attachment: fixed;
-    color: var(--text);
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height: 1.62;
+    background-attachment:fixed;
+    color:var(--text);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    line-height:1.62;
   }
-  .wrap { max-width: 800px; margin: 0 auto; padding: 34px 20px 84px; }
-
-  .brand { display: flex; align-items: center; gap: 11px; margin-bottom: 34px; }
-  .brand img { width: 34px; height: 34px; display: block; }
+  .brand { display:flex; align-items:center; gap:11px; margin-bottom:30px; }
+  .brand img { width:34px; height:34px; display:block; }
   .brand span {
-    font-family: "Space Grotesk", Inter, sans-serif; font-weight: 600;
-    font-size: 13px; letter-spacing: .17em; text-transform: uppercase;
-    color: var(--muted);
+    font-family:"Space Grotesk",Inter,sans-serif; font-weight:600; font-size:13px;
+    letter-spacing:.17em; text-transform:uppercase; color:var(--muted);
   }
-
-  header { margin-bottom: 30px; }
   .eyebrow {
-    font-family: "Space Grotesk", Inter, sans-serif; font-size: 12px;
-    letter-spacing: .18em; text-transform: uppercase; font-weight: 600;
-    color: var(--pink); margin: 0 0 12px;
+    font-family:"Space Grotesk",Inter,sans-serif; font-size:12px;
+    letter-spacing:.18em; text-transform:uppercase; font-weight:600;
+    color:var(--pink); margin:0 0 12px;
   }
   h1 {
-    font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700;
-    font-size: clamp(32px, 7vw, 50px); line-height: 1.06; margin: 0 0 12px;
-    letter-spacing: -.02em;
-    background: linear-gradient(160deg, #fff 8%, #ffc9dd 44%, var(--pink) 78%, var(--violet) 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
+    font-family:"Space Grotesk",Inter,sans-serif; font-weight:700;
+    line-height:1.06; margin:0 0 12px; letter-spacing:-.02em;
+    background:linear-gradient(160deg,#fff 8%,#ffc9dd 44%,var(--pink) 78%,var(--violet) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  .sub { color: var(--muted); font-size: 15px; margin: 0; }
+  .sub { color:var(--muted); font-size:15px; margin:0; }
   .rule {
-    height: 2px; margin: 26px 0 28px; border: 0; border-radius: 2px;
-    background: linear-gradient(90deg, var(--pink), var(--purple) 46%, transparent 92%);
+    height:2px; margin:24px 0 26px; border:0; border-radius:2px;
+    background:linear-gradient(90deg,var(--pink),var(--purple) 46%,transparent 92%);
   }
-
-  .intro { font-size: 17.5px; margin: 0 0 20px; color: #efeaff; }
-  .note {
-    background: var(--glass); border: 1px solid var(--glass-border);
-    border-left: 3px solid var(--pink);
-    padding: 15px 17px; border-radius: 4px 12px 12px 4px;
-    font-size: 15px; color: var(--muted); margin: 0 0 38px;
-  }
-
   h2 {
-    font-family: "Space Grotesk", Inter, sans-serif; font-size: 12px;
-    letter-spacing: .18em; text-transform: uppercase; color: var(--dim);
-    font-weight: 600; margin: 0 0 14px;
+    font-family:"Space Grotesk",Inter,sans-serif; font-size:12px;
+    letter-spacing:.18em; text-transform:uppercase; color:var(--dim);
+    font-weight:600; margin:0 0 14px;
+  }
+
+  .wrap { max-width:800px; margin:0 auto; padding:34px 20px 84px; }
+  h1 { font-size:clamp(32px,7vw,50px); }
+  .intro { font-size:17.5px; margin:0 0 20px; color:#efeaff; }
+  .note {
+    background:var(--glass); border:1px solid var(--glass-border);
+    border-left:3px solid var(--pink); padding:15px 17px;
+    border-radius:4px 12px 12px 4px; font-size:15px; color:var(--muted);
+    margin:0 0 38px;
   }
   .logi {
-    background: var(--glass); border: 1px solid var(--glass-border);
-    border-radius: 14px; padding: 4px 18px; margin: 0 0 40px;
-    backdrop-filter: blur(8px);
+    background:var(--glass); border:1px solid var(--glass-border);
+    border-radius:14px; padding:4px 18px; margin:0 0 40px;
   }
-  .lrow {
-    display: flex; gap: 16px; padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-  }
-  .lrow:last-child { border-bottom: 0; }
+  .lrow { display:flex; gap:16px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.07); }
+  .lrow:last-child { border-bottom:0; }
   .lrow dt {
-    flex: 0 0 88px; font-size: 11px; letter-spacing: .13em; text-transform: uppercase;
-    color: var(--dim); font-weight: 600; margin: 0; padding-top: 4px;
+    flex:0 0 88px; font-size:11px; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--dim); font-weight:600; margin:0; padding-top:4px;
   }
-  .lrow dd { margin: 0; font-size: 15px; color: #eae4ff; }
-
-  .tools { display: flex; gap: 9px; margin: 0 0 18px; }
+  .lrow dd { margin:0; font-size:15px; color:#eae4ff; }
+  .tools { display:flex; gap:9px; margin:0 0 18px; }
   .tools button {
-    font: inherit; font-size: 12.5px; font-weight: 500; cursor: pointer;
-    background: var(--glass); color: var(--muted);
-    border: 1px solid var(--glass-border); border-radius: 30px; padding: 7px 16px;
-    transition: color .16s, border-color .16s;
+    font:inherit; font-size:12.5px; font-weight:500; cursor:pointer;
+    background:var(--glass); color:var(--muted);
+    border:1px solid var(--glass-border); border-radius:30px; padding:7px 16px;
   }
-  .tools button:hover { color: var(--pink); border-color: var(--pink); }
-
+  .tools button:hover { color:var(--pink); border-color:var(--pink); }
   .card {
-    background: var(--glass); border: 1px solid var(--glass-border);
-    border-radius: 14px; margin-bottom: 10px; overflow: hidden;
-    transition: border-color .16s, background .16s;
+    background:var(--glass); border:1px solid var(--glass-border);
+    border-radius:14px; margin-bottom:10px; overflow:hidden;
   }
-  .card:hover { border-color: rgba(255,77,141,0.42); }
-  .card[open] { background: var(--glass-2); border-color: rgba(255,77,141,0.34); }
+  .card:hover { border-color:rgba(255,77,141,0.42); }
+  .card[open] { background:var(--glass-2); border-color:rgba(255,77,141,0.34); }
   summary {
-    cursor: pointer; list-style: none; padding: 15px 18px;
-    display: flex; align-items: baseline; gap: 13px; flex-wrap: wrap;
+    cursor:pointer; list-style:none; padding:15px 18px;
+    display:flex; align-items:baseline; gap:13px; flex-wrap:wrap;
   }
-  summary::-webkit-details-marker { display: none; }
+  summary::-webkit-details-marker { display:none; }
   .num {
-    flex: 0 0 auto; font-family: "Space Grotesk", Inter, sans-serif;
-    font-weight: 700; font-size: 14px; min-width: 24px;
-    color: var(--pink);
+    flex:0 0 auto; font-family:"Space Grotesk",Inter,sans-serif; font-weight:700;
+    font-size:14px; min-width:24px; color:var(--pink);
   }
-  .ttl { flex: 1 1 210px; font-weight: 600; font-size: 16.5px; }
-  .meta { flex: 0 0 auto; display: flex; align-items: center; gap: 8px; }
-  .grp, .dur {
-    font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
-    border-radius: 30px; padding: 4px 11px; white-space: nowrap;
-    border: 1px solid rgba(255,255,255,0.12);
+  .ttl { flex:1 1 210px; font-weight:600; font-size:16.5px; }
+  .meta { flex:0 0 auto; display:flex; align-items:center; gap:8px; }
+  .grp,.dur {
+    font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    border-radius:30px; padding:4px 11px; white-space:nowrap;
+    border:1px solid rgba(255,255,255,0.12);
   }
-  .grp { color: var(--muted); background: rgba(255,255,255,0.05); }
-  .dur { color: var(--pink-soft); background: rgba(255,77,141,0.10);
-          border-color: rgba(255,77,141,0.26); }
-  .body {
-    padding: 2px 18px 20px; border-top: 1px solid rgba(255,255,255,0.08);
-    margin-top: 2px;
-  }
-  .body p { margin: 15px 0 0; font-size: 16.5px; color: #eee9ff; }
-
+  .grp { color:var(--muted); background:rgba(255,255,255,0.05); }
+  .dur { color:var(--pink-soft); background:rgba(255,77,141,0.10);
+         border-color:rgba(255,77,141,0.26); }
+  .body { padding:2px 18px 20px; border-top:1px solid rgba(255,255,255,0.08); }
+  .body p { margin:15px 0 0; font-size:16.5px; color:#eee9ff; }
   footer {
-    margin-top: 50px; padding-top: 22px;
-    border-top: 1px solid rgba(255,255,255,0.09);
-    color: var(--dim); font-size: 13px;
+    margin-top:50px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.09);
+    color:var(--dim); font-size:13px;
   }
-  footer strong { color: var(--muted); font-weight: 600; }
-
-  @media (max-width: 460px) {
-    .meta { width: 100%; padding-left: 37px; }
-    .lrow { flex-direction: column; gap: 3px; }
-    .lrow dt { flex: none; padding-top: 0; }
+  footer strong { color:var(--muted); font-weight:600; }
+  @media (max-width:460px) {
+    .meta { width:100%; padding-left:37px; }
+    .lrow { flex-direction:column; gap:3px; }
+    .lrow dt { flex:none; padding-top:0; }
   }
 </style>
 </head>
-<body>
-<div class="wrap">
-
+<body><div class="wrap">
   <div class="brand">
     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAACXBIWXMAABYlAAAWJQFJUiTwAAAgAElEQVR4nO3d7VUcR9oG4Nt79r95I/A4ArMReByB2Qg8jsA4AssRLIrAowhWisAQwYoIDBGsiMDvj6IXjJCYj/6orr6ucziSLegpvvruqnqq6os///wzAMC8/W3qBgAAxxPoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADfj71A0AoHpnSU6TrJ/8/8skH+7/fD9qi/jIF3/++efUbQCgTmdJLpJ8tcP73iV5m2SbEvCMTKAD8JxNkt8O/NjbJK9Swp2RCHQAnlol+aOH61wnOY8e+ygUxQHw1KuervNNkt9Thu1Peromn6CHDsBTH5J82fM1b1Pm5BXPDUQPHYCn+g7zpBTWXabMzTMAgQ7AWL5MKbR7NXE7mmTIHYCnxgiGN9Fb75UeOgBPXY/wGj9ET71XAh2Ap8YqXPsleum9EegAPHUz4mtdpGwry5EEOgBPjbm07MvYUa4XAh2Apz6M/HrfxHz60QQ6ADU4T9lylgNZtgbAc6YIB0vZjiDQAXjOVOHwdcYtymuGIXcAanI+dQPmSg8dgOdMFQ53cTLbQfTQAXhqynXhX8Y8+kEEOgBPTd1DPpv49WdJoANQm++nbsAcCXQAnpp6K9bbiV9/lgQ6AE/1NeR+m+R1ku+S/F+SLx69fZ3kn/f//vh0t7uodD/I36duAADVWR358bcpW7luP/M+N/dvb+//+yRlZOB9xt96tgkCHYCnVkd87K85bF/2D0kuj3jdxbMOHYCnPqQsH9vHXUp1+mXvrWEnAh2Ap/YNhrsk64x77CpPKIoD4LF9C+KEeSUEOgCP7RvoZxHmVRDoADx2s8f7/hxz5tUQ6AA8dbfD+7xJcjF0Q9idQAfgqbcv/Pu7OEClOqrcAXjqJGXo/bmla12Y2/ylMnroADz1IWVzmTd5GH6/Tdk05izCvEp66ADQAD10AGiAQAeABgh0AGiAQAeABgh0AGiA89CBsa1y3Hnb72PZFHxEoAPHWt2/nSQ5vf9/p3k45OM0+5+tvY+rR3+/vP+zC/2b7Lc3OcyWdejALrqwPk0J7+7Pr6Zr0l6uUwL+Mg8hfzlZa2AAAh146nFwrzN8D3tKtym9+fcpAW84n9kS6LBsXc97nfbDe1fXeQj4yxiyZyYEOizPOmU/7nWSbyZtyTzcpZw+dhkBT8UEOrRvlYcA/37SlrThNg8B/9IxozAagQ5tOk054vIs8ylcm6O7PAT725h/Z0ICHdohxKf3LsKdiQh0mLdVSohvIsRr04X7duJ2sBACHeZpc//27bTNYAddUd1FSvU8DEKgw3yskpynBPnSl5bN1W1KsG9jSJ6eCXSo31lKkOuNt6Prtb+KZXD0RKBDvTYpN3xz4227Svk+X07bDOZOoENdTlJ64+cxrL40VylD8dtpm8FcCXSogyCnc5vSY99O2wzmRqDDtAQ5n2Ionr0IdJjOJqXiWZDzOVcpD3yWvPFZf5u6AbBAZymVzb9FmPOyb5P8J+Xh72TitlAxPXQYzyplXtTyMw51l9Jb307cDiqkhw7DO0npXf0RYc5xvkwZ2blM2bsf/kegw7DOUuY+f5q6ITSlG4Z/NXE7+nCacrSv6YQjCXQYxknKTmD/jo1hGM4vKQ+Mc+utr1KmDf5MeTD5Pcl/U2pL1AocSKBD/85TbkzfT9wOluGblCH484nbsatNykPID8/821cpo1k39+/HHhTFQX9OUnodgpypvEsJwloPfjlNefjYdXXHj1EAuDOBDv04S7nxWIbG1G7zULtRm/cpIwr7+C4219mJIXc43kXKXLkwpwZfpQTgZtpmfGST/cM8Kb9f7EAPHQ53mtIrP+QmBWN4nXrm1m9yeIGoXvoO9NDhMGcpNxhhTs1+SnnonLpq/DTHrfbY9NSOpgl02J8hdubkh5SHzylDfXPkx696aEPzDLnD7rq15XZ7Y46u83COwNhuclwP/S7TjzJUTw8ddtMttxHmzNU3mWYTmlVsrjQKgQ4v68LcfDlz92XG3wd+3cM1alyCVx2BDp+3Sdma0nw5rRg71Ncjvc7iCXT4tE3KyVbQmjFDvY/XqHXnu6oIdHjeNsKctn2ZUuQ5dLFZH1NVhtx3INDhY9s8f3AEtKbbVW6oUF8PdF2eIdDhr7YR5izLKsMFel9D+jc9XadpAh0ebCPMWZa7lF70zUDXX/V0nZuertM0gQ7FNsKcZenCfMj56bHXvC+aneJAmLM8Y4R5UqrT+1jy+X9R6f4igc7SbSPMWZaxwjxJ+gqYL3q6TtMMubNk5xHmLMuYYb7u6TrXPV2neQKdpdok+dfUjYARjRnmSX+V84badyTQWaJ1bBrDsowd5kl/BXE2ldmRQGdpTlN2x4KlmCLMk/566Dc9Xad5Ap0l6c4zd9AKSzFVmCd66KMT6CzJZZzLzHJMGeZJfz10gb4jgc5SbOM8c5Zj6jBP+vl9u42iuJ0JdJZgE8vTWI4awryv4fbLnq6zCAKd1p0muZi6ETCSGsI8EeiTEOi07CRlqF0RHEtQS5gnAn0SAp2WXcS8OctQU5gn/ewSdx1L1vYi0GnVWcybswy1hfkq/TxIb3u4xqIIdFq0ipsBy1BbmCflYboPNoDa09+nbgAMYBvz5rW6SwmfmzwMp14+eZ/H/5aUWoinc7Lr+z9PH/370r7nNYZ5UlaVHOsqhtv3JtBpzXmSb6duBEnKHOhlyo35fQ4vcPrwzMc+d60u2Lu3ddrdSKjWMD+N4fbJOA+dlqxSbnBL66nVogvw7q2GDUFWKSFzlnYCvtYwT0oQH1u7cpvyfWNPAp2WvE3y/dSNWJh3KeH9NvMYIu167pvMcwVEzWG+TvJ7D9f5MXroBxHotOIsyb+nbsRC3KYsCZxLiH/KKiXYN5lHz73mME9Ku459SLpOf2vYF0eg04KTlJvJHG7Kc/Ymped0OW0zBrFO3VsE1x7mr5L80sN1vkubP1+jEOi04FX6uZnwsbuUEL/IvHvju1qlBPt56qnFqD3M+xode5N+KuQXS6Azd6skf0zdiAbdpYT4ReoobhvbSUqoTx3stYf5aUqP+tiv0V3K7/ISf9Z6I9CZu8tYpta3NylB5ub6EOxTjAAtJcyT5J+xkczRBDpztk4/VbUUVylDnjfTNqNKq5Sph7EeHmsP85OUn5M+wvx1ykMTRxLozNlNFML14TblhqqH9LKzDL8T4RzC/DL9LPtT1d4je7kzV5sI8z68TrmhCvPdvE3prV8NdP0lhXn3udITPXTm6iYC/Rh3Kb3Ny4nbMWfnSf7V4/WWGOa1fq6zpIfOHG0izI/xLqWXeTltM2bvImXd9F0P16o94PoM86Q8TNb6uc6WQGeOXk3dgBn7OeVmqoK9H5cpQXx9xDWWFuY/xsPkIAQ6c7OJ3vkh7lJ6kxdTN6RB73N4qC8xzLc9XYsnzKEzNzcR6Pu6TnkQqjU0WrFv+NUe5l2xZB+/b3cpP4OKLwfkPHTmZBNhvq/rlNAwxD68Dylf68u8HOpzCPPL9LM8r/bPtRmG3JmTV1M3YGbeRZiPrQv1zw2/1x5wmwjzWRLozMVZ9M738SaK36byIeVr/1z1e+0Bd57kt/QT5t2mMbV+rs0xh85cXMae7btyalUdTpP859F/1x7m2/R3fKypngnooTMHpxHmu+r2Y2d671OqupO6w7wr5usrzN9EmE9CURxz4OCG3VynDPVSj23KA+k2dYZ517a+lqUZHZqQIXdq1+epTi0zxMm+1inLyPr63bLGfGKG3KndJsL8Jd0aX2HOrjYpRw/3Vcn+zwjzyemhU7ubqG5/yXexlSa726a/+fKaawMWRw+dmp1GmL/k1whzdnOSMsTeZyX7KsK8GgKdmimG+7x3sdkOu+kq2b/v6Xo2LaqQIXdq9iHmzz/lLqV35IbKS/rcxjVRyV4tPXRqdRZh/jl2gWMXfYf5zxHm1RLo1Mp66k97HfPmvGydfsP8xzh+t2qG3KmV4fbn3ab0uvTO+ZxNyp7sfbhLecC+7Ol6DMROcdTIcPunnUeY83mb9Bvm66hknwVD7tTIcPvzrlKWHcGnbCLMF8uQOzUy3P68r1M22oHnrFN2f+vDbcqDtTCfEUPu1OY0wvw5v0aY82mn6W/0xrkAM2XIndoYbv/YXVQXD22dsvnKHK3SXzW7cwFmTKBTG4H+sYu4wQ5hkzKk/GfKUPV/U3q5cwr2bjvXvsJ8HcPss2UOnZqcpNxUeWBHuP51IfjtJ/7918xnS9236Wc7V2HeAD10arKeugEV0jvv12lKaH0qzJP5/Byep7+92c8jzGdPoFOT9dQNqIy5836dpBwd2sIJfqdJ/tXTtV7HWeZNEOjUZD11Ayqzjd55n94m+WbH96tZN2XQh6s41bAZ5tCphfnzj1l33p9Vkj92fN/av+59zpufpu7PlT3ooVOL06kbUJl3caPt066rJ16n7q973/PmNz1diwoIdGqxnroBldlO3YDG7LIU7Sp1V7f3OW/+Ln7GmiPQqYUe+oPb1D+POzfblCHm59ylLFVbp96aha6grw/XcaZ5k2z9Si3WUzegIsK8fzcpP2Ov8tfe+tvMo/jwIrsV9L3ETnANUxRHDRTE/dU/Yk0wDzbp7wQ1P1sNM+RODQy3P7iOGy4PVulvL4If42eraQKdGqynbkBFDLfzWF/7tP8YRXDNE+jUYDV1Ayoi0On0NW8uzBdCoFOD1dQNqMRtDIlSnCX5qYfrCPMFEejU4HMHZSzJ5dQNoAp9LVET5gsj0JnanM6eHprhdpJ+5s2F+QIJdKamwv3B5dQNYHKvcvyIlTBfKIHO1FZTN6ASt7HZx9Ktk/xy5DWE+YIJdKa2mroBlbicugFMqo95c2G+cAKdqa2mbkAlVLcv29skXx3x8cIcgc7kVlM3oBICfble5bh5858jzIm93Jne+/SzecbcfTF1A5jEJsft0/4mTk7jnkBnan4Ay/7tqv2X5zTJf474eGHOXxhyh+ndTN0ARnea4wohhTkfEehMaTV1Ayph/nxZujA/dPMYYc6zBDpTWk3dgErcTN0ARiPMGYxAh+ndTN0ARiHMGZRAh+nZIa59mxwX5q8jzHnB36duAIumsrswh962VzluS1ebxrATgc6UnLRGy7rtXL8/8OPvkpxHmLMjgQ7Tup26AQxinRLEh27nend/DaM37MwcOkzrZuoG0KuTJBdJfs/hYX6dsgJEmLMXgQ7Qj7OUEP7piGu8SaktUSjJ3gQ6wHHWKRXs/85xQ+w/RiU7RzCHDnCYdY4/KS0pQ+ybGGLnSAKdKa2nbkAF3MTnZ3P/dmyQJ2V9+XkP1wGBDhMzVzoPp3kI8kM3h3nsNg+bzUAvBDrA885SRpHOcvjc+HNepwzVe5ijVwIdoDjJX0O8j574Y3rlDEqgA0vWhfhZDt/RbRe/pqxP1ytnMAKdKd2kn8KiObOf/fjGCvEkuUrpld8M/Dog0JnUzdQNqID97MdzlhKuQ4d4YnidCdhYBmjZacqe6h9SNn4ZOsxvUzaIWaW9MF+lTBtcJvkz5Wv6NjbDqYYeOtCidfrZ9GVXdylh1+o8+Sblc3tcKPhlygPS93lY0nczbrN4TKADLVlHkPdtm+SHF97n25RNktaxWdJkBDpMS1FcP7pTzl4Knj61vp78JGV4/Zsd3//L+/c/jZ76JMyhw7T6Xuu8RJuUABkrzN8l+Tply9ZWw7wL5V3DvPNlSo+eCQj0Np2kDH2tpm3GiwzNcYyTlKKs3zLOg9F1ku9SquVvRni9qWxSetqHfk2/jZGnSQj0dmxSbm5/Jvlvkt+T/HH/30/fLlPHcqlWezf7Wk/dgBlap4TqGEvQ7pL8nBJSlyO83pQu0s8D0lkPbWFP5tDnr1uWs8/Q2Ld5mOuCuTlP8q+RXutdysNy6w+fJyn3kTEekBiIHvq8bbJf0cpj32T6QG/9Jrmrqb8Pc7LNOGF+m4fh9dZ/TruRB2E+cwJ9vjY5fmhs6huVOfSihumPOdhmnMK311nG8HpSpi4uc1in4HOmvrcskiH3eTpNmes6xm3aLuyZk/XUDZiBbYYP86Vt17pJ6RQM4e1A1+Uz9NDnp6vsPbZopZZfuNupG1CB1dQNqNw2w4f5knrlSfmaDhXmV9FZmIQe+vy8SvJVD9c5toffl5v08/nM2dI//8/ZZtgwX1qvfOjit7vY230yeujzcprkpx6u82vqeYI211asp25AhbYZNszfZFm98m7ntyGL39ap596yOAJ9Xs57uMZ1Si+/FgrjCpXuD7pppaHC/C7JP7OM5Wid05Tftb6L3zp3Sf4Rv8+TMuQ+H6scf4OrcThsKTfUlwj0Yt/9w/d1leWdCtaNQgy1m94Sv6ZV0kOfj2N3XrpLnSch1daeqaynbkAFuuAZKsx/zfKGhIcM89uUkY51lvU1rZYe+nysj/jY25QHghrDUw+9+Cqld7rUr8c6/azeeM7SCt86Q4T5Xcr3aZvlfT2rJ9DnY3Xgx9W+dWWNDxlTWaee5YRj2mS4JVS1//wPpa8wv7q/zmXK19Dva8W++PPPP6duA7vZ9xt1l1JEt+2/Kb0bslhnTt6kvhqHoW0zXPHbz6lneeaYjg3zdynflyU+XM6aHnqbXqdUss+lV3ITgZ4sax59yOK3WutFxtCtMz8kzN+k3Ddu+msOY1IUNx+77Kj2JsnXKT3zuYR5sswb73O+yjKq3U8z3EPcVcr01BJ/pg59SOruG5sI81kT6POx/cT/v0up3p3zL+QSb76fsp66AQM7T/KfDFP81lWxz+lhtk8X2S/Mr1NOlNtknvcNnjCHPi+vUn75uifxbdqY5zpNuclTbrIt9tJPUgJniPnybn+FFn4XDrVO8vse7/9r6tpgih4IdGrhB/HB12mrx3Sa8vA5xBD7dcqSzJsBrj0n2+z2sLTUJXyLYMidWlxN3YCKbKZuQI/OMlzx25vY1KSz2uF93mVZe9cvjkCnFubRH2ymbkBPLpL8O8PMl/+YZa4v/5SXpht+Tnm48vVqmECnFpdTN6AiX2XexXGrlAe0Pk4GfKo7BGQ7wLXnbJsy/fDUVcrXa4nr8RfHHDq1WCX5Y+pGVGSum8yc5fB10C+5zrKr2F9ykrKKYJ3yNbqIB+VFEejU5Cald0rxf5lXeF1kmF55UjZL6uP4YGiWIXdqcjl1AyozlwBbZdgh9h8zn68FTEagU5PLqRtQmTmEWHeK3xBV7Lcpw8fbAa4NzRHo1ORy6gZU5svUO4/ebRQzVBX7VcoSK6sfYEfm0KnNTcyjP3abw4/OHcqQG8UkdjGDg+ihU5slb9/5nK9SVy/9Vco2vUOdkvbPCHM4iECnNpdTN6BCr6ZuQMoowWWSXwa6frckzQMdHEigUxs39I99lWkL5DYpc9nfDnT9bgtX8+VwBHPo1Ohtku+nbkRl7lJ6yWOuSz9JmSsf8nvxc+xiBr3QQ6dGeukf+zLjDr13J5gNFea3sSUp9EoPnRqdJPnv1I2o1D8y7ND0GL3yd3GwCvROD50afUi56fOxIXu05xm2V5449QsGI9CplWH3532b/gvkVikV7P/KMJvEJIbYYXCG3KmVYfdPu0vZ3OWmh2u9SnlAGCrIE0PsMAo9dGpl2P3Tvszx+5uvUx4IfsmwYW6IHUby96kbwGycpfQKkxIEl+mnh/g521i+9px3OXzYvduD/Yf+mvOs6zysXwdGYMidzzlJCY5PDcmOcUb1h0+89hLdpoTk5YEff54yxD701/P1/evolcOIDLnznFVK7/i/+fyQ7E8Z/mjLoa8/F69TRkguD/jYdcpoypBFb8nDXuznEeZPnaauPflpkB46j52k9Kx+2vPjvstwe7Cvkvwx0LXn4C4lCA6p+l+lPBANtWXrYwrfPu0k5ffjmyQ/xkMqA9FDp3OWMt+5b5h3HzuUm5SzsZfoOqVnt2+Yd5vD/JHhw/wuCt9ecpGH0+l+i0BnIAKds5Tew79z+Dnkpy+/y1GWuHb5XR6GynfVjbDcZPiit6Q8aJ1mmd+fXZ3n4+/FDxHqDECV+zKtU4L8LIeH+JjephSEzaGtfTjkwJLN/ceMUUB4l/LgIMg/b5NSt/CcHx69D/RCoC/DKg8hvs48q8Yv8umbYysOWep1mtLb++aF9+vLVUobb0Z6vbk6TRle/xyhTq8UxbXrJCXAzzP8zf4q5UFhSCcpITLHh5Fd/Jry0LLrPPShBYyHukv5WdqO9Hpz1q1G2PVn9Trl90cNAkcxh96edR6WnP2W8XpuQ/uQNod4r1L2OH+V3W/oXWCMFebv8lAxz+ftG+ZJ+R29THlIg4MJ9HZsUm4Kv2ecgqjHLkd6ne1IrzOG25TlfuvsN8S+ycMSqKF1bVTBvptDwrwj1DmaQJ+/s5Sh6N8yznrjKd0keTN1I450lbIWeZX9H4QuUr7PQ0873KVMAawy3sPa3HWrRY753gh1jmIOfb7WKcO0NYT4mJtlrDLPjWbepHyNLg/42JOUSv+xNojpzkVnN5u8XAC3j7vsP3IDeugz1G0a8nvqCPNk3Jv/TebTS79NWYL2dQ7fg32d8jkP/b2+zsPw+s3Ar9WSbfoN86T08i8z/P4ONEYPfV7OUm4gtVV6D7n163NWqbeXfp3ytdjmuB7WWFXsqtcPs0oZNRmylkFPnb0I9HnoeuW1HiX6j4x/07nIeFXen3OXEuBv09+Rsmcpn9/QG+nYf/0wYz5YC3V2JtDrt04Ji9p65Y99McFrTrUu/Trl5vo+JcD7vNGuMs5hKscc+LJkY6/9f8yhLrzITnF1O0/7u6MdqluX/stA17/LQ3Df5CHAh7BKCYoxlhvqlR9mnRKoU20/3M3Tbyd6fWZAD71e24y/nvxQ/5dpAuIkJWiPvcle5ePwHuPzWWW8INcrP8wq5cGxlukuPXU+SaDX5/HZyXMxdlHcY5vsV2V8m9LWyzyE+NjWKe0e64HtdfbbiY7ye3h+/1bbdJdQ51kCvS5zDPNk2kDP/Wt/bt75XR4K126Gb86zTlJC/DzjDdseepDKKg/HsO6zv3wrNhnv5LpDvYlDXXhCoNdjrmGeHHbcZ59Ok/znyf97lxLgbzNdIHUH5Jxl3CHb2xy+7v1V/torvUvpDV6k7fXp3ffqVeZzTK9Q5y8Eeh3mHOZJGdI9n7gNF3lYTrTNdOGzysMxtWPPux5zTvkux7C+u3+flubhV3kYOam5R/4pQp3/EejTm3uYJ+Mcn1qrVcrn3r1N1bs7Zp78VfZbLXCbEurbzHN99FQjJ0MR6iQR6FNrIcyT0jNcwoESJyk92fWjP6fu1R06T57s1it/SRfu3cY6tWotxJ9ypjoCfUKthHnn67Qzx7q6fzt99Odppg/vx65ThokvD/z4V+l/DX+3a163Zv+y5+vv4yR/HTlp5ffsc4T6wgn0abQW5knyz8xzbvX0yVstB958ym1KGG8P/PixtpXtdDvr3eRhff9lj9fvRk1WeZj+WGU+hW19E+oLJtDH12KYJ3UUxu2iGyrv3mrqdX/OXUoQH7qM7PT+Y2t6YLnOw+dyk5dHeNaP/r7KckP7JUJ9oQT6uFoN86QEzip13kROU+aZzzLPEHiT8rB0yNf2JCXI57LrIP1wqMsCOQ99XNu0GeZJ6em+mroRj3Q7fd2krFH/KfML8zd5OEv90Or1mwjzJXKm+gLpoY9nm2XcWH/NtMG+un/9s8xnOP2pq5TP4fLAjx97npx66akviEAfxzbLCPPOMUupDrXOuPujD+HYyvV1yoNATfPkTE+oL4Qh9+GdZ94hc4hvk/yR8iCzGvB1uv3R3yf5PfP9Ot+mHLhxmsPCfJXytf49wpyPfZky7bSZuB0MTA99WJvsdxJYq67ysGXosUVzLW0QcuwStK5OYKgz4WmPk9oaJtCHs07pMfFXV/nr8aUvBXy3xniddjYIOTbIkxLkrzLfOgGmI9QbJdCH0Q2dutnu5vF65E5tO7P14di15ImCN/oh1Bsk0PvX8lpzDtNHkK+j4I1+OdSlMX+fugENehthTnGbEuLbHB7kq/uPF+T0rSsi3UzZCPoj0PtV29aaTKOPOfLV/TXmWrnPPAj1hhhy788mKtqXro8gt1UrUzD83gCB3g9FcMt2lRLCx5w21y1BO4+fI6bhUJeZE+jHUwS3XO9SgvzyiGsIcmryLmUlBTNkDv14FxHmS3KX0hN/leO2thXk1OYudR2wxJ700I9zluTfUzeCUfRRsZ4Icur1j9jvfdb00A+3io0ZlqCP+fFEkFO3HyPMZ0+gH24bN+ZW3aYE+EWOPzFOkFM7u8Y1QqAf5jzWm7foTUqQH9sbT8oIznnKUiBBTq2EeUPMoe/vJKXX5ibdhnd5CPE+luusYkMY5kGYN0YPfX/bCPO56zvEE3utMy/CvEF66PtZx5GoczVEiCdlSP08li4yH8K8UQJ9P+/jxj0nQ4V4V+i2iWNMmRdh3jBD7rvbRJjPwXXKDWub/rewXMX8OPN0lzLCaGlawwT67s6nbgCf1G368jbHLzP7nA8pvXOYE2G+EIbcd3Oa5D9TN4K/6LZgvcj4N6qLJD+N/JpwCAeuLMjfpovuEMQAAAWCSURBVG7ATKynbgD/c5UyD3iSMg0yRa/j/L4NdxO8NuzqTYT5ogj03aynbsDC3Sb5NcnXKd+L7ZSNubdNacv1tM2AZ/2a8sArzBfEHPpuzJtOo8+d24bwPiXUL6JQjjrcpQR5rb8zDMgc+m4+xGYyY+nrVLOxbVLa7eeEqVynnAB5M3E7mIhA340v0rC6ArdtkstJW3KcVcrnYXkjY3sdK3EWT6Dv5iY2EBnCdR6Wm82pN/6SV0l+mboRLIIhdv5HoO/mMvbo7suUy83GdJoy4qC3zlCuUobYW3oY5giq3HdzM3UDGtAtN1tluuVmY3qfEuq/Tt0QmnOX5OdYksYTAn03rYfPUO5S5vYeLzdb2g3oVcrnfzVxO2jDVcqD4sXUDaE+htx3s0ryx9SNmJF3KeFtXu+vNlEJz2HuUorethO3g4oJ9N3dRGHc54y1n/rcdSe1KZpjV29SfmaWNrrFngy5784Q18fuUm42/0gZxbiIMH/JhzwMw7+ZtilU7irJd7HjGzvSQ9/dSUpYGS59OGd8O3E7WrBOCXirKOjcpvxMbKdtBnMj0PdznuRfUzdiIkOeM45gp4x4Xdy/+R1jbwJ9f++znLXFt3lYM34zbVMWYx3BvjSCnF4I9P2tUkK91aH3LsS3sVxvSusI9iV4k/J9vpm2GbRAoB/mNGX3uFZCXYjX6zRlqsdpbu3QI2cQAv1wcw91IT4vq5Rq5/PM92du6QQ5gxLoxzlJCcTvJ27Hrt6lPIRYKz5vm/s3w/Hz0B1CtJ24HTROoPdjnTrnO69TAvwydm1r0Sqlx34Wmx7V6E3mfyQwMyLQ+7VKCfez+z/HHhq9Shk+v7x/M6y3HGeP3gzJT6fVI4GZAYE+rNOUYF/f/73PXtRVyrD5+zyEOCTCfWy2PaYKAn1cJynBfvro7yeP/v005Qb8+GSuDymB3f15EzcNdteNFhmW71e30ZIQpxoCHZZjlYeAX0fvfR93eahFuYwQp0ICHZZrnYfpoHUE/GNdgHdvlnZSPYEOdE6fvNW2amNI13moRenqUmBWBDrwOacpQ/Wnj/4+57MMblOGyy/z16JSmD2BDhxi9Ym3ZNqe/XVKAenTYtLuT2iWQAeGtH7hvw9xk78WpXWBDYsm0AGgAX+bugEAwPEEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA04P8BkH5NVWmYWmwAAAAASUVORK5CYII=" alt="Cosmic Arc Media" width="34" height="34">
     <span>Cosmic Arc Media</span>
   </div>
-
   <header>
     <p class="eyebrow">Shoot day scripts</p>
     <h1>Downtown<br>San Angelo</h1>
     <p class="sub">Ethan West &middot; Wednesday, September 2, 2026 &middot; 16 scripts</p>
   </header>
   <hr class="rule">
-
-  <p class="intro">Sixteen scripts for Wednesday, all shot downtown. Every one of them runs about a minute. You are not memorizing these. They go on the iPad and you read them, and we will do as many takes as it takes to sound like you and not like a page.</p>
+  <p class="intro">Sixteen scripts for Wednesday, all shot downtown. Every one of them runs about a minute and a half. You are not memorizing these. They go on the iPad and you read them, and we will do as many takes as it takes to sound like you and not like a page.</p>
   <div class="note">Read them out loud once before Wednesday if you get a chance. Anywhere a line does not sound like something you would actually say, change it. The facts need to stay put, the wording does not.</div>
-
   <h2>Logistics</h2>
   <div class="logi">
 <div class="lrow"><dt>When</dt><dd>Wednesday, September 2</dd></div>
@@ -179,7 +146,6 @@
 <div class="lrow"><dt>Wear</dt><dd>Three looks, we change after 4, 8 and 12</dd></div>
 <div class="lrow"><dt>Bring</dt><dd>Nothing. Water if it is hot.</dd></div>
   </div>
-
   <h2>The scripts</h2>
   <div class="tools">
     <button type="button" onclick="document.querySelectorAll('.card').forEach(function(d){d.open=true})">Open all</button>
@@ -192,11 +158,12 @@
         <span class="ttl">The town name is a corrected typo</span>
         <span class="meta">
           <span class="grp">Chadbourne block</span>
-          <span class="dur">39s</span>
+          <span class="dur">83s</span>
         </span>
       </summary>
       <div class="body"><p>The people who founded this place wanted to call it Santa Angela. The post office turned it down in 1883. Not because of a duplicate name, and not for anything political. They rejected it on grammar.</p>
-<p>Santa Angela was the wrong construction in Spanish, so the name became San Angelo, and that has been it ever since. A hundred and forty some years of a city carrying a name it got because a federal clerk marked somebody&#x27;s paperwork wrong. I think about that every time a person tells me a West Texas town has no story in it.</p></div>
+<p>Santa Angela was the wrong construction in Spanish, so somebody fixed the ending, and the city has been San Angelo ever since. A hundred and forty some years of a name that exists because a federal clerk marked up a piece of paperwork. I bring that up because it tells you something about how this town got built. Nobody down here was working from a master plan.</p>
+<p>People showed up, put buildings where the buildings made sense, and dealt with whatever came back in the mail. You can see it in the street grid, and you can see it in the fact that a downtown this size has a fourteen story hotel in the middle of it. There is a version of San Angelo that got planned by a committee and it does not look like this one. Every time somebody tells me a West Texas town has no story in it, I think about the fact that this one is named after a typo somebody had to go back and fix.</p></div>
     </details>
     <details class="card">
       <summary>
@@ -204,12 +171,13 @@
         <span class="ttl">Conrad Hilton built this and you can live in it</span>
         <span class="meta">
           <span class="grp">Cactus Hotel</span>
-          <span class="dur">63s</span>
+          <span class="dur">91s</span>
         </span>
       </summary>
-      <div class="body"><p>Frasier spent eleven seasons in an apartment with a view he would not stop talking about. You can do a version of that here, in the tallest building in town. The Cactus Hotel opened in 1929 as Conrad Hilton&#x27;s fourth hotel. Fourteen stories, a hundred sixty-five feet, and almost a century later it is still the tallest building in San Angelo.</p>
-<p>Hilton sold it during the Depression in 1932 and it picked up the Cactus name in 1934. It went on the National Register in 1984. Here is the part people do not know. It stopped taking overnight guests a long time ago, and it is not a museum.</p>
-<p>There are offices in it, the symphony is in it, and there are apartments in it. Some of the units on the fourth and fifth floors still have the original 1929 bathroom tile. People walk past that building every day of their lives and assume it is closed.</p></div>
+      <div class="body"><p>Frasier spent eleven seasons in an apartment with a view he would not stop talking about. You can do a version of that right here, in the tallest building in this town. The Cactus opened in 1929 as Conrad Hilton&#x27;s fourth hotel. Not his fourth in Texas.</p>
+<p>His fourth, period, back when the name meant a guy who owned a handful of buildings and not a chain on six continents. Fourteen stories, a hundred sixty-five feet, two hundred fifty rooms, and a Dallas architect named Anton Korn drew it. Almost a century later it is still the tallest thing in San Angelo. Hilton lost it in the Depression and sold it in 1932, it picked up the Cactus name in 1934, and it went on the National Register in 1984.</p>
+<p>Here is the part almost nobody knows. It stopped taking overnight guests a long time ago, and it never became a museum. There are offices in it. The symphony is in it.</p>
+<p>There are apartments in it, and some of the units on the fourth and fifth floors still have the original 1929 bathroom tile on the walls. People drive past this building every day of their lives and assume it is closed. It is one of the few places in town where you can rent a piece of actual history and then go to work downstairs.</p></div>
     </details>
     <details class="card">
       <summary>
@@ -217,11 +185,12 @@
         <span class="ttl">This building was boarded up eighteen months ago</span>
         <span class="meta">
           <span class="grp">Roosevelt Lofts</span>
-          <span class="dur">46s</span>
+          <span class="dur">85s</span>
         </span>
       </summary>
-      <div class="body"><p>The Roosevelt opened as the Rainbow Hotel in 1929 and got renamed in 1933. Then it sat. It just came out of a six and a half million dollar renovation as twenty-five loft apartments, and it opened last September. People live there now.</p>
-<p>Between this building and the apartments inside the Cactus, there is a real answer to a question I get asked constantly, which is whether anybody actually lives downtown. They do, the number is going up, and it is happening inside buildings that had been written off. If you have been picturing downtown San Angelo as a place you visit and then drive home from, that picture is about two years out of date.</p></div>
+      <div class="body"><p>This opened as the Rainbow Hotel in 1929, got renamed the Roosevelt in 1933, and then it sat. For a long time. If you drove past it three years ago you saw plywood. It just came out of a six and a half million dollar renovation as twenty-five loft apartments, and the doors opened last September.</p>
+<p>People live here now. The units are income restricted for seniors, so this is not a luxury play, it is housing, and it filled. Put this together with the apartments inside the Cactus and you have the answer to a question I get asked constantly, which is whether anybody actually lives downtown. They do, the number is going up, and it is happening inside buildings that had been written off as dead weight.</p>
+<p>That matters even if you never intend to live down here. Occupied buildings hold value differently than empty ones. They keep the block alive at night, they support the restaurants, and they change what the property next door is worth. So if you have been carrying around a picture of downtown San Angelo as a place you visit and then drive home from, that picture is about two years out of date and it is going to keep getting more out of date.</p></div>
     </details>
     <details class="card">
       <summary>
@@ -229,12 +198,13 @@
         <span class="ttl">One man designed forty buildings down here</span>
         <span class="meta">
           <span class="grp">Cactus Hotel</span>
-          <span class="dur">48s</span>
+          <span class="dur">82s</span>
         </span>
       </summary>
-      <div class="body"><p>An architect named Oscar Ruffini designed something like forty buildings in downtown San Angelo. Several of them are still standing and still in use. Then there is Anton Korn, who designed the two buildings most people would point at first if you asked them to describe this skyline. The San Angelo National Bank building in 1927.</p>
-<p>The Cactus Hotel in 1929. Same architect, two years apart. That is the thing about a downtown that got built fast in one stretch of years. It is more of a set than it looks like.</p>
-<p>These buildings talk to each other because a handful of people drew all of them, and once you know that, you cannot unsee it walking down Chadbourne.</p></div>
+      <div class="body"><p>An architect named Oscar Ruffini designed something like forty buildings in downtown San Angelo. Not forty in his career. Forty here. Several of them are still standing and still in use, which for a nineteenth century architect in a West Texas town is a remarkable hit rate.</p>
+<p>Then there is Anton Korn, who drew the two buildings most people would point at first if you asked them to describe this skyline. The San Angelo National Bank building in 1927. The Cactus Hotel in 1929. Same architect, two years apart, both still here.</p>
+<p>That is the thing about a downtown that got built fast in one concentrated stretch of years. It is more of a set than it looks like. These buildings talk to each other because a handful of people drew all of them, working in the same styles with the same materials in the same decade. Once somebody points that out you cannot unsee it walking down Chadbourne.</p>
+<p>And it is worth knowing if you are looking at buying down here, because it means the building you are considering probably has siblings. Somebody has already solved the problems you are about to run into, two doors down, in a structure built the same way.</p></div>
     </details>
     <details class="card">
       <summary>
@@ -242,12 +212,13 @@
         <span class="ttl">Empty since 1983 and still looking</span>
         <span class="meta">
           <span class="grp">Texas Theatre</span>
-          <span class="dur">50s</span>
+          <span class="dur">85s</span>
         </span>
       </summary>
-      <div class="body"><p>The Texas Theatre opened on Thanksgiving Day in 1929. Two thousand seats, three hundred thousand dollars, billed as the biggest theater in West Texas. It closed in 1983. It is still sitting here, and it is still listed as looking for a tenant.</p>
-<p>Forty some years empty. Every town has a building like this one. The thing I would say about it is that a building sitting empty is not the same as a building with no value. It is a building waiting on somebody who has a use for it and the patience to get through the approvals.</p>
-<p>Those two things almost never show up in the same person at the same time. When they do, that is how a downtown turns around.</p></div>
+      <div class="body"><p>The Texas Theatre opened on Thanksgiving Day in 1929. Two thousand seats, three hundred thousand dollars to build, and at the time it was billed as the biggest theater in West Texas. An architect named W. Scott Dunne designed it, and he built movie palaces all over the state. It closed in 1983.</p>
+<p>It has been sitting here since, it carries a local landmark designation, and it is still listed as looking for a tenant. That is forty some years of a two thousand seat building waiting on somebody. Every town has a building like this one. The thing I would say about it is that a building sitting empty is not the same as a building with no value.</p>
+<p>This is a building waiting on two things to show up in the same person at the same time. A real use for the space, and the patience to get through the approvals and the cost of bringing a 1929 structure up to what a modern occupancy requires. Those two things almost never arrive together. That is why buildings like this sit.</p>
+<p>But when they do arrive together, that is the whole story of how a downtown turns around, and it usually starts with one person deciding the hard building was worth it.</p></div>
     </details>
     <details class="card">
       <summary>
@@ -255,12 +226,12 @@
         <span class="ttl">Forty-five cents back on every rehab dollar</span>
         <span class="meta">
           <span class="grp">Roosevelt Lofts</span>
-          <span class="dur">63s</span>
+          <span class="dur">97s</span>
         </span>
       </summary>
-      <div class="body"><p>If you buy an old building downtown and fix it up right, the government pays you back a chunk of it. The federal historic rehabilitation credit is twenty percent of qualified rehab spending on a certified historic structure. Texas has its own credit on top of that, twenty-five percent, against state franchise tax. Stack them and you are looking at up to forty-five percent back on one project.</p>
-<p>The Texas credit takes at least five thousand dollars of qualified spend, it is transferable, and it carries forward up to five years. There is also a downtown reinvestment zone here that funds facade and preservation grants, and it is a big reason the Chadbourne corridor filled up with bars and restaurants. This is the part of downtown real estate nobody brings up at a dinner party. The buildings look like liabilities.</p>
-<p>For the right buyer with the right plan, the math on them beats anything new construction can offer.</p></div>
+      <div class="body"><p>If you buy an old building downtown and you fix it up correctly, the government pays you back a substantial chunk of what you spent. The federal historic rehabilitation credit is twenty percent of your qualified rehab spending on a certified historic structure. Texas stacks its own credit on top of that, twenty-five percent, taken against state franchise tax. Run both and you are looking at up to forty-five percent back on a single project.</p>
+<p>The Texas credit needs at least five thousand dollars of qualified spend to trigger, it is transferable, meaning you can sell it if you cannot use it, and it carries forward up to five years. There is also a reinvestment zone downtown that funds facade and preservation grants, and that is a real part of why the Chadbourne corridor filled up with bars and restaurants instead of staying boarded. This is the part of downtown real estate that nobody brings up at a dinner party. From the sidewalk these buildings read as liabilities.</p>
+<p>Old wiring, old plumbing, a roof somebody has been patching since the seventies. But for a buyer with a genuine use and the patience to do the paperwork right, the math on a historic building beats anything new construction can put in front of you. The catch is that the credits are unforgiving about how the work gets done, so you bring in somebody who has done it before you swing the first hammer.</p></div>
     </details>
     <details class="card">
       <summary>
@@ -268,12 +239,13 @@
         <span class="ttl">The city told a bank no</span>
         <span class="meta">
           <span class="grp">Chadbourne block</span>
-          <span class="dur">64s</span>
+          <span class="dur">90s</span>
         </span>
       </summary>
-      <div class="body"><p>In January of 2025, a bank asked the city for permission to tear down a building downtown. The commission said no, six to nothing. The council backed them up unanimously. The building sits at 231 West Beauregard, and the widely held belief was that it was coming down for parking.</p>
-<p>The mayor&#x27;s line about it was that the city cannot keep taking out buildings and leaving empty lots. I bring that up because it is the clearest answer I can give you about what buying inside the downtown historic district actually means. There is a district down here with real boundaries. If you own a designated building in it, exterior changes, new construction and demolition all run through a certificate of appropriateness.</p>
-<p>That is not a formality somebody rubber stamps. So if you are buying down here planning to change the outside of the building, find out what is designated and what is not before you make an offer.</p></div>
+      <div class="body"><p>In January of 2025 a bank asked the city for permission to tear down a building downtown. The commission said no, six to nothing. Then the council backed them up, unanimously. The building sits at 231 West Beauregard, and the widely held belief around town was that it was coming down to make parking.</p>
+<p>The mayor&#x27;s line about it was that the city cannot keep taking out buildings and leaving empty lots behind. I bring that up because it is the clearest possible answer to a question people ask me about buying downtown, which is whether the historic rules have any teeth. They do. There is a district down here with real boundaries, running roughly from the river up to Fourth and over between Irving and Oakes.</p>
+<p>If you own a designated building inside it, exterior changes, new construction and demolition all go through something called a certificate of appropriateness. That is a review, not a rubber stamp, and a bank with lawyers just found that out in public. None of that is a reason to avoid buying downtown. Plenty of people are doing it and doing well.</p>
+<p>It is a reason to find out exactly what is designated and what is not before you write an offer, because that answer changes what you are allowed to do with the thing you just bought.</p></div>
     </details>
     <details class="card">
       <summary>
@@ -281,78 +253,81 @@
         <span class="ttl">A whole neighborhood here does not own its own dirt</span>
         <span class="meta">
           <span class="grp">Chadbourne block</span>
-          <span class="dur">69s</span>
+          <span class="dur">94s</span>
         </span>
       </summary>
-      <div class="body"><p>There is a neighborhood in San Angelo where the people living in those houses do not own the ground underneath them. Out at Lake Nasworthy, the lake and the land around it belong to the City of San Angelo. The city runs a lot lease program through its real estate division, so residents own the house and lease the dirt. There is an annual lease fee on top of whatever the house cost.</p>
-<p>And it is a real lease with real teeth. In December of 2024 the city council took up terminating one of them and evicting the leaseholder over about three thousand dollars in unpaid fees. I am not telling you that to scare anybody off the lake. Plenty of people out there love it.</p>
-<p>I am telling you because if you are looking at lake property and nobody has walked you through the difference between owning and leasing yet, you are not being taken care of. Ask what conveys. Ask what the annual fee is. Ask what happens at renewal.</p></div>
+      <div class="body"><p>There is a neighborhood in San Angelo where the people living in those houses do not own the ground underneath them. Out at Lake Nasworthy, the lake and the land around it belong to the City of San Angelo. The city runs a lot lease program through its real estate division. So you own the house, and you lease the dirt it is sitting on, and there is an annual lease fee that shows up on top of whatever you paid for the structure.</p>
+<p>And it is a real lease with real consequences. In December of 2024 the city council took up terminating one of those leases and evicting the leaseholder over roughly three thousand dollars in unpaid fees. That is a matter of public record, on the agenda, in a council meeting. I am not telling you this to scare anybody off the lake.</p>
+<p>Plenty of people out there love where they live and would not trade it. I am telling you because if you are looking at property on that water and nobody has walked you through the difference between owning and leasing yet, you are not being taken care of. Three questions. Ask what actually conveys at closing.</p>
+<p>Ask what the annual lease fee is and when it was last raised. And ask what happens at renewal, because that is the one that decides what this is worth to you in twenty years.</p></div>
     </details>
     <details class="card">
       <summary>
         <span class="num">9</span>
         <span class="ttl">Every branch of the military trains in this town</span>
         <span class="meta">
-          <span class="grp">Neutral downtown</span>
-          <span class="dur">70s</span>
+          <span class="grp">Neutral wall</span>
+          <span class="dur">95s</span>
         </span>
       </summary>
-      <div class="body"><p>Goodfellow is not a small thing sitting on the edge of San Angelo. Every branch trains there. Air Force, Army, Marines, Navy and Space Force. The base contributes about three point eight billion dollars to the Texas economy, supports right around thirteen thousand jobs counting the ripple effects, and the training group graduates close to fourteen thousand students a year.</p>
-<p>That does something to a housing market, and most people here stopped noticing because it has always been true. Here is the part that matters if you served. Nearly ninety percent of VA backed home loans close with no money down. A VA loan never requires private mortgage insurance, which is a line most buyers pay every single month and never get back.</p>
-<p>There is a funding fee, and it depends on your down payment and whether it is your first time using the benefit. If you are stationed here, or you got out and stayed, and you have been assuming you need twenty percent saved, go find out what you actually qualify for.</p></div>
+      <div class="body"><p>Goodfellow is not a small thing sitting out on the edge of San Angelo. Every single branch trains there. Air Force, Army, Marines, Navy, and Space Force, all on one installation. The base puts about three point eight billion dollars into the Texas economy, it supports somewhere around thirteen thousand jobs once you count the ripple effects, and the training group graduates close to fourteen thousand students a year.</p>
+<p>Average daily student load runs about thirty-two hundred people. That does something to a housing market, and most of us who grew up here stopped noticing it because it has always just been true. Here is the part that matters if you served. Nearly ninety percent of VA backed home loans close with no money down at all.</p>
+<p>A VA loan never requires private mortgage insurance, and that is a line most buyers pay every single month for years and never get a dollar of it back. There is a funding fee, and it moves based on your down payment and whether this is your first time using the benefit. It is not free money and I am not going to pretend it is. But if you are stationed here, or you got out and decided to stay, and you have been sitting on the sidelines because you think you need twenty percent saved up, go find out what you actually qualify for before you wait another year.</p></div>
     </details>
     <details class="card">
       <summary>
         <span class="num">10</span>
         <span class="ttl">You can own the property and not what is under it</span>
         <span class="meta">
-          <span class="grp">Neutral downtown</span>
-          <span class="dur">81s</span>
+          <span class="grp">Neutral wall</span>
+          <span class="dur">99s</span>
         </span>
       </summary>
-      <div class="body"><p>Everybody has watched a show about West Texas oil by now. Here is the part those shows skip. In Texas you can own the house, the fence, the well and every inch of the lot, and still not own what is underneath it. The mineral estate can be split off from the surface and sold separately.</p>
-<p>Once it is, the law treats the mineral estate as the dominant one. Not equal to the surface. Dominant. Which means whoever owns the minerals under your yard has an implied legal right to come onto your surface and go get them. They do not need your permission.</p>
-<p>There are real limits on that. They have to give you notice before drilling a new well, they cannot be negligent, and there is a doctrine that protects you when they have a reasonable alternative and you do not. But the starting point is not what most buyers assume when they hear the word own. When you are under contract, read the deed for reservation language and look at Schedule B of your title commitment.</p>
-<p>If the minerals were reserved out of that property at some point in the last hundred years, that is where it shows up.</p></div>
+      <div class="body"><p>Everybody has watched a show about West Texas oil by now. Here is the part those shows skip right past. In Texas you can own the house, the fence, the driveway and every square inch of the lot, and still not own what is underneath it. The mineral estate can be split off from the surface and sold separately, and once that happens the two travel independently forever.</p>
+<p>Here is the part that surprises people. The law treats the mineral estate as the dominant one. Not equal to the surface. Dominant. Which means whoever owns the minerals under your yard has an implied legal right to come onto your surface and go get them, and they do not need your permission to do it.</p>
+<p>There are real limits on that. They have to give you notice before they drill a new well. They cannot be negligent about how they do it. And there is a doctrine that protects you when they have a reasonable alternative and you genuinely do not.</p>
+<p>But the starting point is nothing like what most buyers picture when they hear the word own. So when you are under contract, two things. Read the deed for reservation language, the phrase you are looking for is something like reserving all oil, gas and other minerals. And read Schedule B of your title commitment, because if the minerals got severed off this property at any point in the last hundred years, that is where it shows up.</p></div>
     </details>
     <details class="card">
       <summary>
         <span class="num">11</span>
         <span class="ttl">Ron Swanson would move here for the water law</span>
         <span class="meta">
-          <span class="grp">Neutral downtown</span>
-          <span class="dur">73s</span>
+          <span class="grp">Neutral wall</span>
+          <span class="dur">100s</span>
         </span>
       </summary>
-      <div class="body"><p>Ron Swanson spent seven seasons arguing the government should have as little to do with your property as humanly possible. I think about that man every time I explain Texas groundwater to somebody moving here. Because in Texas, the water under your land belongs to you. Not the state. You.</p>
-<p>You can pump it, sell it, lease it, or haul it off the property. It is called the rule of capture, and people around here call it the law of the biggest pump. That is the part Ron would like less. Your neighbor&#x27;s water is his in exactly the same way, and he can pump as much of it as he wants.</p>
-<p>If he drills deeper and pumps harder and your well runs dry because of it, that is generally his water now. He does not owe you anything unless he did it out of spite, or waste, or plain negligence. What keeps it from being chaos is the local groundwater district, and the one for this county is headquartered out in Wall. So the water is yours.</p>
-<p>So is the risk.</p></div>
+      <div class="body"><p>Ron Swanson spent seven seasons arguing that the government should have as little to do with your property as humanly possible. I think about that man every time I explain Texas groundwater to somebody moving here from out of state. Because in Texas, the water underneath your land belongs to you. Not the state. You.</p>
+<p>You can pump it, sell it, lease it, or haul it off the property in a truck. It is called the rule of capture, it goes back to a court decision in 1904, and people around here call it the law of the biggest pump. That is the part Ron would like considerably less. Because your neighbor&#x27;s water is his in exactly the same way, and he can pump as much of it as he wants.</p>
+<p>If he drills deeper than you and pumps harder than you and your well runs dry as a result, in Texas that is generally his water now. He does not owe you anything, unless he did it out of spite, or he is wasting it, or he was plain negligent about it. That is the default rule. What keeps it from turning into total chaos is the local groundwater district, which sets well spacing and permitting, and the one covering this county is headquartered out in Wall.</p>
+<p>So if you are buying a place with a well, find out how deep yours goes and what the wells around it are doing. The water is yours. So is the risk.</p></div>
     </details>
     <details class="card">
       <summary>
         <span class="num">12</span>
         <span class="ttl">Your tap water drives sixty-two miles to reach you</span>
         <span class="meta">
-          <span class="grp">Neutral downtown</span>
-          <span class="dur">52s</span>
+          <span class="grp">Neutral wall</span>
+          <span class="dur">90s</span>
         </span>
       </summary>
-      <div class="body"><p>Here is one that surprises people who have lived in San Angelo their whole life. Part of this city&#x27;s drinking water does not come from around here at all. It is pumped out of the Hickory Aquifer from wells about fifteen miles south of Melvin, over in McCulloch County, and piped sixty-two miles to get to town. That water comes up carrying naturally occurring radium, so the city has to treat it and strip that out before it ever reaches a faucet.</p>
-<p>Meanwhile a well drilled out in the county is most likely pulling from the Edwards-Trinity, a completely different aquifer. Same general part of Texas, two entirely different water stories. That is worth knowing when somebody tells you country water and city water are the same deal. They are not.</p></div>
+      <div class="body"><p>Here is one that surprises people who have lived in San Angelo their entire life. Part of this city&#x27;s drinking water does not come from anywhere near here. It gets pumped out of the Hickory Aquifer from a well field about fifteen miles south of Melvin, over in McCulloch County, and then it travels sixty-two miles through a pipeline to get to town. And because that water comes up carrying naturally occurring radium in it, the city has to treat it and strip that out before it ever reaches a faucet.</p>
+<p>That is a real piece of infrastructure that most people here have never thought about once. On top of that the city draws on six different surface water sources, including Twin Buttes, O.C. Fisher and Nasworthy, because in this part of Texas you do not get to rely on any single one of them. Meanwhile a well drilled out in the county is most likely pulling from the Edwards-Trinity, which is a completely different aquifer sitting under a big stretch of West Texas. Same general part of the state, two entirely different water stories, two entirely different sets of problems.</p>
+<p>So when somebody tells you country water and city water are basically the same deal, they are not. And which one a house is on is worth knowing before you buy it, not after.</p></div>
     </details>
     <details class="card">
       <summary>
         <span class="num">13</span>
         <span class="ttl">This dirt paid for two universities</span>
         <span class="meta">
-          <span class="grp">Neutral downtown</span>
-          <span class="dur">70s</span>
+          <span class="grp">Neutral wall</span>
+          <span class="dur">96s</span>
         </span>
       </summary>
-      <div class="body"><p>About an hour and a half west of here, outside Big Lake, there is a patch of ground nobody wanted. The state had handed it to the University of Texas back when West Texas land was considered close to worthless. In May of 1923 a well called Santa Rita Number One came in on it. That was the first commercial oil well in the Permian Basin.</p>
-<p>The first royalty check the university got was five hundred sixteen dollars. In the twelve months after that well hit, the fund behind it grew four hundred forty-five percent. It had never cracked a million dollars in the forty years before. That fund is worth better than forty billion dollars today, and it still splits between the UT system and the A&amp;M system.</p>
-<p>All of it off land people had written off as good for nothing but goats. That is the thing about ground out here. What it is worth on top and what it is worth underneath are two different questions. Most people only ever ask the first one.</p></div>
+      <div class="body"><p>About an hour and a half west of here, outside a town called Big Lake, there is a patch of ground that nobody wanted. The state had handed it off to the University of Texas back when West Texas land was considered close to worthless, which at the time was a reasonable opinion. Then in May of 1923 a well called Santa Rita Number One came in on it. That was the first commercial oil well in the Permian Basin.</p>
+<p>The first royalty check the university received was five hundred sixteen dollars. In the twelve months after that well hit, the fund behind it grew four hundred and forty-five percent. It had never once cracked a million dollars in the forty years before that. Today that fund is worth better than forty billion dollars, it is the largest public university endowment in the country, and it still splits between the UT system and the A&amp;M system.</p>
+<p>There are still two point one million acres of West Texas land across nineteen counties feeding it. All of that came off ground people had written off as good for nothing but running goats on. Which is the thing about dirt out here. What a piece of ground is worth on top and what it is worth underneath are two completely separate questions.</p>
+<p>Most people only ever think to ask the first one, and then they are surprised by the answer to the second.</p></div>
     </details>
     <details class="card">
       <summary>
@@ -360,45 +335,44 @@
         <span class="ttl">The joke asset was the only one left standing</span>
         <span class="meta">
           <span class="grp">Chadbourne block</span>
-          <span class="dur">69s</span>
+          <span class="dur">92s</span>
         </span>
       </summary>
-      <div class="body"><p>In Schitt&#x27;s Creek, Johnny Rose buys an entire town in 1991 as a gag birthday present for his son. For years it is the dumbest thing he ever spent money on. Then the family loses everything, the mansion gets seized, and that town is the one asset still standing. It is a comedy premise.</p>
-<p>It is also the most honest thing television has said about small town real estate. Ninety-five percent of the land in Texas is privately owned. More than a hundred forty-two million acres of it is somebody&#x27;s farm, ranch or timber ground. It does not trade like a stock, it never shows up on the news, and people from bigger markets look out here and see nothing happening.</p>
-<p>Then something goes sideways somewhere else, and the boring asset in the country is the one that is still there. I am not going to tell you land only goes up, because it does not. I am telling you the thing everybody laughs at is worth understanding before you laugh at it.</p></div>
+      <div class="body"><p>In Schitt&#x27;s Creek, Johnny Rose buys an entire town in 1991 as a gag birthday present for his son. For years it is the single dumbest thing he ever spent money on, and the show gets a lot of mileage out of that. Then the family loses everything, the business manager takes them for all of it, the government seizes the mansion, and that town is the one asset still standing. It is a comedy premise.</p>
+<p>It is also close to the most honest thing television has ever said about small town real estate. Ninety-five percent of the land in Texas is privately owned. More than a hundred and forty-two million acres of it, about eighty-four percent of this entire state, is somebody&#x27;s farm or ranch or timber ground. That land does not trade like a stock.</p>
+<p>It never shows up on the news. People from bigger markets look out here and genuinely see nothing happening. Then something goes sideways somewhere else, and the boring asset out in the country is the one that is still sitting right where they left it. I am not going to stand here and tell you land only goes up, because it does not, and anybody who tells you that is selling something.</p>
+<p>What I am telling you is that the asset everybody laughs at is worth understanding before you laugh at it.</p></div>
     </details>
     <details class="card">
       <summary>
         <span class="num">15</span>
         <span class="ttl">Hank Hill would understand this question</span>
         <span class="meta">
-          <span class="grp">Neutral downtown</span>
-          <span class="dur">62s</span>
+          <span class="grp">Neutral wall</span>
+          <span class="dur">90s</span>
         </span>
       </summary>
-      <div class="body"><p>Hank Hill sold propane and propane accessories in a fictional Texas town called Arlen, and nobody watching that show ever thought it was a strange way to make a living. Out here it makes even more sense. The second you cross the city limit, there is no gas line running to the house. The stove, the water heater, the furnace, all of it runs off a tank sitting in the yard, and somebody drives out and fills it.</p>
-<p>So if you are shopping outside of town, there is a question most buyers never think to ask. Do you own that tank, or is it leased from the propane company? If it is leased, you buy your propane from that company at their price, and that is the arrangement. If you own it, you can shop it around every fall.</p>
-<p>Over a cold winter that is a real number. Ask before you close. Hank would.</p></div>
+      <div class="body"><p>Hank Hill sold propane and propane accessories in a fictional Texas town called Arlen, and not one person watching that show ever thought that was a strange way to make a living. Out here it makes even more sense than it did on television. The second you cross the city limit, there is no gas line running to the house. The stove, the water heater, the furnace, the fireplace if there is one, all of it runs off a tank sitting somewhere in the yard, and somebody drives out and fills it a few times a year.</p>
+<p>So if you are shopping outside of town, here is a question that most buyers never think to ask and that almost nobody brings up for them. Do you own that tank, or is it leased from the propane company? Because if it is leased, you buy your propane from that company, at that company&#x27;s price, and that is the whole arrangement until you do something about it. If you own the tank outright, you can call around every fall and shop it.</p>
+<p>Over one cold winter that is a real number, and over ten years it is a much bigger one. It is the kind of thing that never shows up in a listing photo and never comes up at a showing. Ask before you close. Hank would.</p></div>
     </details>
     <details class="card">
       <summary>
         <span class="num">16</span>
         <span class="ttl">Your school taxes just got cheaper</span>
         <span class="meta">
-          <span class="grp">Neutral downtown</span>
-          <span class="dur">69s</span>
+          <span class="grp">Neutral wall</span>
+          <span class="dur">91s</span>
         </span>
       </summary>
-      <div class="body"><p>This one is money in your pocket and plenty of people have not caught up to it. The homestead exemption in Texas is the amount knocked off your home&#x27;s value before school taxes get calculated. It is now a hundred forty thousand dollars. Voters raised it again in November.</p>
-<p>It was a hundred thousand before that, and forty thousand before that, so it has gone up three times in three election cycles. If you are sixty-five or older, or disabled, you get another sixty thousand on top of that, which puts you at two hundred thousand exempted from school tax. Your city and county can each add a local exemption of up to twenty percent of appraised value on top of that. Two things to do with this.</p>
-<p>If you bought recently and never filed for your homestead exemption, go file it. It is free and people forget. And if somebody is quoting you a monthly payment on a house, make sure they used the current number and not an old one.</p></div>
+      <div class="body"><p>This one is money in your pocket and a lot of people have not caught up to it yet. The homestead exemption in Texas is the amount that gets knocked off your home&#x27;s value before your school taxes are calculated. It is now a hundred and forty thousand dollars. Voters raised it again this past November.</p>
+<p>It was a hundred thousand before that, and forty thousand before that, so it has gone up three times in three straight election cycles, which is why so many people are working off an old number. If you are sixty-five or older, or disabled, you get another sixty thousand stacked on top of that, which puts you at two hundred thousand dollars exempted from school tax. And your city and your county can each add their own local exemption of up to twenty percent of appraised value on top of all of it. Two things to do with this.</p>
+<p>First, if you bought a house recently and you never filed for your homestead exemption, go file it. It is free, it takes a few minutes, and people forget constantly. Second, if somebody is quoting you a monthly payment on a house right now, make sure whoever ran that number used the current exemption and not last year&#x27;s. On a house in this market that difference is real money every single month.</p></div>
     </details>
-
   <footer>
     <strong>Tap a title to read the script.</strong> Anything that does not sound
     like you, say it your way instead. Questions before Wednesday, just text me.
   </footer>
-
 </div>
 </body>
 </html>
