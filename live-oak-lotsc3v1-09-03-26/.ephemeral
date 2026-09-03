@@ -1,0 +1,2 @@
+2026-09-10
+Live Oak LOTSC3V1 launch images. Cloud Campaign re-hosts every imported image to its own S3, so these copies are disposable after the import window.
