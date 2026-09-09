@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Texas Select Insurance, Shoot 5 Scripts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #040210;
+    --bg-mid: #0c0622;
+    --pink: #ff4d8d;
+    --pink-soft: #ea4c83;
+    --purple: #6a44d6;
+    --violet: #8b5cf6;
+    --text: #ffffff;
+    --muted: #b9aad6;
+    --dim: #6f5fa6;
+    --glass: rgba(255,255,255,0.055);
+    --glass-2: rgba(255,255,255,0.085);
+    --glass-border: rgba(255,255,255,0.14);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background:
+      radial-gradient(900px 620px at 12% -8%, rgba(255,77,141,0.20), transparent 62%),
+      radial-gradient(760px 560px at 92% 4%, rgba(106,68,214,0.24), transparent 60%),
+      linear-gradient(178deg, var(--bg) 0%, var(--bg-mid) 46%, var(--bg) 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 24px 100px; }
+  .brand-row { display: flex; align-items: center; gap: 11px; margin-bottom: 44px; }
+  .logo-mark { width: 34px; height: 34px; display: block; }
+  .brand-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .eyebrow {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pink-soft);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.1;
+    margin: 0 0 18px;
+    background: linear-gradient(100deg, #ffffff 0%, #ffc9dd 35%, var(--pink) 65%, var(--violet) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .intro {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 60ch;
+    margin: 0 0 12px;
+  }
+  .intro strong { color: var(--text); font-weight: 600; }
+  .count-strip {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 28px 0 8px;
+  }
+  .count-pill {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--dim);
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 7px 14px;
+    border-radius: 999px;
+  }
+  .list { margin-top: 40px; display: flex; flex-direction: column; gap: 18px; }
+  .card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 26px 24px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .card:has(.script-body:not([hidden])) {
+    background: var(--glass-2);
+    border-color: rgba(255,77,141,0.35);
+  }
+  .card-head { display: flex; gap: 16px; align-items: flex-start; }
+  .card-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--pink);
+    background: rgba(255,77,141,0.12);
+    border: 1px solid rgba(255,77,141,0.3);
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .card-headtext h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    color: var(--text);
+  }
+  .teaser {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0 0 12px;
+    max-width: 56ch;
+  }
+  .meta-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .meta-pill {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--dim);
+    border: 1px solid var(--glass-border);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .read-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(100deg, var(--pink) 0%, var(--purple) 100%);
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    box-shadow: 0 8px 24px rgba(255,77,141,0.28);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s ease;
+  }
+  .read-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(255,77,141,0.38);
+  }
+  .read-btn:active { transform: translateY(0); }
+  .read-btn-chevron {
+    display: inline-block;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+  }
+  .read-btn[aria-expanded="true"] {
+    background: rgba(255,255,255,0.1);
+    box-shadow: none;
+    border: 1px solid rgba(255,77,141,0.5);
+  }
+  .read-btn[aria-expanded="true"] .read-btn-chevron { transform: rotate(180deg); }
+  .script-body {
+    margin-top: 22px;
+    color: #ece7f7;
+    font-size: 16px;
+  }
+  .script-body p { margin: 0 0 16px; }
+  .script-body p:last-child { margin-bottom: 0; }
+  .script-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,77,141,0.5), rgba(139,92,246,0.1));
+    margin-bottom: 22px;
+  }
+  .expanded-flag {
+    display: none;
+  }
+  .foot {
+    margin-top: 56px;
+    padding-top: 28px;
+    border-top: 1px solid var(--glass-border);
+    color: var(--dim);
+    font-size: 13px;
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 40px 16px 80px; }
+    .card { padding: 20px 16px; }
+    .card-head { gap: 12px; }
+    .read-btn { padding: 15px 14px; font-size: 13.5px; letter-spacing: 0.04em; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand-row">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAACXBIWXMAABYlAAAWJQFJUiTwAAAgAElEQVR4nO3d7VUcR9oG4Nt79r95I/A4ArMReByB2Qg8jsA4AssRLIrAowhWisAQwYoIDBGsiMDvj6IXjJCYj/6orr6ucziSLegpvvruqnqq6os///wzAMC8/W3qBgAAxxPoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADRDoANAAgQ4ADfj71A0AoHpnSU6TrJ/8/8skH+7/fD9qi/jIF3/++efUbQCgTmdJLpJ8tcP73iV5m2SbEvCMTKAD8JxNkt8O/NjbJK9Swp2RCHQAnlol+aOH61wnOY8e+ygUxQHw1KuervNNkt9Thu1Peromn6CHDsBTH5J82fM1b1Pm5BXPDUQPHYCn+g7zpBTWXabMzTMAgQ7AWL5MKbR7NXE7mmTIHYCnxgiGN9Fb75UeOgBPXY/wGj9ET71XAh2Ap8YqXPsleum9EegAPHUz4mtdpGwry5EEOgBPjbm07MvYUa4XAh2Apz6M/HrfxHz60QQ6ADU4T9lylgNZtgbAc6YIB0vZjiDQAXjOVOHwdcYtymuGIXcAanI+dQPmSg8dgOdMFQ53cTLbQfTQAXhqynXhX8Y8+kEEOgBPTd1DPpv49WdJoANQm++nbsAcCXQAnpp6K9bbiV9/lgQ6AE/1NeR+m+R1ku+S/F+SLx69fZ3kn/f//vh0t7uodD/I36duAADVWR358bcpW7luP/M+N/dvb+//+yRlZOB9xt96tgkCHYCnVkd87K85bF/2D0kuj3jdxbMOHYCnPqQsH9vHXUp1+mXvrWEnAh2Ap/YNhrsk64x77CpPKIoD4LF9C+KEeSUEOgCP7RvoZxHmVRDoADx2s8f7/hxz5tUQ6AA8dbfD+7xJcjF0Q9idQAfgqbcv/Pu7OEClOqrcAXjqJGXo/bmla12Y2/ylMnroADz1IWVzmTd5GH6/Tdk05izCvEp66ADQAD10AGiAQAeABgh0AGiAQAeABgh0AGiA89CBsa1y3Hnb72PZFHxEoAPHWt2/nSQ5vf9/p3k45OM0+5+tvY+rR3+/vP+zC/2b7Lc3OcyWdejALrqwPk0J7+7Pr6Zr0l6uUwL+Mg8hfzlZa2AAAh146nFwrzN8D3tKtym9+fcpAW84n9kS6LBsXc97nfbDe1fXeQj4yxiyZyYEOizPOmU/7nWSbyZtyTzcpZw+dhkBT8UEOrRvlYcA/37SlrThNg8B/9IxozAagQ5tOk054vIs8ylcm6O7PAT725h/Z0ICHdohxKf3LsKdiQh0mLdVSohvIsRr04X7duJ2sBACHeZpc//27bTNYAddUd1FSvU8DEKgw3yskpynBPnSl5bN1W1KsG9jSJ6eCXSo31lKkOuNt6Prtb+KZXD0RKBDvTYpN3xz4227Svk+X07bDOZOoENdTlJ64+cxrL40VylD8dtpm8FcCXSogyCnc5vSY99O2wzmRqDDtAQ5n2Ionr0IdJjOJqXiWZDzOVcpD3yWvPFZf5u6AbBAZymVzb9FmPOyb5P8J+Xh72TitlAxPXQYzyplXtTyMw51l9Jb307cDiqkhw7DO0npXf0RYc5xvkwZ2blM2bsf/kegw7DOUuY+f5q6ITSlG4Z/NXE7+nCacrSv6YQjCXQYxknKTmD/jo1hGM4vKQ+Mc+utr1KmDf5MeTD5Pcl/U2pL1AocSKBD/85TbkzfT9wOluGblCH484nbsatNykPID8/821cpo1k39+/HHhTFQX9OUnodgpypvEsJwloPfjlNefjYdXXHj1EAuDOBDv04S7nxWIbG1G7zULtRm/cpIwr7+C4219mJIXc43kXKXLkwpwZfpQTgZtpmfGST/cM8Kb9f7EAPHQ53mtIrP+QmBWN4nXrm1m9yeIGoXvoO9NDhMGcpNxhhTs1+SnnonLpq/DTHrfbY9NSOpgl02J8hdubkh5SHzylDfXPkx696aEPzDLnD7rq15XZ7Y46u83COwNhuclwP/S7TjzJUTw8ddtMttxHmzNU3mWYTmlVsrjQKgQ4v68LcfDlz92XG3wd+3cM1alyCVx2BDp+3Sdma0nw5rRg71Ncjvc7iCXT4tE3KyVbQmjFDvY/XqHXnu6oIdHjeNsKctn2ZUuQ5dLFZH1NVhtx3INDhY9s8f3AEtKbbVW6oUF8PdF2eIdDhr7YR5izLKsMFel9D+jc9XadpAh0ebCPMWZa7lF70zUDXX/V0nZuertM0gQ7FNsKcZenCfMj56bHXvC+aneJAmLM8Y4R5UqrT+1jy+X9R6f4igc7SbSPMWZaxwjxJ+gqYL3q6TtMMubNk5xHmLMuYYb7u6TrXPV2neQKdpdok+dfUjYARjRnmSX+V84badyTQWaJ1bBrDsowd5kl/BXE2ldmRQGdpTlN2x4KlmCLMk/566Dc9Xad5Ap0l6c4zd9AKSzFVmCd66KMT6CzJZZzLzHJMGeZJfz10gb4jgc5SbOM8c5Zj6jBP+vl9u42iuJ0JdJZgE8vTWI4awryv4fbLnq6zCAKd1p0muZi6ETCSGsI8EeiTEOi07CRlqF0RHEtQS5gnAn0SAp2WXcS8OctQU5gn/ewSdx1L1vYi0GnVWcybswy1hfkq/TxIb3u4xqIIdFq0ipsBy1BbmCflYboPNoDa09+nbgAMYBvz5rW6SwmfmzwMp14+eZ/H/5aUWoinc7Lr+z9PH/370r7nNYZ5UlaVHOsqhtv3JtBpzXmSb6duBEnKHOhlyo35fQ4vcPrwzMc+d60u2Lu3ddrdSKjWMD+N4fbJOA+dlqxSbnBL66nVogvw7q2GDUFWKSFzlnYCvtYwT0oQH1u7cpvyfWNPAp2WvE3y/dSNWJh3KeH9NvMYIu167pvMcwVEzWG+TvJ7D9f5MXroBxHotOIsyb+nbsRC3KYsCZxLiH/KKiXYN5lHz73mME9Ku459SLpOf2vYF0eg04KTlJvJHG7Kc/Ymped0OW0zBrFO3VsE1x7mr5L80sN1vkubP1+jEOi04FX6uZnwsbuUEL/IvHvju1qlBPt56qnFqD3M+xode5N+KuQXS6Azd6skf0zdiAbdpYT4ReoobhvbSUqoTx3stYf5aUqP+tiv0V3K7/ISf9Z6I9CZu8tYpta3NylB5ub6EOxTjAAtJcyT5J+xkczRBDpztk4/VbUUVylDnjfTNqNKq5Sph7EeHmsP85OUn5M+wvx1ykMTRxLozNlNFML14TblhqqH9LKzDL8T4RzC/DL9LPtT1d4je7kzV5sI8z68TrmhCvPdvE3prV8NdP0lhXn3udITPXTm6iYC/Rh3Kb3Ny4nbMWfnSf7V4/WWGOa1fq6zpIfOHG0izI/xLqWXeTltM2bvImXd9F0P16o94PoM86Q8TNb6uc6WQGeOXk3dgBn7OeVmqoK9H5cpQXx9xDWWFuY/xsPkIAQ6c7OJ3vkh7lJ6kxdTN6RB73N4qC8xzLc9XYsnzKEzNzcR6Pu6TnkQqjU0WrFv+NUe5l2xZB+/b3cpP4OKLwfkPHTmZBNhvq/rlNAwxD68Dylf68u8HOpzCPPL9LM8r/bPtRmG3JmTV1M3YGbeRZiPrQv1zw2/1x5wmwjzWRLozMVZ9M738SaK36byIeVr/1z1e+0Bd57kt/QT5t2mMbV+rs0xh85cXMae7btyalUdTpP859F/1x7m2/R3fKypngnooTMHpxHmu+r2Y2d671OqupO6w7wr5usrzN9EmE9CURxz4OCG3VynDPVSj23KA+k2dYZ517a+lqUZHZqQIXdq1+epTi0zxMm+1inLyPr63bLGfGKG3KndJsL8Jd0aX2HOrjYpRw/3Vcn+zwjzyemhU7ubqG5/yXexlSa726a/+fKaawMWRw+dmp1GmL/k1whzdnOSMsTeZyX7KsK8GgKdmimG+7x3sdkOu+kq2b/v6Xo2LaqQIXdq9iHmzz/lLqV35IbKS/rcxjVRyV4tPXRqdRZh/jl2gWMXfYf5zxHm1RLo1Mp66k97HfPmvGydfsP8xzh+t2qG3KmV4fbn3ab0uvTO+ZxNyp7sfbhLecC+7Ol6DMROcdTIcPunnUeY83mb9Bvm66hknwVD7tTIcPvzrlKWHcGnbCLMF8uQOzUy3P68r1M22oHnrFN2f+vDbcqDtTCfEUPu1OY0wvw5v0aY82mn6W/0xrkAM2XIndoYbv/YXVQXD22dsvnKHK3SXzW7cwFmTKBTG4H+sYu4wQ5hkzKk/GfKUPV/U3q5cwr2bjvXvsJ8HcPss2UOnZqcpNxUeWBHuP51IfjtJ/7918xnS9236Wc7V2HeAD10arKeugEV0jvv12lKaH0qzJP5/Byep7+92c8jzGdPoFOT9dQNqIy5836dpBwd2sIJfqdJ/tXTtV7HWeZNEOjUZD11Ayqzjd55n94m+WbH96tZN2XQh6s41bAZ5tCphfnzj1l33p9Vkj92fN/av+59zpufpu7PlT3ooVOL06kbUJl3caPt066rJ16n7q973/PmNz1diwoIdGqxnroBldlO3YDG7LIU7Sp1V7f3OW/+Ln7GmiPQqYUe+oPb1D+POzfblCHm59ylLFVbp96aha6grw/XcaZ5k2z9Si3WUzegIsK8fzcpP2Ov8tfe+tvMo/jwIrsV9L3ETnANUxRHDRTE/dU/Yk0wDzbp7wQ1P1sNM+RODQy3P7iOGy4PVulvL4If42eraQKdGqynbkBFDLfzWF/7tP8YRXDNE+jUYDV1Ayoi0On0NW8uzBdCoFOD1dQNqMRtDIlSnCX5qYfrCPMFEejU4HMHZSzJ5dQNoAp9LVET5gsj0JnanM6eHprhdpJ+5s2F+QIJdKamwv3B5dQNYHKvcvyIlTBfKIHO1FZTN6ASt7HZx9Ktk/xy5DWE+YIJdKa2mroBlbicugFMqo95c2G+cAKdqa2mbkAlVLcv29skXx3x8cIcgc7kVlM3oBICfble5bh5858jzIm93Jne+/SzecbcfTF1A5jEJsft0/4mTk7jnkBnan4Ay/7tqv2X5zTJf474eGHOXxhyh+ndTN0ARnea4wohhTkfEehMaTV1Ayph/nxZujA/dPMYYc6zBDpTWk3dgErcTN0ARiPMGYxAh+ndTN0ARiHMGZRAh+nZIa59mxwX5q8jzHnB36duAIumsrswh962VzluS1ebxrATgc6UnLRGy7rtXL8/8OPvkpxHmLMjgQ7Tup26AQxinRLEh27nend/DaM37MwcOkzrZuoG0KuTJBdJfs/hYX6dsgJEmLMXgQ7Qj7OUEP7piGu8SaktUSjJ3gQ6wHHWKRXs/85xQ+w/RiU7RzCHDnCYdY4/KS0pQ+ybGGLnSAKdKa2nbkAF3MTnZ3P/dmyQJ2V9+XkP1wGBDhMzVzoPp3kI8kM3h3nsNg+bzUAvBDrA885SRpHOcvjc+HNepwzVe5ijVwIdoDjJX0O8j574Y3rlDEqgA0vWhfhZDt/RbRe/pqxP1ytnMAKdKd2kn8KiObOf/fjGCvEkuUrpld8M/Dog0JnUzdQNqID97MdzlhKuQ4d4YnidCdhYBmjZacqe6h9SNn4ZOsxvUzaIWaW9MF+lTBtcJvkz5Wv6NjbDqYYeOtCidfrZ9GVXdylh1+o8+Sblc3tcKPhlygPS93lY0nczbrN4TKADLVlHkPdtm+SHF97n25RNktaxWdJkBDpMS1FcP7pTzl4Knj61vp78JGV4/Zsd3//L+/c/jZ76JMyhw7T6Xuu8RJuUABkrzN8l+Tply9ZWw7wL5V3DvPNlSo+eCQj0Np2kDH2tpm3GiwzNcYyTlKKs3zLOg9F1ku9SquVvRni9qWxSetqHfk2/jZGnSQj0dmxSbm5/Jvlvkt+T/HH/30/fLlPHcqlWezf7Wk/dgBlap4TqGEvQ7pL8nBJSlyO83pQu0s8D0lkPbWFP5tDnr1uWs8/Q2Ld5mOuCuTlP8q+RXutdysNy6w+fJyn3kTEekBiIHvq8bbJf0cpj32T6QG/9Jrmrqb8Pc7LNOGF+m4fh9dZ/TruRB2E+cwJ9vjY5fmhs6huVOfSihumPOdhmnMK311nG8HpSpi4uc1in4HOmvrcskiH3eTpNmes6xm3aLuyZk/XUDZiBbYYP86Vt17pJ6RQM4e1A1+Uz9NDnp6vsPbZopZZfuNupG1CB1dQNqNw2w4f5knrlSfmaDhXmV9FZmIQe+vy8SvJVD9c5toffl5v08/nM2dI//8/ZZtgwX1qvfOjit7vY230yeujzcprkpx6u82vqeYI211asp25AhbYZNszfZFm98m7ntyGL39ap596yOAJ9Xs57uMZ1Si+/FgrjCpXuD7pppaHC/C7JP7OM5Wid05Tftb6L3zp3Sf4Rv8+TMuQ+H6scf4OrcThsKTfUlwj0Yt/9w/d1leWdCtaNQgy1m94Sv6ZV0kOfj2N3XrpLnSch1daeqaynbkAFuuAZKsx/zfKGhIcM89uUkY51lvU1rZYe+nysj/jY25QHghrDUw+9+Cqld7rUr8c6/azeeM7SCt86Q4T5Xcr3aZvlfT2rJ9DnY3Xgx9W+dWWNDxlTWaee5YRj2mS4JVS1//wPpa8wv7q/zmXK19Dva8W++PPPP6duA7vZ9xt1l1JEt+2/Kb0bslhnTt6kvhqHoW0zXPHbz6lneeaYjg3zdynflyU+XM6aHnqbXqdUss+lV3ITgZ4sax59yOK3WutFxtCtMz8kzN+k3Ddu+msOY1IUNx+77Kj2JsnXKT3zuYR5sswb73O+yjKq3U8z3EPcVcr01BJ/pg59SOruG5sI81kT6POx/cT/v0up3p3zL+QSb76fsp66AQM7T/KfDFP81lWxz+lhtk8X2S/Mr1NOlNtknvcNnjCHPi+vUn75uifxbdqY5zpNuclTbrIt9tJPUgJniPnybn+FFn4XDrVO8vse7/9r6tpgih4IdGrhB/HB12mrx3Sa8vA5xBD7dcqSzJsBrj0n2+z2sLTUJXyLYMidWlxN3YCKbKZuQI/OMlzx25vY1KSz2uF93mVZe9cvjkCnFubRH2ymbkBPLpL8O8PMl/+YZa4v/5SXpht+Tnm48vVqmECnFpdTN6AiX2XexXGrlAe0Pk4GfKo7BGQ7wLXnbJsy/fDUVcrXa4nr8RfHHDq1WCX5Y+pGVGSum8yc5fB10C+5zrKr2F9ykrKKYJ3yNbqIB+VFEejU5Cald0rxf5lXeF1kmF55UjZL6uP4YGiWIXdqcjl1AyozlwBbZdgh9h8zn68FTEagU5PLqRtQmTmEWHeK3xBV7Lcpw8fbAa4NzRHo1ORy6gZU5svUO4/ebRQzVBX7VcoSK6sfYEfm0KnNTcyjP3abw4/OHcqQG8UkdjGDg+ihU5slb9/5nK9SVy/9Vco2vUOdkvbPCHM4iECnNpdTN6BCr6ZuQMoowWWSXwa6frckzQMdHEigUxs39I99lWkL5DYpc9nfDnT9bgtX8+VwBHPo1Ohtku+nbkRl7lJ6yWOuSz9JmSsf8nvxc+xiBr3QQ6dGeukf+zLjDr13J5gNFea3sSUp9EoPnRqdJPnv1I2o1D8y7ND0GL3yd3GwCvROD50afUi56fOxIXu05xm2V5449QsGI9CplWH3532b/gvkVikV7P/KMJvEJIbYYXCG3KmVYfdPu0vZ3OWmh2u9SnlAGCrIE0PsMAo9dGpl2P3Tvszx+5uvUx4IfsmwYW6IHUby96kbwGycpfQKkxIEl+mnh/g521i+9px3OXzYvduD/Yf+mvOs6zysXwdGYMidzzlJCY5PDcmOcUb1h0+89hLdpoTk5YEff54yxD701/P1/evolcOIDLnznFVK7/i/+fyQ7E8Z/mjLoa8/F69TRkguD/jYdcpoypBFb8nDXuznEeZPnaauPflpkB46j52k9Kx+2vPjvstwe7Cvkvwx0LXn4C4lCA6p+l+lPBANtWXrYwrfPu0k5ffjmyQ/xkMqA9FDp3OWMt+5b5h3HzuUm5SzsZfoOqVnt2+Yd5vD/JHhw/wuCt9ecpGH0+l+i0BnIAKds5Tew79z+Dnkpy+/y1GWuHb5XR6GynfVjbDcZPiit6Q8aJ1mmd+fXZ3n4+/FDxHqDECV+zKtU4L8LIeH+JjephSEzaGtfTjkwJLN/ceMUUB4l/LgIMg/b5NSt/CcHx69D/RCoC/DKg8hvs48q8Yv8umbYysOWep1mtLb++aF9+vLVUobb0Z6vbk6TRle/xyhTq8UxbXrJCXAzzP8zf4q5UFhSCcpITLHh5Fd/Jry0LLrPPShBYyHukv5WdqO9Hpz1q1G2PVn9Trl90cNAkcxh96edR6WnP2W8XpuQ/uQNod4r1L2OH+V3W/oXWCMFebv8lAxz+ftG+ZJ+R29THlIg4MJ9HZsUm4Kv2ecgqjHLkd6ne1IrzOG25TlfuvsN8S+ycMSqKF1bVTBvptDwrwj1DmaQJ+/s5Sh6N8yznrjKd0keTN1I450lbIWeZX9H4QuUr7PQ0873KVMAawy3sPa3HWrRY753gh1jmIOfb7WKcO0NYT4mJtlrDLPjWbepHyNLg/42JOUSv+xNojpzkVnN5u8XAC3j7vsP3IDeugz1G0a8nvqCPNk3Jv/TebTS79NWYL2dQ7fg32d8jkP/b2+zsPw+s3Ar9WSbfoN86T08i8z/P4ONEYPfV7OUm4gtVV6D7n163NWqbeXfp3ytdjmuB7WWFXsqtcPs0oZNRmylkFPnb0I9HnoeuW1HiX6j4x/07nIeFXen3OXEuBv09+Rsmcpn9/QG+nYf/0wYz5YC3V2JtDrt04Ji9p65Y99McFrTrUu/Trl5vo+JcD7vNGuMs5hKscc+LJkY6/9f8yhLrzITnF1O0/7u6MdqluX/stA17/LQ3Df5CHAh7BKCYoxlhvqlR9mnRKoU20/3M3Tbyd6fWZAD71e24y/nvxQ/5dpAuIkJWiPvcle5ePwHuPzWWW8INcrP8wq5cGxlukuPXU+SaDX5/HZyXMxdlHcY5vsV2V8m9LWyzyE+NjWKe0e64HtdfbbiY7ye3h+/1bbdJdQ51kCvS5zDPNk2kDP/Wt/bt75XR4K126Gb86zTlJC/DzjDdseepDKKg/HsO6zv3wrNhnv5LpDvYlDXXhCoNdjrmGeHHbcZ59Ok/znyf97lxLgbzNdIHUH5Jxl3CHb2xy+7v1V/torvUvpDV6k7fXp3ffqVeZzTK9Q5y8Eeh3mHOZJGdI9n7gNF3lYTrTNdOGzysMxtWPPux5zTvkux7C+u3+flubhV3kYOam5R/4pQp3/EejTm3uYJ+Mcn1qrVcrn3r1N1bs7Zp78VfZbLXCbEurbzHN99FQjJ0MR6iQR6FNrIcyT0jNcwoESJyk92fWjP6fu1R06T57s1it/SRfu3cY6tWotxJ9ypjoCfUKthHnn67Qzx7q6fzt99Odppg/vx65ThokvD/z4V+l/DX+3a163Zv+y5+vv4yR/HTlp5ffsc4T6wgn0abQW5knyz8xzbvX0yVstB958ym1KGG8P/PixtpXtdDvr3eRhff9lj9fvRk1WeZj+WGU+hW19E+oLJtDH12KYJ3UUxu2iGyrv3mrqdX/OXUoQH7qM7PT+Y2t6YLnOw+dyk5dHeNaP/r7KckP7JUJ9oQT6uFoN86QEzip13kROU+aZzzLPEHiT8rB0yNf2JCXI57LrIP1wqMsCOQ99XNu0GeZJ6em+mroRj3Q7fd2krFH/KfML8zd5OEv90Or1mwjzJXKm+gLpoY9nm2XcWH/NtMG+un/9s8xnOP2pq5TP4fLAjx97npx66akviEAfxzbLCPPOMUupDrXOuPujD+HYyvV1yoNATfPkTE+oL4Qh9+GdZ94hc4hvk/yR8iCzGvB1uv3R3yf5PfP9Ot+mHLhxmsPCfJXytf49wpyPfZky7bSZuB0MTA99WJvsdxJYq67ysGXosUVzLW0QcuwStK5OYKgz4WmPk9oaJtCHs07pMfFXV/nr8aUvBXy3xniddjYIOTbIkxLkrzLfOgGmI9QbJdCH0Q2dutnu5vF65E5tO7P14di15ImCN/oh1Bsk0PvX8lpzDtNHkK+j4I1+OdSlMX+fugENehthTnGbEuLbHB7kq/uPF+T0rSsi3UzZCPoj0PtV29aaTKOPOfLV/TXmWrnPPAj1hhhy788mKtqXro8gt1UrUzD83gCB3g9FcMt2lRLCx5w21y1BO4+fI6bhUJeZE+jHUwS3XO9SgvzyiGsIcmryLmUlBTNkDv14FxHmS3KX0hN/leO2thXk1OYudR2wxJ700I9zluTfUzeCUfRRsZ4Icur1j9jvfdb00A+3io0ZlqCP+fFEkFO3HyPMZ0+gH24bN+ZW3aYE+EWOPzFOkFM7u8Y1QqAf5jzWm7foTUqQH9sbT8oIznnKUiBBTq2EeUPMoe/vJKXX5ibdhnd5CPE+luusYkMY5kGYN0YPfX/bCPO56zvEE3utMy/CvEF66PtZx5GoczVEiCdlSP08li4yH8K8UQJ9P+/jxj0nQ4V4V+i2iWNMmRdh3jBD7rvbRJjPwXXKDWub/rewXMX8OPN0lzLCaGlawwT67s6nbgCf1G368jbHLzP7nA8pvXOYE2G+EIbcd3Oa5D9TN4K/6LZgvcj4N6qLJD+N/JpwCAeuLMjfpovuEMQAAAWCSURBVG7ATKynbgD/c5UyD3iSMg0yRa/j/L4NdxO8NuzqTYT5ogj03aynbsDC3Sb5NcnXKd+L7ZSNubdNacv1tM2AZ/2a8sArzBfEHPpuzJtOo8+d24bwPiXUL6JQjjrcpQR5rb8zDMgc+m4+xGYyY+nrVLOxbVLa7eeEqVynnAB5M3E7mIhA340v0rC6ArdtkstJW3KcVcrnYXkjY3sdK3EWT6Dv5iY2EBnCdR6Wm82pN/6SV0l+mboRLIIhdv5HoO/mMvbo7suUy83GdJoy4qC3zlCuUobYW3oY5giq3HdzM3UDGtAtN1tluuVmY3qfEuq/Tt0QmnOX5OdYksYTAn03rYfPUO5S5vYeLzdb2g3oVcrnfzVxO2jDVcqD4sXUDaE+htx3s0ryx9SNmJF3KeFtXu+vNlEJz2HuUorethO3g4oJ9N3dRGHc54y1n/rcdSe1KZpjV29SfmaWNrrFngy5784Q18fuUm42/0gZxbiIMH/JhzwMw7+ZtilU7irJd7HjGzvSQ9/dSUpYGS59OGd8O3E7WrBOCXirKOjcpvxMbKdtBnMj0PdznuRfUzdiIkOeM45gp4x4Xdy/+R1jbwJ9f++znLXFt3lYM34zbVMWYx3BvjSCnF4I9P2tUkK91aH3LsS3sVxvSusI9iV4k/J9vpm2GbRAoB/mNGX3uFZCXYjX6zRlqsdpbu3QI2cQAv1wcw91IT4vq5Rq5/PM92du6QQ5gxLoxzlJCcTvJ27Hrt6lPIRYKz5vm/s3w/Hz0B1CtJ24HTROoPdjnTrnO69TAvwydm1r0Sqlx34Wmx7V6E3mfyQwMyLQ+7VKCfez+z/HHhq9Shk+v7x/M6y3HGeP3gzJT6fVI4GZAYE+rNOUYF/f/73PXtRVyrD5+zyEOCTCfWy2PaYKAn1cJynBfvro7yeP/v005Qb8+GSuDymB3f15EzcNdteNFhmW71e30ZIQpxoCHZZjlYeAX0fvfR93eahFuYwQp0ICHZZrnYfpoHUE/GNdgHdvlnZSPYEOdE6fvNW2amNI13moRenqUmBWBDrwOacpQ/Wnj/4+57MMblOGyy/z16JSmD2BDhxi9Ym3ZNqe/XVKAenTYtLuT2iWQAeGtH7hvw9xk78WpXWBDYsm0AGgAX+bugEAwPEEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA0QKADQAMEOgA04P8BkH5NVWmYWmwAAAAASUVORK5CYII=" alt="Cosmic Arc Media" class="logo-mark">
+    <span class="brand-name">Cosmic Arc Media</span>
+  </div>
+
+  <p class="eyebrow">Texas Select Insurance &middot; Shoot 5</p>
+  <h1>Eight scripts for Thursday's shoot</h1>
+  <p class="intro">These are the full teleprompter scripts for the September 10th session, in order. Each one below has a quick topic line, then a <strong>Read Full Script</strong> button that opens the entire word for word script right on this page.</p>
+  <p class="intro">Take a look and let us know if anything needs to change before we roll camera.</p>
+
+  <div class="count-strip">
+    <span class="count-pill">8 scripts</span>
+    <span class="count-pill">~10 to 12 min each</span>
+    <span class="count-pill">Long form, informational</span>
+  </div>
+
+  <div class="list">
+    
+      <article class="card" id="script-1">
+        <div class="card-head">
+          <div class="card-num">01</div>
+          <div class="card-headtext">
+            <h2>The One Page Nobody Reads (And The One That Decides Your Claim)</h2>
+            <p class="teaser">A walk through an actual policy, page by page, so you know what each section is for before you ever need it to matter.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Personal lines, policy literacy</span>
+              <span class="meta-pill">~11 min runtime</span>
+            </div>
+          </div>
+        </div>
+        <button class="read-btn" type="button" data-target="body-1" aria-expanded="false">
+          <span class="read-btn-label">READ FULL SCRIPT</span>
+          <span class="read-btn-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <div class="script-body" id="body-1" hidden>
+          <div class="script-divider"></div>
+          <p>You&#x27;ve had this policy for three years, maybe five, and you&#x27;ve read exactly one page of it. The first one. The rest went in a drawer, or a folder on your computer you&#x27;ve never opened twice. I&#x27;m with Texas Select Insurance here in San Angelo, and I&#x27;m not telling you that to make you feel bad about it. Almost nobody reads their policy. But here&#x27;s what nobody tells you when they hand it to you. The page you did read isn&#x27;t the page that decides your claim. It&#x27;s the pages you didn&#x27;t that do that. So today I&#x27;m going to open one up and walk it front to back with you, plain English, no jargon left unexplained, and by the end you&#x27;ll be able to do this yourself with any policy you own. But I want to start with something that happened, because it&#x27;s the whole reason this matters.</p>
+<p>A guy calls us after a pipe bursts in his attic. Real damage, ceiling down in two rooms. He&#x27;s certain he&#x27;s covered, because he remembers his agent saying something about water damage years ago. Except the exclusion that applied wasn&#x27;t about the pipe. It was about how long the water had been running before anyone noticed, and that language was sitting in a section he&#x27;d never once opened. That&#x27;s the moment this stuff stops being paperwork and starts being money. So let&#x27;s make sure it never happens to you.</p>
+<p>Start with the declarations page, because that&#x27;s the one page most people do see. Think of it as the cover sheet. It tells you who&#x27;s insured, what dates your coverage runs, and it lists your coverages with a dollar limit next to each one. That limit is the most the policy will ever pay for that type of loss, full stop. You&#x27;ll also see your deductible there, and your premium. If you only ever read one page, that&#x27;s the one, but it&#x27;s not the one that trips people up.</p>
+<p>Behind it are five more sections, and every policy you&#x27;ll ever own, home, auto, business, uses roughly the same structure. The insuring agreement is the company&#x27;s promise in one paragraph, basically we&#x27;ll pay for covered losses under these terms. Then definitions, which almost everyone skips and which is honestly the most useful section in the whole document. Any time you see a word in quotation marks inside your policy, that word has a specific legal meaning assigned to it back in definitions, and it&#x27;s often narrower than what you&#x27;d assume walking in. Take the word occurrence, sitting in quotes on nearly every liability policy out there. Most people assume it means one single incident. But plenty of policies define it as continuous exposure to substantially the same harmful conditions, which can quietly turn what feels like ten separate incidents into one occurrence for the purpose of your limit. That&#x27;s one sentence, buried in a section almost nobody opens, and it can be the difference between ten limits worth of protection and one. Then exclusions, which is where the company draws the line on what it won&#x27;t touch. Then conditions, the rules both sides have to follow for the policy to function. And last, endorsements, the attachments that change your base coverage, add something, remove something, or adjust a limit.</p>
+<p>Here&#x27;s a question worth asking yourself right now. Do you know what your dwelling limit is, and do you know if it still matches what it would cost to rebuild your house today? Construction costs have moved a lot in the last few years, and a limit that was right when you bought the policy might be quietly wrong now. Most companies recommend insuring to full replacement cost, which is different from market value. It&#x27;s what it would cost to build the exact same structure again, from the ground up, at today&#x27;s prices.</p>
+<p>Now, deductibles, because this is where I hear the most surprise from clients. Your deductible is what you pay before the insurance kicks in, and on home and auto it applies per claim, not once a year like health insurance. Two claims in a year means paying it twice. Here in Texas, a lot of home policies carry a separate deductible for wind and hail, and it&#x27;s usually a percentage of your dwelling coverage, not a flat number. Two percent on a two hundred thousand dollar home is a four thousand dollar deductible, and you don&#x27;t want to learn that number for the first time while you&#x27;re standing in your driveway looking at a hail damaged roof. One more thing on this, and it matters, a contractor can&#x27;t legally offer to eat your deductible for you here in Texas. If someone offers that, that&#x27;s not a deal, that&#x27;s a red flag.</p>
+<p>Okay, exclusions, the section everybody skips and the one that comes up in almost every dispute I&#x27;ve ever seen. They&#x27;re not tricks. They&#x27;re the lines the policy draws around what it was built to cover. Standard Texas home insurance excludes flood, plainly, in writing, no fine print required to find it. It excludes earthquake too. But watch the wording closely, because sometimes an exclusion has an exception built into it, language like &quot;except as provided by endorsement,&quot; and that word except is doing real work. It means there might be a way to buy the coverage back. Sewer backup is a good example, usually excluded in the base policy, usually available as an endorsement for a separate premium.</p>
+<p>So walk your own risks against your own exclusions. What&#x27;s likely to hit your specific property? Out here that&#x27;s wind, hail, a hard freeze splitting a pipe, maybe flooding after a heavy rain. Check each one against what&#x27;s excluded, and if something you&#x27;re genuinely worried about is on that list, you have options, an endorsement, a separate policy, or at minimum you now know exactly where your exposure sits instead of finding out during a claim.</p>
+<p>Endorsements themselves are just customization, nothing scary about the word. Some get attached automatically as part of your state&#x27;s standard form. Others got added because you or your agent chose them. An ordinance or law endorsement, for instance, covers the extra cost of bringing an older home up to current code when you rebuild after a covered loss, and without it, upgraded electrical or plumbing required by your city might come out of your pocket. Scheduled personal property is another common one, listing specific high value items like jewelry individually so the standard sub limit doesn&#x27;t cap what you&#x27;d actually recover.</p>
+<p>Before we get to replacement cost, one more term worth knowing if you own a business or carry a bigger liability policy, per occurrence versus aggregate limits. A per occurrence limit caps what&#x27;s paid for any single event. An aggregate limit caps what&#x27;s paid across every claim during the entire policy period combined. Think of the aggregate as a bucket, every claim dips into it, and once that bucket&#x27;s empty, the policy stops paying for the rest of the period, even if no single loss ever came close to the per occurrence number on its own. Personal auto and home policies mostly just use per occurrence language for liability. Commercial policies run both together, and if you&#x27;re a business owner, that distinction is worth understanding well before a bad year of claims makes it matter.</p>
+<p>Last piece, and it&#x27;s the one that changes real dollar amounts more than anything else we&#x27;ve covered. Replacement cost versus actual cash value. Replacement cost pays what it costs to repair or replace your property today, full stop. Actual cash value pays that same number minus depreciation for age and wear. A ten year old roof that costs ten thousand to replace might only be worth seven thousand in actual cash value terms, and that three thousand dollar gap is yours to cover. Here&#x27;s the part that catches people off guard even when they do have replacement cost coverage. A lot of policies pay you the depreciated amount first, then release the rest, called recoverable depreciation, only after you&#x27;ve finished the repair and shown proof. So the check doesn&#x27;t always come the way people expect, and knowing that in advance saves a very confused phone call later.</p>
+<p>At every renewal, give this ten minutes. Check your dec page against last year&#x27;s. Ask why your premium changed if it did. Think about anything new in your life, a renovation, a home business, new jewelry or equipment, because standard policies often have thin or no coverage for business gear used out of your house. Check your dwelling limit against current rebuild cost. And if you had a claim, know that in Texas, three or more non weather claims in three years can give a company grounds to nonrenew you, though weather claims like hail are treated differently and can&#x27;t be used the same way against you.</p>
+<p>So here&#x27;s what I want you to take from all of this. Your declarations page is your summary, start there. The six sections, dec page, insuring agreement, definitions, exclusions, conditions, endorsements, each does a specific job, and now you know what that job is. Limits cap what&#x27;s paid. Deductibles are your share, and watch for percentage based wind and hail deductibles here in Texas. Exclusions tell you what&#x27;s not covered, and endorsements can sometimes buy it back. And replacement cost versus actual cash value might be the single biggest swing factor in what you actually collect.</p>
+<p>If you want to sit down with us and go through your actual policy, line by line, we&#x27;ll do it, no charge, no pressure. That&#x27;s not a sales pitch, that&#x27;s just what the review is for. Because the worst time to learn what your policy says is the day you need it to say something specific, and that day doesn&#x27;t send you a warning first.</p>
+<p>Texas Select Insurance. San Angelo.</p>
+        </div>
+      </article>
+
+      <article class="card" id="script-2">
+        <div class="card-head">
+          <div class="card-num">02</div>
+          <div class="card-headtext">
+            <h2>What Happens After You Call In A Claim</h2>
+            <p class="teaser">Two real scenarios, a hailstorm and a wreck on Sherwood Way, tracked from the first phone call to the final check.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Claims process, home and auto</span>
+              <span class="meta-pill">~10 min runtime</span>
+            </div>
+          </div>
+        </div>
+        <button class="read-btn" type="button" data-target="body-2" aria-expanded="false">
+          <span class="read-btn-label">READ FULL SCRIPT</span>
+          <span class="read-btn-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <div class="script-body" id="body-2" hidden>
+          <div class="script-divider"></div>
+          <p>Most people file an insurance claim maybe three or four times in their entire life. Which means when it happens, almost nobody knows what they&#x27;re doing, and it&#x27;s usually happening on the worst day of their week. I&#x27;m with Texas Select Insurance in San Angelo, and I want to take the mystery out of this completely. We&#x27;re going to follow two real situations, a hailstorm that tears up a roof and an accident on Sherwood Way, from the first phone call all the way to the final check. And I&#x27;m going to answer the question almost every single client asks me at some point, does filing this actually raise my rate. Stick around for that one, because the answer isn&#x27;t what most people assume.</p>
+<p>The first few hours after something happens matter more than people realize, and here&#x27;s why. Before you clean anything up, before you touch a single thing, take photos and video. Every room, every angle, wide shots and close ups, the whole scene, not just the damage itself. If it&#x27;s your car, walk all the way around it and get the impact points specifically. Your claim gets evaluated on documented evidence, and if you clean up first, that evidence is gone. Now, you&#x27;re also required to prevent further damage where you reasonably can, so board up a broken window, tarp a torn roof if rain&#x27;s coming, just keep every receipt for the materials, because that&#x27;s reimbursable.</p>
+<p>Once you&#x27;ve documented it, you call it in, and that call has a name, first notice of loss. Have your policy number ready, the date, the location, how they can reach you. You&#x27;ll get a claim number back, write it down, you&#x27;ll use it every single time you call after this. Texas gives you roughly a year to file a home claim from the date of the damage, but don&#x27;t sit on it, the sooner you report, the sooner anything moves.</p>
+<p>Here&#x27;s Maria, hail tore through her roof and a couple of windows this spring. And here&#x27;s David, someone ran a red light on Sherwood Way and hit his truck. Both of them call in the same day, both get a claim number, both get told to expect an adjuster. That&#x27;s the next call you&#x27;re going to get, and here&#x27;s who&#x27;s on the other end of it.</p>
+<p>The adjuster works for the insurance company, and I want to be straight with you about what that means. They&#x27;re not against you, but they&#x27;re representing the company&#x27;s interest in getting the number right by their standard. For most claims that&#x27;s fine, most adjusters are thorough and fair. But if your loss is large or genuinely complicated, you can hire your own, called a public adjuster, licensed by the state, working for you instead of the carrier, and they take a percentage of the settlement for it. You don&#x27;t need one for a straightforward claim. You might want one for a complicated, expensive one, and if you do go that route, verify their license through the Texas Department of Insurance first, they run a consumer help line for exactly that.</p>
+<p>Somewhere in here you might get asked for a proof of loss, a signed statement listing what was damaged and what it&#x27;s worth. Not every claim needs one, a simple fender bender usually doesn&#x27;t, but a bigger home claim with personal property involved often does. Be specific, be honest, don&#x27;t round numbers loosely, and if you have receipts or old photos of what got damaged, use them. This is the best argument for keeping a running home inventory before you ever need one.</p>
+<p>Now, the deductible, and here&#x27;s exactly where it lands. It comes off the top before the company pays anything. Say Maria&#x27;s roof and window damage comes in at twelve thousand, and she&#x27;s got a two percent wind and hail deductible on a two hundred thousand dollar home, that&#x27;s four thousand dollars she owes first, meaning the company&#x27;s actual payment is eight thousand. David&#x27;s collision deductible is a thousand on a six thousand dollar repair, so the shop gets five thousand from the company and a thousand from David directly. People sometimes expect a check for the full estimate before the deductible comes out, and that&#x27;s just not how the math works.</p>
+<p>And this next part is where replacement cost really shows its teeth in a live claim. If Maria&#x27;s roof is ten years old and the full replacement cost is twelve thousand, the company might only pay actual cash value up front, call it eight thousand, minus her four thousand deductible, so her first check is four thousand dollars. Once she replaces the roof and turns in the contractor&#x27;s invoice, they release the held back difference, called recoverable depreciation, bringing her total up to the full replacement amount minus the deductible. So the payment shows up in two pieces, and if nobody told you that in advance, the first check can feel a lot smaller than you expected. If your policy is actual cash value only, there&#x27;s no second check, that depreciated number is the final word.</p>
+<p>If you&#x27;ve got a mortgage on the home, there&#x27;s one more wrinkle worth knowing before it surprises you. The check for structural repairs typically gets made out to both you and your mortgage company, not just you. You&#x27;ll need to endorse it and send it their way, and they release the funds as the repair work progresses. Once your lender has what they need from you, Texas guidance requires them to release that money within ten days, and if there&#x27;s ever a dispute over those funds specifically, that&#x27;s actually handled by the Texas Attorney General&#x27;s office, not the insurance company.</p>
+<p>Every so often you&#x27;ll get a letter with reservation of rights at the top, and I want you to not panic when you see it. It just means the company is continuing to investigate while it sorts out a coverage question, it&#x27;s not a denial, it&#x27;s a pause with a flag on it. Call your agent, have them walk you through what it means for your specific situation.</p>
+<p>Texas puts hard deadlines on all of this, and it&#x27;s worth knowing them, because they protect you. Fifteen days for the company to acknowledge your claim and tell you what they need from you. Fifteen business days after they have everything to accept or deny it, with a possible forty five day extension if they explain why in writing. Five business days to pay you once they&#x27;ve agreed to. Miss that five day window after agreeing to pay, and you may have grounds to sue for the claim plus interest and attorney&#x27;s fees.</p>
+<p>So what happens if you just flat out disagree with the number? Start by talking to the adjuster directly, show them your contractor&#x27;s estimate if it&#x27;s higher, ask them to walk you through their math. A lot of this resolves right there. If it doesn&#x27;t, and the disagreement is purely about dollar amount, not whether it&#x27;s covered at all, most policies have a built in appraisal process, you hire an appraiser, the company hires one, the two of them agree on a neutral umpire, and the umpire&#x27;s call is binding. If the fight is actually about coverage, whether it&#x27;s covered at all, appraisal doesn&#x27;t apply, and that&#x27;s when you&#x27;d file a free complaint with the Texas Department of Insurance or talk to an attorney.</p>
+<p>Now, the question everybody&#x27;s been waiting for. Does filing a claim raise your rate? Here&#x27;s the honest answer, it depends, and here&#x27;s the actual nuance behind that. Texas law says three or more non weather claims in three years can give a company grounds to not renew you, and after two, they have to warn you before a third one counts against you. Weather claims, hail, wind, are treated differently and generally can&#x27;t be used against you the same way. There&#x27;s also a database called CLUE that tracks claims history on you and on the property for seven years, and companies pull it at renewal. But here&#x27;s what I want you to hear. None of that should scare you off filing a real claim. The math on a five thousand dollar loss is different from the math on a fifty thousand dollar loss, and for anything significant, filing is almost always the right call. For something small, right around your deductible, that&#x27;s worth a quick call to your agent first, just to think it through together.</p>
+<p>So document everything before you touch anything. Get your claim number and keep notes on every call. Know your deductible ahead of time, especially that wind and hail percentage. Understand replacement cost usually pays in two pieces. And on the rate question, weather claims sit differently than everything else, and real losses are worth filing regardless.</p>
+<p>If you&#x27;re in the middle of a claim right now and something about it doesn&#x27;t feel right, call us. We&#x27;re right here in San Angelo, and this is exactly the kind of thing we help people through every week.</p>
+<p>Texas Select Insurance. San Angelo.</p>
+        </div>
+      </article>
+
+      <article class="card" id="script-3">
+        <div class="card-head">
+          <div class="card-num">03</div>
+          <div class="card-headtext">
+            <h2>The Life Insurance Conversation Nobody Wants To Have Honestly</h2>
+            <p class="teaser">Term versus permanent, how much coverage actually makes sense, and the beneficiary mistake that costs families the most.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Life insurance, personal lines</span>
+              <span class="meta-pill">~10 min runtime</span>
+            </div>
+          </div>
+        </div>
+        <button class="read-btn" type="button" data-target="body-3" aria-expanded="false">
+          <span class="read-btn-label">READ FULL SCRIPT</span>
+          <span class="read-btn-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <div class="script-body" id="body-3" hidden>
+          <div class="script-divider"></div>
+          <p>Life insurance might be the most oversold, least understood product in this entire industry, so let&#x27;s just skip the pitch part entirely. I&#x27;m with Texas Select Insurance here in San Angelo, and today I&#x27;m giving you the honest version, no pressure, nothing to sign at the end. How it works, what term and permanent really do, how to think about how much you need, and the handful of mistakes I watch cost families real money.</p>
+<p>Here&#x27;s the core of it, stripped all the way down. You pay a premium, the company agrees to pay a lump sum, called a death benefit, to whoever you name, called a beneficiary, if you die while the policy&#x27;s active. That&#x27;s the entire mechanism. And here&#x27;s the thing worth sitting with for a second, this product doesn&#x27;t actually benefit you. It benefits the people who depend on you. Which is honestly the healthiest way to think about it, because it moves the question away from what do I get and toward what does my family need if I&#x27;m not here.</p>
+<p>So, term life first, because it&#x27;s the simpler of the two, and it&#x27;s where most people should start. You pick a length, ten years, twenty, thirty, and you pay a level premium for that entire window. Die during the term, your family gets the death benefit. Outlive the term, the policy just ends, no payout, it did its job by existing. Most term policies lock your rate at the age and health you were when you bought it, so a thirty five year old buying a twenty year term keeps that same rate until they&#x27;re fifty five. Renew after that and you&#x27;re priced on your age at renewal, not your original age, which is exactly why buying long when you&#x27;re young tends to make more sense if you&#x27;ll need the coverage a while. Most term policies also carry something called a convertibility feature, meaning you can convert it to a permanent policy down the road without another medical exam, even if your health&#x27;s changed in the meantime. That one feature can matter a lot more than it sounds like it does the day you buy the policy, especially if your health takes a turn you didn&#x27;t see coming. Your actual premium gets built from a handful of factors, your age, your health class, whether you use tobacco, and the amount of coverage you&#x27;re buying. Two people the same age can land in completely different rate classes depending on health, and that&#x27;s exactly why waiting doesn&#x27;t just cost you time, it can cost you the rate class you&#x27;d have qualified for today.</p>
+<p>Permanent life is a different animal, whole life and universal life being the two common versions, and it&#x27;s built to last your entire life, not a set window. Part of every premium goes toward the insurance itself, part goes into something called cash value, basically a savings account living inside the policy that grows over time. Now here&#x27;s where I see people get confused, and it&#x27;s worth being precise about. Cash value isn&#x27;t the death benefit. They&#x27;re two separate pots. Die with a whole life policy, your beneficiary gets the death benefit, the cash value doesn&#x27;t stack on top of it. You can borrow against the cash value, or surrender the policy and take what&#x27;s built up, but it takes years to become meaningful, and the premiums run considerably higher than term because you&#x27;re funding both pieces at once. Universal life is the more flexible cousin, letting you adjust your premium and your death benefit within limits as your situation changes. That flexibility sounds appealing, but it comes with a real responsibility attached. If your premium payments aren&#x27;t enough to cover the actual cost of insurance in a given year, the shortfall gets pulled from the cash value automatically. Let that cash value run dry without noticing, and the policy can lapse entirely, which is exactly why a universal life policy needs a periodic checkup to make sure it&#x27;s still on track.</p>
+<p>So how much do you actually need? I want to be straight with you, anyone who hands you a precise number without knowing your life is guessing. What I can give you is a framework instead of a formula. Start with income replacement, how many years would your family need your income covered, until the youngest is grown, until your spouse hits retirement. Add your actual debts, the mortgage balance, car loans, whatever&#x27;s outstanding. Add final expenses, funeral costs run higher than people expect. Some people also add a rider here, waiver of premium keeps the policy active without payment if you become disabled, an accidental death benefit adds a payout on top for specific circumstances. Riders aren&#x27;t required, and not every family needs one, but they&#x27;re worth asking about once you know your base coverage number. Then subtract what you&#x27;ve already got, savings, retirement accounts, existing coverage, a spouse&#x27;s income. The gap between those two numbers is the conversation worth having. Let&#x27;s run one, so this isn&#x27;t just theory. Say a family needs eight years of income replacement at sixty thousand a year, that&#x27;s four hundred eighty thousand right there. Add a two hundred thousand dollar mortgage balance and twenty thousand in final expenses, and the total need lands around seven hundred thousand. Now subtract eighty thousand in existing savings and a hundred thousand in employer coverage already in place, and the actual gap left to fill is around five hundred twenty thousand. That&#x27;s the number worth pricing a term policy against, not a guess pulled from a multiple of salary.</p>
+<p>Match your term length to your actual exposure window, not to whatever the cheapest quote happens to be. Three year old at home, twenty years covers you through college. Just signed a thirty year mortgage, some people run the term that long to match it. Closer to retirement, a shorter term might be all you need.</p>
+<p>Now let&#x27;s talk about beneficiaries, because this is where I see the most heartbreaking mistakes, and they&#x27;re completely avoidable. Life insurance pays out directly to whoever&#x27;s named on the policy, and it bypasses your will entirely. Your will doesn&#x27;t override that beneficiary form, ever. So here&#x27;s what happens out there. Someone names an ex spouse in their twenties, gets remarried, has kids, and never once goes back and updates the paperwork. Divorce, remarriage, new kids, the death of an existing beneficiary, any one of those should trigger you pulling out that form and checking it. And second, your beneficiary has to know the policy exists to file a claim on it, the money doesn&#x27;t show up automatically, so tell the people who need to know. There&#x27;s a national resource for this exact problem, the NAIC runs a Life Insurance Policy Locator service that helps families search for policies after someone&#x27;s passed and nobody&#x27;s sure what exists. It&#x27;s a good backstop, but it&#x27;s still just a backstop, the real fix is a conversation you have while everyone&#x27;s still around to have it.</p>
+<p>Let me walk through the mistakes I see most often, because knowing them ahead of time is the whole point of this video. Relying only on your employer&#x27;s group coverage, which usually caps out around one or two times your salary and disappears entirely the day you leave that job. Underinsuring because the premium felt high, which just means you paid for something that won&#x27;t cover what your family needs when it matters. Waiting until you feel ready, except premiums climb with age and health changes can close doors that were open last year, someone insurable at thirty two can develop a condition by forty two that changes their options entirely. And forgetting to update beneficiaries, which we already covered, but it&#x27;s worth saying twice because it&#x27;s the one I see most.</p>
+<p>So here&#x27;s the honest summary. Term is straightforward, affordable coverage for a defined window, and it&#x27;s the right fit for most people in their prime earning years with a family depending on that income. Permanent life is more complex, more expensive, and it has real uses, but it&#x27;s not automatically the better option just because it costs more. How much you need depends entirely on your actual numbers, not a generic multiple of your salary. And the mistakes that cost families the most are all avoidable, if someone tells you about them before they happen instead of after.</p>
+<p>I&#x27;m not here to tell you everyone needs a policy, or that bigger is always better, or that one type beats the other for every family. What I&#x27;m telling you is that if people depend on your income, this is a conversation worth having clearly, and honestly, while you still have the choice in front of you.</p>
+<p>If you want to sit down and think through your actual picture, we&#x27;re here, no pitch, just the numbers laid out plainly, whenever you&#x27;re ready for that conversation.</p>
+<p>Texas Select Insurance. San Angelo.</p>
+        </div>
+      </article>
+
+      <article class="card" id="script-4">
+        <div class="card-head">
+          <div class="card-num">04</div>
+          <div class="card-headtext">
+            <h2>Why A Standard Policy Can&#x27;t Touch An Oilfield Claim</h2>
+            <p class="teaser">What operators, drilling contractors, and haulers across the Permian actually need beyond a standard business policy.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Energy, oil and gas coverage</span>
+              <span class="meta-pill">~10 min runtime</span>
+            </div>
+          </div>
+        </div>
+        <button class="read-btn" type="button" data-target="body-4" aria-expanded="false">
+          <span class="read-btn-label">READ FULL SCRIPT</span>
+          <span class="read-btn-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <div class="script-body" id="body-4" hidden>
+          <div class="script-divider"></div>
+          <p>Out on a lease, one piece of equipment can be worth more than the house you go home to at night. And one bad afternoon on that same location can turn into a claim that follows a company for years. I&#x27;m with Texas Select Insurance in San Angelo, and I work with operators and contractors across the Permian Basin and the Concho Valley. So let&#x27;s build this whole picture from the ground up, who needs specialized coverage out here, what the core policies really do, and how the paperwork, the MSAs and the certificates, ends up mattering just as much as the coverage itself.</p>
+<p>Almost everyone touching an oilfield operation needs something beyond a standard business policy, and here&#x27;s why that&#x27;s true across the board. Operators hold the lease and answer for everything happening on it. Drilling contractors run the rigs under high pressure, often right next to other infrastructure. Service contractors, your cementing crews, wireline, pressure pumping, completions, are on a different location almost every day, for a different operator each time. Haulers move crude, saltwater, produced water, sitting right at the intersection of energy risk and trucking risk, needing both done right. And even suppliers dropping off pipe or chemicals can carry contractual insurance requirements the moment their equipment sits on that pad. A policy built for a retail shop or a plumber was never built for any of this.</p>
+<p>Start with general liability, the backbone every business carries in some form. It covers bodily injury and property damage your operations cause to someone else, a vendor falling at your shop, your equipment damaging someone&#x27;s truck on location. Here&#x27;s the gap that matters most in energy specifically. Most standard general liability policies carry an absolute pollution exclusion, and carriers often argue that language covers oil, gas, produced water, and drilling fluids. Which means the exact thing you&#x27;re most exposed to out here might be the exact thing your base policy won&#x27;t touch. The other gap worth knowing about sits inside completed operations specifically. If a service company finishes a job on a well and something goes wrong weeks or months later that traces back to that work, completed operations coverage inside the general liability policy is what responds, assuming the limits actually hold up. A million per occurrence used to be a reasonable starting point, but plenty of operators and MSAs now ask for two million or more, so check what your actual contracts require before assuming your existing limit clears the bar.</p>
+<p>That&#x27;s why pollution liability exists as its own separate policy in this industry, and it&#x27;s worth understanding precisely what it does. Say a hose fails while a service company&#x27;s pumping chemicals into a well, product hits the soil, leaches down, and now you&#x27;re looking at environmental remediation. That cost, and any third party claims tied to it, falls under pollution liability, not general liability. Service companies working multiple sites usually want a contractor&#x27;s pollution form that travels with them job to job. Operators tied to one location often want a site specific version, sometimes both. There&#x27;s also a distinction between sudden releases and gradual ones, and it matters more than people expect. A hose failure is sudden, obvious, easy to point to. Slow seepage from an aging pipeline is gradual, and it might not show up as a visible event until well after it started. Some pollution forms cover both, some only cover sudden and accidental releases, and that difference is exactly the kind of thing worth confirming before you assume you&#x27;re covered for whichever version happens to you.</p>
+<p>Then there&#x27;s control of well, built for one specific nightmare, a blowout, a kick, a crater. Regaining control of a wild well requires specialized firefighting crews, and their services run into the millions before the well&#x27;s even back under control. This coverage picks up those costs, plus re-drilling if it comes to that, plus the pollution cleanup from the event itself.</p>
+<p>Physical equipment out here takes a beating in the field, away from any fixed location, and that&#x27;s exactly where standard commercial property stops being enough. Inland marine covers your tools and equipment while they&#x27;re in transit, staged in a yard, or sitting on location, filling the gap a property policy leaves wide open. The thing worth checking, does your property policy&#x27;s off premises limit match your real exposure, and does your inland marine pick up cleanly where it stops, because that seam is exactly where I&#x27;ve seen programs quietly fail.</p>
+<p>Now, here&#x27;s something that surprises people who aren&#x27;t from here. Texas is one of the only states where workers compensation isn&#x27;t legally required for most private employers. But being a nonsubscriber, the Texas term for skipping it, means you lose common law defenses if an employee gets hurt, and they can sue you directly. In an industry with real physical hazards, that exposure isn&#x27;t theoretical, it&#x27;s Tuesday. Most operators carry it anyway, and most MSAs require it regardless of what state law says. Workers comp in this industry gets rated using classification codes tied to the actual work being done, drilling crews, well service hands, pipeline workers, and shop employees each carry different rates built on historical loss data for that specific job type. Get someone misclassified, in either direction, and you&#x27;re either sitting on a coverage gap or overpaying for a risk you don&#x27;t actually carry, and either one tends to surface at the worst possible time, during an audit or right after a claim.</p>
+<p>Commercial auto out here means pickups doubling as office space, service trucks hauling tools, tankers moving crude and chemicals down lease roads with no shoulders. A policy written for a florist&#x27;s delivery van isn&#x27;t built for that, and it shows the moment something happens on caliche instead of pavement. Make sure your commercial auto extends to hired and non owned vehicles too, meaning rental trucks and employee owned vehicles pressed into company use, because that&#x27;s a gap that surfaces constantly in field operations where someone grabs whatever truck is closest to get to a location fast.</p>
+<p>Above all of it sits your umbrella, picking up once your underlying limits run out. In energy, five million, ten million, sometimes more isn&#x27;t unusual, because a single blowout or a serious road accident involving multiple parties can blow straight through a standard limit in one event. If your umbrella number was set five years ago and you haven&#x27;t looked at it since, that&#x27;s worth a real conversation, because MSA requirements have been climbing. You&#x27;ll also hear the term excess liability used alongside umbrella, and while they get treated as interchangeable in casual conversation, they&#x27;re not always the same thing on paper. An umbrella typically sits broadly above every underlying policy at once, where an excess layer can be written to follow just one specific policy beneath it, so ask your agent to walk you through exactly how yours is structured rather than assuming either term means the other.</p>
+<p>Which brings me to the part of this video that matters most on a practical, this week, this contract level. Operators almost universally require an MSA before a contractor sets foot on location, and that agreement decides who&#x27;s responsible for what when something goes wrong. Texas limits some of what these agreements can demand, the Oilfield Anti-Indemnity Act restricts pushing liability onto one party for the other party&#x27;s own negligence. But the coverage requirements inside the MSA are real and specific, two million general liability, a million in pollution, statutory workers comp, whatever the contract says.</p>
+<p>So when a contractor shows up, the operator needs proof, and that proof is the certificate of insurance, the COI. It&#x27;s a snapshot, carrier, policy numbers, limits, dates. Often the MSA also requires the operator be named additional insured on the contractor&#x27;s policy, giving them standing to claim under it if something tied to that work goes wrong. Here&#x27;s what actually happens when this goes sideways, a contractor shows up with a certificate listing the wrong limits, or an exclusion the MSA doesn&#x27;t allow for, and now they&#x27;re either getting sent home off the job, or worse, personally exposed for a loss the insurance was supposed to have handled. That&#x27;s not a paperwork problem anymore at that point, that&#x27;s a very expensive afternoon.</p>
+<p>So review your MSAs against your actual coverage at least once a year, because contracts change, operations change, and the two need to stay lined up on purpose, not by accident.</p>
+<p>Not every carrier writes this business, and not every agent understands where the traps sit. A general commercial agent who mostly writes retailers and contractors can build you a program that reads fine on paper and has a hole in it the moment an actual oilfield claim hits. An independent agency with real relationships in the specialty markets, pollution, control of well, oilfield auto, is the difference between coverage that looks right and coverage that actually responds.</p>
+<p>We&#x27;re in San Angelo, our clients are in the oilpatch, and we&#x27;re out here every day. If your program hasn&#x27;t had a real review in the last year, or your operation&#x27;s changed and your coverage hasn&#x27;t kept up with it, that&#x27;s exactly where to start.</p>
+<p>Texas Select Insurance. San Angelo.</p>
+        </div>
+      </article>
+
+      <article class="card" id="script-5">
+        <div class="card-head">
+          <div class="card-num">05</div>
+          <div class="card-headtext">
+            <h2>The Barn Your Homeowners Policy Was Never Going To Cover</h2>
+            <p class="teaser">Structures, liability, livestock, and equipment on a working ranch, and where crop insurance fits in separately.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Farm and ranch, agribusiness</span>
+              <span class="meta-pill">~10 min runtime</span>
+            </div>
+          </div>
+        </div>
+        <button class="read-btn" type="button" data-target="body-5" aria-expanded="false">
+          <span class="read-btn-label">READ FULL SCRIPT</span>
+          <span class="read-btn-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <div class="script-body" id="body-5" hidden>
+          <div class="script-divider"></div>
+          <p>A working ranch is a home, a business, and an equipment yard, all sitting on the same deed. And a standard homeowners policy was never built to cover any of that at once. I&#x27;m Sarah Knox with Texas Select Insurance, and I work with farm and ranch families across West Texas. Today I want to walk through exactly what a real farm and ranch policy covers that homeowners simply doesn&#x27;t, your buildings, your liability, your livestock and equipment, and where crop coverage fits into all of it.</p>
+<p>Here&#x27;s the scenario I run into constantly, and it costs people real money. Someone buys two hundred acres outside of town, a house, a couple of barns, some working pens, maybe a small herd, and they figure their homeowners policy has them covered because, well, it&#x27;s their home. Except a homeowners policy is built around a primary residence and the stuff inside it. It typically doesn&#x27;t treat your barns as separately insured property. Your tractor and trailers aren&#x27;t personal property the way your homeowners policy defines that term, so they often just aren&#x27;t there. And the liability section was never written with wandering livestock, hired hands, or a hunting lease in mind.</p>
+<p>So a real farm and ranch policy is built differently from the ground up, and it generally breaks into four pieces, the dwelling and household contents, your farm structures and equipment, farm liability, and coverage for livestock.</p>
+<p>Start with structures, because this is where I see the biggest gap. Barns, hay sheds, working pens, loading chutes, perimeter fencing, none of that rides along automatically. It has to be scheduled, meaning specifically listed with its own value. And here&#x27;s the part that catches people, if it&#x27;s not on that list, it&#x27;s probably not covered when something happens to it. Most ranches have more structures than the owner remembers counting, so go through the actual list with your agent, not from memory. Fencing especially, because on a large ranch that represents real money, and coverage for it is often limited or handled per occurrence, so ask specifically what your policy says about it.</p>
+<p>Now, liability, and this is the piece people underestimate the most. A hired hand gets hurt moving cattle, a neighbor&#x27;s fence gets torn up when stock gets loose, a visitor falls and gets hurt on your land, equipment moving along a county road causes an accident. That first scenario is worth its own sentence, because if you&#x27;ve got hired help on the place at all, Texas doesn&#x27;t require workers compensation the way most states do, but skipping it means losing your legal defenses if that hand gets hurt on the job, and they can sue you directly. Plenty of ranch operations carry it anyway for exactly that reason, and it&#x27;s worth a specific conversation if you&#x27;ve got anyone working your land besides family. Farm liability is built to respond to exactly this kind of thing.</p>
+<p>Two situations come up constantly out here, and they deserve their own attention. Hunting leases, extremely common in this part of the state, and once money changes hands for access, the liability picture shifts, Texas landowner statutes offer some protection but they come with conditions, and a paid lease can change how that analysis plays out. And agritourism, tours, a working ranch stay, anything that invites the public onto your land for an activity, where the Texas Agritourism Act offers protection, but only if you&#x27;ve got proper waivers signed and the right signage posted. Neither of these are automatically covered under a standard farm liability endorsement, some carriers include it, some don&#x27;t, so ask directly. And here&#x27;s the part that matters just as much as the coverage itself, the protections in both of those Texas statutes only hold up if you&#x27;ve actually done your part, real waivers signed, real warning signage posted where it&#x27;s supposed to be. Skip that step and you can find yourself outside the very protection the law was built to give you, regardless of what your policy says.</p>
+<p>Livestock coverage is where expectations and reality tend to disagree the most, so let&#x27;s be precise about it. It typically covers death of individual animals from specifically listed perils, fire, lightning, windstorm, vehicle collision, drowning, attack by wild animals. Here&#x27;s what it doesn&#x27;t cover in most cases, disease, old age, or weather stress. Lose cattle to a respiratory illness or a hard freeze, and whether that&#x27;s covered depends entirely on what&#x27;s actually listed in your policy, and disease death specifically is often excluded outright. And drought, a real and constant fact of life across the Concho Valley and the Edwards Plateau, isn&#x27;t a livestock insurance event at all, it&#x27;s a management and market problem, it just forces earlier sales or moves. For animals to be covered at all, they generally need to be scheduled and identified, so if you&#x27;re running three hundred head, that&#x27;s a real conversation with your agent about how the herd gets described and valued on paper.</p>
+<p>Equipment is often the single most valuable thing on a ranch outside the land itself, a tractor, a baler, a cotton stripper, stock trailers. It can be scheduled individually or covered on a blanket limit across everything as a group, and here&#x27;s a distinction worth knowing, a tractor working your own land is typically under your farm policy, but that same tractor rolling down the highway can cross into commercial auto territory entirely. Tell your agent exactly what you have and how you use it, because that&#x27;s precisely where blind spots hide. And ATVs, extremely common out here, covered under farm and ranch when used for agricultural work, but recreational use by family members might fall outside that same coverage entirely, so ask how yours are described on the policy.</p>
+<p>Two pairs of terms come up constantly, and they&#x27;re simpler than they sound. A working farm policy often runs different sections on different bases within the same document, so it&#x27;s worth knowing which is which before a claim forces you to find out. Named peril lists exactly what&#x27;s covered, if your loss isn&#x27;t on that list, it&#x27;s not covered, period. All risk, sometimes called open peril, flips that, it covers everything except what&#x27;s specifically excluded, which shifts the burden onto the company to explain why something isn&#x27;t covered rather than onto you to prove it is. And scheduled versus blanket is just about how property gets organized, scheduled lists each item with its own value, blanket uses one combined limit across a category, and most working ranches end up using both, scheduling the big ticket items and running blanket coverage for the smaller tools. Say you&#x27;re running a hundred thousand dollars of equipment total, a tractor worth sixty, a baler worth twenty five, and the rest in smaller implements. Scheduling the tractor and baler individually protects their full value specifically, while a blanket limit covering the remaining fifteen thousand in smaller tools means you&#x27;re not filling out paperwork every time you buy a new attachment. The trade off is real though, blanket coverage generally wants an honest total value assessment behind it, because understating that total can create its own coinsurance style shortfall at claim time.</p>
+<p>One more piece, separate from all of this entirely. If you&#x27;re growing wheat, sorghum, or cotton, crop insurance is a federally backed program through USDA&#x27;s Risk Management Agency, sold through licensed agents but managed at the federal level. It covers production losses from drought, hail, freeze, and disease depending on the plan, with revenue protection options layered on for price swings, not just yield losses. Sign up deadlines and program details shift year to year based on USDA updates, so the specifics for any given crop year are worth confirming directly with a licensed crop insurance agent rather than going off what applied a couple of seasons back. Your buildings, livestock, and equipment live on your farm policy. Your crops live on a completely separate federal program. They work alongside each other, but they aren&#x27;t the same thing, and one doesn&#x27;t substitute for the other.</p>
+<p>So here&#x27;s what to walk away with. A farm and ranch policy covers your home the way homeowners does, then layers on your structures, your equipment, your liability, and your livestock, each with its own rules. Livestock coverage protects against listed perils, not disease or drought, and it needs proper scheduling to work at all. Liability needs to specifically address how your land gets used, hunting leases included. And crop insurance sits entirely outside all of it, a separate federal program for a separate exposure.</p>
+<p>This isn&#x27;t something a generic policy review handles well. It takes an actual conversation about what&#x27;s on your land, how it&#x27;s being used, and what would genuinely hurt if it were gone tomorrow. That&#x27;s the review we do here, no rush, no pressure, just a clear look at what you&#x27;ve got.</p>
+<p>I&#x27;m Sarah Knox, and I work with farm and ranch accounts right here in San Angelo. Reach out if you want to talk through your operation.</p>
+<p>Texas Select Insurance. San Angelo.</p>
+        </div>
+      </article>
+
+      <article class="card" id="script-6">
+        <div class="card-head">
+          <div class="card-num">06</div>
+          <div class="card-headtext">
+            <h2>The Number On Your Property Policy That&#x27;s Almost Never Right</h2>
+            <p class="teaser">The coinsurance penalty that shows up at claim time, with real numbers on what an underinsured building actually loses.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Commercial property, business owners</span>
+              <span class="meta-pill">~10 min runtime</span>
+            </div>
+          </div>
+        </div>
+        <button class="read-btn" type="button" data-target="body-6" aria-expanded="false">
+          <span class="read-btn-label">READ FULL SCRIPT</span>
+          <span class="read-btn-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <div class="script-body" id="body-6" hidden>
+          <div class="script-divider"></div>
+          <p>There&#x27;s a number sitting on most commercial property policies that is almost never correct. And the building owner usually finds that out at the single worst possible moment, which is claim time. I&#x27;m with Texas Select Insurance in San Angelo, and that number is what your building is insured for. So let&#x27;s separate the three values people confuse, walk through the penalty clause that catches people off guard with an actual example, and cover the pieces that protect a commercial building the right way.</p>
+<p>Business owners tend to be thinking about one of three numbers, what they paid for the building, what it would sell for today, or what it would actually cost to rebuild it. Those sound similar, they aren&#x27;t the same, and only one of them belongs on your insurance policy. Purchase price is a real estate number, it reflects the market at the moment you bought, and it includes the land. Market value is what you could sell it for today, also a real estate number, also includes the land, and it moves with the economy whether your building changed or not. Replacement cost is the only one that matters here, what it would cost, right now, at today&#x27;s labor and material prices, to rebuild your exact building. No land, just the structure. And here&#x27;s the problem, construction costs have climbed significantly over the last several years, so a building that was properly insured not long ago can be quietly underinsured today if that number never got updated.</p>
+<p>That&#x27;s where the coinsurance clause comes in, and it&#x27;s probably the single most misunderstood piece of commercial property insurance, so let&#x27;s make it concrete with real numbers. Most policies require you to carry coverage equal to a minimum percentage of your building&#x27;s actual replacement cost, commonly eighty percent. Say your building&#x27;s true replacement cost is a million dollars, so you&#x27;re supposed to be carrying at least eight hundred thousand. But your policy limit sits at six hundred thousand, set years ago and never revisited. A storm hits, and you&#x27;ve got two hundred thousand dollars in real, covered damage. Here&#x27;s what actually happens next. The company divides what you carried, six hundred thousand, by what you should have carried, eight hundred thousand, and gets seventy five percent. That ratio applies to your claim. So instead of two hundred thousand, you get seventy five percent of it, a hundred fifty thousand, before your deductible even comes off. The remaining fifty thousand is yours, because the clause treats the underinsured gap as if you&#x27;d chosen to self insure that portion. You paid premiums the whole time, you had a real covered loss, and you&#x27;re still fifty thousand dollars short, purely because the number on the policy never matched reality.</p>
+<p>There&#x27;s also the question of which perils your property form names, and this is worth understanding before it&#x27;s the thing standing between you and a payout. A basic form covers a short, specifically named list of causes of loss. Broad form extends that list further but still names each one. Special form flips the logic entirely and covers everything except what&#x27;s specifically excluded, which is generally the broadest protection available and the more appropriate choice for most commercial buildings carrying real equipment and inventory. Know which one you&#x27;re holding, because the difference only shows up when you need it to.</p>
+<p>Now, replacement cost versus actual cash value plays into this same claim. Replacement cost pays current prices with no deduction for age. Actual cash value is that same number minus depreciation, so a fifteen year old roof or an aging mechanical system pays out for what it&#x27;s worth today, not what it costs new. Actual cash value runs cheaper, and for some operations that&#x27;s a legitimate budget call, but go into it knowing the gap can be significant, especially on an older building.</p>
+<p>There&#x27;s a cleaner way to sidestep the coinsurance math entirely, called agreed value. You and the insurer agree upfront on your building&#x27;s value through something called a statement of values, and once that&#x27;s accepted, the coinsurance clause is suspended for that policy period, full stop, no formula, no ratio. Here&#x27;s the catch worth knowing, that endorsement expires with the policy term, and if you don&#x27;t resubmit and renew it, coinsurance quietly comes back the next year without anyone announcing it. Agreed value tends to make the most sense for larger or more unique commercial properties where the replacement cost math is complicated enough that revisiting it every renewal by formula stops being practical. For a smaller, straightforward building, a solid annual conversation with your agent about current replacement cost might do the same job without the extra paperwork.</p>
+<p>Even with the right number today, construction costs don&#x27;t sit still, so an inflation guard endorsement automatically bumps your limit a set percentage each year, usually two to four percent. Be honest with yourself about this one though, when construction costs spike hard, that small annual bump often doesn&#x27;t keep pace, so it&#x27;s a tool, not a substitute for sitting down with your agent every few years.</p>
+<p>Ordinance or law coverage is built out of three separate pieces, and it&#x27;s worth knowing all three because they solve different parts of the same problem. The first covers the lost value of the undamaged portion of your building, for the cases where local code won&#x27;t let you repair a building once it&#x27;s damaged past a certain percentage, so the whole structure has to come down. The second covers the actual demolition cost of removing that undamaged portion once it&#x27;s condemned along with the rest. And the third covers the increased cost of construction itself, meeting current code on the rebuild instead of just replicating what was there before. For an older commercial building, and West Texas has plenty of them, all three pieces deserve a specific look, because the gap between what standard coverage pays and what code requires can run into real money.</p>
+<p>A few more pieces work alongside your building coverage and get overlooked constantly. Business personal property covers what&#x27;s inside, furniture, equipment, inventory, separate from the structure itself, and tenants especially tend to assume the building owner&#x27;s policy handles this, it doesn&#x27;t. Ordinance or law coverage handles something that only shows up after a loss, when local code requires a rebuilt structure to meet current standards even though the original building was grandfathered under older rules, updated electrical, accessibility requirements, fire suppression, none of that gets paid by standard coverage without this endorsement attached. And business interruption replaces the income you&#x27;d have earned while your doors are closed after a covered loss, kicking in after a short waiting period and running through your actual period of restoration, but it only exists alongside an underlying property claim, it doesn&#x27;t stand on its own.</p>
+<p>Business interruption deserves one more sentence, because the number people underestimate isn&#x27;t the payout, it&#x27;s the waiting period. Most policies start the clock somewhere between twenty four and seventy two hours after the covered loss before coverage kicks in, and it runs through your actual period of restoration, meaning the realistic time it takes to rebuild, not an arbitrary date on a calendar. Lost net income, ongoing payroll, rent you still owe even with the doors closed, all of it can be included, but only if the limit and the duration you picked actually match how long a real rebuild would take for your specific building. Set that number based on a guess and you can end up with the right coverage running out weeks before your doors reopen.</p>
+<p>So how do you arrive at the right number? A rough per square foot construction estimate gets you in the ballpark. A formal replacement cost appraisal gets you precise, factoring in your exact construction type and current local labor rates. For most small to mid size buildings, a real conversation with your agent walking through size, construction type, age, and recent improvements gets you close enough to be defensible, and it&#x27;s worth revisiting every few years as costs shift under you.</p>
+<p>So here&#x27;s the actual takeaway. What you paid and what it&#x27;s worth on the market are both real estate numbers, and neither one belongs in your insurance policy. Replacement cost is the only number that matters here, and it needs to reflect today&#x27;s construction costs, not five years ago. The coinsurance clause punishes the gap between what you carry and what you should carry, on every claim, even partial ones, and agreed value is how you make that gap disappear entirely if you keep it renewed.</p>
+<p>I&#x27;ve spent twenty years in commercial property, and the pattern is always the same, the fix is easy before a loss and painful after one. Pull your policy, find your building&#x27;s real replacement cost, and see if those two numbers agree with each other. If they don&#x27;t, that&#x27;s a short phone call. If they don&#x27;t and something happens first, it&#x27;s a much longer one.</p>
+<p>If you own a commercial building here in West Texas and want a straightforward look at how yours is set up, we&#x27;ll walk through it with you, no obligation.</p>
+<p>Texas Select Insurance. San Angelo.</p>
+        </div>
+      </article>
+
+      <article class="card" id="script-7">
+        <div class="card-head">
+          <div class="card-num">07</div>
+          <div class="card-headtext">
+            <h2>The Coverage Gap That Can Ground Your Truck Before A Wreck Ever Does</h2>
+            <p class="teaser">DOT numbers, federal minimums, and the gap in coverage most truckers never think about until they&#x27;re standing in it.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Trucking, commercial auto, DOT compliance</span>
+              <span class="meta-pill">~10 min runtime</span>
+            </div>
+          </div>
+        </div>
+        <button class="read-btn" type="button" data-target="body-7" aria-expanded="false">
+          <span class="read-btn-label">READ FULL SCRIPT</span>
+          <span class="read-btn-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <div class="script-body" id="body-7" hidden>
+          <div class="script-divider"></div>
+          <p>In trucking, the gap between the right coverage and the wrong coverage isn&#x27;t just money. It can decide whether your rig is even legal to roll tomorrow morning. I&#x27;m with Texas Select Insurance in San Angelo, and trucking insurance is federally regulated, genuinely more layered than ordinary commercial auto, so let&#x27;s make it clear instead of confusing. DOT numbers and operating authority, the federal minimums and what they mean in practice, cargo and physical damage, the coverage gap almost nobody knows about until they&#x27;re in it, and the one endorsement that trips up more people than anything else in this entire video.</p>
+<p>A USDOT number comes from the Federal Motor Carrier Safety Administration, and you need one the moment you&#x27;re crossing state lines in a commercial vehicle rated at ten thousand and one pounds or more. You also need one hauling hazardous materials requiring a safety permit, even staying entirely inside Texas. And here&#x27;s something people miss, Texas requires a USDOT number for certain intrastate commercial vehicles too, so staying inside state lines doesn&#x27;t automatically mean you&#x27;re exempt. Operating authority is a separate thing entirely, and it only applies if you&#x27;re hauling someone else&#x27;s freight for pay across state lines. Haul your own company&#x27;s goods in your own trucks, you may only need the DOT number. Haul freight for customers across state lines, you typically need both, and getting that authority requires filing proof of insurance with the federal government first. That distinction, private carrier hauling your own goods versus for hire carrier hauling someone else&#x27;s, decides which set of federal insurance filing rules applies to you, so know which one you are before you assume either way.</p>
+<p>So here&#x27;s the actual floor that insurance has to clear, set under federal law, and I want to be clear these are minimums, not what your actual exposure calls for. General freight at ten thousand one pounds or above, seven hundred fifty thousand dollars minimum liability. Certain hazardous materials, a million. The most dangerous cargo categories, explosives, certain gases, radioactive material, five million. Below that ten thousand one pound threshold, for hire non hazardous carriers drop to a three hundred thousand dollar floor, and we&#x27;ll come back to exactly who that affects. Here&#x27;s what matters more than any of those federal numbers though, your actual shippers and brokers often require higher limits in their contracts regardless of what the government requires, a million even for general freight is common.</p>
+<p>Primary liability is the coverage doing the heavy lifting here, it protects the public if your truck&#x27;s involved in an accident, and it&#x27;s active anytime you&#x27;re dispatched and moving freight. This is genuinely different from a personal auto policy, and it&#x27;s the single most common mistake I see people make starting out. A personal auto policy excludes commercial hauling activity entirely, so a truck that looks commercial running on a personal policy can get a claim denied outright the moment it&#x27;s confirmed you were hauling freight for pay.</p>
+<p>Cargo coverage is a completely separate thing from your liability, and it protects the actual load, not the third parties around you. Damage a load of pipe fittings, lose something off the truck, cargo coverage is what responds to that claim from your customer. Your limit needs to match the real value of what you haul, and pay attention to exclusions here, bulk liquids, hazmat, live animals, refrigerated goods each carry their own restrictions, and a generic cargo form built for furniture delivery isn&#x27;t built for crude, water, sand, or chemicals moving through the Permian.</p>
+<p>Physical damage covers your own equipment, split into collision, which is exactly what it sounds like, and comprehensive, everything else, fire, theft, hail, which out here is a genuine exposure across the Concho Valley and the oil patch. It gets written on either an actual cash value basis, paying what the truck&#x27;s worth at the time of loss after depreciation, or an agreed value basis, where you and the carrier settle on a number upfront that pays out if it&#x27;s a total loss. Newer, higher value equipment tends to favor agreed value, older depreciated equipment often does fine on actual cash value, and that&#x27;s a real conversation to have when you&#x27;re setting the policy up, not after the truck&#x27;s already totaled. Here&#x27;s a detail worth knowing before you need it, your trailer isn&#x27;t automatically covered under your tractor&#x27;s physical damage policy, it has to be scheduled separately, or covered under trailer interchange if you&#x27;re pulling equipment that isn&#x27;t yours under a formal agreement. That interchange coverage only works when there&#x27;s an actual written trailer interchange agreement behind it, not a casual handshake swap between two drivers who know each other. In the oilfield specifically, tank trailers for crude or water get leased and exchanged constantly, so know ahead of time whether you&#x27;re on the hook for damage to a trailer you don&#x27;t own, and if you are, make sure interchange coverage is part of your program before you need it.</p>
+<p>Now here&#x27;s the gap almost nobody thinks about until they&#x27;re standing in the middle of it. What happens when you&#x27;re not under dispatch, no load, driving the empty tractor home, grabbing lunch between runs? Your primary trucking liability is only active while you&#x27;re actually moving freight, and the motor carrier&#x27;s policy you&#x27;re leased under may not follow you off duty either. Non trucking liability, sometimes called bobtail coverage, fills exactly that window, and if you&#x27;re leased to a carrier, read that lease agreement closely to see who&#x27;s covering what during each phase, because assuming coverage follows you everywhere is how people get caught.</p>
+<p>And then there&#x27;s the MCS-90, which shows up on every trucking policy and works completely differently than people expect. Here&#x27;s what it actually does. It&#x27;s a guarantee to the public, not a benefit for the carrier. If your truck causes injury and, for whatever reason, your own policy won&#x27;t pay, the MCS-90 steps in and pays the public anyway, up to the federal minimum, and then the insurer goes after the carrier to get reimbursed. So if you ever hear someone call it extra coverage for the trucker, that&#x27;s simply wrong, it protects the person you hit, not you, and every for hire interstate carrier is required to have it attached.</p>
+<p>Whether you&#x27;re one truck or twenty, the coverage types stay the same, but the structure shifts. An owner operator leased to a carrier usually runs under that carrier&#x27;s authority and primary policy while dispatched, but still needs their own physical damage and non trucking liability for off dispatch time. An owner operator running their own authority needs the entire stack themselves, DOT number, primary liability with the MCS-90, cargo, physical damage, all of it. Fleets add driver history into the underwriting, motor vehicle records on every driver, because a single bad record can move the whole program&#x27;s pricing. Carriers underwrite trucking risk heavily around who&#x27;s behind the wheel, so a fleet with several drivers needs current MVRs pulled and reviewed regularly, not just at hiring. As a fleet grows past a handful of trucks, some operators start looking at aggregate programs instead of pricing each vehicle separately, and larger fleets sometimes move toward self insured retentions to manage cost, which is a real conversation worth having once you&#x27;re at that scale.</p>
+<p>Hot shot trucking is its own lane out here, one ton pickups pulling gooseneck trailers running parts and equipment to job sites fast. The line that actually matters is combined weight, truck plus loaded trailer, at ten thousand one pounds you&#x27;re in full DOT territory, below it you&#x27;re at that three hundred thousand dollar federal floor, but the operators and shippers you&#x27;re working for in the oilfield frequently require a million regardless of what the federal number says. And that same rule from earlier still applies here, a personal pickup hauling a trailer for pay isn&#x27;t covered by a personal auto policy, full stop, no matter how small the operation feels.</p>
+<p>Out here specifically, lease roads with no shoulders, cattle guards, dead cell coverage in stretches, heavy trucks mixing with regular traffic on farm to market roads, all of it changes how a carrier should be underwriting your risk. Bulk liquid shifts in transit and changes how a truck handles. Sand hauling for frac work runs equipment hard through constant loading cycles. A carrier that&#x27;s never asked what you haul and where you actually run it is pricing a policy for someone else&#x27;s operation, not yours.</p>
+<p>So here&#x27;s what actually matters out of all of this. A DOT number and, often, operating authority are required well before you ever get to insurance. Federal minimums are a floor, not a target, and your contracts will usually ask for more. Cargo and physical damage are separate coverages protecting separate things. Non trucking liability closes the gap when you&#x27;re off dispatch. And the MCS-90 protects the public, not you, which is exactly why it&#x27;s required on every interstate policy regardless of size.</p>
+<p>If you&#x27;re hauling in West Texas and you want your program built for what you run, not borrowed from someone else&#x27;s fleet, we&#x27;re glad to take a look.</p>
+<p>Texas Select Insurance. San Angelo.</p>
+        </div>
+      </article>
+
+      <article class="card" id="script-8">
+        <div class="card-head">
+          <div class="card-num">08</div>
+          <div class="card-headtext">
+            <h2>Why Your Liability Doesn&#x27;t End At The Loading Dock</h2>
+            <p class="teaser">Product liability, recall costs, and what happens when a defective part shows up months after it left the building.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Manufacturers and wholesalers, product liability</span>
+              <span class="meta-pill">~10 min runtime</span>
+            </div>
+          </div>
+        </div>
+        <button class="read-btn" type="button" data-target="body-8" aria-expanded="false">
+          <span class="read-btn-label">READ FULL SCRIPT</span>
+          <span class="read-btn-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <div class="script-body" id="body-8" hidden>
+          <div class="script-divider"></div>
+          <p>When you make something, your responsibility for it doesn&#x27;t stop at the loading dock. It travels with that product, sometimes for years after it&#x27;s left your building. I&#x27;m with Texas Select Insurance in San Angelo, and this one&#x27;s for the manufacturers, fabricators, and wholesalers, the businesses that build things and move them. General and product liability, recall costs almost nobody realizes aren&#x27;t covered, equipment breakdown, what happens when your supplier&#x27;s problem becomes your problem, and the coverages I watch owners overlook most often.</p>
+<p>General liability is the foundation every business carries, and it covers three broad buckets. Premises and operations, someone gets hurt on your property or because of what your crew did. Personal and advertising injury, defamation, false advertising claims, less common here but worth knowing it exists. And the one that matters most for you specifically, products and completed operations, injury or damage happening away from your building, caused by something you made or installed. That third bucket is where manufacturing exposure gets real, so let&#x27;s stay there for a minute. One practical detail before we do, general liability policies for manufacturers run on a premium audit, meaning what you pay at the start of the year is really just an estimate based on projected sales or payroll. At year end, the carrier audits your actual numbers and true up happens either direction, you owe more if you grew, or you get money back if you overestimated. Keep that estimate honest and tell your agent when operations change mid year, because a surprise audit bill is a lot less fun than a phone call would have been.</p>
+<p>Here&#x27;s a fabrication shop in the Concho Valley building a component for a piece of oilfield equipment. Six months later, that part fails in the field, and the failure damages other equipment, or worse, hurts someone. The fabricator&#x27;s now facing a claim that the part was defective, and products liability is what responds, assuming it&#x27;s actually built into the policy correctly. Food producers face this even faster, one contamination allegation from a grocery distributor is enough, products liability isn&#x27;t optional in that world. And wholesalers get pulled in too, even without making a single thing themselves, just being in the distribution chain is enough exposure to matter. There&#x27;s a distinction buried in that same coverage worth understanding, occurrence versus claims made. An occurrence policy covers incidents that happened during the policy period no matter when the claim actually gets filed, sometimes years later. A claims made policy only responds to claims reported while that specific policy is actively in force. For a manufacturer whose product can sit in the field for years before a failure ever surfaces, that difference isn&#x27;t small print, it&#x27;s the difference between being covered and not when the call finally comes in. Limits matter here too, an aggregate limit caps what&#x27;s paid across every claim in the policy year, a per occurrence limit caps a single event, and for a manufacturer shipping real volume, those numbers need to be sized to match what you&#x27;re putting out into the world, not a generic starting point copied from a smaller operation.</p>
+<p>Now here&#x27;s something that catches almost every manufacturer off guard the first time they hear it. Standard general liability specifically excludes the cost of an actual recall. It might cover the injury claims that come out of a defective product, but the recall itself, pulling product from shelves, notifying customers, the logistics, the lost sales during that window, none of that lives in a standard policy. Product recall expense is a separate coverage built exactly for that gap, and for anyone shipping product to distributors or retail at any real scale, it&#x27;s worth a direct conversation with your agent about what that would look like.</p>
+<p>Your physical assets need their own attention too, and there&#x27;s a distinction here that trips people up constantly. Commercial property covers external events, fire, wind, theft, hitting your building and its contents. Equipment breakdown, sometimes called boiler and machinery coverage, is a completely different thing, it covers internal failure, a motor burning out, an electrical short, a mechanical breakdown that has nothing to do with an outside event. Property insurance won&#x27;t touch that kind of failure. For a shop running CNC equipment, compressors, industrial ovens, that internal failure gap is exactly where equipment breakdown coverage earns its keep, and it often includes income loss tied to the breakdown itself.</p>
+<p>Which brings us to business interruption, one of the most valuable and most underused coverages out there. Standard business interruption kicks in when a covered physical loss shuts you down, replacing lost income and certain fixed costs, rent, loan payments, some payroll, through your period of restoration. But here&#x27;s the more advanced version, and it&#x27;s specifically relevant if you&#x27;re a manufacturer, contingent business interruption. What if the loss isn&#x27;t yours at all? Say your plant here in the Concho Valley is completely fine, but your key supplier somewhere else in Texas takes a major weather loss and can&#x27;t ship your raw material for six weeks. You didn&#x27;t lose a building, you lost your ability to produce, and contingent business interruption is built specifically to cover income losses triggered by a disruption at a supplier or a key customer. Not every policy includes it automatically, so if your supply chain is concentrated with one or two key sources, that&#x27;s a real conversation worth having.</p>
+<p>Once product leaves your building, it&#x27;s in a different kind of exposure entirely, and your regular commercial property policy stops covering it the second it&#x27;s on a truck. Motor truck cargo, sometimes filed under inland marine, covers your finished goods while they&#x27;re in transit to a customer or distribution center, an accident or theft during that window is exactly what this fills. For a wholesaler constantly moving inventory between warehouses and customers, that transit window can represent a significant share of total exposure at any given moment, so check what causes of loss are covered and whether your per load limits match your real shipment sizes. Here&#x27;s the number that actually catches people, if your policy insures a fixed inventory value and your real stock on hand runs higher at the moment a loss hits, the shortfall is entirely yours. Say your policy is set at four hundred thousand in finished goods, but a strong production month has you sitting on six hundred thousand when a fire hits your warehouse, that two hundred thousand dollar gap between what you insured and what you actually had doesn&#x27;t come back, no matter how long you&#x27;ve been paying premiums on the lower number.</p>
+<p>Inventory valuation sounds like an accounting question, but it&#x27;s genuinely an insurance question, and here&#x27;s why it matters. Raw materials, work in progress, finished goods, your total inventory value shifts week to week with production cycles. If your policy insures a fixed number and your actual inventory runs higher when a loss hits, you&#x27;re underinsured exactly when it counts most. A reporting form policy, where you report real values on a schedule and coverage adjusts accordingly, is one fix, or simply setting your declared value at your actual peak inventory level rather than an average.</p>
+<p>A few more pieces worth a quick mention. Commercial auto for any vehicle used to deliver product or pick up supplies, a personal policy excludes that use the moment it&#x27;s confirmed as business activity. Workers compensation, legally optional in Texas but carried by nearly every serious manufacturer anyway, because being a non subscriber means losing your legal defenses if an employee gets hurt on the floor. And cyber liability, worth a real conversation if you&#x27;re taking orders online or processing payments digitally, because a ransomware event that shuts down production is something your property and general liability policies were never built to touch. Picture a regional distributor whose order system gets locked down for a week by ransomware, no orders processed, no shipments going out, and a demand for payment sitting in the inbox. A basic cyber policy can cover the notification costs if customer data&#x27;s involved, the legal and regulatory defense, the cost of restoring your systems, and in a lot of policies, the business income lost during that week itself.</p>
+<p>So here&#x27;s the actual shape of it. General liability is your foundation, and products and completed operations is the piece that follows your product out the door. Recall expense isn&#x27;t included in that foundation, it has to be added separately. Equipment breakdown covers internal failure that property insurance won&#x27;t. Business interruption covers your own shutdown, contingent business interruption covers your supplier&#x27;s. And cargo and inventory valuation both need real numbers behind them, not placeholders set years ago.</p>
+<p>Every operation&#x27;s mix of exposure is different, and this is a map of the territory, not a one size prescription for your specific business. If you want to sit down and go through your actual program, or you&#x27;re starting something new and want it built correctly from day one, we&#x27;ll have that conversation with you directly.</p>
+<p>Texas Select Insurance. San Angelo.</p>
+        </div>
+      </article>
+  </div>
+
+  <div class="foot">Cosmic Arc Media for Texas Select Insurance. This page is unlisted, link only.</div>
+</div>
+
+<script>
+document.querySelectorAll('.read-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var targetId = btn.getAttribute('data-target');
+    var body = document.getElementById(targetId);
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      body.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.querySelector('.read-btn-label').textContent = 'READ FULL SCRIPT';
+    } else {
+      body.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      btn.querySelector('.read-btn-label').textContent = 'HIDE SCRIPT';
+    }
+  });
+});
+</script>
+</body>
+</html>
