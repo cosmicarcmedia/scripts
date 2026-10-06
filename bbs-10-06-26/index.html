@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Busker's Body Shop | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Busker's Body Shop</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">A wreck ruins your day twice</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">People hire the face they recognize, and the shop has fixed San Angelo's cars since 1970 without a face on camera. This puts Will's name and his team's names next to the praise customers have already written about them.</div>
+<div class="spot">Spot A</div>
+<div class="lines">A wreck ruins your day twice.
+Once when it happens, and again when you have to find somebody to fix the car.
+I'm Will Busker, and this shop has been fixing cars in San Angelo since 1970.
+[OWNER: who opened the shop in 1970, and how you came to run it]
+We're one of the last body shops in town that's still locally owned.
+We've built our name on good work and treating folks right.
+My name is on our website, right next to my email address.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Customers put our names in their reviews.
+One family wrote that Cory kept them updated through the whole repair.
+They said the paint match on their son's older Land Cruiser looks factory again.
+They also said we found parts for it that another shop couldn't.
+Another customer wrote that Zach and I took the time to answer every question.
+They said we gave them a ride home when they dropped the car off.
+Then we brought the car to them when it was done.
+[OWNER: a customer you remember, and what you did for them]</div>
+<div class="spot">Spot C</div>
+<div class="lines">The shop is an I-CAR Gold Class facility with I-CAR Platinum technicians.
+We work on all makes and models, and we handle all insurance.
+We paint with PPG waterborne paint.
+The work has a lifetime warranty, and estimates are free.
+We're at 617 Glenna Street.
+Monday through Thursday we open at seven thirty and close at five thirty.
+Friday we close at five.
+Come by and meet the people who'd be fixing your car.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">Two of our reviews are about a deer</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Two of the shop's own testimonials come from deer strikes, and TxDOT says the rut runs October through December, which is when this video goes out. It teaches a driver what to do on the road and puts the shop in their head for the phone call after.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Two of the reviews on our website are from people who hit a deer.
+That's October in San Angelo.
+TxDOT says Texas has more than five million whitetail deer.
+From October through December they're on the move, looking for mates.
+That's when they end up in front of your bumper.
+Deer seldom run alone, so if you see one, others could be nearby.
+Slow down when you see one near the edge of the road.
+At night, use your high beams when nobody's coming. They light up a deer's eyes.</div>
+<div class="spot">Spot A</div>
+<div class="lines">If one steps out, brake firmly and stay in your lane.
+Many serious crashes happen when drivers swerve to miss a deer.
+If you do hit one, don't touch it.
+A frightened, wounded deer can hurt you.
+Move your car off the road, call 911, and stay in the vehicle.
+That's all from TxDOT.</div>
+<div class="spot">Spot C</div>
+<div class="lines">After that, call us.
+One parent dropped their daughter's car off on a Monday after a deer strike.
+By Thursday afternoon we called to say it was finished.
+They'd been worried about the paint color, and they wrote that we did a phenomenal job.
+Another customer wrote that we made their car look brand new again after a deer.
+[OWNER: the worst deer wreck you've repaired, and what it took]
+Bring it by 617 Glenna Street.
+Estimates are free, and we work with every insurance company.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Your insurance company can't pick your body shop</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Texas law says the driver chooses the shop, and plenty of drivers never hear it. Saying it first, then showing a named person for every carrier, makes Busker's the shop that tells you the rule and shows you who handles your claim.</div>
+<div class="spot">Spot C</div>
+<div class="lines">After a wreck, your insurance company might hand you a list of shops.
+They can hand you the list.
+They can't make you use it.
+The Texas Insurance Code says an insurer can't limit which repair shop you choose.
+The Texas Department of Insurance says an insurer can't tell you to use a preferred shop either.
+You pick where your car gets fixed.</div>
+<div class="spot">Spot A</div>
+<div class="lines">I'd like it to be us, and we work with every insurance company.
+Our website puts a name next to each one.
+If you're with Liberty Mutual, Safeco, State Farm or USAA, that's me.
+Allstate, Farm Bureau and Farmers go to Cory Flippin.
+Geico and Progressive go to Michael Vaughan.
+Everybody else goes to Zach Taylor.
+Their email addresses are right there too.</div>
+<div class="spot">Spot B</div>
+<div class="lines">So get an estimate from us, and get one from anybody else you're considering.
+Ours is free.
+Then ask each shop three things.
+Who do I call when something looks off after I drive away?
+What does the warranty cover, and for how long?
+Who owns the shop?
+Ours is a lifetime warranty, and we've been locally owned since 1970.
+We're an I-CAR Gold Class shop, and we work on all makes and models.
+Put the answers side by side.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">That dent might not need paint</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Paintless dent repair is on the shop's service list and few drivers know when it applies. A viewer who learns to check the paint before booking a repair calls the shop with the right job in mind.</div>
+<div class="spot">Spot A</div>
+<div class="lines">You've got a dent in your door, and you're bracing for a paint bill.
+What if you don't need one?
+Paintless dent repair fixes a dent without sanding, painting or replacing the panel.
+We do it here.
+Three of our Google reviews mention hail damage repair.</div>
+<div class="spot">Spot C</div>
+<div class="lines">It works when the paint is still intact.
+Hail, rocks and gravel, door dings from the parking lot.
+Large flat panels are the best candidates: hoods, trunks, doors.
+It handles multiple minor dings too, like a hood full of hail damage.
+Somewhere between eighty and ninety percent of typical dents can be fixed this way.
+With no paint and no new panel, the bill usually runs lower.
+It usually takes less time too.</div>
+<div class="spot">Spot B</div>
+<div class="lines">It won't work on everything.
+If the metal is stretched too thin, or the panel has a crease, it needs the full repair.
+Same if the paint is cracked in or around the dent.
+So look at the paint before you book anything.
+If it's smooth, ask for a paintless estimate.
+If it's cracked, you'll know why the shop wants to paint it.
+Our estimates are free.
+One customer wrote that they called the day before and we fit them in the next morning.
+They were in and out in under an hour.</div>
+</div></div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof"><b>New Year, New Feed.</b> 12 locally relevant videos, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The local-interest video we wrote for a realtor here in town is sitting at about 25,000 views.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+</script>
+</body>
+</html>
