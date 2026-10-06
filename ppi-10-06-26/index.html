@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Premier Professional Inspections | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Premier Professional Inspections</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything around.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">The guy with the flashlight has 37 years of construction behind him</div>
+<div class="job">Origin</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A buyer hiring an inspector is trusting a stranger, so this script puts Michael's face, his Texas roots and his 37 years of construction work in front of them first.</div>
+<div class="spot">Spot A</div>
+<div class="lines">If you're buying a house,
+a stranger is going to walk through it with a flashlight before you close.
+You ought to know who he is.
+I'm Michael Nichols.
+I'm a lifelong Texan, and San Angelo has been home for 25 years.
+I'm a licensed TREC inspector, number 25566,
+and a member of the San Angelo Association of Realtors.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Behind that license are 37 years of hands-on work.
+Commercial and residential construction, remodeling, and property maintenance.
+I know how a house goes together,
+and I know where the problems like to hide.
+So when I find one, I can tell you where it comes from
+and what it means for your house.
+Every inspection, I treat the house like it's going to be my own family's.
+That means you get the same honest answer I'd give them.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Inside, I go through the heating and air, the plumbing, the water heater,
+the electrical, the kitchen appliances, and the attic.
+Outside, it's the foundation, the roof, the drainage, and the gutters.
+Then you get a report that's clear, honest, and thorough.
+I write it for buyers, sellers, and the agents working with them.
+I do residential, and I do commercial up to a four-plex.
+If you're buying, selling, or planning some upgrades,
+I'd be glad to be the one with the flashlight.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">If the roof is older than May 21, 2020, ask what happened to it</div>
+<div class="job">Local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The National Weather Service write-up of the May 21, 2020 hailstorm says it damaged roofs across much of San Angelo, which gives Michael a local reason to teach buyers what to ask about a roof.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If you're looking at a house in San Angelo, ask how old the roof is.
+If it's older than May 21, 2020,
+that roof was here for the hailstorm.
+The National Weather Service wrote that one up.
+Hail the size of golf balls and tennis balls, some of it up to three inches across.
+The storm sat over town for about ninety minutes
+and did considerable damage to roofs on homes and businesses across much of San Angelo.</div>
+<div class="spot">Spot A</div>
+<div class="lines">I've lived here 25 years, and the roof is on my list for every house.
+I look at the roof, the chimney, the flashings, and the valleys.
+Flashings are the metal where the roof meets a wall or a chimney.
+Valleys are where two roof slopes come together.
+Those are two of the places water likes to find a way in.
+Hail damage can be hard to spot from the driveway.</div>
+<div class="spot">Spot C</div>
+<div class="lines">So before you fall for the house, ask the seller three things.
+How old is the roof?
+What's been done to it since May 2020?
+And is there paperwork for that work?
+Write down the answers.
+If it's been replaced since then, good. Get the date.
+If the answer is "I'm not sure," have somebody look at that roof before you close.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Three questions to ask before you hire any home inspector</div>
+<div class="job">Competitor contrast</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A buyer choosing between inspectors has little to go on, so three questions they can forward to a friend or an agent let Michael's construction background and plain reports do the comparing for him.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Before you hire a home inspector, ask him three questions.
+It's the one professional look you get at the house before it's yours.
+First, what have you built?
+A license is where it starts.
+Every inspector you call should have one.
+What he's built, remodeled, and maintained decides what he notices once he's in your house.
+I've spent 37 years building, remodeling, and maintaining houses and commercial buildings.
+Unlike a lot of inspectors, I know exactly how a house is built.
+That goes for a four-plex too. I inspect those.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Second, will your report make sense to me?
+Mine is detailed and easy to understand.
+When I find a problem, I look at what's causing it
+and what it means for you.
+A buyer, a seller, or an agent should be able to read it and make a decision.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Third, will you answer my questions?
+I take the time to answer every one and explain what I found,
+so you feel confident about what comes next.
+Call, text, or email me any time.
+Ask every inspector on your list the same three things,
+then hire the one you'd want walking through your own family's house.
+It's your house, and it's worth the five minutes.
+I'm Michael Nichols, and I'll answer all three.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">If your builder gave you a warranty, the date to mark is month eleven</div>
+<div class="job">Useful customer education</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The eleven month warranty inspection is on Michael's own service list, and a deadline tip like this gives a new home owner a reason to follow him long before they need him.</div>
+<div class="spot">Spot A</div>
+<div class="lines">If your builder gave you a one-year warranty on a new house, the clock is already running.
+Find the date it ends and count back one month.
+That's when you want somebody to go through the whole house.
+It leaves you time to hand your builder a list before the warranty runs out.</div>
+<div class="spot">Spot B</div>
+<div class="lines">That's what an eleven month warranty inspection is for, and it's on my list of services.
+You can book one through the scheduler on my website.
+I go through the house the way I'd go through any other, inside and out.
+A house goes through its first year of heat, cold, and settling,
+and some things only show up then.
+I write up what I find, clear and detailed,
+so you can hand it to your builder with a date on it.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Pull out your warranty paperwork and read what it covers.
+Find the end date and put month eleven on your calendar.
+If you can't find the paperwork, call your builder and ask for a copy.
+Between now and then, keep a list.
+A door that sticks, a crack in the drywall, a stain on the ceiling.
+Write down what you saw and when, and take a picture.
+After the warranty runs out, a repair your builder might have covered is yours to pay for.</div>
+</div></div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof"><b>New Year, New Feed.</b> 12 locally relevant videos, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The local-interest video we wrote for a realtor here in town is sitting at about 25,000 views.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+</script>
+</body>
+</html>
