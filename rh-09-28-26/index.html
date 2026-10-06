@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Ric Henry Auto Service | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Ric Henry Auto Service</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work instead of hearing me describe it.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">The shop I didn't start</div>
+<div class="job">Origin</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Builds Ric as a real person with a real story before anything gets sold. Almost nobody in San Angelo knows the real story behind the legacy shop line on his own website, that he worked nine years for the previous owner before buying him out.</div>
+<div class="spot">Spot A</div>
+<div class="lines">In 1991 I went to work for a man named Eugene Kirksey,
+at a shop on West Washington that was already twenty five years old.
+I was just the guy turning wrenches under somebody else's name on the building.</div>
+<div class="spot">Spot B</div>
+<div class="lines">I did that for nine years.
+Learned how he ran the place, and how he treated people.
+In November of 2000, Mr. Kirksey retired,
+and my wife Pilar and I bought the shop from him.
+We kept the same crew, the same address, the same reason people already trusted the place.
+We just put our own name over the door.</div>
+<div class="spot">Spot C</div>
+<div class="lines">That's why the sign out front still reads a legacy shop since 1966.
+Because it is one. It just carries our name now.
+These days it's not one guy anymore.
+We've got an ASE certified team working on everything from a Ford to a Mercedes, all makes and models,
+same building the whole time, 204 West Washington.
+Mr. Kirksey handed us the trust this town already had in that address.
+We've spent every year since trying to earn it again.
+This shop has more than three thousand Google reviews now.
+That number didn't build up in one year, or under one owner.
+It took two names in a row running the place the same honest way.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">Trucks from towns you've never been to</div>
+<div class="job">Local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The shop's real trade area reaches deep into small towns most San Angelo businesses never mention. Naming those towns tells every truck that drives forty five minutes in that this shop already knows they exist.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Stand outside our shop on West Washington long enough,
+and you'll watch trucks pull in with plates from towns
+you've maybe never even driven through.
+Eldorado. Sonora. Miles. Ballinger. Big Lake.
+Even as far out as Junction and San Saba.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Nobody drives forty five minutes into San Angelo by accident.
+They come because their dad brought his truck here,
+or their boss did, or somebody at the feed store told them to.
+Out here, if your truck breaks down forty five minutes from home,
+you can't just walk back and forth to fix it twice.
+You need it done right the first time,
+by somebody who's still going to be at the same address next year.
+This building has sat on the same corner of West Washington since 1966.</div>
+<div class="spot">Spot C</div>
+<div class="lines">We're not trying to be the shop for everybody in Texas.
+We're the shop for Tom Green County,
+and for Christoval, Wall, Eden, Mertzon, and every small town wrapped around us.
+Our own site doesn't claim San Angelo. It claims the Concho Valley.
+That's the whole reason we say it that way.
+If your truck is what gets you to work,
+we take that seriously.
+That's been true here for almost sixty years, under two names and one address.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">I sign every warranty we write</div>
+<div class="job">Competitor contrast</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">This is the one built to get forwarded. It draws the sharpest line between a shop assigned a manager by a franchise office and a shop where the owner's own name is on the warranty, without ever naming the chain across town.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Every couple of years a new paint job goes up on some shop in this town.
+Same building. Different national name overhead.
+An owner you've never met and never will.</div>
+<div class="spot">Spot A</div>
+<div class="lines">This shop is different. I've owned it since November of 2000.
+My name is on the door because my own money is on the line,
+not some office two states away.
+When Mr. Kirksey retired, I didn't need a franchise name to keep this place running.
+Mine was enough.</div>
+<div class="spot">Spot B</div>
+<div class="lines">That's why every repair here comes with a three year,
+thirty six thousand mile warranty, honored nationwide,
+wherever that truck ends up.
+Every technician under this roof is ASE certified.
+This shop carries AAA approval and follows NAPA AutoCare standards.
+Nobody made us commit to any of that.
+We chose the standard we wanted our own name attached to.
+You also get a full digital inspection before we touch anything,
+pictures of what we found, a plain explanation, a real estimate first.
+You will not get a call after the fact telling you the bill grew because nobody asked.
+When the guy running the shop is the guy who has to look you in the eye next time you're in here,
+the work is just different.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Two questions to ask before you pay for any repair</div>
+<div class="job">Useful customer education</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Costs the shop nothing and helps every viewer whether they ever come in or not. It also plants two specific questions in a viewer's head that this shop already answers well, which is the quiet sell inside a script that never sells anything.</div>
+<div class="spot">Spot A</div>
+<div class="lines">If a shop hands you a bill and the only explanation is a part number,
+you don't know what happened to your car, only what it cost.
+Here's what a real inspection should look like, whether you come to us or not.</div>
+<div class="spot">Spot B</div>
+<div class="lines">A real digital inspection means a technician runs a full check with a tablet, camera included.
+You should get a picture of the actual belt, the actual brake pad, the actual leak,
+not just a guess written on a slip of paper.
+Then somebody explains it in plain language before a wrench ever touches the car.
+That's how we run every inspection that comes through this shop.
+Here's something most people never ask about.
+ASE certification means that technician sat for a real, proctored test in that specialty area.
+AAA approval means an outside inspector reviewed the shop itself before that sign ever went up.</div>
+<div class="spot">Spot C</div>
+<div class="lines">So ask any shop in this town two questions before you say yes to a repair.
+Can I see a picture of the part you're telling me is bad,
+and can you explain it without the jargon.
+If the answer is no, that tells you something.
+If the answer is yes, you're in good hands, here or anywhere else.
+Either way, you'll know exactly what you're paying for before you ever pay for it.</div>
+</div></div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof"><b>New Year, New Feed.</b> 12 locally relevant videos, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<p class="proof">The local-interest video we wrote for a realtor here in town is sitting at about 25,000 views.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> You're not paying us to experiment with your calendar. We guarantee the production system: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on October 12, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+</script>
+</body>
+</html>
