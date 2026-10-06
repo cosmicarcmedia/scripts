@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for San Angelo Museum of Fine Arts | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>San Angelo Museum of Fine Arts</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media. We worked together on the exhibit banners and the Family Day coloring sheets for Where Children Sleep, and I never stopped thinking about what a short video push could do for an exhibit the same way those graphics did. So here are four real scripts, written before we ever got back on the phone.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything.</p>
+<p>We'd come to the museum for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">A supply building at Fort Concho to a building people fly in to see</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Tells the real arc from a repurposed Army supply building to an internationally recognized building on the river, since most locals only know the museum as it looks today and never hear how it got there.</div>
+<div class="spot">Spot A</div>
+<div class="lines">This museum's story starts somewhere else entirely.
+It started inside Fort Concho, in an old Army quartermaster building from 1868.
+A supply depot, turned into an art museum in 1981.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Four years later, in 1985, we opened to the public with pieces on loan from the National Portrait Gallery and the Library of Congress.
+Two Washington institutions, lending real work to a museum inside an old fort in West Texas.
+[OWNER: what made you want to work in a museum, and what keeps you here]
+By 1999 we'd outgrown the fort completely and moved into this building on the Concho River, which went on to get international recognition for its design.
+We've held over three hundred and fifty exhibitions since we opened, everything from Renaissance printmaking to Spanish Colonial religious art to contemporary ceramics.
+Along the way we built a permanent collection of our own. Eight hundred contemporary ceramic pieces. More than sixty Texas paintings and sculptures. Over a hundred pieces of Spanish Colonial religious art.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Most people who walk in today only know us as the building on the river.
+They don't know we started in a supply depot four blocks from here.
+That's the part worth knowing.
+So the next time you're standing in a gallery looking at the river, you're standing on the other end of something that started in an army supply room.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">Everything we are happened inside about five blocks</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Anchors the museum's whole history in two real, walkable San Angelo landmarks, Fort Concho and the Concho River, both places anyone in town could point to.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If you want to see this museum's whole life, you can walk it in about ten minutes.
+Start at Fort Concho. That's where we opened in 1981, inside a building the Army used to store supplies.
+Fort Concho itself is a National Historic Landmark, one of the best preserved frontier Army posts left standing in the country.
+Walk a few blocks down to the river, and you're standing where we've been since 1999.</div>
+<div class="spot">Spot C</div>
+<div class="lines">The building on Love Street sits right on the Concho, and the design got international attention when it opened.
+Not because somebody wanted a landmark.
+Because the people who built it wanted the river itself to be part of what you see when you're inside.
+Somebody named that street Love a long time before we ever moved onto it, and people still smile the first time they hear it.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Eighteen counties send people through these doors every year, close to two hundred thousand people across West Texas.
+About half the schoolkids in this district come through on a field trip at some point.
+All of that, still inside the same five or six blocks where it started.
+That's real reach for a museum you could still walk to from almost anywhere downtown, on your lunch break if you worked nearby.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Why we've never charged you to walk in</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Contrasts the museum's permanent free admission against big city museums that gate everything behind a ticket price, without naming a specific one. Likely to get forwarded by anyone who has paid thirty dollars to stand in a museum line somewhere else.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Walk into most museums in a big city and you're paying twenty or thirty dollars before you see a single piece.
+Then you're handed a map for a building so big you'll never meet anyone who works there.
+That's a real experience. It just isn't the one we offer.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Admission here has always been free.
+Not a discount day. Not a members only hour. Free, every time the doors are open.
+You can see what's on view in about forty minutes if you're moving with a purpose, or take all afternoon.
+Either way, somebody on staff will walk over and talk to you about what you're looking at.
+People write that exact detail in their own reviews before we ever ask them to say it.
+Right now that means you can walk in and see Discovering Global Treasures in Concho Valley Collections without paying a cent to look at it.</div>
+<div class="spot">Spot B</div>
+<div class="lines">We've won a National Award for Museum Service, the highest honor the field gives out, and the Texas Historical Commission's Award of Excellence.
+That museum service award came from the Institute of Museum and Library Services in Washington, the same federal office that reviews museums nationwide.
+Those came from the same size museum that never charged you a dime to get in.
+Big doesn't automatically mean better.
+Sometimes it just means a longer line.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">What happens here on a Thursday afternoon</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Corrects the assumption that a fine arts museum has nothing for a family or a kid to do, using the museum's own free weekly and monthly programming, at zero cost to give away.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If the only thing you picture when you hear art museum is quiet rooms and don't touch signs, here's what you're missing.
+Every Thursday afternoon we run Art Thursdays, free, no reservation needed.
+Once a month it's a full Family Day, with a different hands on theme every time.
+Bring the kids on a Thursday, or bring them to a Family Day on a Saturday. Either one works, and neither one needs you to plan ahead.</div>
+<div class="spot">Spot A</div>
+<div class="lines">This September's theme was Sound into Color, kids turning music into shapes and color with their hands.
+The next one, October in the Open Air, moves the whole thing outside.
+[OWNER: a specific detail about what a kid does during a typical Family Day, from your own experience running one]
+None of it costs a family anything. Same as walking in on a random Tuesday.</div>
+<div class="spot">Spot C</div>
+<div class="lines">We're in the middle of the twenty sixth year of our ceramic competition too, pieces from all over North America, on view through most of the summer.
+Ceramics Monthly has called it the best clay show in the country.
+There's also the Concho Clay Studio on site, where people take real hands on ceramics classes throughout the year.
+You don't need an appointment for any of it. Just come on a Thursday and see what's out.</div>
+</div></div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof"><b>New Year, New Feed.</b> 12 locally relevant videos, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<p class="proof">The local-interest video we wrote for a realtor here in town is sitting at about <b>25,000 views</b>.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> You're not paying us to experiment with your calendar. We guarantee the production system: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on [TEARDOWN DATE].</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+</script>
+</body>
+</html>
