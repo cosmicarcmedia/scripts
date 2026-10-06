@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Concho Valley Chiropractic | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Concho Valley Chiropractic</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything around in the office.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">A San Angelo Aggie and a Colorado native meet in chiropractic school</div>
+<div class="job">Origin</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A family chiropractor is a two person decision, and the practice's own bios already give each doctor a real story, so this script lets Dr. Emily tell both of them in the voice patients will hear in the room.</div>
+<div class="spot">Spot A</div>
+<div class="lines">I'm Dr. Emily Vlcek, and I grew up right here in the San Angelo area.
+I come from a rural background,
+where I learned to appreciate natural and organic things.
+My family has been part of this community for decades.
+I'm an Aggie. I graduated from Texas A&amp;M in 2015 with a degree in kinesiology.
+I'm a chiropractor, a licensed athletic trainer, and a registered yoga teacher.</div>
+<div class="spot">Spot B</div>
+<div class="lines">My husband, Dr. James Vlcek, is a Colorado native who grew up in Colorado Springs.
+He has a biology degree from Colorado State University Pueblo,
+and he graduated cum laude from Parker University in 2018.
+He was his class president, and he worked in the research department.
+James and I met at chiropractic school.
+He cares a lot about evidence-based care.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Together we see patients at Concho Valley Chiropractic, on Knickerbocker Road.
+We focus primarily on conditions of the nervous and musculoskeletal systems.
+We see families, from infants to the elderly.
+I have a special place in my heart for women and children.
+When I'm not seeing patients or teaching yoga, I'm outdoors or with my family.
+James is always up for an adventure, and he likes his video games.
+Our desire is to educate this community through individualized chiropractic care.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">Look for the blue roof on Knickerbocker Road</div>
+<div class="job">Local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The practice's own site tells people to look for the blue roof on Knickerbocker Road, so this script turns a landmark patients already use into the way a new face finds the office, and the hours and the Monday yoga class give them a reason to stop.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If you're looking for Concho Valley Chiropractic, look for the blue roof.
+We're on Knickerbocker Road, just north of Bentwood.
+The address is 5114 Knickerbocker Road.
+I grew up in this area, and my family has been part of San Angelo for decades.
+Our motto is wellness minded and family oriented.
+I'm Dr. Emily Vlcek, and this is where James and I see patients.
+We can't wait to meet you.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Here are our hours.
+Monday and Wednesday, we're open nine to noon and two to six.
+Tuesday and Friday, we open at seven in the morning and close at two.
+Thursday, we're open eleven to seven, so you can come after work.
+Saturday is by appointment, and we're closed Sunday.
+You can book online, or call 325-617-2865.
+You can buy a gift card online, too.</div>
+<div class="spot">Spot C</div>
+<div class="lines">On Monday nights, I teach a vinyasa yoga class at the clinic for ten dollars.
+Vinyasa pairs breathing with movement and stretching.
+All experience levels are welcome, and you bring your own mat.
+Our website also has a Learn section,
+with posts on things like backpacks, foam rolling, and wide toe box shoes.
+You can find us on Facebook and Instagram at conchovalleychiro.
+I'd love to help you explore your own path to health and wellness.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Ask any chiropractor what they treat before you book</div>
+<div class="job">Competitor contrast</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Anyone choosing a chiropractor is comparing promises, and a plain statement of scope in Texas, with an invitation to ask every practice the same questions, lets the doctors earn trust without saying a word about another office.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Before you book any chiropractor, ask what they treat.
+I'm Dr. James Vlcek, and I'll go first.
+At Concho Valley Chiropractic, we focus primarily on diagnosing and treating
+conditions of the nervous and musculoskeletal systems.
+In Texas, chiropractors focus on musculoskeletal conditions.
+That's the spine, the joints, and the muscles.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Our care starts with hands-on adjustments.
+It can also include muscle therapy, stretches, core stability exercises, and Kinesio tape, as needed.
+We see athletes too, with soft tissue work and Kinesio tape.
+Dr. Emily is a licensed athletic trainer.
+We offer a rehabilitative option that focuses on building up your body's strength.
+I care about evidence-based care, so I'm glad to explain what we do and why.
+And we take the time to explain what your body is going through.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If your concern is outside what we do, we encourage you to see your healthcare provider.
+Healthcare works best when you work with a provider you trust.
+So ask every chiropractor on your list the same questions.
+What do you treat? What will a visit include? Will you explain what you find?
+You'll see Dr. Emily or me, and you can book online or call 325-617-2865.
+Those are fair questions to ask us too.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">When it gets cold in San Angelo and your joints ache, arthritis means a lot of things</div>
+<div class="job">Useful customer education</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The practice's own arthritis post already says the cold weather brings the same comment into the office every fall, and a plain explanation of what the word covers is the kind of thing a patient saves and sends to a parent.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Every fall, when it gets colder here in San Angelo, we hear the same sentence in our office.
+"My joints are starting to ache. I probably just have arthritis."
+Arthritis is one word for a lot of different conditions.
+Arthro means joint, and itis means inflammation.
+A lot of things can inflame a joint,
+and there are many more types than the three I'm about to mention.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Osteoarthritis is the most common form.
+It involves mechanical damage to the surfaces between the bones,
+and it tends to get worse with age.
+Common sites are the knees, the hips, and the hands.
+Rheumatoid arthritis is the most common inflammatory form.
+That's when the body's own immune system attacks the tissue of the joints,
+and it commonly affects the hands, wrists, and neck.
+Psoriatic arthritis is less common,
+and it shows up in some people who have psoriasis.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Those are different conditions, and knowing which one you have plays a big role in your care.
+If you're worried about changes in your joints,
+a trusted healthcare provider is a good next step.
+And if you have questions about what chiropractic care involves,
+we're glad to answer them.
+I'm Dr. James Vlcek at Concho Valley Chiropractic.</div>
+</div></div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof"><b>New Year, New Feed.</b> 12 locally relevant videos, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The local-interest video we wrote for a realtor here in town is sitting at about 25,000 views.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+</script>
+</body>
+</html>
