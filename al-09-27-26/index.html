@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Arteriors Landscape | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Arteriors Landscape</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. We talked before about a content retainer built around your installs. I wrote these four scripts this week so you can see the work instead of hearing me describe it again.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, about 90 seconds to two minutes. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving the truck.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">Seventy five years of experience, standing in one yard</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Introduces the crew as real people with real years in the dirt before anything gets sold, since no single founder name is published to hang the story on.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Add up the years everybody on this crew has spent doing this work
+and you get past seventy five years,
+standing in one yard.</div>
+<div class="spot">Spot B</div>
+<div class="lines">[OWNER: what got you personally into landscape design in the first place]
+None of us started out drawing pool decks on a laptop.
+Most of us started with a shovel, a trailer, and somebody else's yard that needed fixing.
+You learn soil before you ever learn design.
+You learn where water wants to go on a piece of West Texas caliche
+before anybody hands you a rendering to build from.
+That's still true for every one of us on this crew today,
+creative thinkers and problem solvers who happen to also love being outside for a living.</div>
+<div class="spot">Spot C</div>
+<div class="lines">We still do design now. Pools. Fire features. Full outdoor kitchens.
+Turf for the parts of the yard that need to survive a dog and a Texas summer.
+But every one of those still starts with somebody walking the property first,
+checking the drainage and the soil before a single line gets drawn.
+We didn't skip the shovel part to get here.
+We just got better at everything that comes after it,
+and we took that same approach out past San Angelo,
+into Abilene, Midland, Del Rio, and a handful of other West Texas towns
+that needed somebody who walks the yard first.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">The yard at Capital Farm Credit</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A real, named commercial project at a well known West Texas agricultural lender, plus a residential story pulled from an actual review, showing the work holds up in public and in a backyard.</div>
+<div class="spot">Spot B</div>
+<div class="lines">You've probably driven past Capital Farm Credit here in San Angelo
+without thinking twice about the landscaping out front.
+That's ours.
+A full commercial transformation, done for a company
+that spends its whole day financing land and agriculture,
+which means they know exactly what good ground is supposed to look like.
+People walk in there to talk about their livelihood.
+The last thing that building needs is a front yard that looks like nobody's paying attention.</div>
+<div class="spot">Spot A</div>
+<div class="lines">That's the part that keeps us honest on a commercial job.
+You're not just landscaping a building.
+You're landscaping the front of a company
+whose own clients judge land for a living.
+There's no cutting a corner on a job like that.</div>
+<div class="spot">Spot C</div>
+<div class="lines">One homeowner told us after we redid his irrigation and backyard
+that a water feature we added was the one thing he couldn't stop showing people.
+That's a house on a quarter acre, not a bank on the loop,
+and the site still got walked the same way,
+the plan still got built around the same questions,
+and it still got finished like somebody's going to judge it,
+because somebody always is, whether that's a loan officer or your own family.
+We treat both jobs like they're the last one anybody will ever see our name on.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Why we walk your yard before we quote it</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">This is the one that gets forwarded. A national lawn franchise sends a crew and a flat rate, not a design built around your actual soil and drainage, and this says so without naming anyone.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Call one of the big national lawn franchises
+and you'll get a price over the phone
+before anybody has ever seen your yard.
+Same crew, same price, same plan as the house down the street.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Here's why we don't do that.
+Every yard in this part of Texas sits on different ground.
+Some of it drains fine. Some of it turns into a bathtub after one hard rain.
+A flat rate crew treats both the same way,
+because they were never trained to look at the difference,
+and they're not coming back next month if the grading was wrong.
+We'd rather find that problem walking the yard with you
+than have you find it after the first storm.</div>
+<div class="spot">Spot B</div>
+<div class="lines">We walk the property first. Every time.
+Soil, drainage, the direction the sun hits it,
+before we ever draw a plan or hand you a number.
+Then we build a plan around your yard specifically,
+hardscape, irrigation, and planting sized to how your land behaves,
+not a template that gets used on every stop that week.
+We even set up financing through a local bank for the bigger builds,
+because a real plan sometimes costs more than a template,
+and you shouldn't have to choose the template just to afford it.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">The turf question we get from people with dogs</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Costs nothing to give away, grounded in a real customer's project (a pet's allergies) and the water conservation angle already central to the company's own service list, in a region where every homeowner is thinking about their water bill.</div>
+<div class="spot">Spot A</div>
+<div class="lines">If you've got a dog that tears up the yard,
+or worse, a pet with allergies to real grass,
+here's something most people never think to ask about.</div>
+<div class="spot">Spot B</div>
+<div class="lines">We put in a full artificial turf yard recently
+specifically because the family's pet had allergies to real grass.
+No more mud dragged inside. No more flare ups.
+We use ForeverLawn's premium product line, including their pet specific turf,
+which drains straight through the base instead of pooling on top,
+so it doesn't turn into standing water in a West Texas downpour either.
+And it's not the fake feeling stuff from years ago.
+It's built to take a dog running full speed on it every single day.</div>
+<div class="spot">Spot C</div>
+<div class="lines">The other side of that same coin is your water bill.
+A xeriscaped bed and the right turf in the right spots
+means less irrigation running every single week,
+which matters here more than almost anywhere else in the state.
+We can also design the irrigation zones around whatever real grass stays,
+so you're not watering turf that never needed it in the first place.
+You don't have to turf the whole yard to feel that difference.
+Ask us where it makes sense on your property
+and where real grass still wins.</div>
+</div></div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof"><b>New Year, New Feed.</b> 12 locally relevant videos, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<p class="proof">The local-interest video we wrote for a realtor here in town is sitting at about 25,000 views.</p>
+<p class="proof">A trash hauler out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> You're not paying us to experiment with your calendar. We guarantee the production system: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on [TEARDOWN DATE].</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+</script>
+</body>
+</html>
