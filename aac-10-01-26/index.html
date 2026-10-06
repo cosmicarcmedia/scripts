@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for AAC Security | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>AAC Security</em></h1>
+<div class="sub">Abilene, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work instead of hearing me describe it. Every number in them comes from your own website, your Google reviews, your Facebook page or the City of Abilene's alarm ordinance.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, about 80 to 105 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">I started in this business in 1995</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Builds you as a person before it sells anything, because people hire the face they recognize and every fact in this one already sits on your own site, your Google reviews and your Facebook page.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Letting a stranger put an alarm system in your house is a big decision.
+But I've been that stranger since 1995.
+I started as a technician for one of the big national companies.
+Right around the turn of the century, I left and started my own.
+I wanted people to get better personal service than a company that size can give.</div>
+<div class="spot">Spot B</div>
+<div class="lines">[OWNER: one sentence on the day you decided to leave.]
+AAC stands for Abilene Alarm Contractors.
+It's a local company, and the name says so.
+Does that matter?
+When you call with a question, a real person answers.
+When you tell us what you need, we recommend what fits your house and stop there.
+We do what we say we'll do.
+Sometimes that means a hot attic.
+We go.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Everything we've grown has come from word of mouth.
+One customer tells the next.
+One of our Google reviews says other security companies treat you like an account, and we treat you like a person.
+I'll take that over an ad.
+We protect homes, big businesses, even government buildings.
+This summer a new McDonald's opened on Antilley, and they trusted us with their security.
+Our customers don't leave.
+We have one of the lowest attrition rates in the security business.
+If you aren't very pleased, you get your money back, and nobody asks you why.
+I'm Aaron Roe, and this is AAC Security.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">What the City of Abilene wants from your alarm</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Hyperlocal and free to give away: the permit and false alarm schedule comes straight from the City of Abilene's own documents, and it makes you the company that knows the city's rules.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If you have an alarm system in Abilene, the city is counting your false alarms.
+You get three a year for free.
+The fourth and fifth cost fifty dollars each.
+The sixth and seventh cost seventy-five.
+From the eighth on, it's a hundred each.
+Reach eight in twelve months and the city can pull your permit.</div>
+<div class="spot">Spot C</div>
+<div class="lines">You also need a permit just to have the system.
+It's twenty dollars a year for a home and fifty for a business.
+It's good for a year, and it expires on the last day of the month you got it.
+Run an alarm on an expired permit and that's a misdemeanor, up to five hundred dollars.
+The application asks for two people who've agreed to come to your house if the police call, let them in, and reset the system.
+Pick people who answer their phones.</div>
+<div class="spot">Spot A</div>
+<div class="lines">So what counts as a false alarm?
+Any police response when nothing was wrong.
+A malfunction counts too, which means a dying battery can cost you.
+On our Platinum plan, we replace those for free.
+A storm that sets it off doesn't count against you.
+The permit belongs to whoever holds it, and it doesn't come with the house.
+So if you buy a place that already has an alarm, you need your own.
+You can apply and pay online through the City of Abilene's alarm permit site.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Ask your alarm company for this number</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">This is the one that gets forwarded: the minute and a half of math comes from your own home page, and it hands viewers one question to put to any alarm company.</div>
+<div class="spot">Spot C</div>
+<div class="lines">A minute and a half.
+That's how long some alarm companies can take before anybody acts on your alarm.
+Forty-five seconds for the signal to reach their station, and forty-five more for the station to respond.
+That's a long time when somebody's already inside.
+A good monitoring station averages thirty to thirty-five seconds to respond.
+Our target is twenty or less, and our communicators send within seconds.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Our average over the last twelve months is [OWNER: current average, the site says 12.6 seconds].
+Does yours even have a number?
+When our signal lands, the operator can see which door tripped, front, back, or a window.
+If it's a fire, they may be able to tell the fire department which part of the house it's in.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Six monitoring stations share the calls, so a storm at one of them doesn't leave you waiting.
+The station that watches AAC systems won Central Station of the Year in 2014, ahead of more than a hundred and eighty others.
+Call us with a question and a real person answers.
+Some companies send you to an answering service in another country.
+So ask your alarm company for their average response time.
+Then ask what a service call costs.
+On our Platinum plan, it's free during business hours, and a part that malfunctions gets replaced at no charge.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">How burglars try to beat an alarm</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">It costs you nothing to give away and it earns the follow: the crash and smash and phone line explanation is already on your residential page, and it ends on two questions a homeowner can ask any installer.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Kick in the door.
+Smash the panel.
+The alarm never calls anybody.
+Burglars have tried exactly that.
+Your panel gives you thirty to sixty seconds to type your code, and that's the window they use.
+So what happens if the panel waits for that countdown to finish before it calls the station?
+Smash it first, and the whole system goes quiet.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Ours doesn't wait.
+The moment the entry door opens, the system sends a signal.
+It says a door just opened, stand by for a disarm confirmation.
+Type your code and the confirmation goes through, so nothing happens.
+Don't, and the station assumes the panel got smashed.
+They follow the normal burglary protocol and send police if they need to.
+The panel is tamper-resistant, too, and it's designed to keep working through attempted damage.</div>
+<div class="spot">Spot C</div>
+<div class="lines">The other weak spot is the phone line.
+Older systems called out over a landline.
+A storm can take that line down, and an intruder can disable it on purpose.
+A cellular communicator doesn't need the line.
+It's also the quickest, most reliable way to send a signal.
+An alarm is a link between your house and the help you need.
+So ask anyone selling you a system two things.
+Does the panel signal when the door opens, before anyone types a code?
+And does it call out over cellular?</div>
+</div></div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof"><b>New Year, New Feed.</b> 12 locally relevant videos, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<p class="proof">The local-interest video we wrote for a realtor here in town is sitting at about 25,000 views.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> You're not paying us to experiment with your calendar. We guarantee the production system: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on [TEARDOWN DATE].</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+</script>
+</body>
+</html>
