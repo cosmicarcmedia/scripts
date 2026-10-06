@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for G&amp;G Garage Doors | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>G&amp;G Garage Doors</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work instead of hearing me describe it.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without changing locations.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">Why we worked a Father's Day against a customer's advice</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A customer already wrote that you worked on Father's Day to get the job done, and this puts your face and your voice on that story, so the next homeowner meets you and your brother before they ever call.</div>
+<div class="spot">Spot A</div>
+<div class="lines">A customer wrote that we worked on Father's Day to get their door done.
+They also wrote that it was against their advice.
+That's how we were raised.
+I'm Tony Garza, and my brother and I own G and G Garage Doors here in San Angelo.
+We grew up around here.
+We learned young that hard work and honesty will get you a long way in life.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Between the two of us, we've got more than thirty years in garage doors.
+We started G and G in 2018, and we want to give back to this community.
+[OWNER: why you and your brother went out on your own]
+We sell Clopay doors and LiftMaster openers, and we work on all types.
+Installs, repairs, maintenance.
+We take the big jobs and the small ones.
+And the estimate is free.</div>
+<div class="spot">Spot C</div>
+<div class="lines">One customer was visiting their daughter from out of town.
+The night before they had to leave, the daughter's garage door opener burned out.
+They called us at eight in the morning.
+We were there before nine.
+We put in a new opener, adjusted the spring tension, and lubed the door.
+All of it was done before eleven.
+They said the price was very reasonable.
+Another customer called about their mother's opener, which had quit a day or two earlier.
+We came out right away and took care of it.
+[OWNER: why you worked that Father's Day]
+So yes, we worked on Father's Day.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">A neighbor on Nextdoor asked who fixes garage doors and isn't a big company</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A neighbor asked Nextdoor for a garage door company that isn't a big one, and the next day another neighbor wrote that G&amp;G is the best and left your name and number, so this script turns that exchange into a reason for the whole town to know your face.</div>
+<div class="spot">Spot B</div>
+<div class="lines">In May of 2025, somebody on Nextdoor asked a question.
+Who fixes garage doors in San Angelo and isn't a big company?
+That same week, another neighbor wrote that G and G Garage is the best.
+Then they typed my name and my number.
+I'm Tony. My brother and I own G and G.
+We're from here.
+We're one of the newer garage door companies in town.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Another neighbor wrote about a Saturday.
+Their garage door wouldn't close all the way, so they called us and left a message.
+We called back within the hour.
+One of our guys came out and found the problem.
+They needed a new unit, and he had one on hand.
+He put it in right there.
+They said we were very professional and friendly.
+On Google, somebody wrote that we came out the same day and fixed their door.
+They called it a great price.</div>
+<div class="spot">Spot C</div>
+<div class="lines">We sell garage doors to builders and homeowners.
+We carry Clopay doors and LiftMaster openers, and we work on all types.
+We belong to the Home Builders Association here, and we're BBB accredited.
+We've served San Angelo and the surrounding areas since 2018.
+We go out to Wall and Christoval.
+Miles, Big Lake, Big Spring.
+Midland, Odessa, and Abilene, too.
+[OWNER: the farthest you've driven for one garage door, and what you found when you got there]
+Garage doors have their ups and downs in every one of those towns.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Call six garage door companies before you call me</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">This is the one worth forwarding: it hands homeowners two questions to ask any garage door company, and your own customers' reviews supply the answers.</div>
+<div class="spot">Spot C</div>
+<div class="lines">If your garage door breaks, don't call me first.
+Call six places.
+Ask every one of them the same two questions.
+What's it going to cost, and how soon can you be here?
+One customer did exactly that.
+They asked six places for a price.
+They wrote that ours was the best of the six.
+They said the installation was perfect, and called us great guys and super professional.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Two other customers called around, too.
+One had backed into their own garage door and needed a new one.
+The places they called quoted far more, and couldn't help for weeks.
+The other had trouble with an opener.
+Everybody they called was a week or more out.
+We came the same day and replaced it.
+Another customer called at eleven on a Monday morning with a broken spring.
+Our tech was there by two, and the door was fixed by three.</div>
+<div class="spot">Spot B</div>
+<div class="lines">A garage door is part of what keeps your house safe.
+It shouldn't sit broken for a week.
+Our estimates are free, and the work comes with a warranty.
+Sometimes a part has to be ordered.
+One customer wrote that we installed it super fast once it came in.
+Another one said we answered right away.
+So call six if you want.
+Then call me. Ask for Tony.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">What to ask whoever comes out to look at your garage door</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">It costs you nothing to give away and comes straight from your own services page and your reviews, so homeowners save it and remember who explained it.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If your garage door squeaks, you've probably stopped hearing it.
+It shouldn't squeak.
+A squeak or a funny noise means it's time to get the door checked.
+We find the source of the problem and fix it.
+Garage doors need regular maintenance to keep running smoothly for years.
+A little attention now saves you money down the road.</div>
+<div class="spot">Spot C</div>
+<div class="lines">So when somebody comes out to look at yours, ask questions.
+Ask how many years your door has left.
+On a maintenance visit, we'll give you an estimate on the life of your door.
+Ask if the spring tension is right.
+Ask when the door was last lubed.
+One customer needed a new opener.
+In the same visit, we adjusted the spring tension and lubed the door.
+[OWNER: the one thing a homeowner can safely check on their own between visits]</div>
+<div class="spot">Spot A</div>
+<div class="lines">Your home is one of the biggest investments you'll ever make.
+Your garage door is part of keeping it safe and secure.
+So look up whoever you call on the Better Business Bureau.
+We're accredited, with an A plus rating.
+Ask them to explain what's wrong in plain words.
+I'll keep you as informed as I can about whatever is going on with your door.
+[OWNER: why nobody should try to fix a broken spring themselves]
+Ask about the warranty, too.
+Ask for the estimate first. Ours is free.
+Can't tell if you need a repair, a new opener, or a whole new door?
+I'll tell you.</div>
+</div></div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof"><b>New Year, New Feed.</b> 12 locally relevant videos, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<p class="proof">The local-interest video we wrote for a realtor here in town is sitting at about 25,000 views.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> You're not paying us to experiment with your calendar. We guarantee the production system: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on October 15, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+</script>
+</body>
+</html>
