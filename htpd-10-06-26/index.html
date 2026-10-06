@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Hi-Tech Pest Defense | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Hi-Tech Pest Defense</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving the truck.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">We've been treating San Angelo homes for thirty-five years</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Most customers are never home when the system is serviced, so the owner is the one face they have never seen. This puts Steve, a family company since 1991, and the people customers already praise by name on camera.</div>
+<div class="spot">Spot A</div>
+<div class="lines">We've been treating San Angelo homes for thirty-five years.
+Most of my customers aren't home when we do it.
+We connect to the system from an outside hub, so nobody has to let us in.
+I'm Steve Hejl, and I own Hi-Tech Pest Defense.</div>
+<div class="spot">Spot B</div>
+<div class="lines">We opened in 1991, and we're a family company.
+[OWNER: how Hi-Tech got started, and who in the family works here]
+Our Instagram bio says it plainly.
+We treat your home like it's our own.
+No service fees, no hassle.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Read our reviews and one name keeps coming up.
+Edna, who answers our phone.
+Customers say she gave them money-saving options,
+and that she's quick to call back or text when you leave a message.
+They say we email and text your appointment two weeks ahead,
+email again a week before, and text when the tech is on the way.
+They say the techs are always nice and answer any questions you have.
+One customer has used us exclusively for over nine years.
+Another says our pricing is fair and our service is effective.
+One review calls us timely, professional, honest and, most importantly, no bugs.
+We've been BBB accredited since 2002, with an A plus rating
+and zero complaints on our profile.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">If your house in San Angelo was built after 1991, we may have been there first</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The company's own site says a San Angelo home built after 1991 was highly likely treated by Hi-Tech before the slab was poured. Opening on that tells homeowners across town that they may already be customers.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If your house in San Angelo was built after 1991, we may have been there first.
+Before the slab was poured, we treated the soil for termites.
+That's on our own website.
+It says it's highly likely your foundation was treated by Hi-Tech.
+The majority of builders in San Angelo have trusted us with it for decades.
+It's the one part of the job you can't see once the house is finished.</div>
+<div class="spot">Spot A</div>
+<div class="lines">One customer wrote that we've been taking care of their house for twenty years,
+since it was built.
+Another has used us since 2001 and calls the service professional and friendly.
+That's how a lot of our customers start.
+With the dirt, before there's a house.</div>
+<div class="spot">Spot C</div>
+<div class="lines">After a big storm, every critter in town goes looking for shelter.
+One customer wrote that after the last one, the office responded right away
+and got them scheduled with ease.
+Out past the city limits, it's scorpions.
+Another customer out there wrote that they're everywhere,
+and that dusting the attic is a must for their home.
+We're members of the San Angelo Chamber of Commerce
+and an associate member of the Texas Association of Builders.
+Our office is on Austin Street, open Monday through Friday.
+We've been in San Angelo since 1991.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Before the walls close on a new house, ask your builder about pest defense</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The tubes in the wall go in at no charge to the homeowner or the builder, and only Hi-Tech installs and maintains them in Tom Green County. A buyer can ask about it before the walls close, and this video tells them to.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Building a house in San Angelo? Ask your builder one thing before the walls close.
+Does this house get a pest defense system?
+Not every builder offers it as a standard feature. Our own website says so.
+It's a network of small perforated tubes running through the walls.
+When we service it, the pest control goes into those lines,
+right where pests live, hide and breed.
+Your family and your pets don't come in contact with the materials.</div>
+<div class="spot">Spot A</div>
+<div class="lines">It doesn't cost you or your builder anything to have it installed.
+In Tom Green County, we're the only company that installs and maintains it.
+Conventional pest control works from the outside of your house.
+We do that too.
+But nobody else can put this system inside your walls here.</div>
+<div class="spot">Spot B</div>
+<div class="lines">People ask me two things.
+Does it make the walls damp?
+The University of Florida research on our website says there's more water
+from condensation after a hot shower than from servicing the system.
+Does it clog?
+A University of Georgia test ran a simulated twenty years and found no apparent clogging.
+We install it while the house is being built.
+If yours is already built, we can still treat it the conventional way.
+And if you're a homebuyer, send this to your builder.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Found a scorpion in your house? Check four things before you call anybody</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Scorpions come up in the reviews, and the company's own info page already lists what a homeowner can do about them. Giving that away earns the follow, and the call.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Found a scorpion in your house?
+Texas has eighteen species of them.
+When it gets hot, they go looking for somewhere cooler,
+and that can be your house.
+Before you call anybody, check four things.
+First, your lights.
+All insects are attracted to light, and that includes a porch light
+or a window with no curtain.
+If you need lights outside, use motion lights.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Second, the gaps.
+Keep your windows closed at night.
+Caulk the trim around your eaves.
+Put steel wool in your weep holes.
+Trim any tree or shrub that touches the house.
+Third, firewood.
+Don't bring it inside until you're ready to burn it.
+Those last two have a name, integrated pest management.
+It means controlling pests by means other than insecticide.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Fourth, your schedule.
+Pests are around in winter too.
+Scorpions breed in the fall and spring, and the young ones are easier to kill,
+so treating then cuts the numbers you see in summer.
+The treatment also stays stable in cold weather,
+so it's still working when pests come out in spring.
+After we treat, wait a week or two before you water your lawn.
+It helps the service work.
+And tell your tech where the problem area is.
+They'll focus on it.</div>
+</div></div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof"><b>New Year, New Feed.</b> 12 locally relevant videos, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The local-interest video we wrote for a realtor here in town is sitting at about 25,000 views.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+</script>
+</body>
+</html>
