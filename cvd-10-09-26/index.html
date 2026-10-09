@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Concho Valley Door | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Concho Valley Door</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">My parents started this company in 1975</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The owners' own staff page says Dennis and Judy Urbantke founded the company and their daughter Tonya and her husband Shawn took it over. A second generation handing off a 1975 company is the face this stale website never shows.</div>
+<div class="spot">Spot B</div>
+<div class="lines">My parents, Dennis and Judy Urbantke, started this company in 1975.
+That's fifty one years ago, right here in San Angelo.
+They sold, serviced and installed garage doors for the whole Concho Valley.
+When they retired, my husband Shawn and I took it over.
+[OWNER: what you and Shawn were doing before you took over, and how that decision got made]</div>
+<div class="spot">Spot C</div>
+<div class="lines">When you take over your parents' company,
+you start with fifty years of their customers' trust.
+That's a lot to protect.
+So our goal was simple.
+Keep up the traditions of great products and service that Dennis and Judy began.
+[OWNER: one thing your parents taught you about the business that still guides you]</div>
+<div class="spot">Spot A</div>
+<div class="lines">Shawn and I are both owners, and it has stayed in the family since day one.
+Today we sell, service and install garage doors and openers.
+Residential and commercial, plus gates and keypads and card readers.
+We work out of 610 Art Street.
+Michelle and Kaytlyn work the office.
+[OWNER: a customer or contractor who has been with the company since your parents ran it]
+So if you've got a door that won't close,
+or you're building something new and need one hung,
+call us.
+The number is 325 658 4146.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">From Del Rio to Brownwood to Fort Stockton</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The service area, the memberships and the wind rated opener details are all on the company's own pages. Naming real towns and the West Texas wind tells a rancher in Fort Stockton and a builder in San Angelo that this video is for them.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Our service area runs from Del Rio to Brownwood to Fort Stockton.
+That's a lot of West Texas to cover with a garage door company.
+Our home base is right here on Art Street in San Angelo,
+but the trucks go a long way.
+[OWNER: the farthest job you have driven to, and what it was]</div>
+<div class="spot">Spot A</div>
+<div class="lines">We're members of the San Angelo Chamber of Commerce.
+We're members of the Home Builders Association,
+the Better Business Bureau and the International Door Association.
+This is where we work and where we live.
+We work with the builders and the businesses in this town.
+When they need a door, an opener or a gate, they call somebody they know.
+That goes for the family putting in a new garage too.</div>
+<div class="spot">Spot B</div>
+<div class="lines">And then there's the wind.
+If you live out here, you know a West Texas wind will test any door.
+The barn doors and carriage house doors take the worst of it.
+Some openers are built for big doors that catch the wind,
+up to fourteen feet high.
+That matters out here.
+So before you buy something off the shelf in a box,
+talk to somebody who has been hanging doors in this wind since 1975.
+Come by Art Street if you're not sure what you need.
+We'll walk you through it.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Anybody can sell you a garage door. Ask who's installing it.</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The accreditation and the two master technicians are both claimed on the company's own homepage. This script turns a line buried on a 2017 style website into the question a homeowner should ask before hiring anyone.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Anybody can sell you a garage door.
+The harder question is who's going to put it up.
+Here's something most people never ask a door company.
+Are you accredited?
+We are, through the Institute of Door Dealer Education and Accreditation.
+And we're the only dealer in the Concho Valley that is.</div>
+<div class="spot">Spot B</div>
+<div class="lines">That accreditation is the highest level of professionalism
+the door and operator industry awards.
+It says our company has been looked at by the industry itself.
+We also have two master technicians.
+The first two in the nation.
+That's a title we're proud of, and it took work.
+[OWNER: the names of your two master technicians and what it took to earn the title]</div>
+<div class="spot">Spot C</div>
+<div class="lines">Why does that matter to you?
+Because a garage door is the largest moving part of your house.
+It's heavy, and it has a lot of tension in it.
+You want somebody who has been trained on it.
+If you're comparing quotes, ask each company the same two questions.
+Are you accredited, and who is doing the install?
+Ask who will be at your house, and what training they've had.
+Write down what they tell you.
+Then call us and compare.
+We'll be glad to answer both questions the same way.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Three things to check before you buy an opener</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Every product detail here, the optional battery backup, the lift height and the wind rated models, is on the company's own opener page. It gives a homeowner something to use tonight and costs the company nothing to say.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If your garage door opener is on its way out,
+here are the things I'd check before you buy a new one.
+First, what happens when the power goes out?
+Some openers offer an optional battery backup,
+so the door still works during an outage.
+If you've ever been stuck outside your own garage in a storm, you know why that matters.
+Ask whether the one you're looking at has it.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Second, how tall and heavy is your door?
+If you have a big door, or a carriage house door,
+or one that catches a lot of wind,
+you want an opener rated for it.
+Some are built for doors up to fourteen feet high.
+Ask what yours is rated for before you buy it.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Third, ask about the light and the speed.
+A lot of newer openers have built in LED lighting,
+and some let you set how fast the door travels.
+Those are small things you'll notice every day.
+[OWNER: the one thing that fails first on an old opener, and how a customer can spot it]
+If you're not sure what you need, call us.
+We'll tell you what makes sense for your door.
+The number is 325 658 4146.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">What a master technician does</div>
+<p>Put one of your two master technicians on camera at a job and have them talk through one repair, step by step, as they would to a new hire. Open on the line from your homepage, then show the part of the job a customer never sees. Keep it to one repair and one tip.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
