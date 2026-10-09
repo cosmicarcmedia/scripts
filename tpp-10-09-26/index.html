@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for The Pooch Pros | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>The Pooch Pros</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+<p>They're yours either way. Shoot them on a phone this weekend if you want. They'll work.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">I turned my own dog mean, and here is how I train now</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">George already wrote this story on his own team page. Told on camera it gives a dog owner a reason to trust him before they ever call, and it is a story no franchise trainer can borrow.</div>
+<div class="spot">Spot A</div>
+<div class="lines">When I was a kid, I had a German Shepherd named Lobo.
+I loved that dog.
+And I played so rough with him that none of my friends wanted to come around.
+I had turned him into a mean dog.
+I thought yelling was how you disciplined a dog.
+I was wrong.</div>
+<div class="spot">Spot B</div>
+<div class="lines">I'm George Norwood with The Pooch Pros, here in San Angelo.
+Angela and I train dogs, and I tell people about Lobo on purpose.
+[OWNER: what finally showed you that yelling was the wrong way].
+Today I work with dogs in a gentle, calm way,
+and it brings great results.
+That's what I wish somebody had shown me when I was a kid.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Most of the dogs we meet aren't bad dogs.
+Some are scared. Some are anxious.
+Some have an owner who was never shown how.
+That was me with Lobo.
+So the person we spend the most time training is you.
+You'll likely have that dog for ten years or more.
+We want those ten years to be good ones, for both of you.
+If your dog is a handful, you can book a free phone consultation on our website.
+Tell us the dog's name and what's going on.
+We'll get back to you within twenty four hours.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">The rescue dog who would not trust a man</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A real dog from a real local customer, named on the site's own success page. It plants the business in San Angelo and shows a viewer with a hard dog that George has already met one.</div>
+<div class="spot">Spot C</div>
+<div class="lines">There's a dog in San Angelo who didn't trust men.
+A rescue named Coco.
+She had been abused, and she was wary of men.
+I'm a man, so I was the first thing she had to get past.
+She warmed up to me quickly.
+[OWNER: what you did in the first ten minutes with Coco].</div>
+<div class="spot">Spot A</div>
+<div class="lines">San Angelo has a lot of dogs like her.
+Rescues. Strays. Dogs nobody has the history on.
+Another one was a stray named Lucy.
+Nobody knew where she'd come from, and she had never worn a leash.
+She kept trying to escape.
+With a training harness, she was walking on a leash the first day.</div>
+<div class="spot">Spot B</div>
+<div class="lines">We work out of San Angelo, and we go well past it.
+One owner had a pit bull and husky mix named Mia, and had nearly given up on parks.
+We drove over three hours for pickup and drop off,
+and we sent progress videos along the way.
+For families in Austin, Dallas, San Antonio, Boerne, and Fort Worth,
+we offer door to door pickup and delivery.
+So if you're in the Concho Valley, or a long way from it,
+call and ask whether we can get to you.
+Every dog has a story, and we want to hear yours.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Three questions to ask any dog trainer first</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The one meant to get passed around. A pet owner about to pay thousands for training gets three questions to ask, and George's own program details answer each one without naming anybody.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Here's a question to ask any dog trainer before you hand over your dog.
+When my dog comes home, who is it going to listen to?
+If the answer is the trainer, you've paid for a dog that works for somebody else.
+Ask us. Ask everybody.
+Here's how we answer it.
+Every board and train we do ends with an owner hand off consultation.
+You learn the handling, and you leave knowing what we did.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Second question. What does it cost, and what do I get?
+Our prices are on our website.
+A three week behavioral program starts at thirty five hundred dollars.
+A two week adult dog program starts at twenty one hundred.
+After an in home session, you get seven days to text or email us your questions.
+You can read all of that before you ever call.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Third question. How does the trainer treat the dog?
+We use a relationship-based calming method.
+[OWNER: your stance on e-collars and choke chains, in your own words].
+Trust, respect, and communication.
+A dog that feels safe is eager to learn.
+One family getting ready for a new baby called us
+practical, realistic, kind and effective.
+Ask the other trainers these three questions.
+Then ask us, and I'll answer every one before you pay a dollar.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Is it anxiety or bad behavior? Check for these</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A free checklist from the specialist. Dog owners search this exact question late at night, and a short list they can screenshot earns the follow.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Is your dog anxious, or just badly behaved?
+From the couch they can look exactly alike.
+I'm George Norwood, and here are the signs I tell owners to watch for.
+Pacing.
+Barking or whining a lot.
+Trembling.
+Watch your own dog tonight and see how many you count.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Hiding.
+Chewing things up when you're gone.
+Panting or drooling when the dog hasn't been running.
+If you see a few of these, your dog is probably worried.
+And a worried dog needs a different plan than a stubborn one.
+Harsh correction is the wrong tool for a worried dog.
+Gentle and consistent is the way through.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Next, find the trigger.
+Is it the keys in your hand? The doorbell? You walking out?
+Write down what happens right before it starts.
+That note is the most useful thing you can bring to a trainer.
+[OWNER: the first thing you do with an anxious dog on a first visit].
+And before a consultation, keep the house calm.
+Have the dog at home, and keep things quiet.
+If it's more than you can handle alone,
+you can book a free phone consultation on our website.
+We'd be glad to talk it through.
+The earlier you call, the easier it is on everybody.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">Mia's long drive</div>
+<p>Tell the story of the three hour drive to pick up a dog whose owner had nearly given up on parks. Open on the first look Mia gave you, then tell what changed by drop off. Use a progress clip from the month if you have one.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
