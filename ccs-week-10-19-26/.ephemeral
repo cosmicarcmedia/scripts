@@ -1,0 +1,2 @@
+2026-11-07
+CCS week of Oct 19 to 25 calendar graphics, 6 images at 1080x1350 for the Cloud Campaign import. Cloud Campaign re-hosts to its own S3 on import, so these copies are disposable after the window. Masters live in the vault at client-work/clients/cornerstone-christian-school/assets/social/2026-10-12/graphics/.
