@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Reyes Diesel Service | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Reyes Diesel Service</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">Thirteen years in other people's shops before I opened mine</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Nobody pulling a rig into a commercial diesel shop knows the owner spent thirteen years in dealer shops first, or that he and his wife built the business from a 3,000 square foot building. That path is the reason a fleet manager can trust the name on the sign.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Thirteen years. That's how long I turned wrenches in other people's shops.
+I started in a dealer shop in 1998 and stayed four years.
+In 2002 I moved to another dealership, and I stayed there nine.
+I learned a lot in both places.
+[OWNER: the one thing you saw in those shops that you promised yourself you'd do differently]
+So in 2011, I went out on my own.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Reyes Diesel Service started as me and my wife Patricia.
+Our first building was three thousand square feet, and it wasn't in the best spot in town.
+That meant we had to be worth the drive.
+Every customer we had, we earned one truck at a time.
+[OWNER: the first customer who trusted you with a truck]
+Years later we outgrew that shop, and an SBA loan helped us build a new one.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Today that's eight bays and twelve thousand square feet on Gibbs Drive.
+Engine-in-frames, transmission rebuilds, clutches, trailers, computer diagnostics.
+There's a showroom floor of parts, oils and lubricants now too.
+Over twenty years as a mechanic, and my name is still on the sign.
+We've been BBB accredited since 2015, with an A plus rating.
+A truck that's down is a paycheck that's down.
+You bring us a rig that's stuck, and we work to get it back on the road.
+If you drive for a living, this shop was built for you.
+Reyes Diesel Service. Gibbs Drive, San Angelo.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">School buses, chemical rigs, and truckers from a hundred miles out</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The shop works on school buses for the City of San Angelo and nearby districts, rigs for one of the biggest chemical companies in the country, and truckers within a hundred miles, and nobody in town knows it. Naming those customers tells every fleet manager in the Concho Valley this shop is built for them.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Take a look at what's parked outside our eight bays.
+School buses for the City of San Angelo and the districts around it.
+Rigs that haul for one of the biggest chemical companies in the country.
+Truckers who drove in from a hundred miles away.
+Different trucks, but when one goes down the problem is the same.
+A bus that can't run is a route that doesn't get driven.
+A rig that can't run is a driver who doesn't get paid.</div>
+<div class="spot">Spot C</div>
+<div class="lines">We built the new shop close to the truck stops by the highway junction.
+That's one of the best things about the move.
+When a truck breaks down, you want a shop that's easy to get to.
+[OWNER: which highway you sit closest to, and how many minutes it is from the truck stops]
+We're on Gibbs Drive, close to the middle of town.
+We're open Monday through Friday, eight to five.
+Past five, we do twenty-four hour emergency service.</div>
+<div class="spot">Spot A</div>
+<div class="lines">A few years back, Patricia and I entered the San Angelo Business Plan Competition.
+In 2022 we took second place. Twenty thousand dollars.
+That money was meant for one thing, more parts on the shelf and a system to keep track of them.
+The idea was simple. Fewer days waiting on a part means fewer days a truck sits.
+We've got a showroom floor now with parts, oils, lubricants and lighting.
+Come by and see it.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Three questions to ask any diesel shop before you hand over the keys</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The shop has real answers to three things every fleet manager and owner-operator wonders about: who is under the truck, how long it waits on a part, and how a big bill gets paid. Laid out as questions to ask any shop, it draws a sharp line without naming anyone.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Before you hand your keys to any diesel shop, ask them three questions.
+I'll answer all three for mine, and you can ask the next shop theirs.
+Question one. Who is going to be under my truck?
+At my shop it's mechanics with over twenty years of experience, and I'm one of them.
+Ask the next shop who's going to be under your truck, and how long they've been doing it.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Question two. How long will my truck sit waiting on a part?
+We took second place in a business plan contest, and that prize money was meant for parts stock and an inventory system.
+We keep a showroom floor of parts, oils and lubricants right here in the shop.
+Fewer days waiting on a part means more days you're hauling.
+[OWNER: a part or two you keep on the shelf that saves a customer a day]</div>
+<div class="spot">Spot B</div>
+<div class="lines">Question three. What if I can't pay for the whole repair today?
+A big repair bill shows up at the worst possible time.
+We offer financing up to ten thousand dollars on repairs.
+You pick when and how you pay it back, and you hear a yes or no in seconds.
+So the truck gets fixed and gets back to work, and the payment gets figured out after.
+Those are the three. Ask the next shop the same ones.
+If you want to hear how we answer them in person, we're on Gibbs Drive, Monday through Friday.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">What the code on your dash is trying to tell you</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Every driver gets a warning light eventually, and most either ignore it or start guessing at parts. Explaining what a fault code is and what to tell a mechanic costs the shop nothing and shows the customer who reads codes for a living.</div>
+<div class="spot">Spot A</div>
+<div class="lines">When a warning light comes on, most drivers do one of two things.
+They ignore it, or they start guessing at parts.
+Either one can cost you money.
+The truck's computer writes down a code the second it sees something wrong.
+That code is where every diagnosis starts.
+It's what computer diagnostics are for. We read the code, then find out what's behind it.</div>
+<div class="spot">Spot B</div>
+<div class="lines">A code tells you which system is complaining, or which reading is out of range.
+Finding the broken part is the mechanic's job.
+That's why the part somebody told you to replace sometimes turns out to be fine.
+Two things help me a lot when a driver brings a truck in.
+Write down the code before anybody clears it.
+And tell me what the truck was doing when the light came on. Hauling a load, idling, climbing a grade.
+Cummins, Detroit, Cat, a DT 466, the code is where we start on all of them.</div>
+<div class="spot">Spot C</div>
+<div class="lines">The cheap stuff matters too.
+Oil changes, filters, batteries. That's preventative maintenance, and it's on our list for a reason.
+A dead battery on a Monday morning costs a lot more than the battery.
+If the light is on and you're unsure what to do, call us.
+We do twenty-four hour emergency service, and a phone call costs you nothing.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">The first weekend off</div>
+<p>Shoot it at closing time on a Friday with the bays behind you. Open on how long the shop ran without a weekend, then say what a weekend off looks like now. The SBA story gives you the line to start from.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
