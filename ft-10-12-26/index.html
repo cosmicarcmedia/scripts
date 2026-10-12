@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for FinerXide Transport | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>FinerXide Transport</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">Say it with me: Finer-Side. The X is on purpose.</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The name is the first thing every broker and shipper trips over, and the About page already has a good answer. Saying it out loud turns the odd spelling into the reason a stranger remembers the company and the family behind it.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Say it with me. Finer-Side.
+FinerXide Transport. We're a family-owned flatbed carrier in San Angelo, Texas.
+Yes, the spelling is strange. There's a reason for it.
+A finer ride. A finer standard of service. A finer experience for every shipper and broker who hands us a load.
+And the X in the middle?
+That's the crossroads, where reliability meets the open road.
+We treat every load like our livelihood depends on it, because it does.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Here's why we started.
+[OWNER: how many years you spent in trucking and the oilfield, and doing what]
+After all that time, we kept seeing the same thing missing. Accountability.
+Freight that wasn't strapped down right.
+Drivers nobody could reach.
+Shippers sitting in the dark about where their load was.
+So we built a small family company to run the other way.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Family-owned and driver-operated means something simple.
+When you ship with us, you deal directly with the people who move your freight.
+From the first phone call to the final signature.
+[OWNER: who drives the truck, and how the family splits the work]
+Our promise has three parts. Family-owned. Driver-operated. Built on trust.
+Just straight communication, clean equipment, and freight that shows up when and where it's supposed to.
+We're growing, and someday there will be more trucks, more drivers, and more lanes.
+It'll still be the same hands-on, family-first outfit that got us here.
+So when you see that odd spelling on a flatbed, that's us.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">Where the truck goes when it leaves San Angelo</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">It tells the Concho Valley and the oilfield in one picture what a San Angelo flatbed hauls, from a wellhead on a lease road to feed and hay. A shipper or broker who reads this knows the truck is local and knows the work.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Every load starts the same way, here in San Angelo.
+The truck is a 2019 Freightliner Cascadia with a 53 foot flatbed.
+It's a sleeper cab, built for the long road.
+From here we run west to the oilfield.
+Drill-site deliveries. Wellhead equipment. Frac sand. Rig-up components.
+Midland and Odessa, and the basins around them.
+Oilfield and regional Texas runs are our specialty.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Getting to a rig is a different kind of driving.
+There are lease roads at the end of the trip, and a crew waiting on what's on your deck.
+Rig-up components and completion equipment go where the crew needs them.
+We tarp it, strap it, and chain it down before we roll.
+We know the pace of that work. When the rig needs the equipment, the schedule is the whole job.
+[OWNER: one delivery to a lease road or drill site that shows what it takes]</div>
+<div class="spot">Spot A</div>
+<div class="lines">But a flatbed out of San Angelo doesn't only see oilfield.
+It's steel and pipe one day, and lumber or construction materials the next.
+Steel coils, rebar, I-beams.
+Machinery for an equipment dealer. Grain, feed, and hay for a farm.
+Manufacturing, agriculture, construction, and the oilfield all need something moved.
+That's what a flatbed out of this town hauls.
+When the load is ready, we go wherever the freight needs to go, anywhere in the lower 48.
+Crane loading in, storm rolling out.
+Another sunrise, loaded up and headed out.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Three questions to ask any carrier before you hand over a load</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Shippers and brokers already worry about who answers when a load runs late. These three questions let them test any carrier, and a one-truck family outfit can answer all three with a name and a phone number.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Before you hand a load to any carrier, ask three questions.
+First one. Who do I call when it's running late, and do they pick up?
+Here, the numbers are on our website, with a name next to each one.
+Dispatch is open twenty four seven.
+No call center. No phone tree.
+And the voice that quotes your rate is the voice you hear at the dock.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Second question. Who checks the load?
+Every strap checked. Every tarp secured.
+We haul steel, pipe, and oilfield equipment, so we use chains, straps, corner protectors, and dunnage.
+Open deck freight gets full tarping, strapping, and chain-down.
+Ask any carrier to walk you through how they'd secure your freight.
+If the answer is vague, you've learned something.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Third question. Can I see your paperwork?
+Our USDOT number is 4112825, and our MC number is 1571259.
+You can look both up yourself.
+A certificate of insurance is available on request.
+Rates come with no hidden fees.
+And you get live updates from pickup to drop, so you always know where your freight is.
+When we accept a load, we deliver it.
+Weather, traffic, or tight timelines, we find a way to make it work.
+Most quotes go out within the hour, and for an urgent load you call and get a number right away.
+[OWNER: what you say to a broker who's comparing you against a bigger carrier]</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Five things to have ready before you ask for a flatbed quote</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Anyone shipping steel, pipe or equipment for the first time does not know what a carrier needs. A short list saves them a round of phone calls, and it matches the quote form on the site.</div>
+<div class="spot">Spot C</div>
+<div class="lines">If you've never shipped on a flatbed, the quote starts with a few questions.
+Have these five answers ready, and you'll get a number fast.
+One. What is it?
+Steel, pipe, oilfield equipment, construction materials, machinery.
+Two. What does it weigh?
+Weight decides whether a load is legal on one truck.
+A 53 foot aluminum flatbed handles standard legal loads up to forty eight thousand pounds.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Three. Does it need a tarp?
+Say so up front, and say what size.
+Lumber, trusses, and building products usually want covering.
+We carry four foot and six foot tarps.
+Four. Where does it pick up, and where does it go?
+If it's going to a drill site, tell us.
+Lease roads change what we need to know.
+Include a phone number for whoever is receiving the load.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Five. When does it need to move?
+A pickup date up front saves a phone call.
+That's the whole list, and it's what our quote form asks too.
+Send it in, and most quotes go out within the hour during business hours.
+If it's urgent, skip the form and call.
+And if you're a broker, it's the same list.
+We work with brokers and shippers alike.
+Put those five on a sticky note by the phone.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">Crane loading in, storm rolling out</div>
+<p>Film the next load from the first strap to the first mile. Show the freight going on the deck, the chains and tarps going on, and the sky behind it. Say out loud what you check before you pull out.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
