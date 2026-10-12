@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Shine Brite Lube Center &amp; Car Wash | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Shine Brite Lube Center &amp; Car Wash</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">I bought one lube shop and asked a lot of questions</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Feliciano's own SBDC story is a first person arc from buying one lube center to running two and an express wash, and nobody in town has heard him tell it. It gives a face to a name on the sign.</div>
+<div class="spot">Spot A</div>
+<div class="lines">My name is Feliciano Hernandez.
+Priscilla and I own Shine Brite Lube Center and Car Wash here in San Angelo.
+I bought this business from the previous owner.
+[OWNER: the year you bought it, and what you did before]
+I walked in with one lube center and a lot of questions.
+How do I hire people. How do I manage them. How do I set prices.</div>
+<div class="spot">Spot B</div>
+<div class="lines">So I went to the Small Business Development Center at Angelo State.
+We worked through hiring, managing a team, and pricing.
+After that I hired more people, and the business grew.
+In 2022 we opened a second lube center on North Bryant.
+Then we took the car wash on Sherwood Way and rebuilt it as an express wash.
+That one was a labor of love, and it took us a long time to get open.</div>
+<div class="spot">Spot C</div>
+<div class="lines">In 2024 San Angelo voted us best lube center in the Community's Choice Awards.
+Our Sherwood Way shop has also been a CARFAX Top Rated Service Center five years in a row.
+That comes from customer reviews.
+Our technicians have a lot of years behind them, and customers keep coming back.
+Our goal is the fastest service and the best quality oil change and car wash in San Angelo.
+[OWNER: one line on what you want a customer to feel when they pull in]
+Oil change, wash, vacuum, done.
+Two lube centers and an express wash, and you never need an appointment.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">The old KFC on North Bryant now changes oil</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The north side shop sits in a building San Angelo LIVE reported was a KFC and other businesses, empty for some time. Everybody who drives North Bryant remembers something about that corner, and it opens the video on a place the viewer already knows.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Our north side shop is on North Bryant Boulevard, in a building that used to be a KFC.
+It sat empty for a while.
+Now it's a lube center, and you can drive in without an appointment.
+[OWNER: what the corner looked like when you first saw it]
+Our other shop is on Sherwood Way, with the express wash right next door.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Driving in West Texas means dust, pollen, and bugs on the windshield.
+So we built the wash around that.
+We pre-bug your vehicle before it goes through.
+We prep it, we towel dry it, and the vacuums are free.
+Towels and spray bottles are right there at the vacuums.</div>
+<div class="spot">Spot A</div>
+<div class="lines">If you get an oil change at either shop, you get a free wash with it.
+At Sherwood Way that's a free silver wash.
+At North Bryant you get a coupon for the wash on Sherwood Way.
+Seniors, students, and military get ten percent off an oil change, and Wednesday is Ladies Day.
+Both lube centers are first come, first served, so drive in any time.
+Got a fleet of five or more cars? Ask us about fleet prices.
+Two addresses, forty two thirty two Sherwood Way, and twenty three oh two North Bryant.
+Come see whichever one is closer to you.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Your owner's manual says when to change your oil. Ask your shop if they agree.</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The site says Shine Brite recommends following the manufacturer's interval and that a wash member can cancel at the wash any time. Those are two printed policies a chain built on volume has little reason to advertise.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Four questions to ask any oil change shop.
+Question one. How often should I change my oil?
+Our website answers it.
+We recommend you follow your vehicle manufacturer's recommendation.
+The number that matters is in your owner's manual.
+That goes for the synthetic blend, the full synthetic, and the diesel oil change.
+Pick the oil your engine calls for.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Second question is about car wash memberships.
+How do I cancel?
+Ours is billed monthly, and your license plate is your ticket into the wash.
+You can cancel at the wash any time.
+Silver is fourteen dollars a wash or twenty eight a month.
+Do two washes a month and you've covered it.
+Unlimited is for one vehicle.
+Commercial and ride share vehicles don't qualify for it, but we do have a fleet program for them.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Third question. Do I need an appointment?
+Not at either shop. Drive in, and it's first come, first served.
+Fourth question. What's free?
+The vacuums at our wash are free.
+So are the towels and spray bottles.
+With an oil change you get a multi point maintenance check and a free wash.
+It's all on our website.
+Ask whoever you use now for the same list, and compare it with ours.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Four small things to check before your car feels off</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Wiper blades, cabin filters, and air filters are the add ons customers never hear explained. Every number comes off the shop's own service page, and it costs them nothing to give away.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Four small parts that make a car feel better, and they're easy to forget.
+First, your wiper blades.
+Over time they get streaky or stop clearing the glass.
+They matter in rain and they matter in dust.
+New blades fix that, and we replace them at either shop.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Second, your cabin filter.
+That's the filter for the air inside the car.
+It traps dust, pollen, and bacteria.
+Most manufacturers say to replace it every twelve thousand to fifteen thousand miles.
+But with Texas pollen, you might want it done more often.
+We can do it as often as you like.
+Our technicians handle all four of these right along with the oil change.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Third, your air filter.
+It keeps clean air flowing to the engine, which helps performance and fuel efficiency.
+Fourth, your fuel filter.
+It takes dirt and contaminants out of the fuel.
+A clogged one can cost you performance and efficiency.
+Check what your manufacturer says about when to replace it.
+None of these are big jobs.
+You can have them done during an oil change at either of our shops,
+and every oil change comes with a multi point maintenance check.
+Drive in and ask what's due on any of the four, at either shop.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">The things we find in your truck</div>
+<p>Hold up a few of the odd things your crew has found in vehicles and tell the ring story, with Ryan P.'s review as the opener. Say what you do with whatever turns up, and end on the shop's address.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
