@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for West Texas Game Feeders | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>West Texas Game Feeders</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">A family shop in San Angelo since 1958</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The site says the shop is family owned and operated and has been since 1958, but never says whose name is on it or how it started. Nobody pulling up to the building on North Chadbourne knows that, and a face and a founding story are what a hunter remembers.</div>
+<div class="spot">Spot A</div>
+<div class="lines">West Texas Game Feeders opened in 1958.
+Sixty eight years later, we're still a locally owned family business.
+[OWNER: who started it in 1958, and what the shop sold at the beginning]
+I'm [OWNER: your name], and [OWNER: how you came into the business].
+When people ask what we do, the short answer is blinds, feeders, towers,
+and the parts and electronics to keep all of it running.</div>
+<div class="spot">Spot B</div>
+<div class="lines">The long answer is that we build some of it ourselves.
+The Original Ground Hugger was designed and manufactured right here in San Angelo.
+It's a ground feeder that holds four hundred pounds of corn.
+It sits on the ground, so nobody has to climb up to fill it.
+It comes with a timer, a twelve volt battery, and a solar panel.
+We also fabricate a road feeder in our own shop that fits a standard two inch receiver and holds three hundred twenty five pounds.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Our shop does welding, punching, shearing, and fabricating, so custom orders are possible.
+Sometimes the wait runs long, and we'll tell you that up front.
+We also stock Ranch King blinds, and feeders from All Seasons, Crossfire, and more.
+Whatever you buy, you leave with something that works
+and a local number to call.
+We're open Monday, Tuesday, Thursday, and Friday, and Saturday mornings.
+Find us at 3312 North Chadbourne Street.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">Hunters and landowners both call this shop</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A shop like this sits in the middle of ranch country, and the site mentions leases, in-field feeder service and delivery within a hundred miles that nobody driving past would guess. Naming the service area tells the whole Concho Valley this video is for them.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Here's something we do that you won't find on a price tag.
+Hunters call us about leases.
+Landowners ask us about matching hunting groups.
+If you have land and you want the right people on it,
+or you're looking for a place to hunt, call the shop.
+[OWNER: a lease or a hunting group you matched that worked out]
+We serve the Concho Valley, from 3312 North Chadbourne Street in San Angelo.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Most of what we sell can be delivered within a hundred miles of the shop.
+Most blinds are the exception, and we'll tell you that up front.
+If you'd rather we handle the filling, we'll fill your feeders in the field,
+deer corn and protein, by the ton or by the fifty pound bag.
+While we're out there, we can repair and maintain the feeder too.
+The price depends on how many feeders you have, how hard they are to reach,
+and how far we're driving.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If you can't make it to the store during the day, call ahead.
+We'll take the order and the payment over the phone
+and set up a pickup time that works for both of us.
+Our hours are nine to noon and one to four thirty, Monday, Tuesday, Thursday, and Friday.
+Saturday we're here nine to noon.
+We're closed Wednesday and Sunday.
+You can also message us on our Facebook page.
+[OWNER: the farthest town a customer has driven in from]</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Ask whoever sold you the feeder what happens when it breaks</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">This is the question a box store will not answer well. The shop's own pages say it repairs most feeders, stocks the parts, warranties its own feeder for life at the cost of parts, and fabricates what it does not stock. Laid out plainly, it draws a fair line without naming anyone.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Before you buy a game feeder anywhere, ask what happens when it breaks.
+Here's our answer.
+We can service and repair most feeders.
+We price each repair one at a time, based on what's wrong with it.
+And we carry the parts: motors, slingers, funnels, cones,
+galvanized lids, leg brackets, bolt kits,
+and hanging brackets for seventeen, thirty, and fifty five gallon barrels.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Our own Ground Hugger has a lifetime warranty on the feeder itself.
+The timer has five years.
+If something happens to the feeder, we repair it for the cost of the parts.
+Bullet holes, water damage, we don't judge.
+It's printed right on our Ground Hugger page.
+We can say that because we design and build it here in San Angelo.</div>
+<div class="spot">Spot A</div>
+<div class="lines">New, unused products can come back within thirty days with your receipt.
+And if you need something we don't stock, custom orders are possible.
+It can take a while, and we'll say so.
+There's rarely something we can't make happen,
+and our shop does the welding, punching, shearing, and fabricating to do it.
+We take Discover, MasterCard, Visa, cash, and checks.
+Credit cards carry a three percent fee, and we say so before you pay.
+Ask the next place if they'll tell you the same.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">What's inside a game feeder and what you can check yourself</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Gives a hunter what a box store never will: a plain walk through the parts that run a feeder, each one named from the shop's own parts list. It costs nothing to say and shows this shop knows what is inside the thing it sells.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Before the season starts, check your feeder.
+A game feeder is a handful of parts working together.
+A barrel to hold the feed.
+A motor, with a slinger that throws it.
+A timer that tells the motor when to run.
+A battery, and a solar panel to keep the battery charged.
+Our Ground Hugger ships with the timer, a twelve volt battery, and a solar panel already installed.
+[OWNER: the part that quits most often, and how you spot it]</div>
+<div class="spot">Spot B</div>
+<div class="lines">Start with the battery.
+We sell battery testers, and chargers for six volt and twelve volt.
+Check the solar panel next. Ours ship with brackets and a one year warranty.
+Then the timer.
+Ours, The Timer, has six feed times and a five year warranty.
+If yours is hard to set, we carry a digital timer with four feed times and adjustable duration
+that we call the simplest on the market to set.</div>
+<div class="spot">Spot C</div>
+<div class="lines">If it's the motor or the slinger, those are replaceable too.
+Six volt or twelve volt, with a bracket or without.
+Same goes for lids, funnels, cones, and leg brackets.
+Bring the old part in and we'll see what you need.
+[OWNER: the feed time you set for deer this time of year]
+We sell deer corn, protein pellets, and deer blocks too,
+so you can get the feeder fixed and filled in one stop.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">The part that fixes it</div>
+<p>Film one real repair at the counter, with the customer's okay. Someone walks in with a broken blind window or a dead feeder part, you find the match, and you show how it goes on. Open on the broken piece and use Chris G.'s line, exactly what I needed to fix my blind.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
