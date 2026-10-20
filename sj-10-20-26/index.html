@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Sunset Jr | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Sunset Jr</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">I started this at nineteen with three things on the menu</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Kurt was nineteen when he launched a trailer with a three item menu, and KTAB just put him and his mom on TV. That is a face and a story a stranger can follow in under a minute, and it gives the new audience a reason to root for him.</div>
+<div class="spot">Spot A</div>
+<div class="lines">I started Sunset Jr. when I was nineteen years old.
+It was a food trailer, and the menu had three things on it.
+A hamburger, a Texas cheesesteak, and fries.
+That was January of 2022.
+I'm Kurt Klausner. I'm from San Angelo, and I played offensive line for the Central Bobcats.</div>
+<div class="spot">Spot B</div>
+<div class="lines">My parents owned Sunset Grill, and my mom Pam says our family has been in the restaurant business since the 1960s.
+As a teenager, I cooked burgers for my friends during football games, and I kept playing with flavors.
+A kitchen is a kind of dance.
+You need technique, timing, and teamwork.
+Some of what I learned on the football field carried over.
+[OWNER: one thing from football that you use in the kitchen every day]
+The Hawaiian cheesesteak started with a pizza.
+I love Hawaiian barbecue chicken pizza, so I put those same things on a hoagie.
+Grilled chicken, thick cut bacon, jalapenos, pineapple, and barbecue sauce.</div>
+<div class="spot">Spot C</div>
+<div class="lines">In the spring of 2023, the trailer grew into a restaurant at 502 North Van Buren.
+The trailer didn't go away.
+It still works around San Angelo, for lunches, dinners, and events.
+Now we do burgers, cheesesteaks, sliders, and gyros.
+My dad Troy and my brother in law Oscar are in the kitchen with me.
+[OWNER: what your mom Pam does at the restaurant]
+We open at eleven, Monday through Saturday, and we close at eight.
+Come say hi.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">From a bar patio to the corner of Van Buren</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A trailer on a patio that became a building on Van Buren is a path locals can picture, and the trailer is still out working. This script ties the restaurant to its corner, its trailer and its weekday specials so people know when to stop in.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Before we had a building, we had a trailer on a bar patio.
+In the spring of 2023, that trailer was parked at the Fiddlestrings patio.
+We were waiting on a restaurant to be finished at the corner of Van Buren and the Houston Harte frontage road.
+That's 502 North Van Buren.
+We planned to open it around April first, with a ribbon cutting that day.
+[OWNER: what you remember about opening day]</div>
+<div class="spot">Spot A</div>
+<div class="lines">The trailer still works, too.
+That trailer is where it all started, and we still use it.
+It does lunches, dinners, and events around San Angelo.
+If you've got an event coming up, catering and special events are on our website.
+I'm a San Angelo native, and I played for the Central Bobcats.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Every weekday has a special, so you always have a reason to stop in.
+Monday is a gyro, with grilled lamb, spinach, tomato, and tzatziki on warm pita.
+Tuesday is Burger Tuesday, a hand made burger with fries.
+Wednesday, it's a chopped cheese, with a chopped beef patty, cheddar, and Sunset Sauce on a hoagie roll.
+Thursday is buffalo ranch chicken sliders, with sidewinder fries.
+Friday is a Texas cheesesteak, with shaved ribeye, grilled onions, and jalapenos, and fries on the side.
+Come by 502 North Van Buren, Monday through Saturday, eleven to eight.
+[OWNER: your own favorite day on the specials menu, and why]</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Who is making your burger? Ask the next place.</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The owner, his dad and his brother in law are the ones in the kitchen, and the patties, the ribeye and the sauces are made in house. That is the one thing a chain cannot say, and it comes straight from the menu and the KTAB story. No competitor is named.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Next time you order a burger, ask one question.
+Who's making it?
+Here, it's me, my dad Troy, and my brother in law Oscar.
+My mom Pam is part of this too.
+The owner is in the kitchen.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Every patty is hand made and pressed, from fresh ground beef, on a brioche bun.
+The ribeye on your cheesesteak is shaved in house.
+The Texas cheesesteak comes with grilled onions, jalapenos, and provolone on a toasted hoagie.
+The ranch, the honey mustard, the Sunset Sauce, and the tzatziki are all house made.
+[OWNER: whether you hand first timers sauce samples, and which sauce people pick]
+I care about two things.
+Quality ingredients, and the same food every time.
+The Jr Burger is the smaller one, with grilled onions, baby spinach, pickles, and tomato.
+It's a smaller patty, made by hand like the big ones.</div>
+<div class="spot">Spot B</div>
+<div class="lines">When I started, the menu had three items, on purpose.
+A hamburger, a Texas cheesesteak, and fries.
+It was simple, and I wanted to do it well.
+Now there are sliders, gyros, chicken, and funnel cake fries.
+Our customers keep telling us about those funnel cake fries.
+It's funnel cake batter shaped like fries, with powdered sugar on top.
+Our sidewinder fries are thick cut and seasoned.
+Come by 502 North Van Buren, and say hi to the people making your food.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">How to read our menu when you're counting calories or protein</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Calories and protein are printed on most of the menu, and few customers know to use them. Showing how costs nothing, helps anyone who is training or watching their day, and gives people a reason to follow.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Our menu has calories and protein printed on most of the items.
+Here's how you can use that.
+The numbers are in the item descriptions when you order online.
+The Jr Burger is 480 calories and 29 grams of protein.
+The cheeseburger is 710 calories and 52 grams of protein.
+If you want to skip the bun, we have bunless salads over fresh baby spinach.</div>
+<div class="spot">Spot B</div>
+<div class="lines">The chicken cheesesteak salad is 400 calories and 47 grams of protein.
+The ribeye cheesesteak salad is 530 calories and 39 grams of protein.
+If you want a sandwich, the Hawaiian cheesesteak is 900 calories and 78 grams of protein.
+The BBQ bacon burger is 950 calories and 72 grams.
+If you like gyros, the chicken gyro is 550 calories and 65 grams of protein.
+The classic lamb gyro is 540 calories and 26 grams.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Most of our sandwiches come without a side.
+So what you add is up to you.
+The sidewinder fries are 280 calories.
+The tater tots are 260.
+The kids' meals come with fries and a bottle of water.
+Look at the numbers before you order, then pick what fits your day.
+You can order online, or come by 502 North Van Buren.
+We'll see you there.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">The sauce taste test</div>
+<p>Line up the ranch, buffalo, honey mustard and Sunset Sauce, and let one person taste each on camera. Open on the question of which one wins, then show the reaction. Scott P.'s review gives you the line to build around.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
