@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Farmer's Daughter Landscape | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Farmer's Daughter Landscape</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">A horticulture degree in 1974 and three state licenses by 1990</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A customer standing in the greenhouse has no way to know the owner has held a Texas A&amp;M horticulture degree since 1974, plus nursery, pesticide and irrigator licenses, and putting that on camera answers the question of who is behind the yard before it gets asked.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Growing things in West Texas is hard.
+I've had a horticulture degree from Texas A&amp;M since 1974.
+[OWNER: what you did between graduating and opening Farmer's Daughter]
+In 1988 I added a Texas nursery license.
+In 1989, a commercial pesticide license.
+In 1990, a Texas irrigator's license.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Since 1990, the Honaker family has owned and run Farmer's Daughter.
+[OWNER: who the farmer's daughter is]
+Along the way I've put in 23 years on commercial and government landscape construction jobs,
+and 30 years managing people.
+I know AutoCAD too, for landscape and irrigation design.
+What we build is Texas and Desert Southwest natives, mixed with rock, boulder, turf and hardscape,
+and irrigation set up to use as little water as the yard can live on.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Today we're on ten acres on South Bryant Boulevard.
+We've got over twenty five thousand square feet of greenhouse,
+and a six thousand square foot showroom.
+The nursery has trees, shrubs, perennials, annuals, tropicals, cacti and succulents, plus gardening supplies and soil.
+There's about a dozen of us: design, installation, growing, the garden center and the office.
+Diane, our retail manager and buyer, grew up on a cotton farm.
+She came to San Angelo in 2003, and she's the one who'll answer your plant questions.
+We're an authorized dealer and distributor for Belgard patio products, too.
+We call it garden to home.
+Come see it.
+Happy planting.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">Dig a hole in the Concho Valley and you'll meet caliche</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Caliche, nineteen inches of rain and a March that cannot make up its mind are things every San Angelo yard owner has already lived through, so the video reads as someone who knows this exact ground.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Dig a hole anywhere in the Concho Valley and sooner or later you hit caliche.
+It blocks drainage, and it fights back when a root tries to get through.
+San Angelo gets about nineteen inches of rain a year, about half the Texas average.
+So the rain you do get has to drain somewhere, and caliche makes that hard.
+We plan for the caliche first, before anything goes in the ground.</div>
+<div class="spot">Spot A</div>
+<div class="lines">We work all over town, from Knickerbocker Road to Sherwood Way to Loop 306.
+Houses, and oil sector offices, medical campuses, retail centers and office parks.
+Different yards, same ground.
+A designer from here knows the soil, which natives hold up and what the weather does,
+because we're out in it too.
+Heat is the other one.
+Pavers and concrete swell and shrink between a summer high and a winter cold snap,
+so the base and the joints get extra attention.
+[OWNER: the worst caliche you ever dug through]</div>
+<div class="spot">Spot C</div>
+<div class="lines">Then there is March.
+The daffodils bloom. The redbuds flirt.
+Then March throws a 29 degree morning and a 40 mile an hour wind at you.
+In the fall we have pansies, stock and mums.
+Come see what's in the greenhouse. We're on South Bryant Boulevard.
+Ask us what survives a San Angelo summer.
+Happy planting.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Ask who's licensed to plant your yard</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Each question has an answer the shop can give from its own licenses and its own team, and the line about mowing shows the kind of honesty customers remember.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Here is something most people never ask a landscaper.
+Who's licensed?
+I hold a Texas irrigator's license, a commercial pesticide applicator license and a state nursery license.
+Then ask if the person who designs your yard is the person who builds it.
+Here, one team handles the whole project in house, starting with a look at your site,
+so nothing falls through the cracks.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Ask if the plant was grown for West Texas.
+We carry a lot of Texas natives and plants that suit this climate,
+and a whole greenhouse of succulents.
+[OWNER: how much of what's on the benches you grow yourself]
+Slide any plant out of its pot and look at the roots.
+A plant that has sat in its pot too long starts circling its own roots.
+Ask how big it will get, and where it will be in three years.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Ask whether anyone will try to sell you more than you need.
+One customer wrote that our people answer every question and never push.
+The same customer called our collection of Texas natives insane, and said some are hard to find.
+And here's one more thing.
+We don't do regular residential maintenance. No mowing, no leaf cleanup.
+We design it and we install it, and we say so up front.
+Ask the same things anywhere you shop for plants, and ask us too.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Fill a hole with water before you buy a tree</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A free test any homeowner can run in ten minutes, built on how caliche behaves, and it ends with the shop as the place to bring the answer.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Before you buy a single tree, dig one hole.
+Dig it right where the tree is going.
+Fill it with water and walk away.
+All it takes is a shovel, a hose and a free afternoon.
+This is the cheapest test in gardening.
+Caliche is the hard layer under a lot of San Angelo yards,
+and you won't know it's there until you dig.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Check on it in [OWNER: how long water should take to drain].
+If the water's gone, the soil is draining and you're in good shape.
+If it's still sitting there, you've met caliche,
+and a tree set in a hole that holds water can drown.
+Caliche blocks drainage and resists roots.
+That's when you plan around it, before the tree goes in.
+Break through it, move the spot, or choose a plant that can live with it.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Then choose plants that grew up in dry country.
+Texas natives and Desert Southwest plants handle nineteen inches of rain better than most.
+Rock, boulder and hardscape can fill in the rest.
+When it goes in, water it with drip.
+Our irrigation designs use pressure zones and drip emitters, so you get even coverage without wasting water.
+Tell us what you found in that hole,
+and we'll tell you what makes it here.
+Happy planting.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">Pull one plant out of its pot</div>
+<p>Slide a plant out of its pot on camera and show the roots. Say what a healthy root ball looks like and what a rootbound one looks like in a store. John T.'s review gives you the opening line: nothing rootbound.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
