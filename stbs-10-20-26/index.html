@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Strategic Business Solutions | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Strategic Business Solutions</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">I used to run the small business center at Angelo State</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Pamela's own bio on the firm's site carries a story nobody driving past West Concho would guess, a university SBDC director who launched an incubator and then started her own firm. Told in her voice, it answers why a small business owner should trust her with the books.</div>
+<div class="spot">Spot A</div>
+<div class="lines">I used to direct the Small Business Development Center at Angelo State University.
+I was responsible for launching the Concho Valley Center for Entrepreneurial Development, a small business incubator.
+I also taught on the faculty at Angelo State.
+Entrepreneurship. Communications in business. The business internship class.
+Before any of that, I worked at a public accounting firm.
+I ran its human resource development, marketing, operations and strategic planning,
+and I oversaw the firm's finances.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Along the way I've been part of the startup and ownership of several businesses of my own.
+The SBA named me its Young Entrepreneur of the Year, [OWNER: the year].
+I've been a QuickBooks ProAdvisor since 2005.
+I'm a certified John Maxwell trainer, coach and facilitator,
+and I've been trained as a Dave Ramsey counselor.
+I even completed sixteen hours of a doctoral program on small business leadership and succession.</div>
+<div class="spot">Spot C</div>
+<div class="lines">In September of 2010, I started Strategic Business Solutions.
+I wanted a small business focused on its clients, so I could reach and serve them better.
+It has grown a lot since then.
+Today we do bookkeeping, payroll, tax preparation and planning, QuickBooks setup and training, and consulting.
+All of it is under one roof at 311 West Concho Avenue.
+If you own a business in the Concho Valley, that's who you'd be working with.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">We bought a building on West Concho and fixed it up</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A firm that owns its building on West Concho, and a team that grew up at Central, Lake View and Angelo State, is a local fact people can check. It also puts the founder's years on Concho Valley boards on camera without saying anything a client has to take on faith.</div>
+<div class="spot">Spot B</div>
+<div class="lines">We're at 311 West Concho Avenue, in downtown San Angelo.
+We bought this building and renovated it.
+We held a ribbon cutting with the Chamber of Commerce and an open house on October 28th, 2022.
+Before we bought it, this building was [OWNER: what the building was before you bought it].
+Come by and see what we did with it.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Several of us grew up right here in San Angelo.
+Central High School. Lake View High School. Angelo State University.
+Our bookkeepers have worked in oilfield offices and ranch offices,
+in restaurants, in clinics, in auto repair shops and in construction.
+So when you tell us what you do, we've been inside that kind of office.
+We know what those books look like.</div>
+<div class="spot">Spot C</div>
+<div class="lines">I've served on the Concho Valley Workforce Development Board for nearly twenty years.
+I was a River Corridor Commissioner for two three year terms.
+I serve on the Concho Valley Council of Governments loan review board for economic development.
+I was on the board of the Concho Valley Center for Entrepreneurial Development.
+I judge the annual Texas Family Business of the Year event.
+And I'm a 1997 graduate of Leadership San Angelo.
+I like knowing the owners in this town, and I like helping them keep their businesses going.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Ask one question before anyone prepares your business return</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Reconciliation, the monthly or quarterly cadence and the question about who moves money in the office are all stated on the firm's own bookkeeping page, and most owners never think to put them to a tax preparer. It draws a clear line from the books to the return without naming anyone and without promising a result.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Before anyone prepares your business tax return, ask them one question.
+Have my bank and credit card accounts been reconciled?
+That means somebody matched every line in your books to what your bank says happened.
+When we reconcile an account, here's what it can catch.
+Lost checks. Lost deposits.
+Transfers and wires nobody authorized.
+Bank charges that shouldn't be there, and transactions the bank posted wrong.
+It can also catch money going missing from inside the company.</div>
+<div class="spot">Spot A</div>
+<div class="lines">It also tells you how your business is doing.
+You can't know until every account has been matched and the numbers land on your financial statements.
+We do this every month or every quarter, depending on the package you pick.
+We check your mail, handle your payables and receivables, and clean up your general ledger.
+Then we hand you a profit and loss statement and a balance sheet.</div>
+<div class="spot">Spot B</div>
+<div class="lines">One more thing to ask any firm.
+Who in your office can move money, and who checks the bank statement?
+We look at how the jobs are divided between your staff and ours.
+We pay attention to segregation of duties, so the same person isn't handling everything.
+That's an internal control, and it protects the business.
+We can review your operations and recommend which jobs your staff keeps and which ones we take.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Three questions to answer before you set up QuickBooks</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">QuickBooks setup decides whether the numbers can be trusted for years, and the three questions come straight from the firm's own QuickBooks page. It costs nothing to give away and the owner has been a ProAdvisor since 2005.</div>
+<div class="spot">Spot A</div>
+<div class="lines">QuickBooks is easy to use.
+The setup is where people get into trouble.
+It takes all the same information you'd need to keep paper books.
+If the setup isn't done correctly, nothing it tells you later can be trusted.
+I've been a QuickBooks ProAdvisor since 2005, so I've seen how this goes.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Which accounting method will you use?
+What chart of accounts does your business need?
+And how will you handle your beginning balances?
+If you don't know the answers, ask your tax preparer before you enter a single transaction.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Then pick a starting date.
+Enter every outstanding balance and every opening balance as of that date.
+After that, enter your transactions from the starting date forward.
+If you're switching from paper books in the middle of the year, it's more complicated than starting in January, so give yourself time.
+A good setup also covers payroll, receivables, payables and inventory, if your business uses them.
+Train your staff on it too.
+After that, have someone review your QuickBooks data every month, every quarter or once a year.
+That review helps with your management reports and with your taxes.
+If you'd like help with any of that, setup and training is what we do.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">The first meeting, explained</div>
+<p>Film the first thing you walk a new client through, with the questions you ask and why you ask them. Keep it to what a client sees across the table and leave out anyone's numbers. Darian W.'s Yelp review gives you the line to open on.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
