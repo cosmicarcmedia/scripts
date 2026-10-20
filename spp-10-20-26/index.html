@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Stango's Pizza Parlor | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Stango's Pizza Parlor</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">Everywhere I went, people said we miss your pizza</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Customers already tell this story for him. Hearing Steve say it himself, along with the partners behind the counter, turns a pizza parlor into people downtown can root for.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Everywhere I went, somebody said the same thing.
+We miss your pizza.
+I heard it so many times that I finally did something about it.
+I'm Steve Stango, and I brought the pizza back downtown.
+It gave me something to do, too. I will admit that.</div>
+<div class="spot">Spot C</div>
+<div class="lines">This pizza has a history.
+It grew out of the pizza we first made at Stango's Coffee and Ice Cream, the shop I owned downtown before this one.
+[OWNER: the year you started making it and where the recipe came from]
+New York style. Thin, crispy, simple, and built to fold.
+Simple recipes, quality ingredients, nothing overcomplicated.
+The dough and the sauce get made fresh.
+And every sixteen inch pizza is stretched by hand when you order it.</div>
+<div class="spot">Spot A</div>
+<div class="lines">I didn't do this by myself.
+Jen Addona is my partner, and she runs operations, events, and marketing.
+She ran her own restaurant in Bronte before she joined me.
+And I made some of our longtime employees partners too.
+[OWNER: what that means for them, in your words]
+The reviews keep saying the same things. Friendly staff. A family feel.
+One person wrote that the building felt like home. I will take that.
+It's laid back and family friendly, and you can eat in the dining room or out back in the courtyard.
+Book your next party with us.
+I hope everybody comes back.
+We're at 208 South Oakes, downtown, and we're glad you're here.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">What happens in our courtyard on Fridays</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A weekly jam session is a reason for people to come back, bring a friend, and film something. The page shows the owner explaining it in his own words, with the bigger Downtown Music Showcase date attached.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Every Friday at six, our courtyard on Oakes Street turns into a jam session.
+It runs from six to eight, weather permitting.
+People show up with an instrument, a voice, a song, a riff, or just a groove.
+Every style is welcome, and every skill level.
+When I brought the pizza back downtown, I told people we would have a little music venue out back.
+That was the plan from the start. Pizza and live music in the same place.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Zo Rachel hosts it, and there is sound on the stage.
+If you have never played in front of anybody, a jam is a friendly place to start.
+If you just want to listen, grab a table out back.
+Or eat in the dining room and walk out when the music starts.
+We are open eleven to nine on Fridays, so come early, get dinner, and stay for the jam.
+Bring the kids too. We have an old style jukebox inside, and the kids love it.</div>
+<div class="spot">Spot B</div>
+<div class="lines">We're at 208 South Oakes, downtown, one street over from Chadbourne.
+There's a bigger music day coming too.
+The Downtown Music Showcase is set for Saturday, April 24th, 2027.
+It is one day, with venues across downtown hosting San Angelo area musicians.
+[OWNER: what part Stango's plays in the showcase]
+The idea is simple. Support musicians.
+So come out on a Friday. Bring a friend who plays something, and eat a slice first.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Ask who stretched your pizza</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Two questions anyone can ask a big chain, answered with what the shop already does: fresh dough, hand stretched to order, and partners who have been here for years. It lands without naming anybody.</div>
+<div class="spot">Spot A</div>
+<div class="lines">When you order pizza from a big chain, ask two questions.
+Was this dough made today?
+And did a person stretch it by hand after I ordered?
+Here, the answer to both is yes.
+Our dough and our sauce get made fresh.
+Every sixteen inch pizza is hand stretched to order.</div>
+<div class="spot">Spot B</div>
+<div class="lines">A New York pizza is meant to be thin and crispy and fold in your hand.
+We keep the recipes simple on purpose, with quality ingredients and nothing overcomplicated.
+And you don't have to buy a whole pizza.
+A slice here is a quarter of a sixteen inch pizza, and we sell slices all day.
+Tuesday through Friday, eleven to two, there is a lunch slice special.
+Students and seniors get a better price on it.
+The soft drinks come with free refills.
+And the Caesar comes with croutons and bread we make ourselves.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Then ask who owns the place.
+Here it's me and Jen Addona, and you can find us.
+A few people who have worked here a long time own a piece of it too.
+I'm proud of that.
+So next time you're deciding where to get dinner, ask where the dough came from.
+We're locally owned, family friendly, and at 208 South Oakes.
+Then come see how we do it.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Calzone or stromboli, here is the difference</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A plain explainer built from the shop's own menu. It costs nothing to give away, and it puts the rolls, the calzone, and the gluten free pizza in front of people who are still deciding what to order.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Calzone or stromboli. Here is the difference, using what is on our menu.
+A calzone gets folded over into a half moon.
+Ours is mozzarella and ricotta, with marinara on the side, and you can add toppings.
+A stromboli gets rolled up like a log.
+Ours is mozzarella, with marinara for dipping.
+Or you can get one with pepperoni and Italian sausage rolled inside.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Then there are the pizza rolls, which are their own thing.
+They come four to an order, made with pepperoni and mozzarella.
+We also make a jalapeno popper roll, with cream cheese, jalapeno, and bacon.
+Both come with marinara.
+Cheese sticks come ten to an order, with marinara.
+Add pepperoni and jalapenos and you have loaded sticks.
+Garlic breadsticks come ten to an order too.
+If you can't decide, the sampler has two of each.</div>
+<div class="spot">Spot A</div>
+<div class="lines">If you came for pizza, we have that too, thin and New York style.
+By the slice, it is cheese or pepperoni, all day.
+We also make a ten inch cauliflower crust pizza that is gluten free.
+We have salads, house or Caesar, large or small.
+And for dessert, we have cannoli and a New York style cheesecake.
+So if you are standing there looking at the menu, now you know.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">The toys for the kids</div>
+<p>Film the moment you bring something out for the kids at a table, and say why you started doing it. Open on the line from that San Angelo Neighbors post, then show the table. One table, one family, and the reason in your own words.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$950 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
