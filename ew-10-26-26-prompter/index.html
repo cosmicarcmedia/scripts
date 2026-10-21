@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#040210">
+<title>Ethan West | Downtown Landmarks Prompter | Cosmic Arc Media</title>
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#040210; --bg-mid:#0c0622; --pink:#ff4d8d; --pink-soft:#ea4c83;
+    --purple:#6a44d6; --violet:#8b5cf6;
+    --glass:rgba(255,255,255,0.055); --glass-2:rgba(255,255,255,0.085);
+    --glass-border:rgba(255,255,255,0.14);
+    --text:#fff; --muted:#b9aad6; --dim:#6f5fa6;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body {
+    margin:0; background:var(--bg);
+    background-image:
+      radial-gradient(900px 620px at 12% -8%, rgba(255,77,141,0.20), transparent 62%),
+      radial-gradient(760px 560px at 92% 4%, rgba(106,68,214,0.24), transparent 60%),
+      linear-gradient(178deg, var(--bg) 0%, var(--bg-mid) 46%, var(--bg) 100%);
+    background-attachment:fixed; color:var(--text);
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    line-height:1.62;
+  }
+  .wrap { max-width:900px; margin:0 auto; padding:30px 20px 120px; }
+  .brand { display:flex; align-items:center; gap:11px; margin-bottom:30px; }
+  .brand img { width:34px; height:34px; display:block; }
+  .brand span {
+    font-family:"Space Grotesk",Inter,sans-serif; font-weight:600; font-size:13px;
+    letter-spacing:.17em; text-transform:uppercase; color:var(--muted);
+  }
+  .eyebrow {
+    font-family:"Space Grotesk",Inter,sans-serif; font-size:12px;
+    letter-spacing:.18em; text-transform:uppercase; font-weight:600;
+    color:var(--pink); margin:0 0 12px;
+  }
+  h1 {
+    font-family:"Space Grotesk",Inter,sans-serif; font-weight:700; line-height:1.06;
+    margin:0 0 12px; letter-spacing:-.02em;
+    background:linear-gradient(160deg,#fff 8%,#ffc9dd 44%,var(--pink) 78%,var(--violet) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .sub { color:var(--muted); font-size:15px; margin:0; }
+  .rule { height:2px; margin:24px 0 26px; border:0; border-radius:2px;
+    background:linear-gradient(90deg,var(--pink),var(--purple) 46%,transparent 92%); }
+  h2 {
+    font-family:"Space Grotesk",Inter,sans-serif; font-size:12px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--dim); font-weight:600; margin:0 0 14px;
+  }
+  footer {
+    margin-top:46px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.09);
+    color:var(--dim); font-size:13px;
+  }
+  footer strong { color:var(--muted); font-weight:600; }
+
+  h1 { font-size:clamp(26px,5.4vw,38px); }
+  .views { display:flex; gap:8px; margin:0 0 10px; flex-wrap:wrap; }
+  .vbtn { font:inherit; font-family:"Space Grotesk",Inter,sans-serif; font-size:13px;
+    font-weight:600; letter-spacing:.06em; cursor:pointer; background:var(--glass);
+    color:var(--muted); border:1px solid var(--glass-border); border-radius:30px;
+    padding:9px 20px; }
+  .vbtn.on { color:#fff; background:rgba(255,77,141,0.18); border-color:var(--pink); }
+  .sizer { display:flex; align-items:center; gap:8px; margin:0 0 26px; color:var(--dim);
+    font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; }
+  .sizer button { font:inherit; font-size:15px; cursor:pointer; width:34px; height:30px;
+    background:var(--glass); color:var(--muted); border:1px solid var(--glass-border);
+    border-radius:8px; }
+  .loc { margin:0 0 40px; }
+  .lochd { padding:0 0 10px; margin:0 0 8px; border-bottom:2px solid rgba(255,77,141,0.45); }
+  .lochd h3 { font-family:"Space Grotesk",Inter,sans-serif; font-size:23px;
+    font-weight:700; margin:0; color:#fff; display:flex; align-items:baseline; gap:11px;
+    flex-wrap:wrap; }
+  .gnum { font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+    color:var(--bg); background:var(--pink); border-radius:30px; padding:4px 11px; }
+  .lochd .meta2 { font-size:12px; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--pink); font-weight:600; }
+  .lochd .blurb { font-size:13.5px; color:var(--dim); margin-top:3px; }
+  .pos { background:var(--glass); border:1px solid var(--glass-border);
+    border-radius:14px; margin:10px 0; overflow:hidden; }
+  .pos[open] { background:var(--glass-2); border-color:rgba(255,77,141,0.3); }
+  .poshd { cursor:pointer; list-style:none; padding:14px 17px; display:flex;
+    align-items:baseline; gap:12px; flex-wrap:wrap; }
+  .poshd::-webkit-details-marker { display:none; }
+  .plet { font-family:"Space Grotesk",Inter,sans-serif; font-weight:700; font-size:20px;
+    color:var(--pink); flex:0 0 auto; }
+  .pdesc { flex:1 1 220px; font-weight:600; font-size:16px; }
+  .pcnt { flex:0 0 auto; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted); background:rgba(255,255,255,0.05); border-radius:30px;
+    padding:4px 11px; border:1px solid rgba(255,255,255,0.12); white-space:nowrap; }
+  .neutral { color:#8ef0c2; background:rgba(60,220,150,0.10);
+    border-color:rgba(60,220,150,0.32); }
+  .posbody { padding:0 15px 16px; border-top:1px solid rgba(255,255,255,0.08); }
+  .sc { border-top:1px solid rgba(255,255,255,0.07); padding-top:12px; margin-top:12px; }
+  .sc:first-child { border-top:0; margin-top:6px; }
+  .schd { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px; }
+  .sidx { font-family:"Space Grotesk",Inter,sans-serif; font-weight:700; font-size:13px;
+    color:var(--pink); }
+  .stitle { font-weight:600; font-size:15.5px; flex:1 1 180px; }
+  .onscr { margin:4px 0 8px; padding:9px 12px; border-radius:9px;
+    background:rgba(255,77,141,0.11); border:1px solid rgba(255,77,141,0.3); }
+  .onscr b { display:block; font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--pink); margin-bottom:2px; font-weight:600; }
+  .onscr span { font-size:15px; color:#fff; font-weight:500; }
+  .spot { margin:12px 0 0; }
+  .slbl { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim);
+    font-weight:600; margin-bottom:5px; display:flex; gap:9px; flex-wrap:wrap; }
+  .sbeat { color:var(--pink-soft); }
+  .bcue { margin:0 0 7px; font-size:14px; font-style:italic; color:var(--violet); }
+  .stxt { font-size:var(--pt,22px); line-height:1.5; color:#fff; white-space:pre-line;
+    outline:none; border-left:2px solid rgba(255,255,255,0.13); padding-left:13px; }
+  .stxt:focus { border-left-color:var(--pink); }
+  .outfit { display:flex; align-items:center; gap:12px; margin:22px 0;
+    font-family:"Space Grotesk",Inter,sans-serif; font-size:12px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--violet); }
+  .outfit::before,.outfit::after { content:""; flex:1; height:1px;
+    background:rgba(139,92,246,0.4); }
+  .ordr { font-size:12px; color:var(--dim); margin:0 0 8px; letter-spacing:.05em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <img src="data:image/png;base64,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" alt="Cosmic Arc Media" width="34" height="34">
+    <span>Cosmic Arc Media</span>
+  </div>
+  <header>
+    <p class="eyebrow">Shoot day prompter</p>
+    <h1>Downtown Landmarks</h1>
+    <p class="sub">Ethan West &middot; Monday, October 26, 2026 &middot; 13 scripts
+      &middot; 77 beats &middot; 5 locations
+      &middot; 14m 12s of talking</p>
+  </header>
+  <hr class="rule">
+  <div class="views">
+    <button class="vbtn on" id="b-loc" type="button" onclick="setview('loc')">By position</button>
+    <button class="vbtn" id="b-scr" type="button" onclick="setview('scr')">By script</button>
+  </div>
+  <div class="sizer"><span>Text size</span>
+    <button type="button" onclick="bump(-2)">&minus;</button>
+    <button type="button" onclick="bump(2)">+</button></div>
+  <div id="v-loc">
+    <section class="loc">
+      <div class="lochd">
+        <h3><span class="gnum">Group 1</span>Old Central Fire Station</h3>
+        <div class="meta2">4 scripts &middot; 3 positions
+          &middot; 5m 1s of talking</div>
+        <div class="blurb">1A, 1B, 1C</div>
+      </div>
+      
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">1A</span>
+          <span class="pdesc">4 framings, each beat says which</span>
+          <span class="pcnt">
+            4 scripts &middot; 8 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>1A &middot; across Magdalen, the whole station in frame &middot; short</span><span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Most people drive past this building downtown and assume it&#x27;s still a working fire station.
+It hasn&#x27;t put out a fire since 1976.</div></div><div class="spot"><div class="slbl"><span>1A &middot; across Magdalen, the whole station in frame &middot; medium</span><span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">After the trucks moved out in 1976, it spent about twenty years as a city recreation and senior center.
+Then a nonprofit used it for a while.
+Then in 2017 a local couple bought it.</div></div><div class="spot"><div class="slbl"><span>1A &middot; across Magdalen, the whole station in frame &middot; short</span><span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">Next time you drive down Magdalen, look up at the tower.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>1A &middot; in the station doorway &middot; medium</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So in a house built twenty years ago, how old are the alarms on the ceiling?
+A lot of the time, nobody knows.
+And a chirping alarm usually gets its battery pulled and never gets it back.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>1A &middot; at the bay doors, the station behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">Every community gets a public protection class from a company called ISO.
+It runs from one to ten, and one is the best.
+It&#x27;s based on things like the fire department, the water supply, and how 911 calls get handled.</div></div><div class="spot"><div class="slbl"><span>1A &middot; at the bay doors, the station behind you &middot; short</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">I&#x27;m not telling you to skip the country house.
+I love the country house.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>1A &middot; beside the bay doors &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">Every December, firefighters all over the country end up repeating the same few things about Christmas trees.
+I&#x27;m one of them, so you&#x27;re getting my version.</div></div><div class="spot"><div class="slbl"><span>1A &middot; beside the bay doors &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">Pick one with needles that don&#x27;t fall off when you touch them.
+Cut a couple of inches off the bottom of the trunk before it goes in the stand.
+Then add water every single day.
+It drinks more than you&#x27;d think.</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">1B</span>
+          <span class="pdesc">4 framings, each beat says which</span>
+          <span class="pcnt">
+            4 scripts &middot; 9 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>1B &middot; at the base of the hose tower, looking up &middot; medium</span><span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">This is the old Central Fire Station, built in 1928.
+The architects were Trost and Trost out of El Paso, the firm behind a good chunk of that city&#x27;s skyline.
+It cost thirty-two thousand dollars.</div></div><div class="spot"><div class="slbl"><span>1B &middot; at the base of the hose tower, looking up &middot; medium</span><span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Today it&#x27;s a bed and breakfast with a pizzeria and a taproom downstairs.
+You can book a suite upstairs and spend the night in a 1928 fire station.
+The walls are covered in helmets, jackets, and old photos that people around town donated.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>1B &middot; tight, the tower over your shoulder &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">I&#x27;m a firefighter, and when I walk through a house somebody&#x27;s about to buy, I look up before I look at the countertops.
+I&#x27;m checking the smoke alarms.</div></div><div class="spot"><div class="slbl"><span>1B &middot; tight, the tower over your shoulder &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">The National Fire Protection Association keeps the guidance simple.
+One inside every bedroom, one outside each sleeping area, and one on every level of the house.
+Test them once a month.
+Close to three out of five home fire deaths happen in homes with no smoke alarms or alarms that didn&#x27;t work.</div></div><div class="spot"><div class="slbl"><span>1B &middot; tight, the tower over your shoulder &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">So when you get the keys, pull one down and read the date.
+If it&#x27;s past ten years, swap them all before you unpack a single box.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>1B &middot; wide, Magdalen Street and the station &middot; medium</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">Insurance companies use that number when they price a homeowners policy.
+So why would a house a few miles out cost more?
+Distance.</div></div><div class="spot"><div class="slbl"><span>1B &middot; wide, Magdalen Street and the station &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">Just get an insurance quote before you fall in love with it.
+That way the monthly payment you planned on is the one you get.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>1B &middot; at the corner of the building, the tower behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">A real tree looks great on day one.
+By week three, if nobody&#x27;s been watering it, it&#x27;s kindling standing in your living room.
+And a dry tree burns fast.</div></div><div class="spot"><div class="slbl"><span>1B &middot; at the corner of the building, the tower behind you &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">Keep it at least three feet from anything that puts out heat, like the fireplace, a space heater, a vent, or candles.
+Turn the lights off when you go to bed or leave the house.
+And when the needles start dropping after Christmas, it&#x27;s time for it to go.</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">1C</span>
+          <span class="pdesc">4 framings, each beat says which</span>
+          <span class="pcnt neutral">
+            4 scripts &middot; 8 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight against the brick, no signage &middot; medium</span><span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">So what&#x27;s the tower for?
+Canvas fire hose comes back from a call soaking wet, and it has to hang straight down to dry or it rots.
+That four story tower was the hose dryer.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight against the brick, no signage &middot; short</span><span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">As a firefighter, I&#x27;ll admit this one gets me.
+It did its job for almost fifty years and then found a second one.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, plain brick wall, tight &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">Most people don&#x27;t know smoke alarms expire.
+The recommendation is to replace them every ten years.
+And the date it was made is printed right on the back.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, plain brick wall, tight &middot; short</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">That&#x27;s a cheap problem to fix.
+A new alarm costs less than dinner out.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight, brick and shade &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">Two houses can be the same size, the same age, and the same price, and one can cost a lot more to insure.
+A big piece of that comes down to the fire department.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight, brick and shade &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">If a home sits more than about five road miles from a responding fire station, it can land in the worst class.
+Being far from a hydrant can hurt it too.
+And as a firefighter, I get why.
+Every minute on the road is a minute the fire keeps growing.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight on you, dark brick behind &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So how do you keep yours from getting there?
+Start at the lot.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight on you, dark brick behind &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">None of that takes the fun out of it.
+It just means you decide when the tree comes down.</div></div></div></div>
+      </details>
+    </section>
+    <section class="loc">
+      <div class="lochd">
+        <h3><span class="gnum">Group 2</span>Concho Avenue</h3>
+        <div class="meta2">4 scripts &middot; 3 positions
+          &middot; 3m 50s of talking</div>
+        <div class="blurb">2A, 2B, 2C</div>
+      </div>
+      
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">2A</span>
+          <span class="pdesc">4 framings, each beat says which</span>
+          <span class="pcnt">
+            4 scripts &middot; 8 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>2A &middot; across Chadbourne, the Naylor&#x27;s full height behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">This building went dark in 1983, the same year the Texas Theatre closed.
+It&#x27;s the old Naylor Hotel, and it&#x27;s been sitting here boarded up ever since.</div></div><div class="spot"><div class="slbl"><span>2A &middot; across Chadbourne, the Naylor&#x27;s full height behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">And why did it close?
+It couldn&#x27;t pass fire code.
+As a firefighter, that part makes sense to me.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>2A &middot; on the sidewalk, the jewelry store front behind you &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">How long can a place like that last on the main street in town?
+Long enough that it took the Texas Rangers to finally close it.</div></div><div class="spot"><div class="slbl"><span>2A &middot; on the sidewalk, the jewelry store front behind you &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">Tours can&#x27;t be booked ahead, so just stop in.
+And next time you&#x27;re on Concho, look up.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>2A &middot; in front of the jewelry store window &middot; medium</span><span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">Concho pearls come from a freshwater mussel that lives in these rivers.
+They don&#x27;t come out white.
+They come out pink, purple, and lavender, and usually a little lopsided.</div></div><div class="spot"><div class="slbl"><span>2A &middot; in front of the jewelry store window &middot; medium</span><span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">And here&#x27;s what I like about it.
+A lot of towns have a river.
+Not many have one that makes its own gemstones.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>2A &middot; on Concho Avenue, the street wide behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">Quick quiz, and be honest, pick before I give you the answer.
+Which of these three downtown buildings is the oldest?</div></div><div class="spot"><div class="slbl"><span>2A &middot; on Concho Avenue, the street wide behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">The depot went up in 1909 and 1910.
+The fire station came in 1928.
+And the sandstone building on Concho beats them both by more than twenty years.</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">2B</span>
+          <span class="pdesc">4 framings, each beat says which</span>
+          <span class="pcnt">
+            4 scripts &middot; 7 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>2B &middot; at the corner of Concho and Chadbourne, the hotel over your shoulder &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">It&#x27;s had more names than most people have had addresses.
+The Nimitz, the Landon, the Naylor, and the Town House.
+And it&#x27;s burned more than once.
+A fire in 1902 killed a woman named Rosa Landon, and it burned again in 1925.</div></div><div class="spot"><div class="slbl"><span>2B &middot; at the corner of Concho and Chadbourne, the hotel over your shoulder &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">Downtown&#x27;s been filling back in around it, one building at a time.
+Lofts, restaurants, people living down here again.
+So what happens when somebody finally takes this one on?</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>2B &middot; across Concho, the second floor windows in frame &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">Most people walk down Concho Avenue and look in the shop windows.
+Look one floor higher.</div></div><div class="spot"><div class="slbl"><span>2B &middot; across Concho, the second floor windows in frame &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">Decades later, in the late 1970s, the building changed hands and the upstairs got remodeled.
+Today it&#x27;s Miss Hattie&#x27;s Bordello Museum.
+The rooms are set up with furnishings from that era.
+And you get to it through the jewelry store downstairs.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>2B &middot; down the block, Concho Avenue stretching behind you &middot; medium</span><span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">So why would anybody pay that much for one?
+Because a round one is rare.
+The one at Legend Jewelers is just over twelve millimeters and close to perfectly round.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>2B &middot; at a corner, two storefronts behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">The old Central Fire Station with the hose tower on Magdalen.
+The Orient railroad depot on Chadbourne.
+Or a two story sandstone building right here on Concho Avenue.</div></div><div class="spot"><div class="slbl"><span>2B &middot; at a corner, two storefronts behind you &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">It&#x27;s the Freeze Building, built in 1887 as a blacksmith shop.
+A Danish immigrant named Peter Freeze put it up after a fire wiped out his first shop that spring.
+It got restored in the 1990s and went on the National Register in 1997.</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">2C</span>
+          <span class="pdesc">4 framings, each beat says which</span>
+          <span class="pcnt neutral">
+            4 scripts &middot; 8 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight against a storefront, no signage &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So what you&#x27;re looking at is the rebuild.
+The six story hotel went up in the 1930s.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight against a storefront, no signage &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">Whoever does gets one of the best corners in town.
+Keep an eye on it.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, plain storefront brick &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">For about half a century, the second floor of this building was a bordello.
+Miss Hattie&#x27;s.
+It ran right over the main street downtown.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, plain storefront brick &middot; short</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">That&#x27;s my favorite part.
+You walk in to look at rings and walk out knowing one of the wildest chapters in San Angelo history.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, shade, nothing identifiable &middot; short</span><span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">There&#x27;s a pearl on this street about the size of a pea, and it&#x27;s priced at a hundred ten thousand dollars.
+It came out of a river a few blocks from here.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, shade, nothing identifiable &middot; short</span><span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">Legend&#x27;s been on this street since 1976.
+Ask to see the case next time you&#x27;re downtown.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, plain wall, nothing identifiable &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">Got your pick?
+The depot feels like the safe answer, because railroads feel old.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, plain wall, nothing identifiable &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">How&#x27;d you do?
+Tell me in the comments which one you picked.</div></div></div></div>
+      </details>
+    </section>
+    <section class="loc">
+      <div class="lochd">
+        <h3><span class="gnum">Group 3</span>Orient depot</h3>
+        <div class="meta2">2 scripts &middot; 3 positions
+          &middot; 1m 58s of talking</div>
+        <div class="blurb">3A, 3B, 3C</div>
+      </div>
+      
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">3A</span>
+          <span class="pdesc">2 framings, each beat says which</span>
+          <span class="pcnt">
+            2 scripts &middot; 3 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>3A &middot; across Chadbourne, the full depot behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">A man named Arthur Stilwell planned a railroad sixteen hundred miles long, from Kansas City to the Pacific coast of Mexico.
+San Angelo was on the route.</div></div><div class="spot"><div class="slbl"><span>3A &middot; across Chadbourne, the full depot behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">The Mexican Revolution got in the way, and the full line never got finished.
+Santa Fe bought it in 1928.
+Then in 1989, Santa Fe planned to tear this building down.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>3A &middot; beside the tracks, the depot down the line &middot; medium</span><span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">Sheep ranching came to this area in 1877.
+Ranchers, cattlemen, and the railroads turned this town into one of the biggest wool and mohair markets in the country.
+In 1906 the local paper reported a single sale of more than half a million pounds of wool.
+And a lot of it left town on rails like these.</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">3B</span>
+          <span class="pdesc">2 framings, each beat says which</span>
+          <span class="pcnt">
+            2 scripts &middot; 4 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>3B &middot; on the platform side, the tracks running away behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">It was called the Kansas City, Mexico and Orient.
+This depot went up in 1909 and 1910, and it was the biggest one on the whole line.
+It was the railroad&#x27;s Texas headquarters.</div></div><div class="spot"><div class="slbl"><span>3B &middot; on the platform side, the tracks running away behind you &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">People here wouldn&#x27;t let that happen.
+They rehabbed it, and today it&#x27;s the Railway Museum of San Angelo, with a senior center in the old depot buildings.
+It&#x27;s run by volunteers and open on Saturdays.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>3B &middot; at the depot&#x27;s corner, the street behind you &middot; short</span><span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">If you&#x27;ve lived here a while, you&#x27;ve probably stopped noticing the painted sheep.
+There are about a hundred of them around town.</div></div><div class="spot"><div class="slbl"><span>3B &middot; at the depot&#x27;s corner, the street behind you &middot; short</span><span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">The sheep you see downtown started in 2007.
+A plain fiberglass ewe runs about sixteen hundred dollars before anybody paints it.</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">3C</span>
+          <span class="pdesc">2 framings, each beat says which</span>
+          <span class="pcnt neutral">
+            2 scripts &middot; 4 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>3C &middot; NEUTRAL, tight against the brick, no signage &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So did it ever reach the ocean?
+Never.</div></div><div class="spot"><div class="slbl"><span>3C &middot; NEUTRAL, tight against the brick, no signage &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">The dream never got finished, but the building it left behind is still standing on Chadbourne.
+Go see it on a Saturday.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>3C &middot; NEUTRAL, tight, plain wall and shade &middot; short</span><span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">So why sheep?
+Because at one point San Angelo was the largest sheep market in the United States.</div></div><div class="spot"><div class="slbl"><span>3C &middot; NEUTRAL, tight, plain wall and shade &middot; medium</span><span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">So every one of them is somebody&#x27;s sixteen hundred dollar decision.
+How many have you seen?
+Next time you&#x27;re downtown, count them.</div></div></div></div>
+      </details>
+    </section>
+    <section class="loc">
+      <div class="lochd">
+        <h3><span class="gnum">Group 4</span>Fort Concho</h3>
+        <div class="meta2">1 scripts &middot; 3 positions
+          &middot; 1m 7s of talking</div>
+        <div class="blurb">4A, 4B, 4C</div>
+      </div>
+      
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">4A</span>
+          <span class="pdesc">on the parade ground, the barracks behind you</span>
+          <span class="pcnt">
+            1 scripts &middot; 2 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>4A &middot; on the parade ground, the barracks behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">San Angelo started as the little town across the river from this fort.
+Fort Concho went up in 1867, and the town grew up to serve it.</div></div><div class="spot"><div class="slbl"><span>4A &middot; on the parade ground, the barracks behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">San Angelo has owned and run it since 1935.
+In 1961 it became a National Historic Landmark.
+The historic district covers forty acres of original buildings, reconstructions, and one stabilized ruin.
+Today it&#x27;s a museum you can walk right into.</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">4B</span>
+          <span class="pdesc">beside a stone building, the parade ground over your shoulder</span>
+          <span class="pcnt">
+            1 scripts &middot; 2 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>4B &middot; beside a stone building, the parade ground over your shoulder &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">From 1875 to 1882, this was the regimental headquarters of the 10th Cavalry, the Buffalo Soldiers.
+Their commander was Colonel Benjamin Grierson.
+The army pulled out in 1889.</div></div><div class="spot"><div class="slbl"><span>4B &middot; beside a stone building, the parade ground over your shoulder &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">And the best time to see it is coming up.
+Christmas at Old Fort Concho runs December fourth through sixth this year.
+The whole fort fills up for it.</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">4C</span>
+          <span class="pdesc">NEUTRAL, tight against limestone, nothing identifiable</span>
+          <span class="pcnt neutral">
+            1 scripts &middot; 2 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>4C &middot; NEUTRAL, tight against limestone, nothing identifiable &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So how is so much of it still standing?
+Because the city stepped in.</div></div><div class="spot"><div class="slbl"><span>4C &middot; NEUTRAL, tight against limestone, nothing identifiable &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">If you&#x27;ve never been inside the fort, that&#x27;s the weekend to go.
+And if you&#x27;re house shopping, the streets around it carry some of the oldest history in town.</div></div></div></div>
+      </details>
+    </section>
+    <section class="loc">
+      <div class="lochd">
+        <h3><span class="gnum">Group 5</span>Angelo Heights</h3>
+        <div class="meta2">2 scripts &middot; 3 positions
+          &middot; 2m 16s of talking</div>
+        <div class="blurb">5A, 5B, 5C</div>
+      </div>
+      
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">5A</span>
+          <span class="pdesc">2 framings, each beat says which</span>
+          <span class="pcnt">
+            2 scripts &middot; 4 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>5A &middot; on the sidewalk, a historic house behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">This whole neighborhood is on the National Register of Historic Places.
+It&#x27;s called Angelo Heights.</div></div><div class="spot"><div class="slbl"><span>5A &middot; on the sidewalk, a historic house behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">Spanish and Mediterranean houses mixed in with all of it.
+One house on Washington Street got picked up and moved to its lot in 1930.
+And these are people&#x27;s homes, so every so often one comes up for sale.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>5A &middot; at the river bank, water behind you &middot; medium</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">Then came the night of August twenty-third, 1882.
+It rained hard all night, and by midmorning the next day the water hit town.
+Sixty-five people drowned.</div></div><div class="spot"><div class="slbl"><span>5A &middot; at the river bank, water behind you &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">It&#x27;s also why I tell buyers to pull the flood map on any lot near the water before they make an offer.
+These rivers have done it before.</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">5B</span>
+          <span class="pdesc">2 framings, each beat says which</span>
+          <span class="pcnt">
+            2 scripts &middot; 4 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>5B &middot; at a corner, the street of older homes behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">It sits along the Concho River on the west side of downtown.
+Thirty-four acres, and forty-six buildings that count toward the historic district.
+It was listed in 1988, and the homes go back to around 1905.</div></div><div class="spot"><div class="slbl"><span>5B &middot; at a corner, the street of older homes behind you &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">The question I get is always the same.
+Can I change anything if I buy one?
+Being on the National Register by itself doesn&#x27;t limit what a private owner does with private money.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>5B &middot; walking along the street toward camera &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">San Angelo wasn&#x27;t the first county seat around here.
+The first one washed away in a single morning.</div></div><div class="spot"><div class="slbl"><span>5B &middot; walking along the street toward camera &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">On the flat, almost nothing was left.
+Only the courthouse, the jail, and two houses were still standing.
+So where do you put a county seat when the county seat is gone?</div></div></div></div>
+      </details>
+      <details class="pos">
+        <summary class="poshd">
+          <span class="plet">5C</span>
+          <span class="pdesc">2 framings, each beat says which</span>
+          <span class="pcnt neutral">
+            2 scripts &middot; 4 beats</span>
+        </summary>
+        <div class="posbody"><div class="sc"><div class="spot"><div class="slbl"><span>5C &middot; NEUTRAL, tight, trees and sky, no house &middot; medium</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So what&#x27;s in here?
+A Classical Revival house with four big Ionic columns.
+A Queen Anne with an octagonal tower.</div></div><div class="spot"><div class="slbl"><span>5C &middot; NEUTRAL, tight, trees and sky, no house &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">Local rules can be a different story, so that&#x27;s the first thing we&#x27;d look into together.
+If you want a house with a hundred years of history in it, this is a good place to start.</div></div></div><div class="sc"><div class="spot"><div class="slbl"><span>5C &middot; NEUTRAL, tight, open sky, no house &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">It was a town called Ben Ficklin, laid out in 1873 on the South Concho.
+In 1875 it beat out San Angela for the county seat.
+By 1879 about six hundred people lived there.</div></div><div class="spot"><div class="slbl"><span>5C &middot; NEUTRAL, tight, open sky, no house &middot; short</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">You move it to the town across the river from the fort.
+That&#x27;s how San Angelo became the county seat in 1883.</div></div></div></div>
+      </details>
+    </section></div>
+  <div id="v-scr" hidden>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">1</span>
+        <span class="pdesc">The fire station you can sleep in</span>
+        <span class="pcnt">Group 1 &middot; Old Central Fire Station &middot; 82s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>Built for fire trucks in 1928.</span></div>
+        <p class="dir">Get the hose tower in frame.</p>
+        <p class="ordr">Shooting order 1A -> 1B -> 1C -> 1A -> 1B -> 1C -> 1A &middot; 1A across Magdalen, the whole station in frame &middot; 1B at the base of the hose tower, looking up &middot; 1C NEUTRAL, tight against the brick, no signage</p>
+        <div class="spot"><div class="slbl"><span>1A &middot; across Magdalen, the whole station in frame &middot; short</span><span class="sbeat">beat 1 of 7</span></div><div class="stxt" contenteditable="true">Most people drive past this building downtown and assume it&#x27;s still a working fire station.
+It hasn&#x27;t put out a fire since 1976.</div></div><div class="spot"><div class="slbl"><span>1B &middot; at the base of the hose tower, looking up &middot; medium</span><span class="sbeat">beat 2 of 7</span></div><div class="stxt" contenteditable="true">This is the old Central Fire Station, built in 1928.
+The architects were Trost and Trost out of El Paso, the firm behind a good chunk of that city&#x27;s skyline.
+It cost thirty-two thousand dollars.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight against the brick, no signage &middot; medium</span><span class="sbeat">beat 3 of 7</span></div><div class="stxt" contenteditable="true">So what&#x27;s the tower for?
+Canvas fire hose comes back from a call soaking wet, and it has to hang straight down to dry or it rots.
+That four story tower was the hose dryer.</div></div><div class="spot"><div class="slbl"><span>1A &middot; across Magdalen, the whole station in frame &middot; medium</span><span class="sbeat">beat 4 of 7</span></div><div class="stxt" contenteditable="true">After the trucks moved out in 1976, it spent about twenty years as a city recreation and senior center.
+Then a nonprofit used it for a while.
+Then in 2017 a local couple bought it.</div></div><div class="spot"><div class="slbl"><span>1B &middot; at the base of the hose tower, looking up &middot; medium</span><span class="sbeat">beat 5 of 7</span></div><div class="stxt" contenteditable="true">Today it&#x27;s a bed and breakfast with a pizzeria and a taproom downstairs.
+You can book a suite upstairs and spend the night in a 1928 fire station.
+The walls are covered in helmets, jackets, and old photos that people around town donated.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight against the brick, no signage &middot; short</span><span class="sbeat">beat 6 of 7</span></div><div class="stxt" contenteditable="true">As a firefighter, I&#x27;ll admit this one gets me.
+It did its job for almost fifty years and then found a second one.</div></div><div class="spot"><div class="slbl"><span>1A &middot; across Magdalen, the whole station in frame &middot; short</span><span class="sbeat">beat 7 of 7</span></div><div class="stxt" contenteditable="true">Next time you drive down Magdalen, look up at the tower.</div></div>
+      </div>
+    </details>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">2</span>
+        <span class="pdesc">Read the back of your smoke alarm</span>
+        <span class="pcnt">Group 1 &middot; Old Central Fire Station &middot; 74s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>The date most buyers never check.</span></div>
+        
+        <p class="ordr">Shooting order 1B -> 1C -> 1A -> 1B -> 1C -> 1B &middot; 1A in the station doorway &middot; 1B tight, the tower over your shoulder &middot; 1C NEUTRAL, plain brick wall, tight</p>
+        <div class="spot"><div class="slbl"><span>1B &middot; tight, the tower over your shoulder &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">I&#x27;m a firefighter, and when I walk through a house somebody&#x27;s about to buy, I look up before I look at the countertops.
+I&#x27;m checking the smoke alarms.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, plain brick wall, tight &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">Most people don&#x27;t know smoke alarms expire.
+The recommendation is to replace them every ten years.
+And the date it was made is printed right on the back.</div></div><div class="spot"><div class="slbl"><span>1A &middot; in the station doorway &middot; medium</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So in a house built twenty years ago, how old are the alarms on the ceiling?
+A lot of the time, nobody knows.
+And a chirping alarm usually gets its battery pulled and never gets it back.</div></div><div class="spot"><div class="slbl"><span>1B &middot; tight, the tower over your shoulder &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">The National Fire Protection Association keeps the guidance simple.
+One inside every bedroom, one outside each sleeping area, and one on every level of the house.
+Test them once a month.
+Close to three out of five home fire deaths happen in homes with no smoke alarms or alarms that didn&#x27;t work.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, plain brick wall, tight &middot; short</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">That&#x27;s a cheap problem to fix.
+A new alarm costs less than dinner out.</div></div><div class="spot"><div class="slbl"><span>1B &middot; tight, the tower over your shoulder &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">So when you get the keys, pull one down and read the date.
+If it&#x27;s past ten years, swap them all before you unpack a single box.</div></div>
+      </div>
+    </details>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">3</span>
+        <span class="pdesc">Same house, different insurance bill</span>
+        <span class="pcnt">Group 1 &middot; Old Central Fire Station &middot; 74s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>Same house. Different insurance bill. Why?</span></div>
+        
+        <p class="ordr">Shooting order 1C -> 1A -> 1B -> 1C -> 1A -> 1B &middot; 1A at the bay doors, the station behind you &middot; 1B wide, Magdalen Street and the station &middot; 1C NEUTRAL, tight, brick and shade</p>
+        <div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight, brick and shade &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">Two houses can be the same size, the same age, and the same price, and one can cost a lot more to insure.
+A big piece of that comes down to the fire department.</div></div><div class="spot"><div class="slbl"><span>1A &middot; at the bay doors, the station behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">Every community gets a public protection class from a company called ISO.
+It runs from one to ten, and one is the best.
+It&#x27;s based on things like the fire department, the water supply, and how 911 calls get handled.</div></div><div class="spot"><div class="slbl"><span>1B &middot; wide, Magdalen Street and the station &middot; medium</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">Insurance companies use that number when they price a homeowners policy.
+So why would a house a few miles out cost more?
+Distance.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight, brick and shade &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">If a home sits more than about five road miles from a responding fire station, it can land in the worst class.
+Being far from a hydrant can hurt it too.
+And as a firefighter, I get why.
+Every minute on the road is a minute the fire keeps growing.</div></div><div class="spot"><div class="slbl"><span>1A &middot; at the bay doors, the station behind you &middot; short</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">I&#x27;m not telling you to skip the country house.
+I love the country house.</div></div><div class="spot"><div class="slbl"><span>1B &middot; wide, Magdalen Street and the station &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">Just get an insurance quote before you fall in love with it.
+That way the monthly payment you planned on is the one you get.</div></div>
+      </div>
+    </details>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">4</span>
+        <span class="pdesc">The Christmas tree rule firefighters repeat</span>
+        <span class="pcnt">Group 1 &middot; Old Central Fire Station &middot; 71s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>Three feet. Every year.</span></div>
+        
+        <p class="ordr">Shooting order 1A -> 1B -> 1C -> 1A -> 1B -> 1C &middot; 1A beside the bay doors &middot; 1B at the corner of the building, the tower behind you &middot; 1C NEUTRAL, tight on you, dark brick behind</p>
+        <div class="spot"><div class="slbl"><span>1A &middot; beside the bay doors &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">Every December, firefighters all over the country end up repeating the same few things about Christmas trees.
+I&#x27;m one of them, so you&#x27;re getting my version.</div></div><div class="spot"><div class="slbl"><span>1B &middot; at the corner of the building, the tower behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">A real tree looks great on day one.
+By week three, if nobody&#x27;s been watering it, it&#x27;s kindling standing in your living room.
+And a dry tree burns fast.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight on you, dark brick behind &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So how do you keep yours from getting there?
+Start at the lot.</div></div><div class="spot"><div class="slbl"><span>1A &middot; beside the bay doors &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">Pick one with needles that don&#x27;t fall off when you touch them.
+Cut a couple of inches off the bottom of the trunk before it goes in the stand.
+Then add water every single day.
+It drinks more than you&#x27;d think.</div></div><div class="spot"><div class="slbl"><span>1B &middot; at the corner of the building, the tower behind you &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">Keep it at least three feet from anything that puts out heat, like the fireplace, a space heater, a vent, or candles.
+Turn the lights off when you go to bed or leave the house.
+And when the needles start dropping after Christmas, it&#x27;s time for it to go.</div></div><div class="spot"><div class="slbl"><span>1C &middot; NEUTRAL, tight on you, dark brick behind &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">None of that takes the fun out of it.
+It just means you decide when the tree comes down.</div></div>
+      </div>
+    </details><div class="outfit">Outfit change</div>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">5</span>
+        <span class="pdesc">Closed in 1983 and still boarded up</span>
+        <span class="pcnt">Group 2 &middot; Concho Avenue &middot; 60s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>Six stories, boarded up. Why?</span></div>
+        <p class="dir">Shoot at the Naylor, Concho and Chadbourne.</p>
+        <p class="ordr">Shooting order 2A -> 2B -> 2C -> 2A -> 2B -> 2C &middot; 2A across Chadbourne, the Naylor&#x27;s full height behind you &middot; 2B at the corner of Concho and Chadbourne, the hotel over your shoulder &middot; 2C NEUTRAL, tight against a storefront, no signage</p>
+        <div class="spot"><div class="slbl"><span>2A &middot; across Chadbourne, the Naylor&#x27;s full height behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">This building went dark in 1983, the same year the Texas Theatre closed.
+It&#x27;s the old Naylor Hotel, and it&#x27;s been sitting here boarded up ever since.</div></div><div class="spot"><div class="slbl"><span>2B &middot; at the corner of Concho and Chadbourne, the hotel over your shoulder &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">It&#x27;s had more names than most people have had addresses.
+The Nimitz, the Landon, the Naylor, and the Town House.
+And it&#x27;s burned more than once.
+A fire in 1902 killed a woman named Rosa Landon, and it burned again in 1925.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight against a storefront, no signage &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So what you&#x27;re looking at is the rebuild.
+The six story hotel went up in the 1930s.</div></div><div class="spot"><div class="slbl"><span>2A &middot; across Chadbourne, the Naylor&#x27;s full height behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">And why did it close?
+It couldn&#x27;t pass fire code.
+As a firefighter, that part makes sense to me.</div></div><div class="spot"><div class="slbl"><span>2B &middot; at the corner of Concho and Chadbourne, the hotel over your shoulder &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">Downtown&#x27;s been filling back in around it, one building at a time.
+Lofts, restaurants, people living down here again.
+So what happens when somebody finally takes this one on?</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight against a storefront, no signage &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">Whoever does gets one of the best corners in town.
+Keep an eye on it.</div></div>
+      </div>
+    </details>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">6</span>
+        <span class="pdesc">A bordello above a jewelry store</span>
+        <span class="pcnt">Group 2 &middot; Concho Avenue &middot; 59s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>Look up, above the jewelry store.</span></div>
+        <p class="dir">Shoot at Legend Jewelers, 18 E. Concho.</p>
+        <p class="ordr">Shooting order 2B -> 2C -> 2A -> 2B -> 2C -> 2A &middot; 2A on the sidewalk, the jewelry store front behind you &middot; 2B across Concho, the second floor windows in frame &middot; 2C NEUTRAL, tight, plain storefront brick</p>
+        <div class="spot"><div class="slbl"><span>2B &middot; across Concho, the second floor windows in frame &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">Most people walk down Concho Avenue and look in the shop windows.
+Look one floor higher.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, plain storefront brick &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">For about half a century, the second floor of this building was a bordello.
+Miss Hattie&#x27;s.
+It ran right over the main street downtown.</div></div><div class="spot"><div class="slbl"><span>2A &middot; on the sidewalk, the jewelry store front behind you &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">How long can a place like that last on the main street in town?
+Long enough that it took the Texas Rangers to finally close it.</div></div><div class="spot"><div class="slbl"><span>2B &middot; across Concho, the second floor windows in frame &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">Decades later, in the late 1970s, the building changed hands and the upstairs got remodeled.
+Today it&#x27;s Miss Hattie&#x27;s Bordello Museum.
+The rooms are set up with furnishings from that era.
+And you get to it through the jewelry store downstairs.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, plain storefront brick &middot; short</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">That&#x27;s my favorite part.
+You walk in to look at rings and walk out knowing one of the wildest chapters in San Angelo history.</div></div><div class="spot"><div class="slbl"><span>2A &middot; on the sidewalk, the jewelry store front behind you &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">Tours can&#x27;t be booked ahead, so just stop in.
+And next time you&#x27;re on Concho, look up.</div></div>
+      </div>
+    </details>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">7</span>
+        <span class="pdesc">A pink pearl from the Concho River</span>
+        <span class="pcnt">Group 2 &middot; Concho Avenue &middot; 52s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>Found in the river a few blocks away.</span></div>
+        
+        <p class="ordr">Shooting order 2C -> 2A -> 2B -> 2C -> 2A &middot; 2A in front of the jewelry store window &middot; 2B down the block, Concho Avenue stretching behind you &middot; 2C NEUTRAL, tight, shade, nothing identifiable</p>
+        <div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, shade, nothing identifiable &middot; short</span><span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">There&#x27;s a pearl on this street about the size of a pea, and it&#x27;s priced at a hundred ten thousand dollars.
+It came out of a river a few blocks from here.</div></div><div class="spot"><div class="slbl"><span>2A &middot; in front of the jewelry store window &middot; medium</span><span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">Concho pearls come from a freshwater mussel that lives in these rivers.
+They don&#x27;t come out white.
+They come out pink, purple, and lavender, and usually a little lopsided.</div></div><div class="spot"><div class="slbl"><span>2B &middot; down the block, Concho Avenue stretching behind you &middot; medium</span><span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">So why would anybody pay that much for one?
+Because a round one is rare.
+The one at Legend Jewelers is just over twelve millimeters and close to perfectly round.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, shade, nothing identifiable &middot; short</span><span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">Legend&#x27;s been on this street since 1976.
+Ask to see the case next time you&#x27;re downtown.</div></div><div class="spot"><div class="slbl"><span>2A &middot; in front of the jewelry store window &middot; medium</span><span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">And here&#x27;s what I like about it.
+A lot of towns have a river.
+Not many have one that makes its own gemstones.</div></div>
+      </div>
+    </details>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">8</span>
+        <span class="pdesc">Guess the oldest building downtown</span>
+        <span class="pcnt">Group 2 &middot; Concho Avenue &middot; 59s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>Pick one before I tell you.</span></div>
+        <p class="dir">Count the three options on your fingers.</p>
+        <p class="ordr">Shooting order 2A -> 2B -> 2C -> 2A -> 2B -> 2C &middot; 2A on Concho Avenue, the street wide behind you &middot; 2B at a corner, two storefronts behind you &middot; 2C NEUTRAL, tight, plain wall, nothing identifiable</p>
+        <div class="spot"><div class="slbl"><span>2A &middot; on Concho Avenue, the street wide behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">Quick quiz, and be honest, pick before I give you the answer.
+Which of these three downtown buildings is the oldest?</div></div><div class="spot"><div class="slbl"><span>2B &middot; at a corner, two storefronts behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">The old Central Fire Station with the hose tower on Magdalen.
+The Orient railroad depot on Chadbourne.
+Or a two story sandstone building right here on Concho Avenue.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, plain wall, nothing identifiable &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">Got your pick?
+The depot feels like the safe answer, because railroads feel old.</div></div><div class="spot"><div class="slbl"><span>2A &middot; on Concho Avenue, the street wide behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">The depot went up in 1909 and 1910.
+The fire station came in 1928.
+And the sandstone building on Concho beats them both by more than twenty years.</div></div><div class="spot"><div class="slbl"><span>2B &middot; at a corner, two storefronts behind you &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">It&#x27;s the Freeze Building, built in 1887 as a blacksmith shop.
+A Danish immigrant named Peter Freeze put it up after a fire wiped out his first shop that spring.
+It got restored in the 1990s and went on the National Register in 1997.</div></div><div class="spot"><div class="slbl"><span>2C &middot; NEUTRAL, tight, plain wall, nothing identifiable &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">How&#x27;d you do?
+Tell me in the comments which one you picked.</div></div>
+      </div>
+    </details><div class="outfit">Outfit change</div>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">9</span>
+        <span class="pdesc">The railroad that was headed for the Pacific</span>
+        <span class="pcnt">Group 3 &middot; Orient depot &middot; 62s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>Kansas City to the Pacific, through here.</span></div>
+        
+        <p class="ordr">Shooting order 3A -> 3B -> 3C -> 3A -> 3B -> 3C &middot; 3A across Chadbourne, the full depot behind you &middot; 3B on the platform side, the tracks running away behind you &middot; 3C NEUTRAL, tight against the brick, no signage</p>
+        <div class="spot"><div class="slbl"><span>3A &middot; across Chadbourne, the full depot behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">A man named Arthur Stilwell planned a railroad sixteen hundred miles long, from Kansas City to the Pacific coast of Mexico.
+San Angelo was on the route.</div></div><div class="spot"><div class="slbl"><span>3B &middot; on the platform side, the tracks running away behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">It was called the Kansas City, Mexico and Orient.
+This depot went up in 1909 and 1910, and it was the biggest one on the whole line.
+It was the railroad&#x27;s Texas headquarters.</div></div><div class="spot"><div class="slbl"><span>3C &middot; NEUTRAL, tight against the brick, no signage &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So did it ever reach the ocean?
+Never.</div></div><div class="spot"><div class="slbl"><span>3A &middot; across Chadbourne, the full depot behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">The Mexican Revolution got in the way, and the full line never got finished.
+Santa Fe bought it in 1928.
+Then in 1989, Santa Fe planned to tear this building down.</div></div><div class="spot"><div class="slbl"><span>3B &middot; on the platform side, the tracks running away behind you &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">People here wouldn&#x27;t let that happen.
+They rehabbed it, and today it&#x27;s the Railway Museum of San Angelo, with a senior center in the old depot buildings.
+It&#x27;s run by volunteers and open on Saturdays.</div></div><div class="spot"><div class="slbl"><span>3C &middot; NEUTRAL, tight against the brick, no signage &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">The dream never got finished, but the building it left behind is still standing on Chadbourne.
+Go see it on a Saturday.</div></div>
+      </div>
+    </details>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">10</span>
+        <span class="pdesc">Why there are painted sheep everywhere</span>
+        <span class="pcnt">Group 3 &middot; Orient depot &middot; 56s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>Why sheep?</span></div>
+        <p class="dir">If there&#x27;s a painted sheep nearby, get it in frame.</p>
+        <p class="ordr">Shooting order 3B -> 3C -> 3A -> 3B -> 3C &middot; 3A beside the tracks, the depot down the line &middot; 3B at the depot&#x27;s corner, the street behind you &middot; 3C NEUTRAL, tight, plain wall and shade</p>
+        <div class="spot"><div class="slbl"><span>3B &middot; at the depot&#x27;s corner, the street behind you &middot; short</span><span class="sbeat">beat 1 of 5</span></div><div class="stxt" contenteditable="true">If you&#x27;ve lived here a while, you&#x27;ve probably stopped noticing the painted sheep.
+There are about a hundred of them around town.</div></div><div class="spot"><div class="slbl"><span>3C &middot; NEUTRAL, tight, plain wall and shade &middot; short</span><span class="sbeat">beat 2 of 5</span></div><div class="stxt" contenteditable="true">So why sheep?
+Because at one point San Angelo was the largest sheep market in the United States.</div></div><div class="spot"><div class="slbl"><span>3A &middot; beside the tracks, the depot down the line &middot; medium</span><span class="sbeat">beat 3 of 5</span></div><div class="stxt" contenteditable="true">Sheep ranching came to this area in 1877.
+Ranchers, cattlemen, and the railroads turned this town into one of the biggest wool and mohair markets in the country.
+In 1906 the local paper reported a single sale of more than half a million pounds of wool.
+And a lot of it left town on rails like these.</div></div><div class="spot"><div class="slbl"><span>3B &middot; at the depot&#x27;s corner, the street behind you &middot; short</span><span class="sbeat">beat 4 of 5</span></div><div class="stxt" contenteditable="true">The sheep you see downtown started in 2007.
+A plain fiberglass ewe runs about sixteen hundred dollars before anybody paints it.</div></div><div class="spot"><div class="slbl"><span>3C &middot; NEUTRAL, tight, plain wall and shade &middot; medium</span><span class="sbeat">beat 5 of 5</span></div><div class="stxt" contenteditable="true">So every one of them is somebody&#x27;s sixteen hundred dollar decision.
+How many have you seen?
+Next time you&#x27;re downtown, count them.</div></div>
+      </div>
+    </details><div class="outfit">Outfit change</div>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">11</span>
+        <span class="pdesc">The fort the town grew up around</span>
+        <span class="pcnt">Group 4 &middot; Fort Concho &middot; 67s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>The Buffalo Soldiers were headquartered here.</span></div>
+        
+        <p class="ordr">Shooting order 4A -> 4B -> 4C -> 4A -> 4B -> 4C &middot; 4A on the parade ground, the barracks behind you &middot; 4B beside a stone building, the parade ground over your shoulder &middot; 4C NEUTRAL, tight against limestone, nothing identifiable</p>
+        <div class="spot"><div class="slbl"><span>4A &middot; on the parade ground, the barracks behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">San Angelo started as the little town across the river from this fort.
+Fort Concho went up in 1867, and the town grew up to serve it.</div></div><div class="spot"><div class="slbl"><span>4B &middot; beside a stone building, the parade ground over your shoulder &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">From 1875 to 1882, this was the regimental headquarters of the 10th Cavalry, the Buffalo Soldiers.
+Their commander was Colonel Benjamin Grierson.
+The army pulled out in 1889.</div></div><div class="spot"><div class="slbl"><span>4C &middot; NEUTRAL, tight against limestone, nothing identifiable &middot; short</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So how is so much of it still standing?
+Because the city stepped in.</div></div><div class="spot"><div class="slbl"><span>4A &middot; on the parade ground, the barracks behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">San Angelo has owned and run it since 1935.
+In 1961 it became a National Historic Landmark.
+The historic district covers forty acres of original buildings, reconstructions, and one stabilized ruin.
+Today it&#x27;s a museum you can walk right into.</div></div><div class="spot"><div class="slbl"><span>4B &middot; beside a stone building, the parade ground over your shoulder &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">And the best time to see it is coming up.
+Christmas at Old Fort Concho runs December fourth through sixth this year.
+The whole fort fills up for it.</div></div><div class="spot"><div class="slbl"><span>4C &middot; NEUTRAL, tight against limestone, nothing identifiable &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">If you&#x27;ve never been inside the fort, that&#x27;s the weekend to go.
+And if you&#x27;re house shopping, the streets around it carry some of the oldest history in town.</div></div>
+      </div>
+    </details><div class="outfit">Outfit change</div>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">12</span>
+        <span class="pdesc">A whole neighborhood on the National Register</span>
+        <span class="pcnt">Group 5 &middot; Angelo Heights &middot; 72s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>You can live inside a historic district.</span></div>
+        <p class="dir">Shoot along S. Washington Street.</p>
+        <p class="ordr">Shooting order 5A -> 5B -> 5C -> 5A -> 5B -> 5C &middot; 5A on the sidewalk, a historic house behind you &middot; 5B at a corner, the street of older homes behind you &middot; 5C NEUTRAL, tight, trees and sky, no house</p>
+        <div class="spot"><div class="slbl"><span>5A &middot; on the sidewalk, a historic house behind you &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">This whole neighborhood is on the National Register of Historic Places.
+It&#x27;s called Angelo Heights.</div></div><div class="spot"><div class="slbl"><span>5B &middot; at a corner, the street of older homes behind you &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">It sits along the Concho River on the west side of downtown.
+Thirty-four acres, and forty-six buildings that count toward the historic district.
+It was listed in 1988, and the homes go back to around 1905.</div></div><div class="spot"><div class="slbl"><span>5C &middot; NEUTRAL, tight, trees and sky, no house &middot; medium</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">So what&#x27;s in here?
+A Classical Revival house with four big Ionic columns.
+A Queen Anne with an octagonal tower.</div></div><div class="spot"><div class="slbl"><span>5A &middot; on the sidewalk, a historic house behind you &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">Spanish and Mediterranean houses mixed in with all of it.
+One house on Washington Street got picked up and moved to its lot in 1930.
+And these are people&#x27;s homes, so every so often one comes up for sale.</div></div><div class="spot"><div class="slbl"><span>5B &middot; at a corner, the street of older homes behind you &middot; medium</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">The question I get is always the same.
+Can I change anything if I buy one?
+Being on the National Register by itself doesn&#x27;t limit what a private owner does with private money.</div></div><div class="spot"><div class="slbl"><span>5C &middot; NEUTRAL, tight, trees and sky, no house &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">Local rules can be a different story, so that&#x27;s the first thing we&#x27;d look into together.
+If you want a house with a hundred years of history in it, this is a good place to start.</div></div>
+      </div>
+    </details>
+    <details class="pos">
+      <summary class="poshd">
+        <span class="plet">13</span>
+        <span class="pdesc">The county seat that washed away</span>
+        <span class="pcnt">Group 5 &middot; Angelo Heights &middot; 64s</span>
+      </summary>
+      <div class="posbody">
+        <div class="onscr"><b>On screen</b><span>The first county seat is gone.</span></div>
+        
+        <p class="ordr">Shooting order 5B -> 5C -> 5A -> 5B -> 5C -> 5A &middot; 5A at the river bank, water behind you &middot; 5B walking along the street toward camera &middot; 5C NEUTRAL, tight, open sky, no house</p>
+        <div class="spot"><div class="slbl"><span>5B &middot; walking along the street toward camera &middot; short</span><span class="sbeat">beat 1 of 6</span></div><div class="stxt" contenteditable="true">San Angelo wasn&#x27;t the first county seat around here.
+The first one washed away in a single morning.</div></div><div class="spot"><div class="slbl"><span>5C &middot; NEUTRAL, tight, open sky, no house &middot; medium</span><span class="sbeat">beat 2 of 6</span></div><div class="stxt" contenteditable="true">It was a town called Ben Ficklin, laid out in 1873 on the South Concho.
+In 1875 it beat out San Angela for the county seat.
+By 1879 about six hundred people lived there.</div></div><div class="spot"><div class="slbl"><span>5A &middot; at the river bank, water behind you &middot; medium</span><span class="sbeat">beat 3 of 6</span></div><div class="stxt" contenteditable="true">Then came the night of August twenty-third, 1882.
+It rained hard all night, and by midmorning the next day the water hit town.
+Sixty-five people drowned.</div></div><div class="spot"><div class="slbl"><span>5B &middot; walking along the street toward camera &middot; medium</span><span class="sbeat">beat 4 of 6</span></div><div class="stxt" contenteditable="true">On the flat, almost nothing was left.
+Only the courthouse, the jail, and two houses were still standing.
+So where do you put a county seat when the county seat is gone?</div></div><div class="spot"><div class="slbl"><span>5C &middot; NEUTRAL, tight, open sky, no house &middot; short</span><span class="sbeat">beat 5 of 6</span></div><div class="stxt" contenteditable="true">You move it to the town across the river from the fort.
+That&#x27;s how San Angelo became the county seat in 1883.</div></div><div class="spot"><div class="slbl"><span>5A &middot; at the river bank, water behind you &middot; short</span><span class="sbeat">beat 6 of 6</span></div><div class="stxt" contenteditable="true">It&#x27;s also why I tell buyers to pull the flood map on any lot near the water before they make an offer.
+These rivers have done it before.</div></div>
+      </div>
+    </details></div>
+  <footer>Work one position until every beat under it is shot, then move. The green
+    positions are the neutral ones, nothing identifiable in frame, so those beats cut
+    together as generic content later.</footer>
+</div>
+<script>
+function setview(v) {
+  document.getElementById('v-loc').hidden = (v !== 'loc');
+  document.getElementById('v-scr').hidden = (v !== 'scr');
+  document.getElementById('b-loc').classList.toggle('on', v === 'loc');
+  document.getElementById('b-scr').classList.toggle('on', v === 'scr');
+}
+function bump(n) {
+  var r = document.documentElement;
+  var cur = parseInt(getComputedStyle(r).getPropertyValue('--pt')) || 22;
+  r.style.setProperty('--pt', Math.min(46, Math.max(14, cur + n)) + 'px');
+}
+</script>
+</body>
+</html>
