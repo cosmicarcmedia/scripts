@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Shelburne Financial Services | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Shelburne Financial Services</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. Spot A, Spot B and Spot C are three camera positions in the same location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">From Arthur Andersen in Dallas to a home office in San Angelo</div>
+<div class="job">The origin and the face</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Harold's path from a big firm in Dallas to starting a practice at home is the origin of a local CPA, and it tells a business owner that the person doing their books has seen both sides.</div>
+<div class="spot">Spot A</div>
+<div class="lines">I graduated from Angelo State in 1973 with a degree in accounting.
+My first job was at Arthur Andersen in Dallas.
+I earned my CPA certification in August of 1974.
+Then I came back to West Texas, and I worked for accounting firms in Abilene and in San Angelo.</div>
+<div class="spot">Spot B</div>
+<div class="lines">I joined General Telephone of the Southwest in 1976, and I spent years there as a senior internal auditor.
+I held several accounting positions there.
+[OWNER: what you learned auditing a company that size]
+I was in that job from 1976 until I went back into public accounting.
+LaQueta and I have been married since 1970.
+We have three daughters and five grandchildren.</div>
+<div class="spot">Spot C</div>
+<div class="lines">I started my own accounting practice, out of our home.
+LaQueta joined me and helped it grow.
+In 1994, she added financial services.
+Today we have a team on Executive Drive.
+We help individuals, businesses and families reach their financial goals.
+We serve clients in San Angelo and in Winters.
+We do bookkeeping, tax returns, financial statements and payroll.
+Our daughter Meagan Hunnicutt is on the team.
+There are seven of us in accounting.
+[OWNER: the first client who stayed with you]
+I've always worked hard to give each client a customized approach.
+Service has always been the motto for LaQueta and me, in business and at home.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">I kept the books for the Central High boosters for eleven years</div>
+<div class="job">The local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Harold's eleven years as Central High Booster Club treasurer, the soccer and YMCA years, and LaQueta's Project Graduation work show a firm that lives in San Angelo.</div>
+<div class="spot">Spot B</div>
+<div class="lines">For eleven years, I was the treasurer of the Central High Booster Club.
+That's a small budget with a lot of people watching it.
+I've also been involved in youth sports through the San Angelo Soccer Association and the YMCA, for our children and our grandchildren.
+Youth sports have been a big part of our family for years.
+[OWNER: a story from the booster club years, in a sentence or two]</div>
+<div class="spot">Spot A</div>
+<div class="lines">LaQueta helped establish Project Graduation for Central High and Lakeview High.
+She's a lifetime member of the Symphony Guild, and she has served as its president.
+She has also been a member of Beta Sigma Phi for forty years.
+LaQueta attended Bronte High School and Angelo State.
+We live in San Angelo too.
+We have three daughters, three sons-in-law and five grandchildren.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Our office is on Executive Drive.
+We work with individuals, businesses and families in San Angelo, and in Winters.
+Our hours are Monday through Friday, 8 to 5, with lunch from noon to 1.
+From mid-January until about April 15, we stay open until 6, and on Saturdays from 9 to 2.
+Appointments are recommended during that season.
+You can also upload your documents from our website.
+New clients can start with our questionnaire online.
+Our FAQ page answers common questions about deadlines and records.
+Call us at 325 944 9447.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Will your tax preparer talk to you in October?</div>
+<div class="job">The thing the big competitor will not say</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The site says the firm meets with clients during the year to find credits, sends customized tax letters each year, and does payroll in house. Laid out as questions, it draws a fair line with seasonal tax offices without naming anyone.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Here's a question to ask whoever does your taxes.
+Will you talk to me in October?
+Or will I only hear from you in April?
+At our firm, we meet with you during the year.
+We've been serving San Angelo and Winters for decades.
+We review your situation and look for the tax benefits and credits you may qualify for.
+Then we help you apply for them.
+You can count on our professionals to make sure your taxes are done correctly.</div>
+<div class="spot">Spot A</div>
+<div class="lines">Ask if they'll send you a letter when the rules change.
+We do that every year, customized for what affects you.
+Ask what kind of returns they prepare.
+We prepare individual, partnership, corporation, S corporation, estate, trust, gift and nonprofit returns.
+So one office can take care of a family, and the family's business.</div>
+<div class="spot">Spot B</div>
+<div class="lines">If you have employees, ask who handles your payroll.
+Ours is handled in house, by our own staff.
+You can pay by manual check or by direct deposit.
+We have certified human resources staff who help us keep up with changing labor laws.
+And your payroll taxes are filed by a CPA firm, which lowers the risk of filing them incorrectly.
+Ask any office those same questions, and compare the answers.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">The 600 dollar rule every small business owner should know</div>
+<div class="job">The useful one</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The FAQ answers a question small business owners ask every January: who gets a 1099, and what to collect first. Costs nothing to give away.</div>
+<div class="spot">Spot A</div>
+<div class="lines">If you pay people to do work for your business, you may owe them a 1099.
+Here's the rule I want every small business owner to know.
+If you pay an individual or a business $600 or more in one calendar year, you send them a 1099.
+That commonly applies to rent, contract labor and repairs.
+Rent counts. Contract labor counts. Repairs count.</div>
+<div class="spot">Spot B</div>
+<div class="lines">Before you pay them, get a W-9.
+It has their legal name as it appears on their tax return.
+It has their mailing address.
+And it has either a federal ID number, if they're a business, or a Social Security number, if they're an individual.
+You can find the W-9 form on the IRS website.
+Getting it up front saves you from chasing it down in January.</div>
+<div class="spot">Spot C</div>
+<div class="lines">Those 1099 forms generally have to be mailed to the people you paid by January 31.
+Keep your records for three years plus the current year.
+Some people keep five years.
+Three is the minimum we recommend.
+While you're marking calendars, partnerships and S corporations are due March 15, or September 15 with an extension.
+Those dates can change if your year-end is different.
+Every business is different, so if you're unsure whether somebody needs a 1099, call us.
+We're on Executive Drive, at 325 944 9447.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">What a small business hands to its bookkeeper</div>
+<p>Pick three items from your bookkeeping page, such as bank reconciliation, payroll tax deposits and Texas sales tax filing, and tell what each one saves an owner. Film it at your desk, one item for each camera position. Keep each to a few sentences.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Founding 10</h2>
+<p class="proof">90 days and 36 local videos, written, filmed, edited, captioned, and scheduled for you. I'm accepting the first 10 qualified local businesses because I'm personally overseeing the initial production round. Once those 10 calendars are assigned, this founding rate closes. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>Three on location shoot days, reserved in advance</li>
+<li>15 scripts written before each shoot. You cut the 3 you like least</li>
+<li>36 finished videos, 12 from each shoot</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round per batch</li>
+<li>Your $950 every 4 weeks rate stays locked after the 90 days</li>
+</ul>
+<div class="price">$2,250 <span>up front for 90 days</span></div>
+<p class="proof">That's $600 under the normal $2,850 for 90 days. A spot is claimed once the agreement is signed, payment is in, and your three shoot dates are on the calendar.</p>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on November 10, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
