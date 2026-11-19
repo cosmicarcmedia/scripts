@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Four video scripts for Wendland Manufacturing Corp. | Cosmic Arc Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#070B1D;--deep:#150B2B;--bone:#E8E0CF;--dust:#8B8580;
+--magenta:#D83B93;--violet:#7C4DFF;--blue:#2E77FF}
+body{font-family:'Inter',-apple-system,Segoe UI,sans-serif;background:var(--void);
+color:var(--bone);line-height:1.7;padding:0 0 100px;
+background-image:linear-gradient(175deg,#070B1D 0%,#150B2B 55%,#0B0A18 100%);
+background-attachment:fixed}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{padding:52px 0 0}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:.3em;
+text-transform:uppercase;color:var(--magenta);font-weight:600}
+.rule{height:1px;margin:18px 0 26px;max-width:460px;
+background:linear-gradient(90deg,var(--magenta),var(--violet),transparent)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:36px;line-height:1.2;font-weight:600;
+letter-spacing:-.01em;max-width:20ch}
+h1 em{font-style:normal;color:var(--magenta)}
+.sub{color:var(--dust);font-size:15px;margin-top:12px;max-width:62ch}
+.lede{margin:34px 0 0;font-size:16.5px;max-width:64ch}
+.lede p+p{margin-top:14px}
+.panel{border:1px solid rgba(232,224,207,.14);border-radius:4px;padding:22px 24px;margin:30px 0;
+background:rgba(255,255,255,.025)}
+.panel p{font-size:15px;color:var(--dust);max-width:62ch}
+.panel p+p{margin-top:10px}
+.panel b{color:var(--bone);font-weight:600}
+.seclabel{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--violet);font-weight:600;margin:64px 0 10px}
+.firstpass{font-size:14.5px;color:var(--dust);max-width:62ch;margin:0 0 18px}
+.script{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:16px 0;overflow:hidden;
+background:rgba(255,255,255,.02)}
+.shead{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;cursor:pointer;
+user-select:none}
+.shead:hover{background:rgba(216,59,147,.07)}
+.num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--void);
+background:var(--magenta);border-radius:3px;min-width:26px;height:26px;display:flex;
+align-items:center;justify-content:center;margin-top:3px;flex:0 0 auto}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;line-height:1.35}
+.job{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);margin-top:5px}
+.chev{margin-left:auto;color:var(--dust);font-size:19px;transition:transform .2s;flex:0 0 auto}
+.script.open .chev{transform:rotate(180deg)}
+.sbody{display:none;padding:0 22px 24px 64px}
+.script.open .sbody{display:block}
+.why{font-size:14.5px;color:var(--dust);border-left:2px solid var(--violet);padding-left:14px;
+margin-bottom:20px;max-width:60ch}
+.spot{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--blue);font-weight:600;margin:20px 0 7px}
+.lines{font-size:16.5px;line-height:1.85;max-width:56ch;white-space:pre-line}
+.expand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;
+text-transform:uppercase;color:var(--bone);background:transparent;
+border:1px solid rgba(232,224,207,.25);padding:9px 16px;cursor:pointer;margin:6px 0 4px;
+border-radius:3px}
+.expand:hover{border-color:var(--magenta);color:var(--magenta)}
+.bonus{border:1px solid rgba(232,224,207,.13);border-radius:5px;margin:34px 0 0;
+padding:20px 22px;background:rgba(255,255,255,.02)}
+.bonus .stitle{margin-bottom:12px}
+.bonus p{font-size:16.5px;line-height:1.75;max-width:58ch}
+.bonus p+p{margin-top:12px}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:650px;margin:0}
+.vid{margin:0}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;
+border:1px solid rgba(232,224,207,.14);border-radius:5px;object-fit:contain}
+.vid figcaption{font-size:14.5px;line-height:1.55;color:var(--dust);margin-top:11px;max-width:34ch}
+.offer{margin-top:70px;border:1px solid rgba(216,59,147,.35);border-radius:5px;padding:30px 28px;
+background:linear-gradient(135deg,rgba(216,59,147,.09),rgba(124,77,255,.06))}
+.offer h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:14px}
+.offer ul{list-style:none;margin:18px 0}
+.offer li{font-size:15.5px;padding-left:22px;position:relative;margin-bottom:9px;max-width:60ch}
+.offer li:before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;
+border-radius:50%;background:var(--magenta)}
+.price{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;margin:20px 0 4px}
+.price span{font-size:15px;color:var(--dust);font-weight:400}
+.proof{font-size:15px;color:var(--dust);max-width:62ch;margin-top:18px}
+.proof b{color:var(--bone)}
+.cta{margin:22px 0 6px}
+.cta a{display:inline-block;background:var(--magenta);color:#fff;text-decoration:none;
+font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;letter-spacing:.01em;
+padding:15px 34px;border-radius:5px}
+.cta a:hover{background:#E4509F}
+.cta small{display:block;margin-top:9px;font-size:13px;color:var(--dust)}
+.proof a{color:var(--magenta);text-underline-offset:3px}
+footer{margin-top:60px;padding-top:26px;border-top:1px solid rgba(232,224,207,.12);
+font-size:13.5px;color:var(--dust)}
+footer a{color:var(--magenta);text-decoration:none}
+@media(max-width:600px){h1{font-size:28px}.sbody{padding-left:22px}.lines{font-size:16px}
+.cta a{display:block;text-align:center;padding:16px 18px}.wrap{padding:0 18px}.expand{padding:13px 20px}.shead{padding:18px 18px}
+.vids{grid-template-columns:minmax(0,1fr);gap:30px;max-width:360px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">Cosmic Arc Media</div><div class="rule"></div>
+<h1>Four video scripts for <em>Wendland Manufacturing Corp.</em></h1>
+<div class="sub">San Angelo, Texas</div></header>
+<div class="lede">
+<p>I'm Landon with Cosmic Arc Media, here in San Angelo. I wrote these four scripts for you before we ever talked, so you can see the work for yourself.</p>
+</div>
+<div class="panel">
+<p>Each script is written to be read off a teleprompter in one take, 60 to 90 seconds. When we shoot, each script gets broken into short sections of a couple of lines, and every section is filmed at one of three spots in your location, so one script gives you three looks without moving anything in the shop.</p>
+<p>We come to your location for about 2 hours and walk you through all 12 scripts on the teleprompter, then handle everything after: editing, captions, on screen titles, graphics, and a posting schedule at 3 times a week. You review one finished batch and give feedback within 48 hours. That's the whole job on your end.</p>
+</div>
+<div class="seclabel">The scripts</div>
+<p class="firstpass">A first pass. I made some assumptions about your business to write these. On a shoot we'd dial them in to your goals.</p>
+<button class="expand" id="expand">Expand all</button>
+<div class="script">
+<div class="shead"><div class="num">1</div><div>
+<div class="stitle">In 1921, a man named H. G. Wendland started building tanks in San Angelo</div>
+<div class="job">Origin</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">A company that has made one thing in the same town for a century, and still puts the family name on every product, has a story no national fabricator can tell. It gives engineers and facility managers a reason to pick the local shop before they ever call.</div>
+<div class="lines">A hundred years is a long time in manufacturing.
+In 1921, a man named H. G. Wendland started a company in San Angelo.
+It built tanks.
+A hundred years later, in 2021, we marked a century of building custom pressure vessels and tanks for commercial and industrial use.
+
+Today it's still family owned.
+Our name is on every product we make.
+[OWNER: how the Wendland and Hirschfeld families came together, and who ran the company in between]
+
+We do one thing, and we do it well.
+Tanks, and ASME pressure vessels.
+Air separator tanks, expansion tanks, blowdown tanks, hydropneumatic tanks.
+Fire protection tanks, water storage tanks, chilled water buffer tanks, air receiver tanks, water heaters.
+
+Everything from the steel we build with to the coatings we apply meets our own internal quality standards.
+We take pride in going past what the industry requires.
+Our welders are ASME code welders.
+We build for water plants, commercial HVAC, natural gas and fuel storage.
+
+The people are what keep a company going for a hundred years.
+Our average employee has been here nearly two decades.
+Some have been here more than fifty years.
+[OWNER: a person on your crew and what they've built here]
+
+I'm Wendall Hirschfeld, and I'm the president.
+[OWNER: how you came to run the company, and what you want the next hundred years to look like]
+We're at 601 West 11th Street in San Angelo, and we've been building tanks here for more than a century.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">2</div><div>
+<div class="stitle">Look at what has left 601 West 11th Street</div>
+<div class="job">Local anchor</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The company's own timeline puts a San Angelo shop at Los Alamos, at an air force base in Abilene and at a ballpark in Arlington. It turns a street address into a map of Texas and beyond, and it needs no history that anyone else has covered.</div>
+<div class="lines">The address is 601 West 11th Street in San Angelo.
+Look at what has left that building.
+
+In 1952, a generator tank for the Atomic Energy Commission at Los Alamos, New Mexico.
+In 1958, sheet metal for agricultural stock tanks and culvert bridges.
+In 1963, a fifty thousand gallon jet fuel tank, underground, for the air force base in Abilene.
+
+In 1968, an overhead fuel tank designed for ranch and farm businesses.
+In 1977, a twenty thousand gallon propane tank for commercial and industrial use.
+In 1980, gasoline tanks built in high volume for gas stations.
+In 1985, new technology in the production facility.
+In 2011, a safe work environment, strict quality control and ASME code welders.
+
+In 2018, a chilled water buffer tank for the new Texas Rangers ballpark in Arlington.
+A shop in San Angelo, and a ballpark in Arlington.
+[OWNER: the project in the last ten years you're proudest of]
+
+Today we build for water plants, commercial HVAC, natural gas and fuel storage.
+We started with ranch and farm tanks, and the work grew from there.
+It all still comes out of one shop on West 11th Street.
+Our chilled water buffer tanks go into commercial buildings, hospitals, university facilities and stadiums.
+In Texas and Oklahoma we work with a regional commercial HVAC distributor under an exclusive marketing agreement.</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">3</div><div>
+<div class="stitle">Ask who designed your tank, and what they designed it with</div>
+<div class="job">Competitor contrast</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">The software, the pressure ratings and the family name on every tank are all stated on the company's own pages, and a partner called Wendland much more than a vendor. They give a buyer questions to put to any tank fabricator, with no one named.</div>
+<div class="lines">When you buy a pressure vessel, ask two questions.
+Who designed it, and what did they design it with?
+
+Here's our answer.
+We model our parts in SolidWorks, in 3D.
+We use Compress to model, calculate and report on ASME pressure vessels.
+And we check every design against ASME Section VIII, Division 1, with DesignCalc.
+
+Ask what it was built to hold.
+Our expansion tanks are rated for one hundred fifty psi, and they're tested at two twenty five.
+Inspection openings go on every one, as the ASME code requires.
+We offer a diverse range of specs and coatings.
+There are spec sheets, and a written engineer spec for the expansion tank.
+
+Third question.
+Whose name is on it?
+Ours is on every product we manufacture, because we're a family owned company.
+That's one hundred years of putting it where people can read it.
+
+One partner of ours wrote on our website that our design and engineering expertise makes us much more than a vendor or a supplier.
+We take that as the job.
+For sizing, we point you to ASHRAE's latest guide and data book.
+If your project needs something custom, call the factory and we'll build it to your specification.
+[OWNER: a time a customer's problem got solved because your engineers got involved early]</div>
+</div></div>
+<div class="script">
+<div class="shead"><div class="num">4</div><div>
+<div class="stitle">Before you open a pressure vessel, read this</div>
+<div class="job">Useful customer education</div></div>
+<div class="chev">&#9662;</div></div>
+<div class="sbody">
+<div class="why">Every step comes from the company's own operations and maintenance page, so it gives away real, safe guidance that a plant operator or facility manager can use on any tank. It shows the shop answers questions after the sale.</div>
+<div class="lines">You've got a pressure vessel with a manway or an inspection port.
+Here's how to look inside it the right way.
+
+First, shut it down.
+Isolate the feed lines and drain the vessel.
+Make sure all the pressure is relieved before you take off any opening.
+
+Once a year, open it up.
+Flush out the sediment and check the inside for corrosion.
+If it has a lining, look for damage.
+If it has magnesium anodes, check whether they need replacing.
+
+One thing people forget.
+If the tank has an epoxy lining, inspectors should go in wearing socks.
+Shoes, boots and anything abrasive can damage the lining.
+Know your lining. Ours come in hot dip galvanized, Epoxoline and Cementline.
+
+Put it back together with new gaskets.
+Clean the gasket surfaces, tighten the fasteners, and check for leaks.
+Refill with cold water.
+Check that the relief valve moves freely, and replace it if it doesn't.
+Then bring back the heating medium and circulation, and confirm the controls work.
+
+And if it's epoxy lined, connect it with dielectric isolators.
+They keep dissimilar metals apart.
+Never run it above the working pressure stamped on the tank. That voids the warranty.
+If you ever need to make a claim, have the serial number, the date manufactured and the date installed ready.
+That's general guidance. For your tank, read the manual or call us.</div>
+</div></div>
+<div class="seclabel">One more idea</div>
+<div class="bonus">
+<div class="stitle">More than a vendor</div>
+<p>Tell the story of one project where your engineers got involved before the order. Open on the problem the customer brought, then show the design work. Craig V.'s line on your site gives you the title to build around.</p>
+</div>
+<div class="seclabel">What the finished videos look like</div>
+<div class="vids">
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.jpg" src="https://scripts.cosmicarcmedia.com/proof/ethan-west-san-angelo-name.mp4" width="720" height="1280" aria-label="A local realtor: why San Angelo is named after a correction"></video><figcaption>A local realtor: why San Angelo is named after a correction</figcaption></figure>
+<figure class="vid"><video controls playsinline preload="none" poster="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.jpg" src="https://scripts.cosmicarcmedia.com/proof/rwm-push-instead-of-tip.mp4" width="720" height="1280" aria-label="A local waste company: why this truck pushes instead of tips"></video><figcaption>A local waste company: why this truck pushes instead of tips</figcaption></figure>
+</div>
+<div class="offer"><h2>Local Authority Engine</h2>
+<p class="proof">12 locally relevant videos every four weeks, written, filmed, edited, and captioned for you, with your first batch scheduled within seven days of your shoot. I have limited availability on my calendar over the next month. If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+<p class="proof">The videos we make for local businesses average about 10,000 views each on Facebook.</p>
+<p class="proof">A trash company out in the county has been with us for several production cycles now. They had no video presence before we started.</p>
+<p class="proof"><b>The On-Time Content Guarantee.</b> We guarantee the production system, so your calendar stays on schedule: show up, approve the batch on time, and your content is delivered within seven days or you receive a $250 credit.</p>
+<ul>
+<li>A short recorded discovery call, so every script sounds like you</li>
+<li>15 scripts written for your business. You cut the 3 you like least</li>
+<li>One 2 hour on location shoot for the 12 you keep</li>
+<li>Direction and teleprompter, provided on set</li>
+<li>Editing, captions, on screen hook titles, and graphics</li>
+<li>A written caption for every video</li>
+<li>Scheduled at 3 posts a week</li>
+<li>One consolidated approval round</li>
+<li>90 day minimum</li>
+<li>Shoot date reserved in advance</li>
+</ul>
+<div class="price">$1,250 <span>every 4 weeks</span></div>
+<p class="proof">If this sounds interesting, <a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">book a quick call here</a>. It's 30 minutes or less, phone or video. You can also reply to the email this page came from.</p>
+<div class="cta"><a href="https://calendar.app.google/GKW4Foz2y7VVVJEQ8">Book a quick call</a><small>30 minutes or less, phone or video.</small></div>
+</div>
+<footer>Cosmic Arc Media &middot; <a href="mailto:landon@cosmicarcmedia.com">landon@cosmicarcmedia.com</a> &middot; (325) 812-4052 &middot; 12 East Twohig Ave, Ste 200-L, San Angelo, TX 76903<br>This page comes down on December 3, 2026.</footer>
+</div>
+<script>
+document.querySelectorAll('.shead').forEach(function(h){
+  h.addEventListener('click',function(){h.parentElement.classList.toggle('open')});
+});
+document.getElementById('expand').addEventListener('click',function(){
+  var all=document.querySelectorAll('.script');
+  var anyClosed=Array.prototype.some.call(all,function(s){return !s.classList.contains('open')});
+  all.forEach(function(s){s.classList.toggle('open',anyClosed)});
+  this.textContent=anyClosed?'Collapse all':'Expand all';
+});
+var vids=document.querySelectorAll('.vid video');
+vids.forEach(function(v){
+  v.addEventListener('play',function(){
+    vids.forEach(function(o){if(o!==v&&!o.paused){o.pause()}});
+  });
+});
+</script>
+</body>
+</html>
